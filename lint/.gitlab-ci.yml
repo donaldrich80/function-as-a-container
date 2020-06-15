@@ -1,0 +1,79 @@
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/notifications/pushover.yml'
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/default.yml'
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - notify
+
+.tool-functions:
+  stage: dependency
+  variables:
+    DOCKER_BUILD_DIR: function/lint/$IMAGE_TAG
+    IMAGE_NAME: function
+    DOCKER_BUILD_CONTEXT: function/lint/$IMAGE_TAG
+    DOCKERFILE: Dockerfile
+    GIT_STRATEGY: fetch
+
+bashate:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: bashate
+
+goodcheck:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: goodcheck
+
+markdownlint:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: markdownlint
+
+mdl:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: mdl
+
+shellcheck:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: shellcheck
+
+remarklint:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: remarklint
+
+ruamel.yaml.cmd:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: ruamel.yaml.cmd
+
+yamllint:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: yamllint

@@ -1,0 +1,11 @@
+FROM donaldrich/builder:go        AS builder
+
+RUN     git clone https://github.com/Trendyol/docker-shell.git /docker-shell
+WORKDIR /docker-shell
+RUN     go build -o /usr/local/bin/docker-shell .
+
+# RUN /usr/local/bin/docker-shell
+
+FROM scratch
+
+COPY --from=builder  /usr/local/bin/docker-shell  /usr/local/bin/docker-shell

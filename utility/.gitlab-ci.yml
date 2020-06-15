@@ -1,0 +1,74 @@
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/notifications/pushover.yml'
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/default.yml'
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - notify
+
+.tool-functions:
+  stage: dependency
+  variables:
+    DOCKER_BUILD_DIR: function/utility/$IMAGE_TAG
+    # IMAGE_ALIAS: tools
+    IMAGE_NAME: function
+    DOCKER_BUILD_CONTEXT: function/utility/$IMAGE_TAG
+    DOCKERFILE: Dockerfile
+    GIT_STRATEGY: fetch
+
+apprise:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: apprise
+
+cfssl:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: cfssl
+
+ginstall.sh:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: ginstall.sh
+
+gitleaks:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: gitleaks
+
+httpie:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: httpie
+
+magick:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: magick
+
+ncdu:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: ncdu
+

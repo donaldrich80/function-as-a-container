@@ -1,0 +1,75 @@
+stages:
+  - debug
+  - lint
+  - builder
+  - dependency
+  - build
+  - test
+  - push
+  - notify
+
+lint:tflint:
+  stage: build
+  trigger:
+    include: lint/tflint/gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "lint/tflint/*"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "tflint"'
+      when: on_success
+
+lint:shellcheck:
+  stage: build
+  trigger:
+    include: lint/shellcheck/gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "lint/shellcheck/*"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "shellcheck"'
+      when: on_success
+
+lint:markdown:
+  stage: build
+  trigger:
+    include: lint/markdown/gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "lint/markdown/*"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "markdown"'
+      when: on_success
+
+lint:misspell:
+  stage: build
+  trigger:
+    include: lint/misspell/gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "lint/misspell/*"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "misspell"'
+      when: on_success

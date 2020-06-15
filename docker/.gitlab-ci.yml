@@ -1,0 +1,129 @@
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/notifications/pushover.yml'
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/default.yml'
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - notify
+
+.docker:functions:
+  stage: dependency
+  variables:
+    DOCKER_BUILD_DIR: function/docker/$IMAGE_TAG
+    IMAGE_NAME: function
+    DOCKER_BUILD_CONTEXT: function/docker/$IMAGE_TAG
+    DOCKERFILE: Dockerfile
+    GIT_STRATEGY: fetch
+
+buildx:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: buildx
+
+dgoss:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: dgoss
+
+dive:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: dive
+
+docker:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: docker
+
+docker-compose:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: docker-compose
+
+docker-credential-vault-login:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: docker-credential-vault-login
+
+docker-machine:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: docker-machine
+
+docker-shell:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: docker-shell
+
+docker-slim:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: docker-slim
+
+dockerfilelint:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: dockerfilelint
+
+dockerfile-lint:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: dockerfile-lint
+
+dockerfile_lint:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: dockerfile_lint
+
+dockfmt:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: dockfmt
+
+hadolint:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: hadolint
+
+notary:build:
+  extends:
+    - .build:functions
+    - .docker:functions
+  variables:
+    IMAGE_TAG: notary
+

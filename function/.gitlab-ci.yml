@@ -1,0 +1,85 @@
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/notifications/pushover.yml'
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/default.yml'
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - notify
+
+.tool-functions:
+  stage: dependency
+  variables:
+    DOCKER_BUILD_DIR: function/function/$IMAGE_TAG
+    IMAGE_NAME: function
+    DOCKER_BUILD_CONTEXT: function/function/$IMAGE_TAG
+    DOCKERFILE: Dockerfile
+    GIT_STRATEGY: fetch
+
+apprise:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: apprise
+
+argbash:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: argbash
+
+gomplate:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: gomplate
+
+goss:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: goss
+
+jq:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: jq
+
+jsonnet:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: jsonnet
+
+yq:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: yq
+
+ytt:build:
+  extends:
+    - .build:functions
+    - .tool-functions
+  variables:
+    IMAGE_TAG: ytt
+
+
+
+
+
+

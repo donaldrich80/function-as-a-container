@@ -12,7 +12,7 @@ extra_css:
 
 docs_dir: docs
 theme:
-  favicon: docs/theme/assets/images/favicon.png
+  favicon: .meta/theme/assets/images/favicon.png
   name: material
   custom_dir: .meta/theme
   font:
@@ -33,9 +33,6 @@ plugins:
       filename: .pages
       collapse_single_pages: true
   - markdownextradata: {}
-  # - simple:
-  #     ignore_hidden: True
-  #     ignore_folders: ["docs","docs/snippets","snippets"]
 
 extra:
   external_links:
@@ -90,7 +87,7 @@ markdown_extensions:
   - pymdownx.progressbar:
   - pymdownx.smartsymbols:
   - pymdownx.snippets:
-      base_path: docs/.snippets
+      base_path: meta/.snippets
   - pymdownx.superfences:
       preserve_tabs: true
       custom_fences:

@@ -1,0 +1,15 @@
+repo: docker
+image:
+  tag: dockerfilelint
+  context: ""
+  dir: ""
+  dockerfile: ""
+  base: replicated/dockerfilelint
+commands:
+  dockerfilelint:
+    prefix: /dockerfilelint/bin/dockerfilelint
+    help: --help
+    version: --version
+    github: replicatedhq/dockerfilelint
+    site: https://www.fromlatest.io
+extra: ""

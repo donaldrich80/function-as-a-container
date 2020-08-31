@@ -1,0 +1,34 @@
+image:
+  tag: packer
+  context: ""
+  dir: ""
+  dockerfile: ""
+references:
+
+  packer-provisioner-goss:
+    prefix: packer-provisioner-goss
+    help: --help
+    version: version
+    github: YaleUniversity/packer-provisioner-goss
+    download: https://github.com/YaleUniversity/packer-provisioner-goss/releases/latest/download/packer-provisioner-goss-v1.3.0-linux-amd64
+  packer-builder-arm-image:
+    prefix: packer-builder-arm
+    help: null
+    version: null
+    github: solo-io/packer-builder-arm-image
+    quay: solo-io/packer-builder-arm-image:v0.1.6
+    base: quay.io/solo-io/packer-builder-arm-image:v0.1.6
+  packer-builder-arm:
+    prefix: packer-builder-arm
+    help: null
+    version: null
+    github: mkaczanowski/packer-builder-arm
+    docker: mkaczanowski/packer-builder-arm
+    dockerfile: https://github.com/mkaczanowski/packer-builder-arm/blob/master/docker/Dockerfile
+commands:
+  packer:
+    description: "Packer is a tool for creating identical machine images for multiple platforms from a single source configuration."
+    prefix: packer
+    help: -h
+    version: version
+extra: ""

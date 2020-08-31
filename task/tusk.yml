@@ -1,0 +1,51 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:task .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:task validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:task
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: just --version
+          print: "\e[32mjust\e[0m"
+      - command:
+          exec: orbit version
+          print: "\e[32morbit\e[0m"
+      - command:
+          exec: robo --version
+          print: "\e[32mrobo\e[0m"
+      - command:
+          exec: task --version
+          print: "\e[32mtask\e[0m"
+      - command:
+          exec: tusk --version
+          print: "\e[32mtusk\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: just --help
+          print: "\e[32mjust\e[0m"
+      - command:
+          exec: orbit --help
+          print: "\e[32morbit\e[0m"
+      - command:
+          exec: robo --help
+          print: "\e[32mrobo\e[0m"
+      - command:
+          exec: task --help
+          print: "\e[32mtask\e[0m"
+      - command:
+          exec: tusk --help
+          print: "\e[32mtusk\e[0m"

@@ -1,0 +1,13 @@
+image:
+  tag: vuls
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  vuls:
+    prefix: vuls
+    help: --help
+    version: --version
+    github: future-architect/vuls
+    docs: https://vuls.io
+extra: ""

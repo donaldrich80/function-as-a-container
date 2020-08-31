@@ -1,0 +1,12 @@
+image:
+  tag: cfssl
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  cfssl:
+    prefix: cfssl
+    help: null
+    version: null
+    github: cloudflare/cfssl
+extra: ""

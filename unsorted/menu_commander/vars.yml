@@ -1,0 +1,12 @@
+image:
+  tag: menu_commander
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  menu_commander:
+    prefix: menu
+    help: --help
+    version: --version
+    github: DannyBen/menu_commander
+extra: ""

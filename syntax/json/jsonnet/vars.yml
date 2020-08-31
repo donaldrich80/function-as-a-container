@@ -1,0 +1,14 @@
+image:
+  tag: jsonnet
+  context: https://github.com/google/jsonnet.git
+  dir: /
+  dockerfile: ""
+  download: https://github.com/google/jsonnet/releases/download/v0.16.0/jsonnet-bin-v0.16.0-linux.tar.gz
+commands:
+  jsonnet:
+    prefix: jsonnet
+    help: --help
+    version: --version
+    github: google/jsonnet
+    docs: https://jsonnet.org
+extra: ""

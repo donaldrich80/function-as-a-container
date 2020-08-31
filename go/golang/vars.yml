@@ -1,0 +1,14 @@
+image:
+  tag: golang
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  golang:
+    prefix: golang
+    help: help
+    version: version
+  # github: golang
+  # docs: golang
+  # docker: golang
+extra: ""

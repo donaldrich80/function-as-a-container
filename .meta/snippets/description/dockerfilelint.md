@@ -1,0 +1,1 @@
+An opinionated Dockerfile linter.

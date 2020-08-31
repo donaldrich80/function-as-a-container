@@ -1,0 +1,12 @@
+image:
+  tag: ginstall.sh
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  ginstall.sh:
+    prefix: ginstall.sh
+    help: --help
+    version: --version
+    github: whalehub/ginstall.sh
+extra: ""

@@ -1,0 +1,47 @@
+description: "Various task runners"
+image:
+  tag: task
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  tusk:
+    description: "The modern task runner"
+    prefix: tusk
+    help: --help
+    version: --version
+    github: rliebz/tusk
+    docs: https://rliebz.github.io/tusk
+  task:
+    description: "A task runner / simpler Make alternative written in Go"
+    prefix: task
+    help: --help
+    version: --version
+    github: go-task/task
+    docs: https://taskfile.dev
+  robo:
+    description: "Simple Go / YAML-based task runner for the team."
+    prefix: robo
+    help: --help
+    version: --version
+    github: tj/robo
+  orbit:
+    description: "A cross-platform task runner for executing commands and generating files from templates"
+    prefix: orbit
+    help: --help
+    version: version
+    github: gulien/orbit
+  just:
+    description: "Just a command runner"
+    prefix: just
+    help: --help
+    version: --version
+    github: casey/just
+  # mask:
+  #   prefix: mask
+  #   help: --help
+  #   version: --version
+      # github: jakedeichert/mask
+extra: ""
+links:
+  awesomeopensource: https://awesomeopensource.com/projects/task-runner

@@ -1,12 +1,40 @@
-FROM    vault:latest                               AS vault
+FROM donaldrich/builder:latest  AS vault-builder
+COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
+RUN upx /usr/local/bin/vault
 
-FROM    donaldrich/builder:latest                  AS builder
-COPY    --from=vault /bin/vault /usr/local/bin/vault
-RUN     upx /usr/local/bin/vault
-RUN /usr/local/bin/vault version
+FROM donaldrich/builder:latest AS hashi-helper-builder
+RUN wget "https://github.com/seatgeek/hashi-helper/releases/download/v3.3.0/hashi-helper-linux-amd64" -O /usr/local/bin/hashi-helper
+RUN chmod +rx /usr/local/bin/hashi-helper
+RUN upx /usr/local/bin/hashi-helper
 
-FROM scratch
+FROM donaldrich/builder:latest AS vault-sidekick-builder
+COPY --from=quay.io/ukhomeofficedigital/vault-sidekick /vault-sidekick /usr/local/bin/vault-sidekick
+RUN upx /usr/local/bin/vault-sidekick
 
-COPY --from=builder  /usr/local/bin/vault  /usr/local/bin/vault
+FROM donaldrich/builder:latest AS vault-ssh-helper-builder
+RUN wget "https://releases.hashicorp.com/vault-ssh-helper/0.1.6/vault-ssh-helper_0.1.6_linux_amd64.zip" -O vault-ssh-helper.zip
+RUN unzip vault-ssh-helper.zip
+RUN chmod +rx vault-ssh-helper
+RUN upx vault-ssh-helper
 
-CMD ["/usr/local/bin/vault"]
+FROM donaldrich/builder:latest AS vault-sync-builder
+RUN wget "https://github.com/cloudwatt/vault-sync/releases/download/v0.1.3/vault-sync_linux_amd64" -O /usr/local/bin/vault-sync
+RUN chmod +rx /usr/local/bin/vault-sync
+
+FROM donaldrich/builder:latest AS vaultenv-builder
+RUN wget "https://github.com/channable/vaultenv/releases/download/v0.13.1/vaultenv-0.13.1-linux-musl" -O /usr/local/bin/vaultenv
+RUN chmod +rx /usr/local/bin/vaultenv
+
+FROM alpine
+
+COPY --from=vaultenv-builder  /usr/local/bin/vaultenv  /usr/local/bin/vaultenv
+COPY --from=vault-sync-builder  /usr/local/bin/vault-sync  /usr/local/bin/vault-sync
+COPY --from=vault-ssh-helper-builder  vault-ssh-helper /usr/local/bin/vault-ssh-helper
+COPY --from=vault-sidekick-builder /usr/local/bin/vault-sidekick /usr/local/bin/vault-sidekick
+COPY --from=hashi-helper-builder  /usr/local/bin/hashi-helper  /usr/local/bin/hashi-helper
+COPY --from=vault-builder  /usr/local/bin/vault  /usr/local/bin/vault
+# validate
+COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./tusk.yml ./tusk.yml
+RUN tusk validate
+ENTRYPOINT [ "tusk" ]

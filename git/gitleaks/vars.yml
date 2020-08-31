@@ -1,0 +1,15 @@
+image:
+  tag: gitleaks
+  context: ""
+  dir: ""
+  dockerfile: ""
+  base: zricethezav/gitleaks
+  original_dir: /usr/bin
+commands:
+  gitleaks:
+    prefix: gitleaks
+    help: --help
+    version: --version
+    github: zricethezav/gitleaks
+    docker: zricethezav/gitleaks
+extra: ""

@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:docker-shell .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:docker-shell validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:docker-shell
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: docker-shell --version
+          print: "\e[32mdocker-shell\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: docker-shell --help
+          print: "\e[32mdocker-shell\e[0m"

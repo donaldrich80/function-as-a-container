@@ -1,0 +1,12 @@
+image:
+  tag: show-struct
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  show-struct:
+    prefix: show-struct
+    help: --help
+    version: --version
+    github: ilyash/show-struct
+extra: ""

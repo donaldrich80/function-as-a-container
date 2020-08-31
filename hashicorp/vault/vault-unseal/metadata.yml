@@ -1,0 +1,15 @@
+tag: vault-unseal
+repo: blockloop/vault-unseal-docker
+image:
+  tag:
+  context: ""
+  dir: ""
+  dockerfile: ""
+cmd:
+  help: null
+  version: null
+link:
+  github: https://github.com/blockloop/vault-unseal-docker
+  docs: null
+  docker: null
+extra: ""

@@ -1,0 +1,62 @@
+---
+name: mycli
+usage: A custom aliased command-line application
+
+options:
+  build-dir:
+    usage: Folder containing Dockerfile
+
+tasks:
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -f "${build-dir}/Dockerfile" -t donaldrich/function:test "${build-dir}"
+  dive:
+    usage: analyze built image
+    run: dive donaldrich/function:test
+
+  prune:
+    usage: analyze built image
+    run: docker system prune --all --force
+
+  yq:
+    usage: yq test
+    run: cat metadata.yml | yq r - tag
+
+  pre-commit:
+    usage: run all
+    run: pre-commit run --all-files
+
+  gitleaks:
+    usage: gitleaks de
+    run: docker run -it --rm --name=gitleaks -v $PWD:/code zricethezav/gitleaks -v --repo-path=/code
+
+  gitlab:
+    usage: gitlab
+    run: docker run -it --rm -v $PWD:/code donaldrich/function:gitlab-ci-lint /code/.gitlab-ci.yml
+
+  clean:
+    usage: template
+    run:
+      - command: rm -r docs/ansible | true
+      - command: rm -r docs/aws | true
+      - command: rm -r docs/docker | true
+      - command: rm -r docs/git | true
+      - command: rm -r docs/hashicorp | true
+      - command: rm -r docs/syntax | true
+      - command: rm -r docs/tools | true
+      - command: rm -r docs/media | true
+      - command: rm -r docs/unsorted | true
+      - command: rm -r docs/files | true
+      - command: rm -r docs/network | true
+      - command: rm -r docs/task | true
+      - command: rm -r .meta/pipelines | true
+
+  template:
+    usage: template
+    run:
+      - command: ./run-all.sh
+
+  regenerate:
+    run:
+      - task: clean
+      - task: template

@@ -1,0 +1,12 @@
+image:
+  tag: bashate
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  bashate:
+    prefix: bashate
+    help: --help
+    version: --version
+    github: openstack/bashate
+extra: ""

@@ -1,0 +1,57 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:terraform .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:terraform validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:terraform
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: terraform version
+          print: "\e[32mterraform\e[0m"
+      - command:
+          exec: terraformer --version
+          print: "\e[32mterraformer\e[0m"
+      - command:
+          exec: terragrunt --version
+          print: "\e[32mterragrunt\e[0m"
+      - command:
+          exec: terrahelp --version
+          print: "\e[32mterrahelp\e[0m"
+      - command:
+          exec: tflint --version
+          print: "\e[32mtflint\e[0m"
+      - command:
+          exec: tfsec --version
+          print: "\e[32mtfsec\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: terraform -h
+          print: "\e[32mterraform\e[0m"
+      - command:
+          exec: terraformer --help
+          print: "\e[32mterraformer\e[0m"
+      - command:
+          exec: terragrunt --help
+          print: "\e[32mterragrunt\e[0m"
+      - command:
+          exec: terrahelp --help
+          print: "\e[32mterrahelp\e[0m"
+      - command:
+          exec: tflint --help
+          print: "\e[32mtflint\e[0m"
+      - command:
+          exec: tfsec --help
+          print: "\e[32mtfsec\e[0m"

@@ -1,0 +1,2 @@
+    - curl -u $GITHUB_ID:$GITHUB_SECRET https://api.github.com/repos/$REPO_URL > $CI_PROJECT_DIR/docs/.snippets/github-info/aws-cdk.md || true
+    - cat $CI_PROJECT_DIR/docs/.snippets/github-info/aws-cdk.md | jq --raw-output ".description" > $CI_PROJECT_DIR/docs/.snippets/description/aws-cdk.md || true

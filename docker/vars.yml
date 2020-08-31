@@ -1,0 +1,100 @@
+description: "Docker related tools and utilities"
+image:
+  tag: docker
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  dockfmt:
+    description: "Dockerfile format and parser. Like `gofmt` but for Dockerfiles."
+    prefix: dockfmt
+    help: -h
+    version: version
+    github: jessfraz/dockfmt
+    docker: jessfraz/dockfmt
+    base: jessfraz/dockfmt
+    download: https://github.com/jessfraz/dockfmt/releases/download/v0.3.3/dockfmt-linux-amd64
+  docker-compose:
+    description: "Define and run multi-container applications with Docker"
+    prefix: docker-compose
+    version: version
+    help: --help
+    github: docker/compose
+    docs: https://docs.docker.com/compose
+  buildx:
+    description: "Docker CLI plugin for extended build capabilities with BuildKit"
+    prefix: docker buildx
+    version: version
+    help: --help
+    github: docker/buildx
+    docs: https://docs.docker.com/buildx
+  notary:
+    prefix: notary
+    version: version
+    help: --help
+    github: theupdateframework/notary
+    docs: https://docs.docker.com/notary
+  docker-machine:
+    prefix: docker-machine
+    version: version
+    help: --help
+    github: docker/machine
+    docs: https://docs.docker.com/machine
+  dive:
+    description: "A tool for exploring each layer in a docker image"
+    prefix: dive
+    help: --help
+    version: --version
+    github: wagoodman/dive
+  dobi:
+    description: "A build automation tool for Docker applications"
+    prefix: dobi
+    help: --help
+    version: --version
+    github: dnephin/dobi
+    docs: https://dnephin.github.io/dobi
+  docker-gen:
+    description: "Generate files from docker container meta-data"
+    prefix: docker-gen
+    help: --help
+    version: -version
+    github:  jwilder/docker-gen
+  docker-slim:
+    description: "DockerSlim (docker-slim): Don't change anything in your Docker container image and minify it by up to 30x (and for compiled languages even more) making it secure too! (free and open source)"
+    prefix: docker-slim
+    help: --help
+    version: --version
+    github: docker-slim/docker-slim
+    docker: dslim/docker-slim
+    base: dslim/docker-slim
+    original_dir: /bin
+    site: https://dockersl.im
+  hadolint:
+    description: "Dockerfile linter, validate inline bash, written in Haskell"
+    prefix: hadolint
+    help: --help
+    version: --version
+    github: hadolint/hadolint
+    docker: hadolint/hadolint
+    base: hadolint/hadolint
+  docker-credential-vault-login:
+    description: "Automatically gets docker credentials from Hashicorp Vault"
+    prefix: dive
+    help: --help
+    version: --version
+    github: morningconsult/docker-credential-vault-login
+  dockerfile-generator:
+    description: "dfg - Generates dockerfiles based on various input channels."
+    prefix: dfg
+    help: --help
+    version: --help
+    github: ozankasikci/dockerfile-generator
+    download: https://github.com/ozankasikci/dockerfile-generator/releases/download/v1.0.0/dfg_v1.0.0_linux_amd64
+references:
+  buildx:
+    misc: https://codefresh.io/docker-tutorial/announcing-docker-buildkit-support/
+  docker:
+    github: docker/docker-ce
+  buildkit:
+    github: moby/buildkit
+extra: ""

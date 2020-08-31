@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:inspec .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:inspec validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:inspec
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: inspec --version
+          print: "\e[32minspec\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: inspec --help
+          print: "\e[32minspec\e[0m"

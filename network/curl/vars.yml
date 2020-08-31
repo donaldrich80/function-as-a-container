@@ -1,0 +1,15 @@
+image:
+  tag: curl
+  context: ""
+  dir: ""
+  dockerfile: ""
+  base: curlimages/curl
+commands:
+  curl:
+    prefix: curl
+    help: --help
+    version: --version
+    github: curl/curl
+    docs: https://curl.haxx.se
+    docker: curlimages/curl
+extra: ""

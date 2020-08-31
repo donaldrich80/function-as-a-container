@@ -1,0 +1,6 @@
+FROM alpine
+
+RUN apk --update --no-cache add imagemagick && \
+  rm -rf /var/cache/apk/*
+
+{{- template "validate" }}

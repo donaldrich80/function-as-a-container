@@ -1,0 +1,12 @@
+image:
+  tag: imagemagick
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  imagemagick:
+    prefix: magick
+    help: -help
+    version: -version
+    github: ImageMagick/ImageMagick
+extra: ""

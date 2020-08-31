@@ -1,0 +1,93 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:docker .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:docker validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:docker
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: docker buildx version
+          print: "\e[32mdocker buildx\e[0m"
+      - command:
+          exec: dive --version
+          print: "\e[32mdive\e[0m"
+      - command:
+          exec: dobi --version
+          print: "\e[32mdobi\e[0m"
+      - command:
+          exec: docker-compose version
+          print: "\e[32mdocker-compose\e[0m"
+      - command:
+          exec: dive --version
+          print: "\e[32mdive\e[0m"
+      - command:
+          exec: docker-gen -version
+          print: "\e[32mdocker-gen\e[0m"
+      - command:
+          exec: docker-machine version
+          print: "\e[32mdocker-machine\e[0m"
+      - command:
+          exec: docker-slim --version
+          print: "\e[32mdocker-slim\e[0m"
+      - command:
+          exec: dfg --help
+          print: "\e[32mdfg\e[0m"
+      - command:
+          exec: dockfmt version
+          print: "\e[32mdockfmt\e[0m"
+      - command:
+          exec: hadolint --version
+          print: "\e[32mhadolint\e[0m"
+      - command:
+          exec: notary version
+          print: "\e[32mnotary\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: docker buildx --help
+          print: "\e[32mdocker buildx\e[0m"
+      - command:
+          exec: dive --help
+          print: "\e[32mdive\e[0m"
+      - command:
+          exec: dobi --help
+          print: "\e[32mdobi\e[0m"
+      - command:
+          exec: docker-compose --help
+          print: "\e[32mdocker-compose\e[0m"
+      - command:
+          exec: dive --help
+          print: "\e[32mdive\e[0m"
+      - command:
+          exec: docker-gen --help
+          print: "\e[32mdocker-gen\e[0m"
+      - command:
+          exec: docker-machine --help
+          print: "\e[32mdocker-machine\e[0m"
+      - command:
+          exec: docker-slim --help
+          print: "\e[32mdocker-slim\e[0m"
+      - command:
+          exec: dfg --help
+          print: "\e[32mdfg\e[0m"
+      - command:
+          exec: dockfmt -h
+          print: "\e[32mdockfmt\e[0m"
+      - command:
+          exec: hadolint --help
+          print: "\e[32mhadolint\e[0m"
+      - command:
+          exec: notary --help
+          print: "\e[32mnotary\e[0m"

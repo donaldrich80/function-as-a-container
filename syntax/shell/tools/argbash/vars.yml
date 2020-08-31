@@ -1,0 +1,15 @@
+image:
+  tag: argbash
+  context: ""
+  dir: ""
+  dockerfile: ""
+  base: matejak/argbash
+commands:
+  argbash:
+    prefix: argbash
+    help: --help
+    version: --version
+    github: matejak/argbash
+    docker: https://hub.docker.com/r/matejak/argbash
+    site: https://argbash.io/generate
+extra: -e PROGRAM=argbash -v "$(pwd):/work"

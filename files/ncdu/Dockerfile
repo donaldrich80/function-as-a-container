@@ -1,0 +1,17 @@
+FROM donaldrich/builder:latest          AS builder
+
+RUN wget https://dev.yorhel.nl/download/ncdu-linux-x86_64-1.14.2.tar.gz
+
+RUN tar xzf ncdu-linux-x86_64-1.14.2.tar.gz
+
+RUN mv ncdu /usr/local/bin
+RUN chmod a+x /usr/local/bin/ncdu
+
+FROM alpine
+
+COPY --from=builder   /usr/local/bin/ncdu  /usr/local/bin/ncdu
+# validate
+COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./tusk.yml ./tusk.yml
+RUN tusk validate
+ENTRYPOINT [ "tusk" ]

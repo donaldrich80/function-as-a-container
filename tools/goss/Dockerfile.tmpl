@@ -1,0 +1,28 @@
+FROM docker:latest as docker
+
+FROM donaldrich/builder:latest AS builder
+RUN wget "https://github.com/aelsabbahy/goss/releases/latest/download/goss-linux-amd64" -O /usr/local/bin/goss
+RUN chmod +rx /usr/local/bin/goss
+# RUN upx /usr/local/bin/goss
+
+RUN wget "https://github.com/aelsabbahy/goss/releases/latest/download/dgoss" -O /usr/local/bin/dgoss
+RUN chmod +rx /usr/local/bin/dgoss
+# RUN upx /usr/local/bin/dgoss
+
+RUN wget "https://raw.githubusercontent.com/aelsabbahy/goss/master/extras/dcgoss/dcgoss" -O /usr/local/bin/dcgoss
+RUN chmod +rx /usr/local/bin/dcgoss
+
+RUN wget "https://raw.githubusercontent.com/aelsabbahy/goss/master/extras/kgoss/kgoss" -O /usr/local/bin/kgoss
+RUN chmod +rx /usr/local/bin/kgoss
+
+FROM alpine
+
+RUN apk add bash
+
+COPY --from=docker  /usr/local/bin/docker  /usr/local/bin/docker
+COPY --from=builder /usr/local/bin/dgoss /usr/local/bin/dgoss
+COPY --from=builder /usr/local/bin/goss /usr/local/bin/goss
+COPY --from=builder /usr/local/bin/dcgoss /usr/local/bin/dcgoss
+COPY --from=builder /usr/local/bin/kgoss /usr/local/bin/kgoss
+
+{{- template "validate" }}

@@ -1,0 +1,12 @@
+FROM donaldrich/builder:go AS docker-credential-vault-login-builder
+RUN git clone https://github.com/morningconsult/docker-credential-vault-login /build
+WORKDIR /build
+RUN make
+WORKDIR /
+RUN upx /build/bin/docker-credential-vault-login
+COPY ./config.hcl /etc/docker-credential-vault-login/
+
+FROM scratch
+
+COPY --from=docker-credential-vault-login-builder /etc/docker-credential-vault-login/config.hcl /etc/docker-credential-vault-login/config.hcl
+COPY --from=docker-credential-vault-login-builder /build/bin/docker-credential-vault-login /usr/local/bin/docker-credential-vault-login

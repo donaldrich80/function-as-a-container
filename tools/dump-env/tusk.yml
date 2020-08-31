@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:dump-env .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:dump-env validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:dump-env
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: dump-env --help
+          print: "\e[32mdump-env\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: dump-env --help
+          print: "\e[32mdump-env\e[0m"

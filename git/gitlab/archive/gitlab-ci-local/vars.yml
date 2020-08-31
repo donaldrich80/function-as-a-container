@@ -1,0 +1,12 @@
+image:
+  tag: gitlab-ci-local
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  gitlab-ci-local:
+    prefix: gitlab-ci-local
+    help: --help
+    version: --version
+    github: firecow/gitlab-ci-local
+extra: ""

@@ -1,1 +1,0 @@
-FROM wata727/tflint

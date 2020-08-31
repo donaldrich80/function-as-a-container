@@ -1,0 +1,14 @@
+image:
+  tag: homebrew
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  homebrew:
+    prefix: brew
+    help: --help
+    version: --version
+    github: Homebrew/brew
+    docs: https://docs.brew.sh
+    site: https://brew.sh
+extra: ""

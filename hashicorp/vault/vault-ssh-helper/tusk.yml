@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:vault-ssh-helper .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:vault-ssh-helper validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:vault-ssh-helper
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: vault-ssh-helper verify-only
+          print: "\e[32mvault-ssh-helper\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: vault-ssh-helper <no value>
+          print: "\e[32mvault-ssh-helper\e[0m"

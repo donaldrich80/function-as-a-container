@@ -1,0 +1,12 @@
+image:
+  tag: dump-env
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  dump-env:
+    prefix: dump-env
+    help: --help
+    version: --help
+    github: sobolevn/dump-env
+extra: ""

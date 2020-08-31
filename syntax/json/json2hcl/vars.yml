@@ -1,0 +1,14 @@
+image:
+  tag: json2hcl
+  context: ""
+  dir: ""
+  dockerfile: ""
+  download: https://github.com/kvz/json2hcl/releases/download/v0.0.6/json2hcl_v0.0.6_linux_amd64
+
+extra: ""
+commands:
+  json2hcl:
+    prefix: json2hcl
+    help: --help
+    version: --version
+    github: kvz/json2hcl

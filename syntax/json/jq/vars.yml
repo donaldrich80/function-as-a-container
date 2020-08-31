@@ -1,0 +1,14 @@
+image:
+  tag: jq
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  jq:
+    prefix: jq
+    help: --help
+    version: --version
+    github: stedolan/jq
+    docs: https://stedolan.github.io/jq
+    docker: stedolan/jq
+extra: ""

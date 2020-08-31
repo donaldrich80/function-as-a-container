@@ -1,0 +1,13 @@
+repo: projectatomic/dockerfile_lint
+image:
+  tag: dockerfile_lint
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  dockerfile_lint:
+    prefix: dockerfile_lint
+    help: --help
+    version: --help
+    github: https://github.com/projectatomic/dockerfile_lint
+extra: ""

@@ -1,0 +1,8 @@
+:root {
+  --palette-color-1: rgb(251, 163, 38);
+  --palette-color-2: rgb(252, 109, 38);
+  --palette-color-3: rgb(226, 67, 41);
+  --palette-color-4: rgb(56, 13, 117);
+  --palette-color-5: rgb(48, 53, 62);
+  --palette-color-5-mild: hsla(0, 0%, 100%, 0.15);
+}

@@ -1,0 +1,16 @@
+image:
+  tag: shfmt
+  # context: https://github.com/mvdan/sh.git
+  # dir: cmd/shfmt
+  context: ""
+  dir: ""
+  dockerfile: ""
+  base: mvdan/shfmt
+commands:
+  shfmt:
+    prefix: shfmt
+    help: -h
+    version: -version
+    github: mvdan/sh
+    docker: mvdan/sh
+extra: ""

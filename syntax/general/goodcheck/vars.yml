@@ -1,0 +1,17 @@
+tag: goodcheck
+repo: sider/goodcheck
+image:
+  tag: goodcheck
+  context: ""
+  dir: ""
+  dockerfile: ""
+  base: sider/goodcheck
+commands:
+  goodcheck:
+    prefix: goodcheck
+    help: help
+    version: version
+    github: sider/goodcheck
+    docs: https://sider.github.io/goodcheck
+    rules: https://github.com/sider/goodcheck-rules
+extra: -v "$(pwd):/data" -w "/data"

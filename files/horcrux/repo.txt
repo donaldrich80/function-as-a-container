@@ -1,0 +1,1 @@
+https://github.com/jesseduffield/horcrux/releases/download/v0.2/horcrux_0.2_Linux_x86_64.tar.gz

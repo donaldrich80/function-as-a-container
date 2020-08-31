@@ -1,0 +1,16 @@
+Usage: mdl [options] [FILE.md|DIR ...]
+    -c, --config FILE                The configuration file to use
+    -g, --git-recurse                Only process files known to git when given a directory
+    -i, --[no-]ignore-front-matter   Ignore YAML front matter
+    -j, --json                       JSON output
+    -l, --list-rules                 Don't process any files, just list enabled rules
+    -r, --rules RULE1,RULE2          Only process these rules
+    -u, --rulesets RULESET1,RULESET2 Specify additional ruleset files to load
+    -a, --[no-]show-aliases          Show rule alias instead of rule ID when viewing rules
+    -w, --[no-]warnings              Show kramdown warnings
+    -d, --skip-default-ruleset       Don't load the default markdownlint ruleset
+    -s, --style STYLE                Load the given style
+    -t, --tags TAG1,TAG2             Only process rules with these tags
+    -v, --[no-]verbose               Increase verbosity
+    -h, --help                       Show this message
+    -V, --version                    Show version

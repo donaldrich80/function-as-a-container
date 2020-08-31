@@ -1,0 +1,12 @@
+image:
+  tag: restic
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  restic:
+    prefix: restic
+    help: --help
+    version: version
+    github: restic/restic
+extra: ""

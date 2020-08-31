@@ -1,0 +1,14 @@
+image:
+  tag: languagetool
+  context: ""
+  dir: ""
+  base: silviof/docker-languagetool
+  dockerfile: ""
+commands:
+  languagetool:
+    prefix: languagetool
+    help: null
+    version: null
+    docs: https://www.languagetool.org
+    docker: silviof/docker-languagetool
+extra: ""

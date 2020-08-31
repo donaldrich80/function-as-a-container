@@ -1,0 +1,18 @@
+image:
+  tag: gitlab
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  glab:
+    prefix: glab
+    help: help
+    version: version
+    github: profclems/glab
+    docs: https://clementsam.tech/glab
+  gitlab-ci-local:
+    prefix: gitlab-ci-local
+    help: --help
+    version: --version
+    github: firecow/gitlab-ci-local
+extra: ""

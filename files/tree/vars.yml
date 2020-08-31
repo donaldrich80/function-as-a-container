@@ -1,0 +1,14 @@
+image:
+  tag: tree
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  tree:
+    prefix: tree
+    help: --help
+    version: --version
+extra: -v "$(pwd):/data"
+usage:
+  pre: -v "$(pwd):/data"
+  post: /data

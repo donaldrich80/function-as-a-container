@@ -1,0 +1,11 @@
+image:
+  tag: zsh
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  zsh:
+    prefix: zsh
+    help: --help
+    version: --version
+extra: ""

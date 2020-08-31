@@ -1,0 +1,14 @@
+image:
+  tag: goss
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  goss:
+    prefix: goss
+    help: --help
+    version: --version
+    github: aelsabbahy/goss
+    docs: https://github.com/aelsabbahy/goss/blob/master/docs/manual.md
+extra: -v "$(pwd):/src"
+after: --gossfile "/src/goss.yml"

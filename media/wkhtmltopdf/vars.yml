@@ -1,0 +1,13 @@
+image:
+  tag: wkhtmltopdf
+  context: ""
+  dir: ""
+  dockerfile: ""
+  base: wkhtmltopdf
+commands:
+  wkhtmltopdf:
+    prefix: wkhtmltopdf
+    help: --help
+    version: --version
+    github: wkhtmltopdf
+extra: ""

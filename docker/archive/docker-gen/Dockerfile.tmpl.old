@@ -1,0 +1,10 @@
+{{- template "ginstall-upx" }}
+{{- template "validate" }}
+
+FROM donaldrich/builder:latest AS docker-gen-builder
+RUN ginstall.sh docker-gen latest
+RUN upx /usr/local/bin/docker-gen
+
+FROM alpine
+
+COPY --from=docker-gen-builder /usr/local/bin/docker-gen /usr/local/bin/docker-gen

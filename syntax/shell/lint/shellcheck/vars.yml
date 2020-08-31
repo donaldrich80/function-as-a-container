@@ -1,0 +1,12 @@
+image:
+  tag: shellcheck
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  shellcheck:
+    prefix: shellcheck
+    help: --help
+    version: --version
+    github: koalaman/shellcheck
+extra: ""

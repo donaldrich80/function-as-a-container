@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:realize .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:realize validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:realize
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: realize --version
+          print: "\e[32mrealize\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: realize --help
+          print: "\e[32mrealize\e[0m"

@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:menu_commander .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:menu_commander validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:menu_commander
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: menu --version
+          print: "\e[32mmenu\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: menu --help
+          print: "\e[32mmenu\e[0m"

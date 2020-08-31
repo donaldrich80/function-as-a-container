@@ -1,0 +1,16 @@
+# RUN /usr/local/bin/vault-sync --version
+
+# FROM alpine
+
+# COPY --from=builder /usr/local/bin/vault-sync /usr/local/bin/vault-sync
+
+
+# RUN /usr/local/bin/vault-sync --version
+
+# ENTRYPOINT ["/usr/local/bin/vault-sync"]
+
+# CMD ["--help"]
+
+{{- template "binary" }}
+# COPY --from=donaldrich/hashicorp  /usr/local/bin/vault  /usr/local/bin/vault
+{{- template "validate" }}

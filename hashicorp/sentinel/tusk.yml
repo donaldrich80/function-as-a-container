@@ -1,0 +1,33 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:sentinel .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:sentinel validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:sentinel
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: sentinel version
+          print: "\e[32msentinel\e[0m"
+      - command:
+          exec: tusk --version
+          print: "\e[32mtusk\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: sentinel -h
+          print: "\e[32msentinel\e[0m"
+      - command:
+          exec: tusk --help
+          print: "\e[32mtusk\e[0m"

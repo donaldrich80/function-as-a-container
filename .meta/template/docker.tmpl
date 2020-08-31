@@ -1,0 +1,107 @@
+{{- define "validate" }}
+# validate
+COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./tusk.yml ./tusk.yml
+RUN tusk validate
+ENTRYPOINT [ "tusk" ]
+{{- end }}
+
+{{- define "ginstall" }}
+FROM donaldrich/builder:latest AS {{ (datasource "data").image.tag }}-builder
+RUN ginstall.sh {{ (datasource "data").image.tag }} latest
+
+FROM alpine
+
+COPY --from={{ (datasource "data").image.tag }}-builder /usr/local/bin/{{ (datasource "data").image.tag }} /usr/local/bin/{{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "ginstall-upx" }}
+FROM donaldrich/builder:latest AS {{ (datasource "data").image.tag }}-builder
+RUN ginstall.sh {{ (datasource "data").image.tag }} latest
+RUN upx /usr/local/bin/{{ (datasource "data").image.tag }}
+
+FROM alpine
+
+COPY --from={{ (datasource "data").image.tag }}-builder /usr/local/bin/{{ (datasource "data").image.tag }} /usr/local/bin/{{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "ginstall-scratch" }}
+FROM donaldrich/builder:latest AS {{ (datasource "data").image.tag }}-builder
+RUN ginstall.sh {{ (datasource "data").image.tag }} latest
+
+FROM scratch
+
+COPY --from={{ (datasource "data").image.tag }}-builder /usr/local/bin/{{ (datasource "data").image.tag }} /usr/local/bin/{{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "ginstall-ubuntu" }}
+FROM donaldrich/builder:latest AS {{ (datasource "data").image.tag }}-builder
+RUN ginstall.sh {{ (datasource "data").image.tag }} latest
+
+FROM ubuntu
+
+COPY --from={{ (datasource "data").image.tag }}-builder /usr/local/bin/{{ (datasource "data").image.tag }} /usr/local/bin/{{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "node" }}
+FROM node:slim
+RUN npm install -g {{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "binary-upx" }}
+FROM donaldrich/builder:latest AS {{ (datasource "data").image.tag }}-builder
+RUN wget "{{ (datasource "data").image.download }}" -O /usr/local/bin/{{ (datasource "data").image.tag }}
+RUN chmod +rx /usr/local/bin/{{ (datasource "data").image.tag }}
+RUN upx /usr/local/bin/{{ (datasource "data").image.tag }}
+# RUN  /usr/local/bin/{{ (datasource "data").image.tag }} --version
+
+FROM alpine
+COPY --from={{ (datasource "data").image.tag }}-builder  /usr/local/bin/{{ (datasource "data").image.tag }}  /usr/local/bin/{{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "binary" }}
+FROM donaldrich/builder:latest AS {{ (datasource "data").image.tag }}-builder
+RUN wget "{{ (datasource "data").image.download }}" -O /usr/local/bin/{{ (datasource "data").image.tag }}
+RUN chmod +rx /usr/local/bin/{{ (datasource "data").image.tag }}
+
+FROM alpine
+COPY --from={{ (datasource "data").image.tag }}-builder  /usr/local/bin/{{ (datasource "data").image.tag }}  /usr/local/bin/{{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "base" }}
+FROM {{ (datasource "data").image.base }}
+{{- end }}
+
+{{- define "docker-transfer-upx" }}
+FROM donaldrich/builder:latest AS {{ (datasource "data").image.tag }}-builder
+COPY --from={{ (datasource "data").image.base }} {{ (datasource "data").image.original_dir }}/{{ (datasource "data").image.tag }} /usr/local/bin/{{ (datasource "data").image.tag }}
+RUN upx /usr/local/bin/{{ (datasource "data").image.tag }}
+
+FROM alpine
+COPY --from={{ (datasource "data").image.tag }}-builder /usr/local/bin/{{ (datasource "data").image.tag }} /usr/local/bin/{{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "python" }}
+FROM python:alpine
+RUN pip install --no-cache-dir {{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "python-slim" }}
+FROM python:slim
+RUN pip install --no-cache-dir {{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "alpine" }}
+FROM alpine
+RUN apk add --no-cache {{ (datasource "data").image.tag }}
+{{- end }}
+
+{{- define "binary-zip-upx" }}
+FROM donaldrich/builder:latest AS {{ (datasource "data").image.tag }}-builder
+RUN wget "{{ (datasource "data").image.download }}" -O {{ (datasource "data").image.tag }}.zip
+RUN unzip {{ (datasource "data").image.tag }}.zip
+RUN chmod +rx {{ (datasource "data").image.tag }}
+RUN upx {{ (datasource "data").image.tag }}
+FROM alpine
+COPY --from={{ (datasource "data").image.tag }}-builder  {{ (datasource "data").image.tag }} /usr/local/bin/{{ (datasource "data").image.tag }}
+{{- end }}

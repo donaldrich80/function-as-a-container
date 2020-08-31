@@ -1,0 +1,12 @@
+FROM donaldrich/builder:latest          AS builder
+
+RUN wget https://github.com/rash-sh/rash/releases/download/v1.0.0/rash-x86_64-unkown-linux-gnu.tar.gz
+
+RUN tar xzf rash-x86_64-unkown-linux-gnu.tar.gz
+
+RUN mv rash /usr/local/bin
+RUN chmod a+x /usr/local/bin/rash
+
+FROM alpine
+
+COPY --from=builder   /usr/local/bin/rash  /usr/local/bin/rash

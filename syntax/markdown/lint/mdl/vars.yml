@@ -1,0 +1,12 @@
+image:
+  tag: mdl
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  markdownlint:
+    prefix: mdl
+    help: --help
+    version: --version
+    github: markdownlint/markdownlint
+extra: ""

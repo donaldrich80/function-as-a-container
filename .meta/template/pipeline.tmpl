@@ -1,0 +1,18 @@
+build:{{ (datasource "data").tag }}:
+  stage: build
+  trigger:
+    include: docs/{{ (datasource "path").path }}/.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "{{ (datasource "path").path }}/*"
+      - "docs/{{ (datasource "path").path }}/.gitlab-ci.yml"
+      - "docs/{{ (datasource "path").path }}/pipeline.gitlab-ci.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "{{ (datasource "data").tag }}"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

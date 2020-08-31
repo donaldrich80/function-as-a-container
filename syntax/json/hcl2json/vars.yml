@@ -1,0 +1,13 @@
+image:
+  tag: hcl2json
+  context: ""
+  dir: ""
+  dockerfile: ""
+  download: https://github.com/tmccombs/hcl2json/releases/download/0.2.1/hcl2json_0.2.1_linux_amd64
+commands:
+  hcl2json:
+    prefix: hcl2json
+    help: help
+    version: version
+    github: tmccombs/hcl2json
+extra: ""

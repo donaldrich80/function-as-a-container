@@ -1,0 +1,57 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:yaml .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:yaml validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:yaml
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: yaml --version
+          print: "\e[32myaml\e[0m"
+      - command:
+          exec: yamale -h
+          print: "\e[32myamale\e[0m"
+      - command:
+          exec: yaml-tools --help
+          print: "\e[32myaml-tools\e[0m"
+      - command:
+          exec: yamllint --version
+          print: "\e[32myamllint\e[0m"
+      - command:
+          exec: yq --version
+          print: "\e[32myq\e[0m"
+      - command:
+          exec: ytt --version
+          print: "\e[32mytt\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: yaml --help
+          print: "\e[32myaml\e[0m"
+      - command:
+          exec: yamale -h
+          print: "\e[32myamale\e[0m"
+      - command:
+          exec: yaml-tools --help
+          print: "\e[32myaml-tools\e[0m"
+      - command:
+          exec: yamllint --help
+          print: "\e[32myamllint\e[0m"
+      - command:
+          exec: yq --help
+          print: "\e[32myq\e[0m"
+      - command:
+          exec: ytt --help
+          print: "\e[32mytt\e[0m"

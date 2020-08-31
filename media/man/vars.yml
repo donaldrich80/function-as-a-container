@@ -1,0 +1,11 @@
+image:
+  tag: man
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  man:
+    prefix: man
+    help: --help
+    version: --version
+extra: ""

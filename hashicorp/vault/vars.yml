@@ -1,0 +1,47 @@
+image:
+  tag: vault
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  vault:
+    prefix: vault
+    version: version
+    help: -h
+  tusk:
+    prefix: tusk
+    version: --version
+    help: --help
+  hashi-helper:
+    prefix: hashi-helper
+    help: help
+    version: --version
+    github: seatgeek/hashi-helper
+    download: https://github.com/seatgeek/hashi-helper/releases/download/v3.3.0/hashi-helper-linux-amd64
+  vault-sidekick:
+    prefix: vault-sidekick
+    help: -help
+    version: -version
+    github: UKHomeOffice/vault-sidekick
+    quay: https://quay.io/repository/ukhomeofficedigital/vault-sidekick
+    base: quay.io/ukhomeofficedigital/vault-sidekick
+    original_dir: ""
+  # vault-sync:
+  #   prefix: /usr/local/bin/vault-sync
+  #   help: --help
+  #   version: --version
+  #   github: cloudwatt/vault-sync
+  #   download: https://github.com/cloudwatt/vault-sync/releases/download/v0.1.3/vault-sync_linux_amd64
+  vaultenv:
+    prefix: vaultenv
+    help: --help
+    version: --version
+    github: channable/vaultenv
+    download: https://github.com/channable/vaultenv/releases/download/v0.13.1/vaultenv-0.13.1-linux-musl
+  # vault-ssh-helper:
+  #   prefix: vault-ssh-helper
+  #   help: null
+  #   version: verify-only
+  #   github: hashicorp/vault-ssh-helper
+  #   download: https://releases.hashicorp.com/vault-ssh-helper/0.1.6/vault-ssh-helper_0.1.6_linux_amd64.zip
+extra: ""

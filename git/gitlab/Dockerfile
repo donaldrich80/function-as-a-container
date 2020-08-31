@@ -1,0 +1,18 @@
+FROM donaldrich/builder as gitlab-ci-local-builder
+RUN wget https://github.com/firecow/gitlab-ci-local/releases/latest/download/linux.gz
+RUN gunzip linux.gz
+RUN mv linux /usr/local/bin/gitlab-ci-local
+RUN chmod +x /usr/local/bin/gitlab-ci-local
+
+FROM donaldrich/builder AS glab-builder
+RUN curl -sL https://j.mp/glab-i | sudo bash
+
+FROM alpine
+
+COPY --from=glab-builder /usr/local/bin/glab /usr/local/bin/glab
+COPY --from=gitlab-ci-local-builder /usr/local/bin/gitlab-ci-local /usr/local/bin/gitlab-ci-local
+# validate
+COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./tusk.yml ./tusk.yml
+RUN tusk validate
+ENTRYPOINT [ "tusk" ]

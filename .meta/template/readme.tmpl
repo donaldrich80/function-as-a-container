@@ -1,0 +1,129 @@
+---
+path: tree/master
+source: {{ (datasource "path").path }}/Dockerfile
+
+---
+
+# {{ (datasource "data").image.tag }}
+
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/function/{{ (datasource "data").image.tag }}?color=blue&label=donaldrich/function:{{ (datasource "data").image.tag }}&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/function/{{ (datasource "data").image.tag }})
+
+{{- if has (datasource "data") "description" }}
+
+{{ (datasource "data").description }}
+{{- else }}
+{{- end }}
+
+{{- if has (datasource "data") "commands" }}
+{{- template "references" -}}
+{{- end }}
+
+## Version
+
+```sh
+--8<--
+version/{{ (datasource "data").image.tag }}-docker.md
+--8<--
+```
+
+## Image Commands
+
+### Container shell
+
+```sh
+docker pull donaldrich/function:{{ (datasource "data").image.tag }}
+docker run -it --rm \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v "$(pwd)":"/work" -w "/work" \
+--hostname={{ (datasource "data").image.tag }} \
+--entrypoint="/bin/sh" \
+--net="host" \
+donaldrich/function:{{ (datasource "data").image.tag }}
+```
+
+### Check versions
+
+```sh
+docker pull donaldrich/function:{{ (datasource "data").image.tag }} && docker run -it --rm {{ (datasource "data").extra }} donaldrich/function:{{ (datasource "data").image.tag }} validate
+```
+
+### See config options
+
+```sh
+docker pull donaldrich/function:{{ (datasource "data").image.tag }} && docker run -it --rm {{ (datasource "data").extra }} donaldrich/function:{{ (datasource "data").image.tag }} help
+```
+
+### Inspect layers
+
+```sh
+docker pull donaldrich/function:{{ (datasource "data").image.tag }} && dive donaldrich/function:{{ (datasource "data").image.tag }}
+```
+
+## Configuration
+
+```
+--8<--
+config/{{ (datasource "data").image.tag }}.md
+--8<--
+```
+
+## Image Details
+
+??? info ""
+
+    === "Image"
+        ```json
+        --8<--
+        image-info/{{ (datasource "data").image.tag }}.md
+        --8<--
+        ```
+
+    === "Layers"
+        ```md
+        --8<--
+        layers/{{ (datasource "data").image.tag }}.md
+        --8<--
+        ```
+
+{{- define "references" }}
+
+## Documentation
+
+{{- range $name, $links := (datasource "data").commands }}
+
+### {{ strings.Title $name }}
+
+{{- range $name, $links := $links}}
+{{- if eq $name "github"}}
+
+* [:octicons-mark-github-16: {{$links}}](https://github.com/{{$links}})
+
+{{- end}}
+{{- if eq $name "docs"}}
+
+* [:octicons-book-16: Docs]({{$links}})
+
+{{- end}}
+{{- if eq $name "docker"}}
+
+* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/{{$links}})
+
+{{- end}}
+{{- if eq $name "quay"}}
+
+* [:fontawesome-brands-docker: Quay](https://quay.io/{{$links}})
+
+  {{- end}}
+{{- if eq $name "link"}}
+
+* [$name]({{$links}})
+
+{{- end}}
+{{- if eq $name "site"}}
+
+* [site]({{$links}})
+
+{{- end}}
+{{- end}}
+{{- end }}
+{{- end }}

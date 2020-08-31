@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:wkhtmltopdf .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:wkhtmltopdf validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:wkhtmltopdf
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: wkhtmltopdf --version
+          print: "\e[32mwkhtmltopdf\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: wkhtmltopdf --help
+          print: "\e[32mwkhtmltopdf\e[0m"

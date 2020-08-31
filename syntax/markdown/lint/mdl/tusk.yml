@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:mdl .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:mdl validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:mdl
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: mdl --version
+          print: "\e[32mmdl\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: mdl --help
+          print: "\e[32mmdl\e[0m"

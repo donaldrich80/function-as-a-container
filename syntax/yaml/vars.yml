@@ -1,0 +1,49 @@
+description: "Tools for using and manipulating YAML files"
+image:
+  tag: yaml
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  ruamel.yaml.cmd:
+    description: "commandline utility to manipulate YAML files"
+    prefix: yaml
+    help: --help
+    version: --version
+    docs: https://sourceforge.net/projects/ruamel-yaml-cmd
+    docker: https://github.com/madmuffin1/ruamel.yaml-docker/blob/master/Dockerfile
+  yamllint:
+    description: "A linter for YAML files."
+    prefix: yamllint
+    help: --help
+    version: --version
+    github: adrienverge/yamllint
+  yamale:
+    description: "A schema and validator for YAML"
+    prefix: yamale
+    help: -h
+    version: -h
+    github: 23andMe/Yamale
+  yaml-tools:
+    prefix: yaml-tools
+    help: --help
+    version: --help
+    github: thecodingmachine/yaml-tools
+    download: https://raw.githubusercontent.com/thecodingmachine/yaml-tools/0.0.6/src/yaml_tools.py
+  ytt:
+    description: "YAML templating tool that works on YAML structure instead of text"
+    prefix: ytt
+    help: --help
+    version: --version
+    github: k14s/ytt
+    docs: https://github.com/k14s/ytt/blob/develop/docs/README.md
+    site: https://get-ytt.io
+    download: https://github.com/k14s/ytt/releases/download/v0.27.1/ytt-linux-amd64
+  yq:
+    description: "yq is a portable command-line YAML processor"
+    prefix: yq
+    help: --help
+    version: --version
+    github: mikefarah/yq
+    docs: https://mikefarah.gitbook.io/yq
+extra: ""

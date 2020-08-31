@@ -1,0 +1,5 @@
+FROM node:alpine
+
+RUN npm install markdown-magic --save-dev
+
+{{- template "validate" }}

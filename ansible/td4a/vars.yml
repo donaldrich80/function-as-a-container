@@ -1,0 +1,12 @@
+image:
+  tag: td4a
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  td4a:
+    prefix: td4a-server
+    help: --help
+    version: --help
+    github: cidrblock/td4a
+extra: ""

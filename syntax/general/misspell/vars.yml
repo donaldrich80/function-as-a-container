@@ -1,0 +1,12 @@
+image:
+  tag: misspell
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  misspell:
+    prefix: misspell
+    help: -help
+    version: -v
+    github: client9/misspell
+extra: ""

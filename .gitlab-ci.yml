@@ -1,130 +1,47 @@
 include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: '/analysis/sast.yml'
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/default.yml'
+  - project: donaldrich/modular-gitlab-ci
+    file: templates/default.yml
+  # - project: donaldrich/modular-gitlab-ci
+  #   file: function/repo/auto-push.yml
+  - local: .meta/pipelines.gitlab-ci.yml
+
+cache:
+  # untracked: true
+  paths:
+    - .meta/snippets/
 
 stages:
+  - pre
   - lint
   - debug
-  - builder
-  - dependency
   - build
-  - test
-  - push
-  - notify
+  - documentation
+  - deploy
+  - post
 
-function:functions:
-  stage: dependency
-  trigger:
-    include: function/function/.gitlab-ci.yml
-    strategy: depend
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
-      changes:
-      - "function/function/*"
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "function"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "function" && $TRIGGER_VAR2 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "function" && $TRIGGER_VAR2 == "function"'
-      when: on_success
+variables:
+  DISABLE_LINTING: "true"
+  DISABLE_SAST: "true"
+  PUSHOVER_ID: $CI_PROJECT_TITLE
 
-utility:functions:
-  stage: dependency
-  trigger:
-    include: function/utility/.gitlab-ci.yml
-    strategy: depend
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
-      changes:
-      - "function/utility/*"
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "function"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "utility" && $TRIGGER_VAR2 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "utility" && $TRIGGER_VAR2 == "function"'
-      when: on_success
-
-task:functions:
-  stage: dependency
-  trigger:
-    include: function/task/.gitlab-ci.yml
-    strategy: depend
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
-      changes:
-      - "function/task/*"
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "function"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "task" && $TRIGGER_VAR2 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "task" && $TRIGGER_VAR2 == "function"'
-      when: on_success
-
-lint:functions:
-  stage: dependency
-  trigger:
-    include: function/lint/.gitlab-ci.yml
-    strategy: depend
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
-      changes:
-      - "function/lint/*"
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "function"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "lint" && $TRIGGER_VAR2 == "function"'
-      when: on_success
-
-hashicorp:functions:
-  stage: dependency
-  trigger:
-    include: function/hashicorp/.gitlab-ci.yml
-    strategy: depend
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
-      changes:
-      - "function/hashicorp/*"
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "function"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "hashicorp" && $TRIGGER_VAR2 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "hashicorp" && $TRIGGER_VAR2 == "function"'
-      when: on_success
-
-docker:functions:
-  stage: dependency
-  trigger:
-    include: function/docker/.gitlab-ci.yml
-    strategy: depend
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
-      changes:
-      - "function/docker/*"
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "function"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "docker" && $TRIGGER_VAR2 == "all"'
-      when: on_success
-    - if: '$TRIGGER_VAR1 == "docker" && $TRIGGER_VAR2 == "function"'
-      when: on_success
-
+# update-repo:
+#   stage: .post
+#   variables:
+#     GIT_STRATEGY: fetch
+#   before_script:
+#     - rm -r public/ || true
+#   script:
+#     # - apk add git
+#     - ./run-all.sh
+#     - git config --global user.email $GIT_EMAIL
+#     - git config --global user.name $GIT_NAME
+#     - git config --global user.username $GIT_USER
+#     - git remote set-url --push origin $GIT_PUSH_URL
+#     - git remote show origin
+#     - git add .
+#     - git commit -m "auto commit" || echo "no changes to repo"
+#     # - git commit -m "auto commit [skip ci]" || echo "no changes to repo"
+#     - git push origin HEAD:$CI_COMMIT_REF_NAME || echo "no changes to repo"
+#   rules:
+#   - changes:
+#     - "**/*/*"

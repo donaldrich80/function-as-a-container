@@ -1,0 +1,19 @@
+FROM donaldrich/builder AS builder
+
+ENV YAML_TOOLS_VERSION 0.0.6
+
+RUN wget https://raw.githubusercontent.com/thecodingmachine/yaml-tools/0.0.6/src/yaml_tools.py -O /usr/local/bin/yaml-tools
+
+RUN chmod +x /usr/local/bin/yaml-tools
+
+FROM python:slim
+
+RUN pip install ruamel.yaml
+
+COPY --from=builder /usr/local/bin/yaml-tools /usr/local/bin/yaml-tools
+
+{{- template "validate" }}
+
+# ENTRYPOINT ["yaml-tools"]
+
+# CMD ["--help"]

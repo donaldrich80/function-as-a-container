@@ -1,0 +1,5 @@
+FROM donaldrich/builder:go
+
+RUN curl https://glide.sh/get | sh
+
+{{- template "validate" }}

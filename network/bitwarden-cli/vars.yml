@@ -1,0 +1,12 @@
+image:
+  tag: bw
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  bitwarden-cli:
+    prefix: bw
+    help: -h
+    version: --version
+    github: bitwarden/cli
+extra: ""

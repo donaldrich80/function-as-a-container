@@ -1,0 +1,25 @@
+FROM donaldrich/builder:latest AS builder
+ENV VERSION 3.4.0
+RUN wget "https://github.com/whalehub/ginstall.sh/releases/download/v$VERSION/ginstall.sh" -O /usr/local/bin/ginstall.sh
+RUN chmod +rx /usr/local/bin/ginstall.sh
+RUN upx /usr/local/bin/ginstall.sh
+
+RUN ginstall.sh --first-run
+
+RUN ginstall.sh --self-update
+
+FROM ubuntu
+
+RUN apt-get update && apt install -y curl tar unzip
+
+# FROM alpine
+# RUN apk add curl tar unzip
+
+COPY --from=builder  /usr/local/bin/ginstall.sh  /usr/local/bin/ginstall.sh
+
+RUN ginstall.sh --first-run
+# validate
+COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./tusk.yml ./tusk.yml
+RUN tusk validate
+ENTRYPOINT [ "tusk" ]

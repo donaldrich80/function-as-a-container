@@ -1,0 +1,10 @@
+FROM python:alpine
+
+RUN pip install --no-cache-dir \
+        apprise
+
+
+{{- template "validate" }}
+# ENTRYPOINT ["apprise"]
+
+# CMD ["--help"]

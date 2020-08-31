@@ -1,0 +1,12 @@
+image:
+  tag: navi
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  navi:
+    prefix: navi
+    help: --help
+    version: --version
+    github: denisidoro/navi
+extra: ""

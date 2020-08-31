@@ -1,0 +1,42 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:{{ (datasource "data").image.tag }} .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:{{ (datasource "data").image.tag }} validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:{{ (datasource "data").image.tag }}
+
+{{- if has (datasource "data") "commands" }}
+{{- template "version" -}}
+{{- template "help" -}}
+{{- end }}
+
+{{- define "version" }}
+  validate:
+    usage: check package versions
+    run:
+{{- range $i, $e := (datasource "data").commands }}
+      - command:
+          exec: {{ .prefix }} {{ .version }}
+          print: "\e[32m{{ .prefix }}\e[0m"
+{{- end }}
+{{- end }}
+
+{{- define "help" }}
+  help:
+    usage: see config options
+    run:
+{{- range $i, $e := (datasource "data").commands }}
+      - command:
+          exec: {{ .prefix }} {{ .help }}
+          print: "\e[32m{{ .prefix }}\e[0m"
+{{- end }}
+{{- end }}

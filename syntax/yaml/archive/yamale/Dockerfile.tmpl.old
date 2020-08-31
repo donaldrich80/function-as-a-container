@@ -1,0 +1,10 @@
+# FROM python:slim
+
+# RUN pip install yamale
+
+# ENTRYPOINT ["yamale"]
+
+# CMD ["--help"]
+
+{{- template "python" }}
+{{- template "validate" }}

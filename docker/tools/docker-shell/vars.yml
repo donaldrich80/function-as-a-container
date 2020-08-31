@@ -1,0 +1,12 @@
+image:
+  tag: docker-shell
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  docker-shell:
+    prefix: docker-shell
+    help: --help
+    version: --version
+    github: Trendyol/docker-shell
+extra: ""

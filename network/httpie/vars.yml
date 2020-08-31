@@ -1,0 +1,13 @@
+image:
+  tag: httpie
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  httpie:
+    prefix: http
+    help: --help
+    version: --version
+    github: jakubroztocil/httpie
+    docs: https://httpie.org
+extra: ""

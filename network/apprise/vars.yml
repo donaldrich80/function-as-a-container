@@ -1,0 +1,12 @@
+image:
+  tag: apprise
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  apprise:
+    prefix: apprise
+    help: --help
+    version: --version
+    github: caronc/apprise
+extra: ""

@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:json2hcl .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:json2hcl validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:json2hcl
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: json2hcl --version
+          print: "\e[32mjson2hcl\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: json2hcl --help
+          print: "\e[32mjson2hcl\e[0m"

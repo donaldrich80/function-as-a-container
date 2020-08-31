@@ -1,0 +1,19 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    # -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+# -   repo: local
+#     hooks:
+#     -   id: check-x
+#         name: Check X
+#         entry: ./run-all.sh
+#         language: script
+# -   repo: local
+#     hooks:
+#       -   id: dockerfile-no-entrypoint-2
+#           name: zricethezav/gitleaks
+#           language: docker_image
+#           entry: -v /tmp/:/code/ zricethezav/gitleaks -v --repo-path=/code

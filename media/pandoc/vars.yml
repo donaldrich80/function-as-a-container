@@ -1,0 +1,13 @@
+image:
+  tag: pandoc
+  context: ""
+  dir: ""
+  dockerfile: ""
+  base: pandoc/latex
+commands:
+  pandoc:
+    prefix: pandoc
+    help: --help
+    version: --version
+    github: jgm/pandoc
+extra: ""

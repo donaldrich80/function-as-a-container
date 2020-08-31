@@ -1,0 +1,13 @@
+image:
+  tag: upx
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  upx:
+    prefix: upx
+    help: --help
+    version: --version
+    github: upx/upx
+    docs: https://upx.github.io
+extra: ""

@@ -1,0 +1,49 @@
+image:
+  tag: terraform
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  tflint:
+    prefix: tflint
+    help: --help
+    version: --version
+    github: terraform-linters/tflint
+    docker: wata727/tflint
+  tfsec:
+    prefix: tfsec
+    help: --help
+    version: --version
+    github: liamg/tfsec
+  # terraform-docs:
+  #   prefix: terraform-docs
+  #   help: --help
+  #   version: --version
+  #   github: terraform-docs/terraform-docs
+  #   download: https://github.com/terraform-docs/terraform-docs/releases/download/v0.9.1/terraform-docs-v0.9.1-linux-amd64
+  terrahelp:
+    prefix: terrahelp
+    help: --help
+    version: --version
+    download: https://github.com/opencredo/terrahelp/releases/download/v0.7.4/terrahelp-linux-amd64
+    github: opencredo/terrahelp
+  terraform:
+    prefix: terraform
+    version: version
+    help: -h
+    github: hashicorp/terraform
+    docs: https://www.terraform.io/docs
+  terragrunt:
+    prefix: terragrunt
+    help: --help
+    version: --version
+    github: gruntwork-io/terragrunt
+    docs: https://terragrunt.gruntwork.io
+    download: https://github.com/gruntwork-io/terragrunt/releases/download/v0.23.36/terragrunt_linux_amd64
+  terraformer:
+    prefix: terraformer
+    help: --help
+    version: --version
+    github: GoogleCloudPlatform/terraformer
+    download: https://github.com/GoogleCloudPlatform/terraformer/releases/download/0.8.8/terraformer-all-linux-amd64
+extra: ""

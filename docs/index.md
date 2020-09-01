@@ -10,21 +10,19 @@ source: README.md
 
 ## About
 
-Lightweight docker containers built with the philosophy of being engineered to solve a specific aspect of a problem, but solving it very well. They are "jack of no trades, master of one." If you are trying to work out a solution involving YAML files, why not have all the tools available to deal with YAML files (without gaving to install them all or their dependencies). It's that type of situation these dockers are build for.
-
-However, they're also built with a secondary goal in mind. They also serve as a self-updating standardized image layer repository which can be used in the modular construction of other containers. Whichever YAML tool(s) you find which suits your needs best are now very easy to add to containers which handle a wider scope of processes.
-
-!!! note
-    Functions which can be utilized as a dependency-free layer in Dockerfiles are preferred, but some have unavoidable dependencies and can't be layered.
+A library of lightweight docker images which exist to perform a wide-array of simple function (or a group of similar functions).
 
 ## Usage
 
-These images are built to be versatatile.
+These images can be used in a variety of ways.
 
 - [X] CI/CD Executors
 - [X] Installation-free application
 - [X] Modular Dockerfile building
 - [X] Pre-Commit Hooks
+
+!!! note
+Functions which can be utilized as a dependency-free layer in Dockerfiles are preferred, but some have unavoidable dependencies and can't be layered.
 
 ## Integration with my other projects
 

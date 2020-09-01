@@ -10,6 +10,9 @@ extra_css:
   - assets/stylesheets/custom.css
   - assets/stylesheets/color.css
 
+extra_javascript:
+  - https://unpkg.com/mermaid@8.4.5/dist/mermaid.min.js
+ 
 docs_dir: docs
 theme:
   favicon: .meta/theme/assets/images/favicon.png
@@ -27,6 +30,7 @@ theme:
 plugins:
   - search:
   # - macros:
+  - markdownmermaid:
   - minify:
       minify_html: true
   - awesome-pages:

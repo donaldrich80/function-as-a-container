@@ -1,0 +1,13 @@
+image:
+  tag: cloud-nuke
+  context: ""
+  dir: ""
+  dockerfile: ""
+  download: https://github.com/gruntwork-io/cloud-nuke/releases/download/v0.1.20/cloud-nuke_linux_amd64
+commands:
+  cloud-nuke:
+    prefix: cloud-nuke
+    help: --help
+    version: --version
+    github: gruntwork-io/cloud-nuke
+extra: ""

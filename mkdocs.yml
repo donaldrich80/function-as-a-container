@@ -92,12 +92,12 @@ markdown_extensions:
   - pymdownx.smartsymbols:
   - pymdownx.snippets:
       base_path: meta/.snippets
-  - pymdownx.superfences:
-      preserve_tabs: true
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  # - pymdownx.superfences:
+  #     preserve_tabs: true
+  #     custom_fences:
+  #       - name: mermaid
+  #         class: mermaid
+  #         format: !!python/name:pymdownx.superfences.fence_code_format
 #       permalink: ""
 #         - name: math
 #           class: arithmatex

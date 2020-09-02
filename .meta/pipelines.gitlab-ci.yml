@@ -1,52 +1,43 @@
 include:
-  - local: .meta/pipelines/ansible/td4a/build.gitlab-ci.yml
-  - local: .meta/pipelines/docker/lint/dockerfile_lint/build.gitlab-ci.yml
-  - local: .meta/pipelines/docker/lint/dockerfilelint/build.gitlab-ci.yml
-  - local: .meta/pipelines/docker/tools/docker-shell/build.gitlab-ci.yml
-  - local: .meta/pipelines/docker/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/duc/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/ginstall.sh/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/homebrew/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/ncdu/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/restic/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/tree/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/upx/build.gitlab-ci.yml
-  - local: .meta/pipelines/git/gitlab-ci-lint/build.gitlab-ci.yml
-  - local: .meta/pipelines/git/gitleaks/build.gitlab-ci.yml
-  - local: .meta/pipelines/git/gitlab/archive/gitlab-ci-local/build.gitlab-ci.yml
-  - local: .meta/pipelines/git/gitlab/archive/glab/build.gitlab-ci.yml
-  - local: .meta/pipelines/git/gitlab/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/packer/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/sentinel/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/terraform/archive/terraform-provider-proxmox/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/terraform-provider-healthchecksio/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/terraform/archive/terraform-provider-proxmox/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/sentinel/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/vault/vsh/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/vault-ssh-helper/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/vault-sync/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/vault/vsh/build.gitlab-ci.yml
-  - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/packer/build.gitlab-ci.yml
+  - local: .meta/pipelines/media/wkhtmltopdf/build.gitlab-ci.yml
   - local: .meta/pipelines/media/man/build.gitlab-ci.yml
   - local: .meta/pipelines/media/pandoc/build.gitlab-ci.yml
   - local: .meta/pipelines/media/pdftk/build.gitlab-ci.yml
-  - local: .meta/pipelines/media/wkhtmltopdf/build.gitlab-ci.yml
-  - local: .meta/pipelines/network/apprise/build.gitlab-ci.yml
-  - local: .meta/pipelines/network/bitwarden-cli/build.gitlab-ci.yml
-  - local: .meta/pipelines/network/cfssl/build.gitlab-ci.yml
-  - local: .meta/pipelines/network/curl/build.gitlab-ci.yml
-  - local: .meta/pipelines/network/httpie/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/general/goodcheck/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/general/languagetool/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/general/misspell/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/general/natural_docs/build.gitlab-ci.yml
+  - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/navi/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/dump-env/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/menu_commander/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/commander/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/realize/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/maid/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/vuls/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/gomplate/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/td4a/build.gitlab-ci.yml
+  - local: .meta/pipelines/testing/goss/build.gitlab-ci.yml
+  - local: .meta/pipelines/testing/inspec/build.gitlab-ci.yml
+  - local: .meta/pipelines/testing/container-structure-test/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitleaks/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitlab-ci-lint/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitlab/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitlab/archive/glab/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitlab/archive/gitlab-ci-local/build.gitlab-ci.yml
+  - local: .meta/pipelines/task/build.gitlab-ci.yml
+  - local: .meta/pipelines/go/golang/build.gitlab-ci.yml
+  - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/json/hcl2json/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/jq/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/json2hcl/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/jsonnet/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/show-struct/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/hcl2json/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/markdown/lint/markdown-magic/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/markdown/lint/mdl/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/markdown/markdown-pdf/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/json/jsonnet/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/lint/bashate/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/lint/sh/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/lint/shellcheck/build.gitlab-ci.yml
@@ -54,18 +45,27 @@ include:
   - local: .meta/pipelines/syntax/shell/tools/rash/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/yaml/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
-  - local: .meta/pipelines/task/build.gitlab-ci.yml
-  - local: .meta/pipelines/tools/container-structure-test/build.gitlab-ci.yml
-  - local: .meta/pipelines/tools/dump-env/build.gitlab-ci.yml
-  - local: .meta/pipelines/tools/fzf/build.gitlab-ci.yml
-  - local: .meta/pipelines/tools/goss/build.gitlab-ci.yml
-  - local: .meta/pipelines/tools/inspec/build.gitlab-ci.yml
-  - local: .meta/pipelines/tools/gomplate/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/commander/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/maid/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/menu_commander/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/navi/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/realize/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/vuls/build.gitlab-ci.yml
-  - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
-  - local: .meta/pipelines/go/golang/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/general/natural_docs/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/general/misspell/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/general/languagetool/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/general/goodcheck/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/markdown/markdown-pdf/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/markdown/lint/mdl/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/markdown/lint/markdown-magic/build.gitlab-ci.yml
+  - local: .meta/pipelines/files/tree/build.gitlab-ci.yml
+  - local: .meta/pipelines/files/ginstall.sh/build.gitlab-ci.yml
+  - local: .meta/pipelines/files/homebrew/build.gitlab-ci.yml
+  - local: .meta/pipelines/files/restic/build.gitlab-ci.yml
+  - local: .meta/pipelines/files/ncdu/build.gitlab-ci.yml
+  - local: .meta/pipelines/files/fzf/build.gitlab-ci.yml
+  - local: .meta/pipelines/files/duc/build.gitlab-ci.yml
+  - local: .meta/pipelines/files/upx/build.gitlab-ci.yml
+  - local: .meta/pipelines/docker/build.gitlab-ci.yml
+  - local: .meta/pipelines/docker/lint/dockerfilelint/build.gitlab-ci.yml
+  - local: .meta/pipelines/docker/lint/dockerfile_lint/build.gitlab-ci.yml
+  - local: .meta/pipelines/docker/tools/docker-shell/build.gitlab-ci.yml
+  - local: .meta/pipelines/network/httpie/build.gitlab-ci.yml
+  - local: .meta/pipelines/network/cfssl/build.gitlab-ci.yml
+  - local: .meta/pipelines/network/curl/build.gitlab-ci.yml
+  - local: .meta/pipelines/network/apprise/build.gitlab-ci.yml
+  - local: .meta/pipelines/network/bitwarden-cli/build.gitlab-ci.yml

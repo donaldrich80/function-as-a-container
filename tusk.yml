@@ -60,3 +60,16 @@ tasks:
     run:
       - task: clean
       - task: template
+
+  repo-update:
+    run:
+      - command: git add .
+      - command: git commit -m "repo template regenerate"
+      - command: git push origin master
+
+  repo:
+    usage: check package versions
+    run:
+      - task: clean
+      - task: template
+      - task: repo-update

@@ -1,0 +1,1 @@
+https://github.com/gruntwork-io/cloud-nuke/releases/download/v0.1.20/cloud-nuke_linux_amd64

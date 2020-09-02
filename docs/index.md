@@ -55,11 +55,11 @@ Images designed for implementation in CI/CD pipelines, but also designed and doc
     layout.md
     --8<--
     ```
-    
+
 ```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
+graph TD
+A[Client] --> B[Load Balancer]
+B --> C[Server01]
+B --> D[Server02]
 ```
+

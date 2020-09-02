@@ -1,0 +1,35 @@
+image:
+  tag: files
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  fzf:
+    prefix: fzf
+    help: --help
+    version: --version
+    github: fzf
+  restic:
+    prefix: restic
+    help: --help
+    version: version
+    github: restic/restic
+  upx:
+    prefix: upx
+    help: --help
+    version: --version
+    github: upx/upx
+    docs: https://upx.github.io
+  ncdu:
+    prefix: ncdu
+    help: --help
+    version: --version
+    docs: https://dev.yorhel.nl/ncdu
+    download: https://dev.yorhel.nl/download/ncdu-linux-x86_64-1.14.2.tar.gz
+  fetch:
+    prefix: fetch
+    help: --help
+    version: --version
+    github: gruntwork-io/fetch
+    download: https://github.com/gruntwork-io/fetch/releases/download/v0.3.10/fetch_linux_amd64
+extra: ""

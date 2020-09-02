@@ -105,3 +105,16 @@ RUN upx {{ (datasource "data").image.tag }}
 FROM alpine
 COPY --from={{ (datasource "data").image.tag }}-builder  {{ (datasource "data").image.tag }} /usr/local/bin/{{ (datasource "data").image.tag }}
 {{- end }}
+
+{{- define "binary-tar-upx" }}
+FROM donaldrich/builder:latest AS {{ (datasource "data").image.tag }}-builder
+RUN wget -O archive.tar.gz "{{ (datasource "data").image.download }}"
+RUN tar xzf archive.tar.gz
+RUN upx {{ (datasource "data").image.tag }}
+RUN mv {{ (datasource "data").image.tag }} /usr/local/bin
+RUN chmod a+x /usr/local/bin/{{ (datasource "data").image.tag }}
+
+FROM alpine
+
+COPY --from={{ (datasource "data").image.tag }}-builder /usr/local/bin/{{ (datasource "data").image.tag }} /usr/local/bin/{{ (datasource "data").image.tag }}
+{{- end }}

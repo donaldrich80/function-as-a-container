@@ -1,0 +1,2 @@
+{{- template "binary-tar-upx" }}
+{{- template "validate" }}

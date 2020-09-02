@@ -1,0 +1,51 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:files .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:files validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:files
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: fetch --version
+          print: "\e[32mfetch\e[0m"
+      - command:
+          exec: fzf --version
+          print: "\e[32mfzf\e[0m"
+      - command:
+          exec: ncdu --version
+          print: "\e[32mncdu\e[0m"
+      - command:
+          exec: restic version
+          print: "\e[32mrestic\e[0m"
+      - command:
+          exec: upx --version
+          print: "\e[32mupx\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: fetch --help
+          print: "\e[32mfetch\e[0m"
+      - command:
+          exec: fzf --help
+          print: "\e[32mfzf\e[0m"
+      - command:
+          exec: ncdu --help
+          print: "\e[32mncdu\e[0m"
+      - command:
+          exec: restic --help
+          print: "\e[32mrestic\e[0m"
+      - command:
+          exec: upx --help
+          print: "\e[32mupx\e[0m"

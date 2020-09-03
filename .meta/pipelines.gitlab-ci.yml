@@ -8,6 +8,7 @@ include:
   - local: .meta/pipelines/hashicorp/vault/vault-ssh-helper/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/vault-sync/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/packer/build.gitlab-ci.yml
+  - local: .meta/pipelines/media/diagrams/build.gitlab-ci.yml
   - local: .meta/pipelines/media/wkhtmltopdf/build.gitlab-ci.yml
   - local: .meta/pipelines/media/man/build.gitlab-ci.yml
   - local: .meta/pipelines/media/pandoc/build.gitlab-ci.yml
@@ -55,7 +56,6 @@ include:
   - local: .meta/pipelines/syntax/markdown/lint/markdown-magic/build.gitlab-ci.yml
   - local: .meta/pipelines/files/tree/build.gitlab-ci.yml
   - local: .meta/pipelines/files/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/horcrux/build.gitlab-ci.yml
   - local: .meta/pipelines/files/duc/build.gitlab-ci.yml
   - local: .meta/pipelines/aws/cloud-nuke/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/build.gitlab-ci.yml

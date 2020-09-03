@@ -1,0 +1,12 @@
+image:
+  tag: diagrams
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  diagrams:
+    prefix: diagrams
+    help: --help
+    version: --version
+    github: mingrammer/diagrams
+extra: ""

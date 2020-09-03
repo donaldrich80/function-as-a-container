@@ -14,14 +14,6 @@ source: unsorted/td4a/Dockerfile
 
 * [:octicons-mark-github-16: cidrblock/td4a](https://github.com/cidrblock/td4a)
 
-## Version
-
-```sh
---8<--
-version/td4a-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

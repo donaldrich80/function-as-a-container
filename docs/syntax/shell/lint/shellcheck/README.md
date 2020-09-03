@@ -14,14 +14,6 @@ source: syntax/shell/lint/shellcheck/Dockerfile
 
 * [:octicons-mark-github-16: koalaman/shellcheck](https://github.com/koalaman/shellcheck)
 
-## Version
-
-```sh
---8<--
-version/shellcheck-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

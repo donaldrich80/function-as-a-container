@@ -16,14 +16,6 @@ source: network/httpie/Dockerfile
 
 * [:octicons-mark-github-16: jakubroztocil/httpie](https://github.com/jakubroztocil/httpie)
 
-## Version
-
-```sh
---8<--
-version/httpie-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

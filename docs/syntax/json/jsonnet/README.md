@@ -16,14 +16,6 @@ source: syntax/json/jsonnet/Dockerfile
 
 * [:octicons-mark-github-16: google/jsonnet](https://github.com/google/jsonnet)
 
-## Version
-
-```sh
---8<--
-version/jsonnet-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

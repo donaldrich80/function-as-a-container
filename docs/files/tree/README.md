@@ -12,14 +12,6 @@ source: files/tree/Dockerfile
 
 ### Tree
 
-## Version
-
-```sh
---8<--
-version/tree-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -32,14 +32,6 @@ source: files/Dockerfile
 
 * [:octicons-mark-github-16: upx/upx](https://github.com/upx/upx)
 
-## Version
-
-```sh
---8<--
-version/files-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: hashicorp/vault/vsh/Dockerfile
 
 * [:octicons-mark-github-16: fishi0x01/vsh](https://github.com/fishi0x01/vsh)
 
-## Version
-
-```sh
---8<--
-version/vsh-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

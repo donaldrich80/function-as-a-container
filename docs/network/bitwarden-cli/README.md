@@ -14,14 +14,6 @@ source: network/bitwarden-cli/Dockerfile
 
 * [:octicons-mark-github-16: bitwarden/cli](https://github.com/bitwarden/cli)
 
-## Version
-
-```sh
---8<--
-version/bw-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

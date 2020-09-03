@@ -28,14 +28,6 @@ source: hashicorp/vault/Dockerfile
 
 * [:octicons-mark-github-16: channable/vaultenv](https://github.com/channable/vaultenv)
 
-## Version
-
-```sh
---8<--
-version/vault-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

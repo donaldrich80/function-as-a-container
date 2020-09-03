@@ -12,14 +12,6 @@ source: media/man/Dockerfile
 
 ### Man
 
-## Version
-
-```sh
---8<--
-version/man-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

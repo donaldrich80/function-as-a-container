@@ -18,14 +18,6 @@ source: homebrew/Dockerfile
 
 * [site](https://brew.sh)
 
-## Version
-
-```sh
---8<--
-version/homebrew-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

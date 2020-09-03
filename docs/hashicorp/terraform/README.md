@@ -40,14 +40,6 @@ source: hashicorp/terraform/Dockerfile
 
 * [:octicons-mark-github-16: liamg/tfsec](https://github.com/liamg/tfsec)
 
-## Version
-
-```sh
---8<--
-version/terraform-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

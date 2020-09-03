@@ -14,14 +14,6 @@ source: unsorted/commander/Dockerfile
 
 * [:octicons-mark-github-16: commander-cli/commander](https://github.com/commander-cli/commander)
 
-## Version
-
-```sh
---8<--
-version/commander-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: syntax/markdown/markdown-pdf/Dockerfile
 
 * [:octicons-mark-github-16: alanshaw/markdown-pdf](https://github.com/alanshaw/markdown-pdf)
 
-## Version
-
-```sh
---8<--
-version/markdown-pdf-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

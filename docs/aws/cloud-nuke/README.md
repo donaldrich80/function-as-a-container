@@ -14,14 +14,6 @@ source: aws/cloud-nuke/Dockerfile
 
 * [:octicons-mark-github-16: gruntwork-io/cloud-nuke](https://github.com/gruntwork-io/cloud-nuke)
 
-## Version
-
-```sh
---8<--
-version/cloud-nuke-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

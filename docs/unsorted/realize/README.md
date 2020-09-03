@@ -14,14 +14,6 @@ source: unsorted/realize/Dockerfile
 
 * [:octicons-mark-github-16: oxequa/realize](https://github.com/oxequa/realize)
 
-## Version
-
-```sh
---8<--
-version/realize-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

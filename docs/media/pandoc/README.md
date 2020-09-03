@@ -14,14 +14,6 @@ source: media/pandoc/Dockerfile
 
 * [:octicons-mark-github-16: jgm/pandoc](https://github.com/jgm/pandoc)
 
-## Version
-
-```sh
---8<--
-version/pandoc-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -20,14 +20,6 @@ source: git/gitlab/Dockerfile
 
 * [:octicons-mark-github-16: profclems/glab](https://github.com/profclems/glab)
 
-## Version
-
-```sh
---8<--
-version/gitlab-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

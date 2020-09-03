@@ -14,14 +14,6 @@ source: media/pdftk/Dockerfile
 
 * [:octicons-book-16: Docs](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit)
 
-## Version
-
-```sh
---8<--
-version/pdftk-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

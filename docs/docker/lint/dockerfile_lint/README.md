@@ -14,14 +14,6 @@ source: docker/lint/dockerfile_lint/Dockerfile
 
 * [:octicons-mark-github-16: https://github.com/projectatomic/dockerfile_lint](https://github.com/https://github.com/projectatomic/dockerfile_lint)
 
-## Version
-
-```sh
---8<--
-version/dockerfile_lint-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

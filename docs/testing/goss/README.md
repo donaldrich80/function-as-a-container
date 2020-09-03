@@ -16,14 +16,6 @@ source: testing/goss/Dockerfile
 
 * [:octicons-mark-github-16: aelsabbahy/goss](https://github.com/aelsabbahy/goss)
 
-## Version
-
-```sh
---8<--
-version/goss-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

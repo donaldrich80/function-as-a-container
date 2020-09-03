@@ -14,14 +14,6 @@ source: hashicorp/terraform/terraform-provider-healthchecksio/Dockerfile
 
 * [:octicons-mark-github-16: kristofferahl/terraform-provider-healthchecksio](https://github.com/kristofferahl/terraform-provider-healthchecksio)
 
-## Version
-
-```sh
---8<--
-version/terraform-provider-healthchecksio-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

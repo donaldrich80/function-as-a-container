@@ -16,14 +16,6 @@ source: git/gitleaks/Dockerfile
 
 * [:octicons-mark-github-16: zricethezav/gitleaks](https://github.com/zricethezav/gitleaks)
 
-## Version
-
-```sh
---8<--
-version/gitleaks-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

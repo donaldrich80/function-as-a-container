@@ -16,14 +16,6 @@ source: files/duc/Dockerfile
 
 * [:octicons-mark-github-16: zevv/duc](https://github.com/zevv/duc)
 
-## Version
-
-```sh
---8<--
-version/duc-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: docker/tools/docker-shell/Dockerfile
 
 * [:octicons-mark-github-16: Trendyol/docker-shell](https://github.com/Trendyol/docker-shell)
 
-## Version
-
-```sh
---8<--
-version/docker-shell-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -16,14 +16,6 @@ source: testing/container-structure-test/Dockerfile
 
 * [:octicons-mark-github-16: GoogleContainerTools/container-structure-test](https://github.com/GoogleContainerTools/container-structure-test)
 
-## Version
-
-```sh
---8<--
-version/container-structure-test-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: testing/inspec/Dockerfile
 
 * [:octicons-mark-github-16: inspec/inspec](https://github.com/inspec/inspec)
 
-## Version
-
-```sh
---8<--
-version/inspec-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

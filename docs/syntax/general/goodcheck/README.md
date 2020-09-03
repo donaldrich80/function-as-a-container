@@ -16,14 +16,6 @@ source: syntax/general/goodcheck/Dockerfile
 
 * [:octicons-mark-github-16: sider/goodcheck](https://github.com/sider/goodcheck)
 
-## Version
-
-```sh
---8<--
-version/goodcheck-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

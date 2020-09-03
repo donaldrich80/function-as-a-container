@@ -14,14 +14,6 @@ source: syntax/markdown/lint/mdl/Dockerfile
 
 * [:octicons-mark-github-16: markdownlint/markdownlint](https://github.com/markdownlint/markdownlint)
 
-## Version
-
-```sh
---8<--
-version/mdl-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

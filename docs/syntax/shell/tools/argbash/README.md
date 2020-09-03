@@ -18,14 +18,6 @@ source: syntax/shell/tools/argbash/Dockerfile
 
 * [site](https://argbash.io/generate)
 
-## Version
-
-```sh
---8<--
-version/argbash-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

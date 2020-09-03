@@ -16,14 +16,6 @@ source: syntax/shell/tools/rash/Dockerfile
 
 * [:octicons-mark-github-16: rash-sh/rash](https://github.com/rash-sh/rash)
 
-## Version
-
-```sh
---8<--
-version/rash-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

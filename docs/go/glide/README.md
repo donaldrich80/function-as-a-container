@@ -16,14 +16,6 @@ source: go/glide/Dockerfile
 
 * [:octicons-mark-github-16: Masterminds/glide](https://github.com/Masterminds/glide)
 
-## Version
-
-```sh
---8<--
-version/glide-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: syntax/general/misspell/Dockerfile
 
 * [:octicons-mark-github-16: client9/misspell](https://github.com/client9/misspell)
 
-## Version
-
-```sh
---8<--
-version/misspell-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

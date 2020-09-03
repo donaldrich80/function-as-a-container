@@ -14,14 +14,6 @@ source: syntax/json/json2hcl/Dockerfile
 
 * [:octicons-mark-github-16: kvz/json2hcl](https://github.com/kvz/json2hcl)
 
-## Version
-
-```sh
---8<--
-version/json2hcl-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

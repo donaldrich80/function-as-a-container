@@ -14,14 +14,6 @@ source: hashicorp/terraform/archive/terraform-provider-proxmox/Dockerfile
 
 * [:octicons-mark-github-16: Telmate/terraform-provider-proxmox](https://github.com/Telmate/terraform-provider-proxmox)
 
-## Version
-
-```sh
---8<--
-version/terraform-provider-proxmox-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

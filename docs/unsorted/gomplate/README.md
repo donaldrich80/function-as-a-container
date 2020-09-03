@@ -16,14 +16,6 @@ source: unsorted/gomplate/Dockerfile
 
 * [:octicons-mark-github-16: hairyhenderson/gomplate](https://github.com/hairyhenderson/gomplate)
 
-## Version
-
-```sh
---8<--
-version/gomplate-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: unsorted/maid/Dockerfile
 
 * [:octicons-mark-github-16: egoist/maid](https://github.com/egoist/maid)
 
-## Version
-
-```sh
---8<--
-version/maid-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

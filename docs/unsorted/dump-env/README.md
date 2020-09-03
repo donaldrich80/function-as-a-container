@@ -14,14 +14,6 @@ source: unsorted/dump-env/Dockerfile
 
 * [:octicons-mark-github-16: sobolevn/dump-env](https://github.com/sobolevn/dump-env)
 
-## Version
-
-```sh
---8<--
-version/dump-env-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

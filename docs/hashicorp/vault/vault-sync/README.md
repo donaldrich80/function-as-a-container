@@ -14,14 +14,6 @@ source: hashicorp/vault/vault-sync/Dockerfile
 
 * [:octicons-mark-github-16: cloudwatt/vault-sync](https://github.com/cloudwatt/vault-sync)
 
-## Version
-
-```sh
---8<--
-version/vault-sync-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

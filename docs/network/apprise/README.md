@@ -14,14 +14,6 @@ source: network/apprise/Dockerfile
 
 * [:octicons-mark-github-16: caronc/apprise](https://github.com/caronc/apprise)
 
-## Version
-
-```sh
---8<--
-version/apprise-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: network/cfssl/Dockerfile
 
 * [:octicons-mark-github-16: cloudflare/cfssl](https://github.com/cloudflare/cfssl)
 
-## Version
-
-```sh
---8<--
-version/cfssl-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

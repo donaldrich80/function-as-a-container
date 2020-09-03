@@ -14,14 +14,6 @@ source: media/imagemagick/Dockerfile
 
 * [:octicons-mark-github-16: ImageMagick/ImageMagick](https://github.com/ImageMagick/ImageMagick)
 
-## Version
-
-```sh
---8<--
-version/imagemagick-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

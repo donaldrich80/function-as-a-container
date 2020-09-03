@@ -14,14 +14,6 @@ source: hashicorp/sentinel/Dockerfile
 
 ### Tusk
 
-## Version
-
-```sh
---8<--
-version/sentinel-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

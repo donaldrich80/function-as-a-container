@@ -12,14 +12,6 @@ source: go/golang/Dockerfile
 
 ### Golang
 
-## Version
-
-```sh
---8<--
-version/golang-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

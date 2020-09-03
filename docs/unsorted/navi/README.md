@@ -14,14 +14,6 @@ source: unsorted/navi/Dockerfile
 
 * [:octicons-mark-github-16: denisidoro/navi](https://github.com/denisidoro/navi)
 
-## Version
-
-```sh
---8<--
-version/navi-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

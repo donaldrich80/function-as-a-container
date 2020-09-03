@@ -78,14 +78,6 @@ Docker related tools and utilities
 
 * [:octicons-mark-github-16: theupdateframework/notary](https://github.com/theupdateframework/notary)
 
-## Version
-
-```sh
---8<--
-version/docker-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: unsorted/menu_commander/Dockerfile
 
 * [:octicons-mark-github-16: DannyBen/menu_commander](https://github.com/DannyBen/menu_commander)
 
-## Version
-
-```sh
---8<--
-version/menu_commander-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

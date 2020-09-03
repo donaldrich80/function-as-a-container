@@ -14,14 +14,6 @@ source: syntax/markdown/lint/markdown-magic/Dockerfile
 
 * [:octicons-mark-github-16: DavidWells/markdown-magic](https://github.com/DavidWells/markdown-magic)
 
-## Version
-
-```sh
---8<--
-version/markdown-magic-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

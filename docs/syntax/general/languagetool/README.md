@@ -16,14 +16,6 @@ source: syntax/general/languagetool/Dockerfile
 
 * [:octicons-book-16: Docs](https://www.languagetool.org)
 
-## Version
-
-```sh
---8<--
-version/languagetool-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

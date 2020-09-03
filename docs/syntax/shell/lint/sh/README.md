@@ -16,14 +16,6 @@ source: syntax/shell/lint/sh/Dockerfile
 
 * [:octicons-mark-github-16: mvdan/sh](https://github.com/mvdan/sh)
 
-## Version
-
-```sh
---8<--
-version/shfmt-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: hashicorp/vault/vault-ssh-helper/Dockerfile
 
 * [:octicons-mark-github-16: hashicorp/vault-ssh-helper](https://github.com/hashicorp/vault-ssh-helper)
 
-## Version
-
-```sh
---8<--
-version/vault-ssh-helper-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

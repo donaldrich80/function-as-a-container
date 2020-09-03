@@ -18,14 +18,6 @@ source: network/curl/Dockerfile
 
 * [:octicons-mark-github-16: curl/curl](https://github.com/curl/curl)
 
-## Version
-
-```sh
---8<--
-version/curl-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

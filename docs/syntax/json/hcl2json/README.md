@@ -14,14 +14,6 @@ source: syntax/json/hcl2json/Dockerfile
 
 * [:octicons-mark-github-16: tmccombs/hcl2json](https://github.com/tmccombs/hcl2json)
 
-## Version
-
-```sh
---8<--
-version/hcl2json-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

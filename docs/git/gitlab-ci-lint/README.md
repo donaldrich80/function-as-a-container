@@ -14,14 +14,6 @@ source: git/gitlab-ci-lint/Dockerfile
 
 * [:octicons-mark-github-16: BuBuaBu/gitlab-ci-lint](https://github.com/BuBuaBu/gitlab-ci-lint)
 
-## Version
-
-```sh
---8<--
-version/gitlab-ci-lint-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

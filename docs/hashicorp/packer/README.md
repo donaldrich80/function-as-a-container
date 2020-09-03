@@ -12,14 +12,6 @@ source: hashicorp/packer/Dockerfile
 
 ### Packer
 
-## Version
-
-```sh
---8<--
-version/packer-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

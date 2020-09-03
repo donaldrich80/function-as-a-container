@@ -12,14 +12,6 @@ source: syntax/zsh/Dockerfile
 
 ### Zsh
 
-## Version
-
-```sh
---8<--
-version/zsh-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

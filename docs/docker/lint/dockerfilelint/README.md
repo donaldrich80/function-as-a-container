@@ -16,14 +16,6 @@ source: docker/lint/dockerfilelint/Dockerfile
 
 * [site](https://www.fromlatest.io)
 
-## Version
-
-```sh
---8<--
-version/dockerfilelint-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

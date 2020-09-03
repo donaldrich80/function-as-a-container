@@ -14,14 +14,6 @@ source: media/diagrams/Dockerfile
 
 * [:octicons-mark-github-16: mingrammer/diagrams](https://github.com/mingrammer/diagrams)
 
-## Version
-
-```sh
---8<--
-version/diagrams-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

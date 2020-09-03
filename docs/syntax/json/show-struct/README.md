@@ -14,14 +14,6 @@ source: syntax/json/show-struct/Dockerfile
 
 * [:octicons-mark-github-16: ilyash/show-struct](https://github.com/ilyash/show-struct)
 
-## Version
-
-```sh
---8<--
-version/show-struct-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

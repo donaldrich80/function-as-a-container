@@ -44,14 +44,6 @@ Tools for using and manipulating YAML files
 
 * [site](https://get-ytt.io)
 
-## Version
-
-```sh
---8<--
-version/yaml-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

@@ -14,14 +14,6 @@ source: git/gitlab/archive/gitlab-ci-local/Dockerfile
 
 * [:octicons-mark-github-16: firecow/gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
 
-## Version
-
-```sh
---8<--
-version/gitlab-ci-local-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

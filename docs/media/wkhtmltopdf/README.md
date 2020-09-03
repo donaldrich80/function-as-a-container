@@ -14,14 +14,6 @@ source: media/wkhtmltopdf/Dockerfile
 
 * [:octicons-mark-github-16: wkhtmltopdf](https://github.com/wkhtmltopdf)
 
-## Version
-
-```sh
---8<--
-version/wkhtmltopdf-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

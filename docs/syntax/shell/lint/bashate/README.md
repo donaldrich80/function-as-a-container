@@ -14,14 +14,6 @@ source: syntax/shell/lint/bashate/Dockerfile
 
 * [:octicons-mark-github-16: openstack/bashate](https://github.com/openstack/bashate)
 
-## Version
-
-```sh
---8<--
-version/bashate-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

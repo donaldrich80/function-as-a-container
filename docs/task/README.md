@@ -36,14 +36,6 @@ Various task runners
 
 * [:octicons-mark-github-16: rliebz/tusk](https://github.com/rliebz/tusk)
 
-## Version
-
-```sh
---8<--
-version/task-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

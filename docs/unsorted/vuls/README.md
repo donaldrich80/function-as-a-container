@@ -16,14 +16,6 @@ source: unsorted/vuls/Dockerfile
 
 * [:octicons-mark-github-16: future-architect/vuls](https://github.com/future-architect/vuls)
 
-## Version
-
-```sh
---8<--
-version/vuls-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

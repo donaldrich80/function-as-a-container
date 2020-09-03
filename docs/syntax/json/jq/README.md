@@ -18,14 +18,6 @@ source: syntax/json/jq/Dockerfile
 
 * [:octicons-mark-github-16: stedolan/jq](https://github.com/stedolan/jq)
 
-## Version
-
-```sh
---8<--
-version/jq-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

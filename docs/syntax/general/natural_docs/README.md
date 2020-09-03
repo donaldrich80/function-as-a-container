@@ -16,14 +16,6 @@ source: syntax/general/natural_docs/Dockerfile
 
 * [site](https://www.naturaldocs.org)
 
-## Version
-
-```sh
---8<--
-version/naturaldocs-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

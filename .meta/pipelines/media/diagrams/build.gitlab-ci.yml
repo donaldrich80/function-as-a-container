@@ -24,7 +24,7 @@
 - echo $DOCKER_CLI_EXPERIMENTAL
 - echo $DOCKER_DRIVER
 
-build:horcrux:
+build:diagrams:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,18 +42,18 @@ build:horcrux:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:horcrux
+      --cache-from $REGISTRY/function:diagrams
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:horcrux
-      --file files/horcrux/Dockerfile
-      files/horcrux
+      --tag $REGISTRY/function:diagrams
+      --file media/diagrams/Dockerfile
+      media/diagrams
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: files/horcrux
-#    DOCKER_BUILD_CONTEXT: files/horcrux
+#    DOCKER_BUILD_DIR: media/diagrams
+#    DOCKER_BUILD_CONTEXT: media/diagrams
 #    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
@@ -63,18 +63,18 @@ build:horcrux:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "files/horcrux/*"
+      - "media/diagrams/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "horcrux"'
+    - if: '$TRIGGER_VAR1 == "diagrams"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success
 
-docs:horcrux:
+docs:diagrams:
   needs:
-  - build:horcrux
+  - build:diagrams
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
@@ -86,16 +86,16 @@ docs:horcrux:
     - name: docker:stable-dind
       command: ["--experimental"]
   script:
-    - docker pull donaldrich/function:horcrux
-    - docker run --rm donaldrich/function:horcrux help || true
-    - docker run --rm donaldrich/function:horcrux help > $CI_PROJECT_DIR/.meta/snippets/config/horcrux.md || true
-    - docker run --rm donaldrich/function:horcrux validate > $CI_PROJECT_DIR/.meta/snippets/version/horcrux-docker.md || true
-    - docker image inspect donaldrich/function:horcrux | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/horcrux.md
-    - docker history donaldrich/function:horcrux > $CI_PROJECT_DIR/.meta/snippets/layers/horcrux.md || true
+    - docker pull donaldrich/function:diagrams
+    - docker run --rm donaldrich/function:diagrams help || true
+    - docker run --rm donaldrich/function:diagrams help > $CI_PROJECT_DIR/.meta/snippets/config/diagrams.md || true
+    - docker run --rm donaldrich/function:diagrams validate > $CI_PROJECT_DIR/.meta/snippets/version/diagrams-docker.md || true
+    - docker image inspect donaldrich/function:diagrams | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/diagrams.md
+    - docker history donaldrich/function:diagrams > $CI_PROJECT_DIR/.meta/snippets/layers/diagrams.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: files/horcrux
-#    DOCKER_BUILD_CONTEXT: files/horcrux
+#    DOCKER_BUILD_DIR: media/diagrams
+#    DOCKER_BUILD_CONTEXT: media/diagrams
 #    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
@@ -105,11 +105,11 @@ docs:horcrux:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "files/horcrux/*"
+      - "media/diagrams/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "horcrux"'
+    - if: '$TRIGGER_VAR1 == "diagrams"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

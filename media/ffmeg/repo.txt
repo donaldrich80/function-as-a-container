@@ -1,0 +1,5 @@
+RUN wget -q https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz && \
+tar xf ffmpeg-git-amd64-static.tar.xz && \
+mv ./ffmpeg-git-20190902-amd64-static/ffmpeg /usr/bin/ffmpeg && \
+rm -rfd ./ffmpeg-git-20190902-amd64-static && \
+rm -f ./ffmpeg-git-amd64-static.tar.xz

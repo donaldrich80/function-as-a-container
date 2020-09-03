@@ -31,6 +31,8 @@ plugins:
   - search:
   # - macros:
   - mermaid2:
+      arguments:
+        theme: 'dark'
   # - minify:
   #     minify_html: true
   - awesome-pages:

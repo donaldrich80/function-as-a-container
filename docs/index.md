@@ -22,7 +22,7 @@ These images can be used in a variety of ways.
 - [X] Pre-Commit Hooks
 
 !!! note
-Functions which can be utilized as a dependency-free layer in Dockerfiles are preferred, but some have unavoidable dependencies and can't be layered.
+    Functions which can be utilized as a dependency-free layer in Dockerfiles are preferred, but some have unavoidable dependencies and can't be layered.
 
 ## Integration with my other projects
 

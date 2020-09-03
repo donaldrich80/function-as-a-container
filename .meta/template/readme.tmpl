@@ -18,14 +18,6 @@ source: {{ (datasource "path").path }}/Dockerfile
 {{- template "references" -}}
 {{- end }}
 
-## Version
-
-```sh
---8<--
-version/{{ (datasource "data").image.tag }}-docker.md
---8<--
-```
-
 ## Image Commands
 
 ### Container shell

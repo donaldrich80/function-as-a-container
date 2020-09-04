@@ -2,7 +2,7 @@
 FROM donaldrich/builder:latest AS bat-builder
 RUN wget -O archive.tar.gz "https://github.com/sharkdp/bat/releases/download/v0.15.4/bat-v0.15.4-x86_64-unknown-linux-musl.tar.gz"
 RUN tar xzf archive.tar.gz
-RUN upx bat
+RUN mv bat-v0.15.4-x86_64-unknown-linux-musl/bat bat
 RUN mv bat /usr/local/bin
 RUN chmod a+x /usr/local/bin/bat
 

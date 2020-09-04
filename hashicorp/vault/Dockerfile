@@ -25,8 +25,17 @@ FROM donaldrich/builder:latest AS vaultenv-builder
 RUN wget "https://github.com/channable/vaultenv/releases/download/v0.13.1/vaultenv-0.13.1-linux-musl" -O /usr/local/bin/vaultenv
 RUN chmod +rx /usr/local/bin/vaultenv
 
+FROM donaldrich/builder:latest AS vsh-builder
+RUN wget "https://github.com/fishi0x01/vsh/releases/download/v0.6.2/vsh_linux_amd64" -O /usr/local/bin/vsh
+RUN chmod +rx /usr/local/bin/vsh
+RUN upx /usr/local/bin/vsh
+
+FROM blockloop/vault-unseal:latest AS vault-unseal-builder
+
 FROM alpine
 
+COPY --from=vault-unseal-builder /vault-unseal.sh /usr/local/bin/vault-unseal
+COPY --from=vsh-builder /usr/local/bin/vsh /usr/local/bin/vsh
 COPY --from=vaultenv-builder  /usr/local/bin/vaultenv  /usr/local/bin/vaultenv
 COPY --from=vault-sync-builder  /usr/local/bin/vault-sync  /usr/local/bin/vault-sync
 COPY --from=vault-ssh-helper-builder  vault-ssh-helper /usr/local/bin/vault-ssh-helper

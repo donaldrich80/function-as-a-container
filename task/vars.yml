@@ -37,6 +37,17 @@ commands:
     help: --help
     version: --version
     github: casey/just
+  navi:
+    prefix: navi
+    help: --help
+    version: --version
+    github: denisidoro/navi
+  commander:
+    prefix: commander
+    help: --help
+    version: --version
+    github: commander-cli/commander
+    download: https://github.com/SimonBaeumer/commander/releases/download/v2.1.0/commander-linux-amd64
   # mask:
   #   prefix: mask
   #   help: --help

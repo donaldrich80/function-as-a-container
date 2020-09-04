@@ -12,9 +12,17 @@ Various task runners
 
 ## Documentation
 
+### Commander
+
+* [:octicons-mark-github-16: commander-cli/commander](https://github.com/commander-cli/commander)
+
 ### Just
 
 * [:octicons-mark-github-16: casey/just](https://github.com/casey/just)
+
+### Navi
+
+* [:octicons-mark-github-16: denisidoro/navi](https://github.com/denisidoro/navi)
 
 ### Orbit
 

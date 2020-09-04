@@ -24,7 +24,7 @@
 - echo $DOCKER_CLI_EXPERIMENTAL
 - echo $DOCKER_DRIVER
 
-build:navi:
+build:commander:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,18 +42,18 @@ build:navi:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:navi
+      --cache-from $REGISTRY/function:commander
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:navi
-      --file unsorted/navi/Dockerfile
-      unsorted/navi
+      --tag $REGISTRY/function:commander
+      --file task/archive/commander/Dockerfile
+      task/archive/commander
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: unsorted/navi
-#    DOCKER_BUILD_CONTEXT: unsorted/navi
+#    DOCKER_BUILD_DIR: task/archive/commander
+#    DOCKER_BUILD_CONTEXT: task/archive/commander
 #    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
@@ -63,18 +63,18 @@ build:navi:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "unsorted/navi/*"
+      - "task/archive/commander/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "navi"'
+    - if: '$TRIGGER_VAR1 == "commander"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success
 
-docs:navi:
+docs:commander:
   needs:
-  - build:navi
+  - build:commander
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
@@ -86,16 +86,16 @@ docs:navi:
     - name: docker:stable-dind
       command: ["--experimental"]
   script:
-    - docker pull donaldrich/function:navi
-    - docker run --rm donaldrich/function:navi help || true
-    - docker run --rm donaldrich/function:navi help > $CI_PROJECT_DIR/.meta/snippets/config/navi.md || true
-    - docker run --rm donaldrich/function:navi validate > $CI_PROJECT_DIR/.meta/snippets/version/navi-docker.md || true
-    - docker image inspect donaldrich/function:navi | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/navi.md
-    - docker history donaldrich/function:navi > $CI_PROJECT_DIR/.meta/snippets/layers/navi.md || true
+    - docker pull donaldrich/function:commander
+    - docker run --rm donaldrich/function:commander help || true
+    - docker run --rm donaldrich/function:commander help > $CI_PROJECT_DIR/.meta/snippets/config/commander.md || true
+    - docker run --rm donaldrich/function:commander validate > $CI_PROJECT_DIR/.meta/snippets/version/commander-docker.md || true
+    - docker image inspect donaldrich/function:commander | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/commander.md
+    - docker history donaldrich/function:commander > $CI_PROJECT_DIR/.meta/snippets/layers/commander.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: unsorted/navi
-#    DOCKER_BUILD_CONTEXT: unsorted/navi
+#    DOCKER_BUILD_DIR: task/archive/commander
+#    DOCKER_BUILD_CONTEXT: task/archive/commander
 #    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
@@ -105,11 +105,11 @@ docs:navi:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "unsorted/navi/*"
+      - "task/archive/commander/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "navi"'
+    - if: '$TRIGGER_VAR1 == "commander"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

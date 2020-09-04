@@ -44,12 +44,11 @@ include:
   - local: .meta/pipelines/unsorted/vuls/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/dump-env/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/realize/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/navi/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/menu_commander/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/commander/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/gomplate/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/maid/build.gitlab-ci.yml
   - local: .meta/pipelines/task/build.gitlab-ci.yml
+  - local: .meta/pipelines/task/archive/commander/build.gitlab-ci.yml
   - local: .meta/pipelines/homebrew/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/goss/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/inspec/build.gitlab-ci.yml

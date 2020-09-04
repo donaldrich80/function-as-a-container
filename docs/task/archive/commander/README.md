@@ -1,6 +1,6 @@
 ---
 path: tree/master
-source: unsorted/commander/Dockerfile
+source: task/archive/commander/Dockerfile
 
 ---
 

@@ -17,8 +17,14 @@ tasks:
     usage: check package versions
     run:
       - command:
+          exec: commander --version
+          print: "\e[32mcommander\e[0m"
+      - command:
           exec: just --version
           print: "\e[32mjust\e[0m"
+      - command:
+          exec: navi --version
+          print: "\e[32mnavi\e[0m"
       - command:
           exec: orbit version
           print: "\e[32morbit\e[0m"
@@ -35,8 +41,14 @@ tasks:
     usage: see config options
     run:
       - command:
+          exec: commander --help
+          print: "\e[32mcommander\e[0m"
+      - command:
           exec: just --help
           print: "\e[32mjust\e[0m"
+      - command:
+          exec: navi --help
+          print: "\e[32mnavi\e[0m"
       - command:
           exec: orbit --help
           print: "\e[32morbit\e[0m"

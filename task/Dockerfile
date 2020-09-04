@@ -24,8 +24,24 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash 
 # RUN mv mask /usr/local/bin
 # RUN chmod a+x /usr/local/bin/mask
 
+FROM donaldrich/builder:latest           AS navi-builder
+RUN wget https://github.com/denisidoro/navi/releases/download/v2.6.1/navi-v2.6.1-x86_64-unknown-linux-musl.tar.gz
+RUN tar xzf navi-v2.6.1-x86_64-unknown-linux-musl.tar.gz
+RUN mv navi /usr/local/bin
+RUN chmod a+x /usr/local/bin/navi
+
+FROM donaldrich/builder:latest AS commander-builder
+RUN wget "https://github.com/SimonBaeumer/commander/releases/download/v2.1.0/commander-linux-amd64" -O /usr/local/bin/commander
+RUN chmod +rx /usr/local/bin/commander
+RUN upx /usr/local/bin/commander
+
 FROM alpine
 
+# RUN apk add fzf bash git
+
+
+COPY --from=commander-builder /usr/local/bin/commander /usr/local/bin/commander
+COPY --from=navi-builder /usr/local/bin/navi /usr/local/bin/navi
 COPY --from=task-builder /usr/local/bin/task /usr/local/bin/task
 COPY --from=robo-builder /usr/local/bin/robo /usr/local/bin/robo
 COPY --from=orbit-builder /usr/local/bin/orbit /usr/local/bin/orbit

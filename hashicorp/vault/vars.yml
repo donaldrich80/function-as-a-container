@@ -32,12 +32,12 @@ commands:
   #   version: --version
   #   github: cloudwatt/vault-sync
   #   download: https://github.com/cloudwatt/vault-sync/releases/download/v0.1.3/vault-sync_linux_amd64
-  vsh:
-    prefix: vsh
-    help: help
-    version: version
-    github: fishi0x01/vsh
-    download: https://github.com/fishi0x01/vsh/releases/download/v0.6.2/vsh_linux_amd64
+  # vsh:
+  #   prefix: vsh
+  #   help: help
+  #   version: version
+  #   github: fishi0x01/vsh
+  #   download: https://github.com/fishi0x01/vsh/releases/download/v0.6.2/vsh_linux_amd64
 #   vault-unseal:
 #     github: blockloop/vault-unseal-docker
   vaultenv:

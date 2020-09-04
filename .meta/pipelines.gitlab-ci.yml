@@ -61,8 +61,7 @@ include:
   - local: .meta/pipelines/hashicorp/sentinel/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/vault-ssh-helper/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/vault/vault-sync/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/vault/vsh/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/vault/token-helper/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/packer/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/terraform-provider-healthchecksio/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/build.gitlab-ci.yml

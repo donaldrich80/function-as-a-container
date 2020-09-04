@@ -29,4 +29,29 @@ tasks:
           exec: vault-sidekick -version
           print: "\e[32mvault-sidekick\e[0m"
       - command:
-          exec: 
+          exec: vaultenv --version
+          print: "\e[32mvaultenv\e[0m"
+      - command:
+          exec: vsh version
+          print: "\e[32mvsh\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: hashi-helper help
+          print: "\e[32mhashi-helper\e[0m"
+      - command:
+          exec: tusk --help
+          print: "\e[32mtusk\e[0m"
+      - command:
+          exec: vault -h
+          print: "\e[32mvault\e[0m"
+      - command:
+          exec: vault-sidekick -help
+          print: "\e[32mvault-sidekick\e[0m"
+      - command:
+          exec: vaultenv --help
+          print: "\e[32mvaultenv\e[0m"
+      - command:
+          exec: vsh help
+          print: "\e[32mvsh\e[0m"

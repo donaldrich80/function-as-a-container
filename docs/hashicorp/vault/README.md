@@ -24,10 +24,6 @@ source: hashicorp/vault/Dockerfile
 
 * [:fontawesome-brands-docker: Quay](https://quay.io/https://quay.io/repository/ukhomeofficedigital/vault-sidekick)
 
-### Vault-Unseal
-
-* [:octicons-mark-github-16: blockloop/vault-unseal-docker](https://github.com/blockloop/vault-unseal-docker)
-
 ### Vaultenv
 
 * [:octicons-mark-github-16: channable/vaultenv](https://github.com/channable/vaultenv)

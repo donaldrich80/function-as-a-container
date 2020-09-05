@@ -45,18 +45,16 @@ docker pull donaldrich/function:curl && docker run -it --rm  donaldrich/function
 docker pull donaldrich/function:curl && docker run -it --rm  donaldrich/function:curl help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:curl && dive donaldrich/function:curl
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/curl.md
---8<--
+```sh
+docker history donaldrich/function:curl
 ```
 
 ## Image Details

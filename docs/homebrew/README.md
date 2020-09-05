@@ -45,18 +45,16 @@ docker pull donaldrich/function:homebrew && docker run -it --rm  donaldrich/func
 docker pull donaldrich/function:homebrew && docker run -it --rm  donaldrich/function:homebrew help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:homebrew && dive donaldrich/function:homebrew
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/homebrew.md
---8<--
+```sh
+docker history donaldrich/function:homebrew
 ```
 
 ## Image Details

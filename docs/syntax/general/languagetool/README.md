@@ -43,18 +43,16 @@ docker pull donaldrich/function:languagetool && docker run -it --rm  donaldrich/
 docker pull donaldrich/function:languagetool && docker run -it --rm  donaldrich/function:languagetool help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:languagetool && dive donaldrich/function:languagetool
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/languagetool.md
---8<--
+```sh
+docker history donaldrich/function:languagetool
 ```
 
 ## Image Details

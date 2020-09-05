@@ -59,18 +59,16 @@ docker pull donaldrich/function:files && docker run -it --rm  donaldrich/functio
 docker pull donaldrich/function:files && docker run -it --rm  donaldrich/function:files help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:files && dive donaldrich/function:files
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/files.md
---8<--
+```sh
+docker history donaldrich/function:files
 ```
 
 ## Image Details

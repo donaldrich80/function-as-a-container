@@ -41,18 +41,16 @@ docker pull donaldrich/function:mdl && docker run -it --rm  donaldrich/function:
 docker pull donaldrich/function:mdl && docker run -it --rm  donaldrich/function:mdl help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:mdl && dive donaldrich/function:mdl
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/mdl.md
---8<--
+```sh
+docker history donaldrich/function:mdl
 ```
 
 ## Image Details

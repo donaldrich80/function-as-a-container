@@ -39,18 +39,16 @@ docker pull donaldrich/function:golang && docker run -it --rm  donaldrich/functi
 docker pull donaldrich/function:golang && docker run -it --rm  donaldrich/function:golang help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:golang && dive donaldrich/function:golang
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/golang.md
---8<--
+```sh
+docker history donaldrich/function:golang
 ```
 
 ## Image Details

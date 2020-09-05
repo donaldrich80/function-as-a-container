@@ -43,18 +43,16 @@ docker pull donaldrich/function:shfmt && docker run -it --rm  donaldrich/functio
 docker pull donaldrich/function:shfmt && docker run -it --rm  donaldrich/function:shfmt help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:shfmt && dive donaldrich/function:shfmt
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/shfmt.md
---8<--
+```sh
+docker history donaldrich/function:shfmt
 ```
 
 ## Image Details

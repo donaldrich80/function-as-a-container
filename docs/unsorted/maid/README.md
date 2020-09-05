@@ -41,18 +41,16 @@ docker pull donaldrich/function:maid && docker run -it --rm  donaldrich/function
 docker pull donaldrich/function:maid && docker run -it --rm  donaldrich/function:maid help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:maid && dive donaldrich/function:maid
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/maid.md
---8<--
+```sh
+docker history donaldrich/function:maid
 ```
 
 ## Image Details

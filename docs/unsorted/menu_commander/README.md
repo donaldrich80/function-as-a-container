@@ -41,18 +41,16 @@ docker pull donaldrich/function:menu_commander && docker run -it --rm  donaldric
 docker pull donaldrich/function:menu_commander && docker run -it --rm  donaldrich/function:menu_commander help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:menu_commander && dive donaldrich/function:menu_commander
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/menu_commander.md
---8<--
+```sh
+docker history donaldrich/function:menu_commander
 ```
 
 ## Image Details

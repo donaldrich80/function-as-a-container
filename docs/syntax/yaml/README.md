@@ -71,18 +71,16 @@ docker pull donaldrich/function:yaml && docker run -it --rm  donaldrich/function
 docker pull donaldrich/function:yaml && docker run -it --rm  donaldrich/function:yaml help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:yaml && dive donaldrich/function:yaml
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/yaml.md
---8<--
+```sh
+docker history donaldrich/function:yaml
 ```
 
 ## Image Details

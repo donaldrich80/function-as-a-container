@@ -41,18 +41,16 @@ docker pull donaldrich/function:json2hcl && docker run -it --rm  donaldrich/func
 docker pull donaldrich/function:json2hcl && docker run -it --rm  donaldrich/function:json2hcl help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:json2hcl && dive donaldrich/function:json2hcl
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/json2hcl.md
---8<--
+```sh
+docker history donaldrich/function:json2hcl
 ```
 
 ## Image Details

@@ -41,18 +41,16 @@ docker pull donaldrich/function:bw && docker run -it --rm  donaldrich/function:b
 docker pull donaldrich/function:bw && docker run -it --rm  donaldrich/function:bw help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:bw && dive donaldrich/function:bw
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/bw.md
---8<--
+```sh
+docker history donaldrich/function:bw
 ```
 
 ## Image Details

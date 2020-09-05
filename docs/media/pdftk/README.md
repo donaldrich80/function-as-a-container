@@ -41,18 +41,16 @@ docker pull donaldrich/function:pdftk && docker run -it --rm  donaldrich/functio
 docker pull donaldrich/function:pdftk && docker run -it --rm  donaldrich/function:pdftk help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:pdftk && dive donaldrich/function:pdftk
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/pdftk.md
---8<--
+```sh
+docker history donaldrich/function:pdftk
 ```
 
 ## Image Details

@@ -41,18 +41,16 @@ docker pull donaldrich/function:wkhtmltopdf && docker run -it --rm  donaldrich/f
 docker pull donaldrich/function:wkhtmltopdf && docker run -it --rm  donaldrich/function:wkhtmltopdf help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:wkhtmltopdf && dive donaldrich/function:wkhtmltopdf
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/wkhtmltopdf.md
---8<--
+```sh
+docker history donaldrich/function:wkhtmltopdf
 ```
 
 ## Image Details

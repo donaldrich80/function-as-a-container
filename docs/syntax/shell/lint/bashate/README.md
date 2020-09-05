@@ -41,18 +41,16 @@ docker pull donaldrich/function:bashate && docker run -it --rm  donaldrich/funct
 docker pull donaldrich/function:bashate && docker run -it --rm  donaldrich/function:bashate help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:bashate && dive donaldrich/function:bashate
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/bashate.md
---8<--
+```sh
+docker history donaldrich/function:bashate
 ```
 
 ## Image Details

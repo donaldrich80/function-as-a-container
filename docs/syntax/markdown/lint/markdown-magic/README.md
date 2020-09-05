@@ -41,18 +41,16 @@ docker pull donaldrich/function:markdown-magic && docker run -it --rm  donaldric
 docker pull donaldrich/function:markdown-magic && docker run -it --rm  donaldrich/function:markdown-magic help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:markdown-magic && dive donaldrich/function:markdown-magic
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/markdown-magic.md
---8<--
+```sh
+docker history donaldrich/function:markdown-magic
 ```
 
 ## Image Details

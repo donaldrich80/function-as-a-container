@@ -43,18 +43,16 @@ docker pull donaldrich/function:glide && docker run -it --rm  donaldrich/functio
 docker pull donaldrich/function:glide && docker run -it --rm  donaldrich/function:glide help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:glide && dive donaldrich/function:glide
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/glide.md
---8<--
+```sh
+docker history donaldrich/function:glide
 ```
 
 ## Image Details

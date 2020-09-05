@@ -41,18 +41,16 @@ docker pull donaldrich/function:docker-shell && docker run -it --rm  donaldrich/
 docker pull donaldrich/function:docker-shell && docker run -it --rm  donaldrich/function:docker-shell help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:docker-shell && dive donaldrich/function:docker-shell
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/docker-shell.md
---8<--
+```sh
+docker history donaldrich/function:docker-shell
 ```
 
 ## Image Details

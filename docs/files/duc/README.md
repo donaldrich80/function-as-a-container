@@ -43,18 +43,16 @@ docker pull donaldrich/function:duc && docker run -it --rm  donaldrich/function:
 docker pull donaldrich/function:duc && docker run -it --rm  donaldrich/function:duc help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:duc && dive donaldrich/function:duc
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/duc.md
---8<--
+```sh
+docker history donaldrich/function:duc
 ```
 
 ## Image Details

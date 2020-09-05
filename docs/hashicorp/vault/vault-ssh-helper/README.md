@@ -41,18 +41,16 @@ docker pull donaldrich/function:vault-ssh-helper && docker run -it --rm  donaldr
 docker pull donaldrich/function:vault-ssh-helper && docker run -it --rm  donaldrich/function:vault-ssh-helper help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:vault-ssh-helper && dive donaldrich/function:vault-ssh-helper
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/vault-ssh-helper.md
---8<--
+```sh
+docker history donaldrich/function:vault-ssh-helper
 ```
 
 ## Image Details

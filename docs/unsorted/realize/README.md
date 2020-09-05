@@ -41,18 +41,16 @@ docker pull donaldrich/function:realize && docker run -it --rm  donaldrich/funct
 docker pull donaldrich/function:realize && docker run -it --rm  donaldrich/function:realize help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:realize && dive donaldrich/function:realize
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/realize.md
---8<--
+```sh
+docker history donaldrich/function:realize
 ```
 
 ## Image Details

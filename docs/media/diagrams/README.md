@@ -41,18 +41,16 @@ docker pull donaldrich/function:diagrams && docker run -it --rm  donaldrich/func
 docker pull donaldrich/function:diagrams && docker run -it --rm  donaldrich/function:diagrams help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:diagrams && dive donaldrich/function:diagrams
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/diagrams.md
---8<--
+```sh
+docker history donaldrich/function:diagrams
 ```
 
 ## Image Details

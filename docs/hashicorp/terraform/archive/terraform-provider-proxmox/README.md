@@ -41,18 +41,16 @@ docker pull donaldrich/function:terraform-provider-proxmox && docker run -it --r
 docker pull donaldrich/function:terraform-provider-proxmox && docker run -it --rm  donaldrich/function:terraform-provider-proxmox help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:terraform-provider-proxmox && dive donaldrich/function:terraform-provider-proxmox
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/terraform-provider-proxmox.md
---8<--
+```sh
+docker history donaldrich/function:terraform-provider-proxmox
 ```
 
 ## Image Details

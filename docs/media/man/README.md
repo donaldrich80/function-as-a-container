@@ -39,18 +39,16 @@ docker pull donaldrich/function:man && docker run -it --rm  donaldrich/function:
 docker pull donaldrich/function:man && docker run -it --rm  donaldrich/function:man help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:man && dive donaldrich/function:man
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/man.md
---8<--
+```sh
+docker history donaldrich/function:man
 ```
 
 ## Image Details

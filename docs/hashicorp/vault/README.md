@@ -55,18 +55,16 @@ docker pull donaldrich/function:vault && docker run -it --rm  donaldrich/functio
 docker pull donaldrich/function:vault && docker run -it --rm  donaldrich/function:vault help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:vault && dive donaldrich/function:vault
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/vault.md
---8<--
+```sh
+docker history donaldrich/function:vault
 ```
 
 ## Image Details

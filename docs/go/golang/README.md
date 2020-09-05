@@ -48,7 +48,7 @@ docker pull donaldrich/function:golang && dive donaldrich/function:golang
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:golang
+docker pull donaldrich/function:golang && docker history donaldrich/function:golang
 ```
 
 ## Image Details

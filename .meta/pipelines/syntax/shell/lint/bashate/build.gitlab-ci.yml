@@ -91,7 +91,7 @@ docs:bashate:
     - docker run --rm donaldrich/function:bashate help > $CI_PROJECT_DIR/.meta/snippets/config/bashate.md || true
     - docker run --rm donaldrich/function:bashate validate > $CI_PROJECT_DIR/.meta/snippets/version/bashate-docker.md || true
     - docker image inspect donaldrich/function:bashate | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/bashate.md
-    - docker history donaldrich/function:bashate > $CI_PROJECT_DIR/.meta/snippets/layers/bashate.md || true
+   #  - docker history donaldrich/function:bashate > $CI_PROJECT_DIR/.meta/snippets/layers/bashate.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: syntax/shell/lint/bashate

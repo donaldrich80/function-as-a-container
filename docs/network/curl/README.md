@@ -54,7 +54,7 @@ docker pull donaldrich/function:curl && dive donaldrich/function:curl
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:curl
+docker pull donaldrich/function:curl && docker history donaldrich/function:curl
 ```
 
 ## Image Details

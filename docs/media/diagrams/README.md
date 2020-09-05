@@ -50,7 +50,7 @@ docker pull donaldrich/function:diagrams && dive donaldrich/function:diagrams
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:diagrams
+docker pull donaldrich/function:diagrams && docker history donaldrich/function:diagrams
 ```
 
 ## Image Details

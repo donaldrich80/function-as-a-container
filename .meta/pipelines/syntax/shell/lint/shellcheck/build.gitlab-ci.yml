@@ -91,7 +91,7 @@ docs:shellcheck:
     - docker run --rm donaldrich/function:shellcheck help > $CI_PROJECT_DIR/.meta/snippets/config/shellcheck.md || true
     - docker run --rm donaldrich/function:shellcheck validate > $CI_PROJECT_DIR/.meta/snippets/version/shellcheck-docker.md || true
     - docker image inspect donaldrich/function:shellcheck | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/shellcheck.md
-    - docker history donaldrich/function:shellcheck > $CI_PROJECT_DIR/.meta/snippets/layers/shellcheck.md || true
+   #  - docker history donaldrich/function:shellcheck > $CI_PROJECT_DIR/.meta/snippets/layers/shellcheck.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: syntax/shell/lint/shellcheck

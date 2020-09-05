@@ -48,7 +48,7 @@ docker pull donaldrich/function:zsh && dive donaldrich/function:zsh
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:zsh
+docker pull donaldrich/function:zsh && docker history donaldrich/function:zsh
 ```
 
 ## Image Details

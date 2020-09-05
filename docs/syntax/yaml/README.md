@@ -80,7 +80,7 @@ docker pull donaldrich/function:yaml && dive donaldrich/function:yaml
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:yaml
+docker pull donaldrich/function:yaml && docker history donaldrich/function:yaml
 ```
 
 ## Image Details

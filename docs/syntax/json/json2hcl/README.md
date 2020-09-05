@@ -50,7 +50,7 @@ docker pull donaldrich/function:json2hcl && dive donaldrich/function:json2hcl
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:json2hcl
+docker pull donaldrich/function:json2hcl && docker history donaldrich/function:json2hcl
 ```
 
 ## Image Details

@@ -52,7 +52,7 @@ docker pull donaldrich/function:httpie && dive donaldrich/function:httpie
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:httpie
+docker pull donaldrich/function:httpie && docker history donaldrich/function:httpie
 ```
 
 ## Image Details

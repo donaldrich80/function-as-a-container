@@ -50,7 +50,7 @@ docker pull donaldrich/function:inspec && dive donaldrich/function:inspec
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:inspec
+docker pull donaldrich/function:inspec && docker history donaldrich/function:inspec
 ```
 
 ## Image Details

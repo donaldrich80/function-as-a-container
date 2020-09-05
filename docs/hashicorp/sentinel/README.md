@@ -50,7 +50,7 @@ docker pull donaldrich/function:sentinel && dive donaldrich/function:sentinel
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:sentinel
+docker pull donaldrich/function:sentinel && docker history donaldrich/function:sentinel
 ```
 
 ## Image Details

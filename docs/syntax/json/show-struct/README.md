@@ -50,7 +50,7 @@ docker pull donaldrich/function:show-struct && dive donaldrich/function:show-str
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:show-struct
+docker pull donaldrich/function:show-struct && docker history donaldrich/function:show-struct
 ```
 
 ## Image Details

@@ -50,7 +50,7 @@ docker pull donaldrich/function:wkhtmltopdf && dive donaldrich/function:wkhtmlto
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:wkhtmltopdf
+docker pull donaldrich/function:wkhtmltopdf && docker history donaldrich/function:wkhtmltopdf
 ```
 
 ## Image Details

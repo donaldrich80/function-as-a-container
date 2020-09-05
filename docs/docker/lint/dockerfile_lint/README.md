@@ -50,7 +50,7 @@ docker pull donaldrich/function:dockerfile_lint && dive donaldrich/function:dock
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:dockerfile_lint
+docker pull donaldrich/function:dockerfile_lint && docker history donaldrich/function:dockerfile_lint
 ```
 
 ## Image Details

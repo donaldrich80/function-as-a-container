@@ -91,7 +91,7 @@ docs:pdftk:
     - docker run --rm donaldrich/function:pdftk help > $CI_PROJECT_DIR/.meta/snippets/config/pdftk.md || true
     - docker run --rm donaldrich/function:pdftk validate > $CI_PROJECT_DIR/.meta/snippets/version/pdftk-docker.md || true
     - docker image inspect donaldrich/function:pdftk | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/pdftk.md
-    - docker history donaldrich/function:pdftk > $CI_PROJECT_DIR/.meta/snippets/layers/pdftk.md || true
+   #  - docker history donaldrich/function:pdftk > $CI_PROJECT_DIR/.meta/snippets/layers/pdftk.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: media/pdftk

@@ -50,7 +50,7 @@ docker pull donaldrich/function:dump-env && dive donaldrich/function:dump-env
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:dump-env
+docker pull donaldrich/function:dump-env && docker history donaldrich/function:dump-env
 ```
 
 ## Image Details

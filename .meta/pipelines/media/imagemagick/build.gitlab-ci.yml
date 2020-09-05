@@ -91,7 +91,7 @@ docs:imagemagick:
     - docker run --rm donaldrich/function:imagemagick help > $CI_PROJECT_DIR/.meta/snippets/config/imagemagick.md || true
     - docker run --rm donaldrich/function:imagemagick validate > $CI_PROJECT_DIR/.meta/snippets/version/imagemagick-docker.md || true
     - docker image inspect donaldrich/function:imagemagick | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/imagemagick.md
-    - docker history donaldrich/function:imagemagick > $CI_PROJECT_DIR/.meta/snippets/layers/imagemagick.md || true
+   #  - docker history donaldrich/function:imagemagick > $CI_PROJECT_DIR/.meta/snippets/layers/imagemagick.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: media/imagemagick

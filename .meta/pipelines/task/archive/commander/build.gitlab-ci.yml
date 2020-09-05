@@ -91,7 +91,7 @@ docs:commander:
     - docker run --rm donaldrich/function:commander help > $CI_PROJECT_DIR/.meta/snippets/config/commander.md || true
     - docker run --rm donaldrich/function:commander validate > $CI_PROJECT_DIR/.meta/snippets/version/commander-docker.md || true
     - docker image inspect donaldrich/function:commander | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/commander.md
-    - docker history donaldrich/function:commander > $CI_PROJECT_DIR/.meta/snippets/layers/commander.md || true
+   #  - docker history donaldrich/function:commander > $CI_PROJECT_DIR/.meta/snippets/layers/commander.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: task/archive/commander

@@ -52,7 +52,7 @@ docker pull donaldrich/function:goodcheck && dive donaldrich/function:goodcheck
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:goodcheck
+docker pull donaldrich/function:goodcheck && docker history donaldrich/function:goodcheck
 ```
 
 ## Image Details

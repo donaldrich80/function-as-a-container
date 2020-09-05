@@ -50,7 +50,7 @@ docker pull donaldrich/function:shellcheck && dive donaldrich/function:shellchec
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:shellcheck
+docker pull donaldrich/function:shellcheck && docker history donaldrich/function:shellcheck
 ```
 
 ## Image Details

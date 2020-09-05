@@ -91,7 +91,7 @@ docs:markdown-magic:
     - docker run --rm donaldrich/function:markdown-magic help > $CI_PROJECT_DIR/.meta/snippets/config/markdown-magic.md || true
     - docker run --rm donaldrich/function:markdown-magic validate > $CI_PROJECT_DIR/.meta/snippets/version/markdown-magic-docker.md || true
     - docker image inspect donaldrich/function:markdown-magic | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/markdown-magic.md
-    - docker history donaldrich/function:markdown-magic > $CI_PROJECT_DIR/.meta/snippets/layers/markdown-magic.md || true
+   #  - docker history donaldrich/function:markdown-magic > $CI_PROJECT_DIR/.meta/snippets/layers/markdown-magic.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: syntax/markdown/lint/markdown-magic

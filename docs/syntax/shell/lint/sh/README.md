@@ -52,7 +52,7 @@ docker pull donaldrich/function:shfmt && dive donaldrich/function:shfmt
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:shfmt
+docker pull donaldrich/function:shfmt && docker history donaldrich/function:shfmt
 ```
 
 ## Image Details

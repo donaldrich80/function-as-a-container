@@ -50,7 +50,7 @@ docker pull donaldrich/function:gitlab-ci-local && dive donaldrich/function:gitl
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:gitlab-ci-local
+docker pull donaldrich/function:gitlab-ci-local && docker history donaldrich/function:gitlab-ci-local
 ```
 
 ## Image Details

@@ -52,7 +52,7 @@ docker pull donaldrich/function:duc && dive donaldrich/function:duc
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:duc
+docker pull donaldrich/function:duc && docker history donaldrich/function:duc
 ```
 
 ## Image Details

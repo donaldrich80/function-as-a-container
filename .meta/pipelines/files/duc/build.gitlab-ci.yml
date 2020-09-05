@@ -91,7 +91,7 @@ docs:duc:
     - docker run --rm donaldrich/function:duc help > $CI_PROJECT_DIR/.meta/snippets/config/duc.md || true
     - docker run --rm donaldrich/function:duc validate > $CI_PROJECT_DIR/.meta/snippets/version/duc-docker.md || true
     - docker image inspect donaldrich/function:duc | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/duc.md
-    - docker history donaldrich/function:duc > $CI_PROJECT_DIR/.meta/snippets/layers/duc.md || true
+   #  - docker history donaldrich/function:duc > $CI_PROJECT_DIR/.meta/snippets/layers/duc.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: files/duc

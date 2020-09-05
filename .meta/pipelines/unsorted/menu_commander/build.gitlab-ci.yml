@@ -91,7 +91,7 @@ docs:menu_commander:
     - docker run --rm donaldrich/function:menu_commander help > $CI_PROJECT_DIR/.meta/snippets/config/menu_commander.md || true
     - docker run --rm donaldrich/function:menu_commander validate > $CI_PROJECT_DIR/.meta/snippets/version/menu_commander-docker.md || true
     - docker image inspect donaldrich/function:menu_commander | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/menu_commander.md
-    - docker history donaldrich/function:menu_commander > $CI_PROJECT_DIR/.meta/snippets/layers/menu_commander.md || true
+   #  - docker history donaldrich/function:menu_commander > $CI_PROJECT_DIR/.meta/snippets/layers/menu_commander.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: unsorted/menu_commander

@@ -50,7 +50,7 @@ docker pull donaldrich/function:menu_commander && dive donaldrich/function:menu_
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:menu_commander
+docker pull donaldrich/function:menu_commander && docker history donaldrich/function:menu_commander
 ```
 
 ## Image Details

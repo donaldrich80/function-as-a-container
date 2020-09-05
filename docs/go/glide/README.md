@@ -52,7 +52,7 @@ docker pull donaldrich/function:glide && dive donaldrich/function:glide
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:glide
+docker pull donaldrich/function:glide && docker history donaldrich/function:glide
 ```
 
 ## Image Details

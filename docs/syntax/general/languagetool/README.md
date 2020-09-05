@@ -52,7 +52,7 @@ docker pull donaldrich/function:languagetool && dive donaldrich/function:languag
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:languagetool
+docker pull donaldrich/function:languagetool && docker history donaldrich/function:languagetool
 ```
 
 ## Image Details

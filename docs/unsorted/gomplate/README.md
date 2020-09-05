@@ -52,7 +52,7 @@ docker pull donaldrich/function:gomplate && dive donaldrich/function:gomplate
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:gomplate
+docker pull donaldrich/function:gomplate && docker history donaldrich/function:gomplate
 ```
 
 ## Image Details

@@ -50,7 +50,7 @@ docker pull donaldrich/function:td4a && dive donaldrich/function:td4a
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:td4a
+docker pull donaldrich/function:td4a && docker history donaldrich/function:td4a
 ```
 
 ## Image Details

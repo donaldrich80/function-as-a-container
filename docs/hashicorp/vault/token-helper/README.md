@@ -50,7 +50,7 @@ docker pull donaldrich/function:vault-token-helper && dive donaldrich/function:v
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:vault-token-helper
+docker pull donaldrich/function:vault-token-helper && docker history donaldrich/function:vault-token-helper
 ```
 
 ## Image Details

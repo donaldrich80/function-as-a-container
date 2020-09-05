@@ -50,7 +50,7 @@ docker pull donaldrich/function:realize && dive donaldrich/function:realize
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:realize
+docker pull donaldrich/function:realize && docker history donaldrich/function:realize
 ```
 
 ## Image Details

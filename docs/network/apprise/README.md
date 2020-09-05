@@ -50,7 +50,7 @@ docker pull donaldrich/function:apprise && dive donaldrich/function:apprise
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:apprise
+docker pull donaldrich/function:apprise && docker history donaldrich/function:apprise
 ```
 
 ## Image Details

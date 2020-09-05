@@ -50,7 +50,7 @@ docker pull donaldrich/function:mdl && dive donaldrich/function:mdl
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:mdl
+docker pull donaldrich/function:mdl && docker history donaldrich/function:mdl
 ```
 
 ## Image Details

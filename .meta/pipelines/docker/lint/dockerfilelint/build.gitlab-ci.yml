@@ -91,7 +91,7 @@ docs:dockerfilelint:
     - docker run --rm donaldrich/function:dockerfilelint help > $CI_PROJECT_DIR/.meta/snippets/config/dockerfilelint.md || true
     - docker run --rm donaldrich/function:dockerfilelint validate > $CI_PROJECT_DIR/.meta/snippets/version/dockerfilelint-docker.md || true
     - docker image inspect donaldrich/function:dockerfilelint | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/dockerfilelint.md
-    - docker history donaldrich/function:dockerfilelint > $CI_PROJECT_DIR/.meta/snippets/layers/dockerfilelint.md || true
+   #  - docker history donaldrich/function:dockerfilelint > $CI_PROJECT_DIR/.meta/snippets/layers/dockerfilelint.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: docker/lint/dockerfilelint

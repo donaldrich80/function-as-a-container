@@ -56,7 +56,7 @@ docker pull donaldrich/function:gitlab && dive donaldrich/function:gitlab
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:gitlab
+docker pull donaldrich/function:gitlab && docker history donaldrich/function:gitlab
 ```
 
 ## Image Details

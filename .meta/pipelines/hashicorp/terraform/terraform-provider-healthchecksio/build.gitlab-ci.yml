@@ -91,7 +91,7 @@ docs:terraform-provider-healthchecksio:
     - docker run --rm donaldrich/function:terraform-provider-healthchecksio help > $CI_PROJECT_DIR/.meta/snippets/config/terraform-provider-healthchecksio.md || true
     - docker run --rm donaldrich/function:terraform-provider-healthchecksio validate > $CI_PROJECT_DIR/.meta/snippets/version/terraform-provider-healthchecksio-docker.md || true
     - docker image inspect donaldrich/function:terraform-provider-healthchecksio | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/terraform-provider-healthchecksio.md
-    - docker history donaldrich/function:terraform-provider-healthchecksio > $CI_PROJECT_DIR/.meta/snippets/layers/terraform-provider-healthchecksio.md || true
+   #  - docker history donaldrich/function:terraform-provider-healthchecksio > $CI_PROJECT_DIR/.meta/snippets/layers/terraform-provider-healthchecksio.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: hashicorp/terraform/terraform-provider-healthchecksio

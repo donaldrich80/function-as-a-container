@@ -50,7 +50,7 @@ docker pull donaldrich/function:pdftk && dive donaldrich/function:pdftk
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:pdftk
+docker pull donaldrich/function:pdftk && docker history donaldrich/function:pdftk
 ```
 
 ## Image Details

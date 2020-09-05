@@ -91,7 +91,7 @@ docs:docker:
     - docker run --rm donaldrich/function:docker help > $CI_PROJECT_DIR/.meta/snippets/config/docker.md || true
     - docker run --rm donaldrich/function:docker validate > $CI_PROJECT_DIR/.meta/snippets/version/docker-docker.md || true
     - docker image inspect donaldrich/function:docker | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/docker.md
-    - docker history donaldrich/function:docker > $CI_PROJECT_DIR/.meta/snippets/layers/docker.md || true
+   #  - docker history donaldrich/function:docker > $CI_PROJECT_DIR/.meta/snippets/layers/docker.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: docker

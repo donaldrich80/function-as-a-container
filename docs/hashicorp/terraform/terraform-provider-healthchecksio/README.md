@@ -50,7 +50,7 @@ docker pull donaldrich/function:terraform-provider-healthchecksio && dive donald
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:terraform-provider-healthchecksio
+docker pull donaldrich/function:terraform-provider-healthchecksio && docker history donaldrich/function:terraform-provider-healthchecksio
 ```
 
 ## Image Details

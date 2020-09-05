@@ -50,7 +50,7 @@ docker pull donaldrich/function:vault-ssh-helper && dive donaldrich/function:vau
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:vault-ssh-helper
+docker pull donaldrich/function:vault-ssh-helper && docker history donaldrich/function:vault-ssh-helper
 ```
 
 ## Image Details

@@ -50,7 +50,7 @@ docker pull donaldrich/function:bw && dive donaldrich/function:bw
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:bw
+docker pull donaldrich/function:bw && docker history donaldrich/function:bw
 ```
 
 ## Image Details

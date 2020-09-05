@@ -91,7 +91,7 @@ docs:shfmt:
     - docker run --rm donaldrich/function:shfmt help > $CI_PROJECT_DIR/.meta/snippets/config/shfmt.md || true
     - docker run --rm donaldrich/function:shfmt validate > $CI_PROJECT_DIR/.meta/snippets/version/shfmt-docker.md || true
     - docker image inspect donaldrich/function:shfmt | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/shfmt.md
-    - docker history donaldrich/function:shfmt > $CI_PROJECT_DIR/.meta/snippets/layers/shfmt.md || true
+   #  - docker history donaldrich/function:shfmt > $CI_PROJECT_DIR/.meta/snippets/layers/shfmt.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: syntax/shell/lint/sh

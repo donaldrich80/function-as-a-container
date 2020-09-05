@@ -50,7 +50,7 @@ docker pull donaldrich/function:docker-shell && dive donaldrich/function:docker-
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:docker-shell
+docker pull donaldrich/function:docker-shell && docker history donaldrich/function:docker-shell
 ```
 
 ## Image Details

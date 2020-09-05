@@ -54,7 +54,7 @@ docker pull donaldrich/function:jq && dive donaldrich/function:jq
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:jq
+docker pull donaldrich/function:jq && docker history donaldrich/function:jq
 ```
 
 ## Image Details

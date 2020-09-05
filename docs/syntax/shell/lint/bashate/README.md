@@ -50,7 +50,7 @@ docker pull donaldrich/function:bashate && dive donaldrich/function:bashate
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:bashate
+docker pull donaldrich/function:bashate && docker history donaldrich/function:bashate
 ```
 
 ## Image Details

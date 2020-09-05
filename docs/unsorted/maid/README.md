@@ -50,7 +50,7 @@ docker pull donaldrich/function:maid && dive donaldrich/function:maid
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:maid
+docker pull donaldrich/function:maid && docker history donaldrich/function:maid
 ```
 
 ## Image Details

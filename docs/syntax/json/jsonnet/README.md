@@ -52,7 +52,7 @@ docker pull donaldrich/function:jsonnet && dive donaldrich/function:jsonnet
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:jsonnet
+docker pull donaldrich/function:jsonnet && docker history donaldrich/function:jsonnet
 ```
 
 ## Image Details

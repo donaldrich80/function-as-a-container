@@ -91,7 +91,7 @@ docs:jsonnet:
     - docker run --rm donaldrich/function:jsonnet help > $CI_PROJECT_DIR/.meta/snippets/config/jsonnet.md || true
     - docker run --rm donaldrich/function:jsonnet validate > $CI_PROJECT_DIR/.meta/snippets/version/jsonnet-docker.md || true
     - docker image inspect donaldrich/function:jsonnet | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/jsonnet.md
-    - docker history donaldrich/function:jsonnet > $CI_PROJECT_DIR/.meta/snippets/layers/jsonnet.md || true
+   #  - docker history donaldrich/function:jsonnet > $CI_PROJECT_DIR/.meta/snippets/layers/jsonnet.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: /

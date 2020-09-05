@@ -64,7 +64,7 @@ docker pull donaldrich/function:vault && dive donaldrich/function:vault
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:vault
+docker pull donaldrich/function:vault && docker history donaldrich/function:vault
 ```
 
 ## Image Details

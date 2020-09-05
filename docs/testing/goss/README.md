@@ -52,7 +52,7 @@ docker pull donaldrich/function:goss && dive donaldrich/function:goss
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:goss
+docker pull donaldrich/function:goss && docker history donaldrich/function:goss
 ```
 
 ## Image Details

@@ -68,7 +68,7 @@ docker pull donaldrich/function:files && dive donaldrich/function:files
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:files
+docker pull donaldrich/function:files && docker history donaldrich/function:files
 ```
 
 ## Image Details

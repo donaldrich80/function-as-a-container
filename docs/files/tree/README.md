@@ -48,7 +48,7 @@ docker pull donaldrich/function:tree && dive donaldrich/function:tree
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:tree
+docker pull donaldrich/function:tree && docker history donaldrich/function:tree
 ```
 
 ## Image Details

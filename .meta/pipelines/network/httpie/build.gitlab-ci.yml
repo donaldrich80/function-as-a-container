@@ -91,7 +91,7 @@ docs:httpie:
     - docker run --rm donaldrich/function:httpie help > $CI_PROJECT_DIR/.meta/snippets/config/httpie.md || true
     - docker run --rm donaldrich/function:httpie validate > $CI_PROJECT_DIR/.meta/snippets/version/httpie-docker.md || true
     - docker image inspect donaldrich/function:httpie | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/httpie.md
-    - docker history donaldrich/function:httpie > $CI_PROJECT_DIR/.meta/snippets/layers/httpie.md || true
+   #  - docker history donaldrich/function:httpie > $CI_PROJECT_DIR/.meta/snippets/layers/httpie.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: network/httpie

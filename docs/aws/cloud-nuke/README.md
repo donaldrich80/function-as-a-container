@@ -50,7 +50,7 @@ docker pull donaldrich/function:cloud-nuke && dive donaldrich/function:cloud-nuk
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:cloud-nuke
+docker pull donaldrich/function:cloud-nuke && docker history donaldrich/function:cloud-nuke
 ```
 
 ## Image Details

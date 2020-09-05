@@ -54,7 +54,7 @@ docker pull donaldrich/function:homebrew && dive donaldrich/function:homebrew
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:homebrew
+docker pull donaldrich/function:homebrew && docker history donaldrich/function:homebrew
 ```
 
 ## Image Details

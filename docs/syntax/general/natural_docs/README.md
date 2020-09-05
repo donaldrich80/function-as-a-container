@@ -52,7 +52,7 @@ docker pull donaldrich/function:naturaldocs && dive donaldrich/function:naturald
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:naturaldocs
+docker pull donaldrich/function:naturaldocs && docker history donaldrich/function:naturaldocs
 ```
 
 ## Image Details

@@ -48,7 +48,7 @@ docker pull donaldrich/function:packer && dive donaldrich/function:packer
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:packer
+docker pull donaldrich/function:packer && docker history donaldrich/function:packer
 ```
 
 ## Image Details

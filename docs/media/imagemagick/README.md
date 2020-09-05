@@ -50,7 +50,7 @@ docker pull donaldrich/function:imagemagick && dive donaldrich/function:imagemag
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:imagemagick
+docker pull donaldrich/function:imagemagick && docker history donaldrich/function:imagemagick
 ```
 
 ## Image Details

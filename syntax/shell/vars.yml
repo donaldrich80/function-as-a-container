@@ -1,0 +1,17 @@
+image:
+  tag: shell
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  shellcheck:
+    prefix: shellcheck
+    help: --help
+    version: --version
+    github: koalaman/shellcheck
+  bashate:
+    prefix: bashate
+    help: --help
+    version: --version
+    github: openstack/bashate
+extra: ""

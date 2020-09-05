@@ -41,18 +41,16 @@ docker pull donaldrich/function:shellcheck && docker run -it --rm  donaldrich/fu
 docker pull donaldrich/function:shellcheck && docker run -it --rm  donaldrich/function:shellcheck help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:shellcheck && dive donaldrich/function:shellcheck
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/shellcheck.md
---8<--
+```sh
+docker history donaldrich/function:shellcheck
 ```
 
 ## Image Details

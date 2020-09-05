@@ -43,18 +43,16 @@ docker pull donaldrich/function:gomplate && docker run -it --rm -v "$(pwd):/data
 docker pull donaldrich/function:gomplate && docker run -it --rm -v "$(pwd):/data" -w "/data" donaldrich/function:gomplate help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:gomplate && dive donaldrich/function:gomplate
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/gomplate.md
---8<--
+```sh
+docker history donaldrich/function:gomplate
 ```
 
 ## Image Details

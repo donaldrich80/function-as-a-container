@@ -105,18 +105,16 @@ docker pull donaldrich/function:docker && docker run -it --rm  donaldrich/functi
 docker pull donaldrich/function:docker && docker run -it --rm  donaldrich/function:docker help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:docker && dive donaldrich/function:docker
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/docker.md
---8<--
+```sh
+docker history donaldrich/function:docker
 ```
 
 ## Image Details

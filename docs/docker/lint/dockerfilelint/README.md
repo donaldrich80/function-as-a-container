@@ -43,18 +43,16 @@ docker pull donaldrich/function:dockerfilelint && docker run -it --rm  donaldric
 docker pull donaldrich/function:dockerfilelint && docker run -it --rm  donaldrich/function:dockerfilelint help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:dockerfilelint && dive donaldrich/function:dockerfilelint
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/dockerfilelint.md
---8<--
+```sh
+docker history donaldrich/function:dockerfilelint
 ```
 
 ## Image Details

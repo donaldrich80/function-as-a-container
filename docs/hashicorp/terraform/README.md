@@ -67,18 +67,16 @@ docker pull donaldrich/function:terraform && docker run -it --rm  donaldrich/fun
 docker pull donaldrich/function:terraform && docker run -it --rm  donaldrich/function:terraform help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:terraform && dive donaldrich/function:terraform
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/terraform.md
---8<--
+```sh
+docker history donaldrich/function:terraform
 ```
 
 ## Image Details

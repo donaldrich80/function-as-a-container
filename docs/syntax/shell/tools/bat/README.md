@@ -41,18 +41,16 @@ docker pull donaldrich/function:bat && docker run -it --rm  donaldrich/function:
 docker pull donaldrich/function:bat && docker run -it --rm  donaldrich/function:bat help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:bat && dive donaldrich/function:bat
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/bat.md
---8<--
+```sh
+docker history donaldrich/function:bat
 ```
 
 ## Image Details

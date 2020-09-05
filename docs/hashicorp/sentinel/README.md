@@ -41,18 +41,16 @@ docker pull donaldrich/function:sentinel && docker run -it --rm  donaldrich/func
 docker pull donaldrich/function:sentinel && docker run -it --rm  donaldrich/function:sentinel help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:sentinel && dive donaldrich/function:sentinel
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/sentinel.md
---8<--
+```sh
+docker history donaldrich/function:sentinel
 ```
 
 ## Image Details

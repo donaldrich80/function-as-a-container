@@ -41,18 +41,16 @@ docker pull donaldrich/function:td4a && docker run -it --rm  donaldrich/function
 docker pull donaldrich/function:td4a && docker run -it --rm  donaldrich/function:td4a help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:td4a && dive donaldrich/function:td4a
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/td4a.md
---8<--
+```sh
+docker history donaldrich/function:td4a
 ```
 
 ## Image Details

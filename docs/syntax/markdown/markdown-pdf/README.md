@@ -41,18 +41,16 @@ docker pull donaldrich/function:markdown-pdf && docker run -it --rm  donaldrich/
 docker pull donaldrich/function:markdown-pdf && docker run -it --rm  donaldrich/function:markdown-pdf help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:markdown-pdf && dive donaldrich/function:markdown-pdf
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/markdown-pdf.md
---8<--
+```sh
+docker history donaldrich/function:markdown-pdf
 ```
 
 ## Image Details

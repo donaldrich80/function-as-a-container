@@ -41,18 +41,16 @@ docker pull donaldrich/function:gitlab-ci-local && docker run -it --rm  donaldri
 docker pull donaldrich/function:gitlab-ci-local && docker run -it --rm  donaldrich/function:gitlab-ci-local help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:gitlab-ci-local && dive donaldrich/function:gitlab-ci-local
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/gitlab-ci-local.md
---8<--
+```sh
+docker history donaldrich/function:gitlab-ci-local
 ```
 
 ## Image Details

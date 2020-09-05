@@ -41,18 +41,16 @@ docker pull donaldrich/function:terraform-provider-healthchecksio && docker run 
 docker pull donaldrich/function:terraform-provider-healthchecksio && docker run -it --rm -v "$(pwd):/data" donaldrich/function:terraform-provider-healthchecksio help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:terraform-provider-healthchecksio && dive donaldrich/function:terraform-provider-healthchecksio
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/terraform-provider-healthchecksio.md
---8<--
+```sh
+docker history donaldrich/function:terraform-provider-healthchecksio
 ```
 
 ## Image Details

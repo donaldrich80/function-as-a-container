@@ -41,18 +41,16 @@ docker pull donaldrich/function:inspec && docker run -it --rm  donaldrich/functi
 docker pull donaldrich/function:inspec && docker run -it --rm  donaldrich/function:inspec help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:inspec && dive donaldrich/function:inspec
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/inspec.md
---8<--
+```sh
+docker history donaldrich/function:inspec
 ```
 
 ## Image Details

@@ -45,18 +45,16 @@ docker pull donaldrich/function:argbash && docker run -it --rm -e PROGRAM=argbas
 docker pull donaldrich/function:argbash && docker run -it --rm -e PROGRAM=argbash -v "$(pwd):/work" donaldrich/function:argbash help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:argbash && dive donaldrich/function:argbash
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/argbash.md
---8<--
+```sh
+docker history donaldrich/function:argbash
 ```
 
 ## Image Details

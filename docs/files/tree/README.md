@@ -39,18 +39,16 @@ docker pull donaldrich/function:tree && docker run -it --rm -v "$(pwd):/data" do
 docker pull donaldrich/function:tree && docker run -it --rm -v "$(pwd):/data" donaldrich/function:tree help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:tree && dive donaldrich/function:tree
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/tree.md
---8<--
+```sh
+docker history donaldrich/function:tree
 ```
 
 ## Image Details

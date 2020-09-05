@@ -41,18 +41,16 @@ docker pull donaldrich/function:pandoc && docker run -it --rm  donaldrich/functi
 docker pull donaldrich/function:pandoc && docker run -it --rm  donaldrich/function:pandoc help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:pandoc && dive donaldrich/function:pandoc
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/pandoc.md
---8<--
+```sh
+docker history donaldrich/function:pandoc
 ```
 
 ## Image Details

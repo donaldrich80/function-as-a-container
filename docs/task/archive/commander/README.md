@@ -41,18 +41,16 @@ docker pull donaldrich/function:commander && docker run -it --rm  donaldrich/fun
 docker pull donaldrich/function:commander && docker run -it --rm  donaldrich/function:commander help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:commander && dive donaldrich/function:commander
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/commander.md
---8<--
+```sh
+docker history donaldrich/function:commander
 ```
 
 ## Image Details

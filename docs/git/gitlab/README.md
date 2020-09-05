@@ -47,18 +47,16 @@ docker pull donaldrich/function:gitlab && docker run -it --rm  donaldrich/functi
 docker pull donaldrich/function:gitlab && docker run -it --rm  donaldrich/function:gitlab help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:gitlab && dive donaldrich/function:gitlab
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/gitlab.md
---8<--
+```sh
+docker history donaldrich/function:gitlab
 ```
 
 ## Image Details

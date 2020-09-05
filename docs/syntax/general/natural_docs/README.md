@@ -43,18 +43,16 @@ docker pull donaldrich/function:naturaldocs && docker run -it --rm -v "$(pwd):/d
 docker pull donaldrich/function:naturaldocs && docker run -it --rm -v "$(pwd):/data" -w "/data" donaldrich/function:naturaldocs help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:naturaldocs && dive donaldrich/function:naturaldocs
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/naturaldocs.md
---8<--
+```sh
+docker history donaldrich/function:naturaldocs
 ```
 
 ## Image Details

@@ -54,7 +54,7 @@ docker pull donaldrich/function:{{ (datasource "data").image.tag }} && dive dona
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:{{ (datasource "data").image.tag }}
+docker pull donaldrich/function:{{ (datasource "data").image.tag }} && docker history donaldrich/function:{{ (datasource "data").image.tag }}
 ```
 
 ## Image Details

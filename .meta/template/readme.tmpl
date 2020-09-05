@@ -45,18 +45,16 @@ docker pull donaldrich/function:{{ (datasource "data").image.tag }} && docker ru
 docker pull donaldrich/function:{{ (datasource "data").image.tag }} && docker run -it --rm {{ (datasource "data").extra }} donaldrich/function:{{ (datasource "data").image.tag }} help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:{{ (datasource "data").image.tag }} && dive donaldrich/function:{{ (datasource "data").image.tag }}
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/{{ (datasource "data").image.tag }}.md
---8<--
+```sh
+docker history donaldrich/function:{{ (datasource "data").image.tag }}
 ```
 
 ## Image Details

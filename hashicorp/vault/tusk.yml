@@ -31,9 +31,6 @@ tasks:
       - command:
           exec: vaultenv --version
           print: "\e[32mvaultenv\e[0m"
-      - command:
-          exec: vsh version
-          print: "\e[32mvsh\e[0m"
   help:
     usage: see config options
     run:
@@ -52,6 +49,3 @@ tasks:
       - command:
           exec: vaultenv --help
           print: "\e[32mvaultenv\e[0m"
-      - command:
-          exec: vsh help
-          print: "\e[32mvsh\e[0m"

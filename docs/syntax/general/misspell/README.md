@@ -41,18 +41,16 @@ docker pull donaldrich/function:misspell && docker run -it --rm  donaldrich/func
 docker pull donaldrich/function:misspell && docker run -it --rm  donaldrich/function:misspell help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:misspell && dive donaldrich/function:misspell
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/misspell.md
---8<--
+```sh
+docker history donaldrich/function:misspell
 ```
 
 ## Image Details

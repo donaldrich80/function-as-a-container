@@ -39,18 +39,16 @@ docker pull donaldrich/function:zsh && docker run -it --rm  donaldrich/function:
 docker pull donaldrich/function:zsh && docker run -it --rm  donaldrich/function:zsh help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:zsh && dive donaldrich/function:zsh
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/zsh.md
---8<--
+```sh
+docker history donaldrich/function:zsh
 ```
 
 ## Image Details

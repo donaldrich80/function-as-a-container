@@ -41,18 +41,16 @@ docker pull donaldrich/function:vault-token-helper && docker run -it --rm  donal
 docker pull donaldrich/function:vault-token-helper && docker run -it --rm  donaldrich/function:vault-token-helper help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:vault-token-helper && dive donaldrich/function:vault-token-helper
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/vault-token-helper.md
---8<--
+```sh
+docker history donaldrich/function:vault-token-helper
 ```
 
 ## Image Details

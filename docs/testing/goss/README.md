@@ -43,18 +43,16 @@ docker pull donaldrich/function:goss && docker run -it --rm -v "$(pwd):/src" don
 docker pull donaldrich/function:goss && docker run -it --rm -v "$(pwd):/src" donaldrich/function:goss help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:goss && dive donaldrich/function:goss
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/goss.md
---8<--
+```sh
+docker history donaldrich/function:goss
 ```
 
 ## Image Details

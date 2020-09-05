@@ -43,18 +43,16 @@ docker pull donaldrich/function:glab && docker run -it --rm  donaldrich/function
 docker pull donaldrich/function:glab && docker run -it --rm  donaldrich/function:glab help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:glab && dive donaldrich/function:glab
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/glab.md
---8<--
+```sh
+docker history donaldrich/function:glab
 ```
 
 ## Image Details

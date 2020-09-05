@@ -41,18 +41,16 @@ docker pull donaldrich/function:apprise && docker run -it --rm  donaldrich/funct
 docker pull donaldrich/function:apprise && docker run -it --rm  donaldrich/function:apprise help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:apprise && dive donaldrich/function:apprise
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/apprise.md
---8<--
+```sh
+docker history donaldrich/function:apprise
 ```
 
 ## Image Details

@@ -71,18 +71,16 @@ docker pull donaldrich/function:task && docker run -it --rm  donaldrich/function
 docker pull donaldrich/function:task && docker run -it --rm  donaldrich/function:task help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:task && dive donaldrich/function:task
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/task.md
---8<--
+```sh
+docker history donaldrich/function:task
 ```
 
 ## Image Details

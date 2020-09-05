@@ -43,18 +43,16 @@ docker pull donaldrich/function:httpie && docker run -it --rm  donaldrich/functi
 docker pull donaldrich/function:httpie && docker run -it --rm  donaldrich/function:httpie help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:httpie && dive donaldrich/function:httpie
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/httpie.md
---8<--
+```sh
+docker history donaldrich/function:httpie
 ```
 
 ## Image Details

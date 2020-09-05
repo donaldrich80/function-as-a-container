@@ -43,18 +43,16 @@ docker pull donaldrich/function:jsonnet && docker run -it --rm  donaldrich/funct
 docker pull donaldrich/function:jsonnet && docker run -it --rm  donaldrich/function:jsonnet help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:jsonnet && dive donaldrich/function:jsonnet
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/jsonnet.md
---8<--
+```sh
+docker history donaldrich/function:jsonnet
 ```
 
 ## Image Details

@@ -39,18 +39,16 @@ docker pull donaldrich/function:packer && docker run -it --rm  donaldrich/functi
 docker pull donaldrich/function:packer && docker run -it --rm  donaldrich/function:packer help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:packer && dive donaldrich/function:packer
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/packer.md
---8<--
+```sh
+docker history donaldrich/function:packer
 ```
 
 ## Image Details

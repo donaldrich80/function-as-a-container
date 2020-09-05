@@ -41,18 +41,16 @@ docker pull donaldrich/function:imagemagick && docker run -it --rm  donaldrich/f
 docker pull donaldrich/function:imagemagick && docker run -it --rm  donaldrich/function:imagemagick help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:imagemagick && dive donaldrich/function:imagemagick
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/imagemagick.md
---8<--
+```sh
+docker history donaldrich/function:imagemagick
 ```
 
 ## Image Details

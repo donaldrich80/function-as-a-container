@@ -41,18 +41,16 @@ docker pull donaldrich/function:cloud-nuke && docker run -it --rm  donaldrich/fu
 docker pull donaldrich/function:cloud-nuke && docker run -it --rm  donaldrich/function:cloud-nuke help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:cloud-nuke && dive donaldrich/function:cloud-nuke
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/cloud-nuke.md
---8<--
+```sh
+docker history donaldrich/function:cloud-nuke
 ```
 
 ## Image Details

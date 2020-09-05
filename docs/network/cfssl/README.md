@@ -41,18 +41,16 @@ docker pull donaldrich/function:cfssl && docker run -it --rm  donaldrich/functio
 docker pull donaldrich/function:cfssl && docker run -it --rm  donaldrich/function:cfssl help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:cfssl && dive donaldrich/function:cfssl
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/cfssl.md
---8<--
+```sh
+docker history donaldrich/function:cfssl
 ```
 
 ## Image Details

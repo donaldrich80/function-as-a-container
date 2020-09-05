@@ -43,18 +43,16 @@ docker pull donaldrich/function:gitleaks && docker run -it --rm  donaldrich/func
 docker pull donaldrich/function:gitleaks && docker run -it --rm  donaldrich/function:gitleaks help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:gitleaks && dive donaldrich/function:gitleaks
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/gitleaks.md
---8<--
+```sh
+docker history donaldrich/function:gitleaks
 ```
 
 ## Image Details

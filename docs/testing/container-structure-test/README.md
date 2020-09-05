@@ -43,18 +43,16 @@ docker pull donaldrich/function:container-structure-test && docker run -it --rm 
 docker pull donaldrich/function:container-structure-test && docker run -it --rm  donaldrich/function:container-structure-test help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:container-structure-test && dive donaldrich/function:container-structure-test
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/container-structure-test.md
---8<--
+```sh
+docker history donaldrich/function:container-structure-test
 ```
 
 ## Image Details

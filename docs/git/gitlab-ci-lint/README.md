@@ -41,18 +41,16 @@ docker pull donaldrich/function:gitlab-ci-lint && docker run -it --rm  donaldric
 docker pull donaldrich/function:gitlab-ci-lint && docker run -it --rm  donaldrich/function:gitlab-ci-lint help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:gitlab-ci-lint && dive donaldrich/function:gitlab-ci-lint
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/gitlab-ci-lint.md
---8<--
+```sh
+docker history donaldrich/function:gitlab-ci-lint
 ```
 
 ## Image Details

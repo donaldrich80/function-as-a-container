@@ -41,18 +41,16 @@ docker pull donaldrich/function:dump-env && docker run -it --rm  donaldrich/func
 docker pull donaldrich/function:dump-env && docker run -it --rm  donaldrich/function:dump-env help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:dump-env && dive donaldrich/function:dump-env
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/dump-env.md
---8<--
+```sh
+docker history donaldrich/function:dump-env
 ```
 
 ## Image Details

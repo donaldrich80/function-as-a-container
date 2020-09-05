@@ -43,18 +43,16 @@ docker pull donaldrich/function:rash && docker run -it --rm  donaldrich/function
 docker pull donaldrich/function:rash && docker run -it --rm  donaldrich/function:rash help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:rash && dive donaldrich/function:rash
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/rash.md
---8<--
+```sh
+docker history donaldrich/function:rash
 ```
 
 ## Image Details

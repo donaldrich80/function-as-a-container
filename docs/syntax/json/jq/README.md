@@ -45,18 +45,16 @@ docker pull donaldrich/function:jq && docker run -it --rm  donaldrich/function:j
 docker pull donaldrich/function:jq && docker run -it --rm  donaldrich/function:jq help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:jq && dive donaldrich/function:jq
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/jq.md
---8<--
+```sh
+docker history donaldrich/function:jq
 ```
 
 ## Image Details

@@ -41,18 +41,16 @@ docker pull donaldrich/function:show-struct && docker run -it --rm  donaldrich/f
 docker pull donaldrich/function:show-struct && docker run -it --rm  donaldrich/function:show-struct help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:show-struct && dive donaldrich/function:show-struct
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/show-struct.md
---8<--
+```sh
+docker history donaldrich/function:show-struct
 ```
 
 ## Image Details

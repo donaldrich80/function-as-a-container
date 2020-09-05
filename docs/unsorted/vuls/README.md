@@ -43,18 +43,16 @@ docker pull donaldrich/function:vuls && docker run -it --rm  donaldrich/function
 docker pull donaldrich/function:vuls && docker run -it --rm  donaldrich/function:vuls help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:vuls && dive donaldrich/function:vuls
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/vuls.md
---8<--
+```sh
+docker history donaldrich/function:vuls
 ```
 
 ## Image Details

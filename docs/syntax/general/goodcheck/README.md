@@ -43,18 +43,16 @@ docker pull donaldrich/function:goodcheck && docker run -it --rm -v "$(pwd):/dat
 docker pull donaldrich/function:goodcheck && docker run -it --rm -v "$(pwd):/data" -w "/data" donaldrich/function:goodcheck help
 ```
 
-### Inspect layers
+### Dive into Image
 
 ```sh
 docker pull donaldrich/function:goodcheck && dive donaldrich/function:goodcheck
 ```
 
-## Configuration
+### See Layer Info
 
-```
---8<--
-config/goodcheck.md
---8<--
+```sh
+docker history donaldrich/function:goodcheck
 ```
 
 ## Image Details

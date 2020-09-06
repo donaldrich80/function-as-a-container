@@ -28,7 +28,19 @@ RUN upx horcrux
 RUN mv horcrux /usr/local/bin
 RUN chmod a+x /usr/local/bin/horcrux
 
-FROM alpine
+FROM donaldrich/builder:latest AS ginstall-builder
+ENV VERSION 3.4.0
+RUN wget "https://github.com/whalehub/ginstall.sh/releases/download/v$VERSION/ginstall.sh" -O /usr/local/bin/ginstall.sh
+RUN chmod +rx /usr/local/bin/ginstall.sh
+RUN upx /usr/local/bin/ginstall.sh
+
+FROM ubuntu
+
+RUN apt-get update && apt install -y curl tar unzip
+
+COPY --from=ginstall-builder /usr/local/bin/ginstall.sh /usr/local/bin/ginstall.sh
+
+RUN ginstall.sh --first-run && ginstall.sh --self-update
 
 COPY --from=horcrux-builder /usr/local/bin/horcrux /usr/local/bin/horcrux
 

@@ -1,19 +1,27 @@
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
     hooks:
-    # -   id: check-yaml
-    -   id: end-of-file-fixer
-    -   id: trailing-whitespace
-# -   repo: local
-#     hooks:
-#     -   id: check-x
-#         name: Check X
-#         entry: ./run-all.sh
-#         language: script
-# -   repo: local
-#     hooks:
-#       -   id: dockerfile-no-entrypoint-2
-#           name: zricethezav/gitleaks
-#           language: docker_image
-#           entry: -v /tmp/:/code/ zricethezav/gitleaks -v --repo-path=/code
+      - id: check-yaml
+        exclude: mkdocs.yml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+        args: ["--fix=no"]
+  # -   repo: local
+  #     hooks:
+  #     -   id: check-x
+  #         name: Check X
+  #         entry: ./run-all.sh
+  #         language: script
+  # -   repo: local
+  #     hooks:
+  #       -   id: gitleaks
+  #           name: zricethezav/gitleaks
+  #           language: docker_image
+  #           entry: -v /tmp/:/code/ zricethezav/gitleaks -v --repo-path=/code
+
+  - repo: https://github.com/prettier/prettier
+    rev: master
+    hooks:
+      - id: prettier

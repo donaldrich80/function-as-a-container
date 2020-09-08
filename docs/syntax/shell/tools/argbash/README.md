@@ -54,7 +54,7 @@ docker pull donaldrich/function:argbash && dive donaldrich/function:argbash
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:argbash
+docker pull donaldrich/function:argbash && docker history donaldrich/function:argbash
 ```
 
 ## Image Details

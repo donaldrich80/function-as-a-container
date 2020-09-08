@@ -91,7 +91,7 @@ docs:sentinel:
     - docker run --rm donaldrich/function:sentinel help > $CI_PROJECT_DIR/.meta/snippets/config/sentinel.md || true
     - docker run --rm donaldrich/function:sentinel validate > $CI_PROJECT_DIR/.meta/snippets/version/sentinel-docker.md || true
     - docker image inspect donaldrich/function:sentinel | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/sentinel.md
-    - docker history donaldrich/function:sentinel > $CI_PROJECT_DIR/.meta/snippets/layers/sentinel.md || true
+   #  - docker history donaldrich/function:sentinel > $CI_PROJECT_DIR/.meta/snippets/layers/sentinel.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: hashicorp/sentinel

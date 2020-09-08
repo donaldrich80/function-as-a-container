@@ -52,7 +52,7 @@ docker pull donaldrich/function:rash && dive donaldrich/function:rash
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:rash
+docker pull donaldrich/function:rash && docker history donaldrich/function:rash
 ```
 
 ## Image Details

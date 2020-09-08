@@ -50,7 +50,7 @@ docker pull donaldrich/function:commander && dive donaldrich/function:commander
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:commander
+docker pull donaldrich/function:commander && docker history donaldrich/function:commander
 ```
 
 ## Image Details

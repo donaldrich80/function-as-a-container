@@ -52,7 +52,7 @@ docker pull donaldrich/function:gitleaks && dive donaldrich/function:gitleaks
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:gitleaks
+docker pull donaldrich/function:gitleaks && docker history donaldrich/function:gitleaks
 ```
 
 ## Image Details

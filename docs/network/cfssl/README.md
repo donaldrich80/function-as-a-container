@@ -50,7 +50,7 @@ docker pull donaldrich/function:cfssl && dive donaldrich/function:cfssl
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:cfssl
+docker pull donaldrich/function:cfssl && docker history donaldrich/function:cfssl
 ```
 
 ## Image Details

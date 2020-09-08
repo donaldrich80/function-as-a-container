@@ -76,7 +76,7 @@ docker pull donaldrich/function:terraform && dive donaldrich/function:terraform
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:terraform
+docker pull donaldrich/function:terraform && docker history donaldrich/function:terraform
 ```
 
 ## Image Details

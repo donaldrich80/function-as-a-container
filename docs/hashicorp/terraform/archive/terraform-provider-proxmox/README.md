@@ -50,7 +50,7 @@ docker pull donaldrich/function:terraform-provider-proxmox && dive donaldrich/fu
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:terraform-provider-proxmox
+docker pull donaldrich/function:terraform-provider-proxmox && docker history donaldrich/function:terraform-provider-proxmox
 ```
 
 ## Image Details

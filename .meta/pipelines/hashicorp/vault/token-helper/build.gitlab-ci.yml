@@ -91,7 +91,7 @@ docs:vault-token-helper:
     - docker run --rm donaldrich/function:vault-token-helper help > $CI_PROJECT_DIR/.meta/snippets/config/vault-token-helper.md || true
     - docker run --rm donaldrich/function:vault-token-helper validate > $CI_PROJECT_DIR/.meta/snippets/version/vault-token-helper-docker.md || true
     - docker image inspect donaldrich/function:vault-token-helper | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/vault-token-helper.md
-    - docker history donaldrich/function:vault-token-helper > $CI_PROJECT_DIR/.meta/snippets/layers/vault-token-helper.md || true
+   #  - docker history donaldrich/function:vault-token-helper > $CI_PROJECT_DIR/.meta/snippets/layers/vault-token-helper.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: hashicorp/vault/token-helper

@@ -52,7 +52,7 @@ docker pull donaldrich/function:vuls && dive donaldrich/function:vuls
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:vuls
+docker pull donaldrich/function:vuls && docker history donaldrich/function:vuls
 ```
 
 ## Image Details

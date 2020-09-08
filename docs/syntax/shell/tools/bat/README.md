@@ -50,7 +50,7 @@ docker pull donaldrich/function:bat && dive donaldrich/function:bat
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:bat
+docker pull donaldrich/function:bat && docker history donaldrich/function:bat
 ```
 
 ## Image Details

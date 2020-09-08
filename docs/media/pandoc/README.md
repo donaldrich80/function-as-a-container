@@ -50,7 +50,7 @@ docker pull donaldrich/function:pandoc && dive donaldrich/function:pandoc
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:pandoc
+docker pull donaldrich/function:pandoc && docker history donaldrich/function:pandoc
 ```
 
 ## Image Details

@@ -52,7 +52,7 @@ docker pull donaldrich/function:container-structure-test && dive donaldrich/func
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:container-structure-test
+docker pull donaldrich/function:container-structure-test && docker history donaldrich/function:container-structure-test
 ```
 
 ## Image Details

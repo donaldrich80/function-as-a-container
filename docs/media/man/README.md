@@ -48,7 +48,7 @@ docker pull donaldrich/function:man && dive donaldrich/function:man
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:man
+docker pull donaldrich/function:man && docker history donaldrich/function:man
 ```
 
 ## Image Details

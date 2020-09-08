@@ -91,7 +91,7 @@ docs:curl:
     - docker run --rm donaldrich/function:curl help > $CI_PROJECT_DIR/.meta/snippets/config/curl.md || true
     - docker run --rm donaldrich/function:curl validate > $CI_PROJECT_DIR/.meta/snippets/version/curl-docker.md || true
     - docker image inspect donaldrich/function:curl | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/curl.md
-    - docker history donaldrich/function:curl > $CI_PROJECT_DIR/.meta/snippets/layers/curl.md || true
+   #  - docker history donaldrich/function:curl > $CI_PROJECT_DIR/.meta/snippets/layers/curl.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: network/curl

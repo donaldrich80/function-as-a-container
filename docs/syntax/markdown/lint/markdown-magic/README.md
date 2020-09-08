@@ -50,7 +50,7 @@ docker pull donaldrich/function:markdown-magic && dive donaldrich/function:markd
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:markdown-magic
+docker pull donaldrich/function:markdown-magic && docker history donaldrich/function:markdown-magic
 ```
 
 ## Image Details

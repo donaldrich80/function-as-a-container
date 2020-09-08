@@ -91,7 +91,7 @@ docs:gitlab-ci-lint:
     - docker run --rm donaldrich/function:gitlab-ci-lint help > $CI_PROJECT_DIR/.meta/snippets/config/gitlab-ci-lint.md || true
     - docker run --rm donaldrich/function:gitlab-ci-lint validate > $CI_PROJECT_DIR/.meta/snippets/version/gitlab-ci-lint-docker.md || true
     - docker image inspect donaldrich/function:gitlab-ci-lint | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/gitlab-ci-lint.md
-    - docker history donaldrich/function:gitlab-ci-lint > $CI_PROJECT_DIR/.meta/snippets/layers/gitlab-ci-lint.md || true
+   #  - docker history donaldrich/function:gitlab-ci-lint > $CI_PROJECT_DIR/.meta/snippets/layers/gitlab-ci-lint.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: git/gitlab-ci-lint

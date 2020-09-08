@@ -50,7 +50,7 @@ docker pull donaldrich/function:gitlab-ci-lint && dive donaldrich/function:gitla
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:gitlab-ci-lint
+docker pull donaldrich/function:gitlab-ci-lint && docker history donaldrich/function:gitlab-ci-lint
 ```
 
 ## Image Details

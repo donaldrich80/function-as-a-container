@@ -50,7 +50,7 @@ docker pull donaldrich/function:misspell && dive donaldrich/function:misspell
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:misspell
+docker pull donaldrich/function:misspell && docker history donaldrich/function:misspell
 ```
 
 ## Image Details

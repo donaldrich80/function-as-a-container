@@ -50,7 +50,7 @@ docker pull donaldrich/function:markdown-pdf && dive donaldrich/function:markdow
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:markdown-pdf
+docker pull donaldrich/function:markdown-pdf && docker history donaldrich/function:markdown-pdf
 ```
 
 ## Image Details

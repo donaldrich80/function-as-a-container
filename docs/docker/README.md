@@ -114,7 +114,7 @@ docker pull donaldrich/function:docker && dive donaldrich/function:docker
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:docker
+docker pull donaldrich/function:docker && docker history donaldrich/function:docker
 ```
 
 ## Image Details

@@ -91,7 +91,7 @@ docs:files:
     - docker run --rm donaldrich/function:files help > $CI_PROJECT_DIR/.meta/snippets/config/files.md || true
     - docker run --rm donaldrich/function:files validate > $CI_PROJECT_DIR/.meta/snippets/version/files-docker.md || true
     - docker image inspect donaldrich/function:files | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/files.md
-    - docker history donaldrich/function:files > $CI_PROJECT_DIR/.meta/snippets/layers/files.md || true
+   #  - docker history donaldrich/function:files > $CI_PROJECT_DIR/.meta/snippets/layers/files.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: files

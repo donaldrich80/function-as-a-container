@@ -80,7 +80,7 @@ docker pull donaldrich/function:task && dive donaldrich/function:task
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:task
+docker pull donaldrich/function:task && docker history donaldrich/function:task
 ```
 
 ## Image Details

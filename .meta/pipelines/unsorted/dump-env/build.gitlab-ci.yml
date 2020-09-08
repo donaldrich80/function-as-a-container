@@ -91,7 +91,7 @@ docs:dump-env:
     - docker run --rm donaldrich/function:dump-env help > $CI_PROJECT_DIR/.meta/snippets/config/dump-env.md || true
     - docker run --rm donaldrich/function:dump-env validate > $CI_PROJECT_DIR/.meta/snippets/version/dump-env-docker.md || true
     - docker image inspect donaldrich/function:dump-env | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/dump-env.md
-    - docker history donaldrich/function:dump-env > $CI_PROJECT_DIR/.meta/snippets/layers/dump-env.md || true
+   #  - docker history donaldrich/function:dump-env > $CI_PROJECT_DIR/.meta/snippets/layers/dump-env.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
 #    DOCKER_BUILD_DIR: unsorted/dump-env

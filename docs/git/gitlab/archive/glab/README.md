@@ -52,7 +52,7 @@ docker pull donaldrich/function:glab && dive donaldrich/function:glab
 ### See Layer Info
 
 ```sh
-docker history donaldrich/function:glab
+docker pull donaldrich/function:glab && docker history donaldrich/function:glab
 ```
 
 ## Image Details

@@ -1,0 +1,13 @@
+image:
+  tag: prettier
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  prettier:
+    prefix: npx prettier
+    help: --help
+    version: --version
+    github: prettier/prettier
+    docs: https://prettier.io
+extra: ""

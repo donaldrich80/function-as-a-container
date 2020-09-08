@@ -8,10 +8,10 @@ A library of lightweight docker images which exist to perform a wide-array of si
 
 These images can be used in a variety of ways.
 
-- [X] CI/CD Runners
-- [X] Installation-free application
-- [X] Modular Dockerfile building
-- [X] Pre-Commit Hooks
+- [x] CI/CD Runners
+- [x] Installation-free application
+- [x] Modular Dockerfile building
+- [x] Pre-Commit Hooks
 
 ## Documentation
 

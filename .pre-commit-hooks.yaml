@@ -1,25 +1,26 @@
--   id: gitleaks
-    name: gitleaks
-    language: docker_image
-    verbose: true
-    entry: --entrypoint gitleaks donaldrich/function:gitleaks
--   id: tflint
-    name: tflint
-    language: docker_image
-    verbose: true
-    entry: --entrypoint tflint donaldrich/function:terraform
-    files: \.tf$
-    exclude: \.+.terraform\/.*$
+- id: gitleaks
+  name: gitleaks
+  language: docker_image
+  verbose: true
+  entry: --entrypoint gitleaks donaldrich/function:gitleaks
+- id: tflint
+  name: tflint
+  language: docker_image
+  verbose: true
+  entry: --entrypoint tflint donaldrich/function:terraform
+  files: \.tf$
+  exclude:
+    \.+.terraform\/.*$
 
-          # args: ["-style=Google"]
-    # -   id: dockerfile-no-entrypoint-1
-    #     name: ...
-    #     language: docker_image
-    #     entry: --entrypoint my-exe my.registry.example.com/docker-image-2:latest
-    # # Alternative equivalent solution
-    # -   id: dockerfile-no-entrypoint-2
-    #     name: ...
-    #     language: docker_image
-    #     entry: my.registry.example.com/docker-image-3:latest my-exe
+    # args: ["-style=Google"]
+  # -   id: dockerfile-no-entrypoint-1
+  #     name: ...
+  #     language: docker_image
+  #     entry: --entrypoint my-exe my.registry.example.com/docker-image-2:latest
+  # # Alternative equivalent solution
+  # -   id: dockerfile-no-entrypoint-2
+  #     name: ...
+  #     language: docker_image
+  #     entry: my.registry.example.com/docker-image-3:latest my-exe
 
-    # -v $pwd:"/work"
+  # -v $pwd:"/work"

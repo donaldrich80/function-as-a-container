@@ -4,7 +4,6 @@ image:
   dir: ""
   dockerfile: ""
 references:
-
   packer-provisioner-goss:
     prefix: packer-provisioner-goss
     help: --help

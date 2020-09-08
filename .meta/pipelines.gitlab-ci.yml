@@ -21,7 +21,9 @@ include:
   - local: .meta/pipelines/syntax/shell/lint/sh/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/lint/bashate/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/lint/shellcheck/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/yaml/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/natural_docs/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/goodcheck/build.gitlab-ci.yml

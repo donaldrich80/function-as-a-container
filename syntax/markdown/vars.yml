@@ -1,0 +1,17 @@
+image:
+  tag: markdown
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  markdown-magic:
+    prefix: markdown
+    help: --help
+    version: --version
+    github: DavidWells/markdown-magic
+  markdown-pdf:
+    prefix: markdown-pdf
+    help: --help
+    version: --version
+    github: alanshaw/markdown-pdf
+extra: ""

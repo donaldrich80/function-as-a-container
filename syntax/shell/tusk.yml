@@ -22,6 +22,9 @@ tasks:
       - command:
           exec: shellcheck --version
           print: "\e[32mshellcheck\e[0m"
+      - command:
+          exec: shfmt -version
+          print: "\e[32mshfmt\e[0m"
   help:
     usage: see config options
     run:
@@ -31,3 +34,6 @@ tasks:
       - command:
           exec: shellcheck --help
           print: "\e[32mshellcheck\e[0m"
+      - command:
+          exec: shfmt -h
+          print: "\e[32mshfmt\e[0m"

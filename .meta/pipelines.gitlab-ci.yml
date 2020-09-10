@@ -9,7 +9,9 @@ include:
   - local: .meta/pipelines/docker/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/lint/remark-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/lint/mdl/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/markdown/lint/markdownlint/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/lint/markdown-magic/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/markdown/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/markdown-pdf/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/hcl2json/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/jq/build.gitlab-ci.yml

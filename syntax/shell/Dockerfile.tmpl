@@ -1,13 +1,15 @@
-# RUN apk --no-cache add grep
+FROM mvdan/shfmt as shfmt-builder
+
 FROM donaldrich/builder:latest AS shellcheck-builder
 RUN ginstall.sh shellcheck latest
 RUN upx /usr/local/bin/shellcheck
 
-FROM alpine
+FROM python:alpine
+
+RUN pip install --no-cache-dir bashate
 
 COPY --from=shellcheck-builder /usr/local/bin/shellcheck /usr/local/bin/shellcheck
-# validate
-COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
-COPY ./tusk.yml ./tusk.yml
-RUN tusk validate
-ENTRYPOINT [ "tusk" ]
+
+COPY --from=shfmt-builder /bin/shfmt /usr/local/bin/shfmt
+
+{{- template "validate" }}

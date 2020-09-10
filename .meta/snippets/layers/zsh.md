@@ -1,9 +1,9 @@
-IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-c7a89d801f01        6 days ago          ENTRYPOINT ["tusk"]                             0B                  buildkit.dockerfile.v0
-<missing>           6 days ago          RUN /bin/sh -c tusk validate # buildkit         0B                  buildkit.dockerfile.v0
-<missing>           6 days ago          COPY ./tusk.yml ./tusk.yml # buildkit           622B                buildkit.dockerfile.v0
-<missing>           6 days ago          COPY /usr/local/bin/tusk /usr/local/bin/tusk…   0B                  buildkit.dockerfile.v0
-<missing>           6 days ago          RUN /bin/sh -c sh -c "$(wget -O- https://raw…   191MB               buildkit.dockerfile.v0
+IMAGE CREATED CREATED BY SIZE COMMENT
+c7a89d801f01 6 days ago ENTRYPOINT ["tusk"] 0B buildkit.dockerfile.v0
+<missing> 6 days ago RUN /bin/sh -c tusk validate # buildkit 0B buildkit.dockerfile.v0
+<missing> 6 days ago COPY ./tusk.yml ./tusk.yml # buildkit 622B buildkit.dockerfile.v0
+<missing> 6 days ago COPY /usr/local/bin/tusk /usr/local/bin/tusk… 0B buildkit.dockerfile.v0
+<missing> 6 days ago RUN /bin/sh -c sh -c "$(wget -O- https://raw…   191MB               buildkit.dockerfile.v0
 <missing>           6 days ago          ENTRYPOINT ["tusk"]                             0B                  buildkit.dockerfile.v0
 <missing>           6 days ago          COPY ./tusk-docker.yml ./tusk.yml # buildkit    1.53kB              buildkit.dockerfile.v0
 <missing>           8 days ago          RUN /bin/sh -c goss validate # buildkit         0B                  buildkit.dockerfile.v0
@@ -18,5 +18,5 @@ c7a89d801f01        6 days ago          ENTRYPOINT ["tusk"]                     
 <missing>           3 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
 <missing>           3 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B
 <missing>           3 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B
-<missing>           3 weeks ago         /bin/sh -c [ -z "$(apt-get indextargets)" ]     987kB
-<missing>           3 weeks ago         /bin/sh -c #(nop) ADD file:7d9bbf45a5b2510d4…   63.2MB
+<missing>           3 weeks ago         /bin/sh -c [ -z "$(apt-get indextargets)" ] 987kB
+<missing> 3 weeks ago /bin/sh -c #(nop) ADD file:7d9bbf45a5b2510d4… 63.2MB

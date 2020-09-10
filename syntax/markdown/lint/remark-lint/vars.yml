@@ -1,0 +1,12 @@
+image:
+  tag: remark-lint
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  remark:
+    prefix: bash
+    help: --help
+    version: --version
+    github: remarkjs/remark-lint
+extra: ""

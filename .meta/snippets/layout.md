@@ -1,16 +1,16 @@
 .
 ├── ansible
 │   └── td4a
-│       ├── Dockerfile
-│       ├── Dockerfile.tmpl
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── Dockerfile.tmpl
+│   ├── tusk.yml
+│   └── vars.yml
 ├── aws
 │   └── aws-cdk
-│       ├── Dockerfile
-│       ├── Dockerfile.tmpl
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── Dockerfile.tmpl
+│   ├── tusk.yml
+│   └── vars.yml
 ├── docker
 │   ├── archive
 │   │   ├── dive
@@ -24,7 +24,7 @@
 │   │   ├── dockfmt
 │   │   │   └── Dockerfile.tmpl.old
 │   │   └── hadolint
-│   │       └── Dockerfile.tmpl.old
+│   │   └── Dockerfile.tmpl.old
 │   ├── dfg
 │   │   └── dfg.yml
 │   ├── lint
@@ -34,22 +34,22 @@
 │   │   │   ├── tusk.yml
 │   │   │   └── vars.yml
 │   │   └── dockerfilelint
-│   │       ├── Dockerfile
-│   │       ├── Dockerfile.tmpl
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── Dockerfile.tmpl
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   ├── plugins
 │   │   └── docker-credential-vault-login
-│   │       ├── Dockerfile
-│   │       ├── config.hcl
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── config.hcl
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   ├── tools
 │   │   └── docker-shell
-│   │       ├── Dockerfile
-│   │       ├── Dockerfile.tmpl
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── Dockerfile.tmpl
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   ├── Dockerfile
 │   ├── Dockerfile.tmpl
 │   ├── README.md
@@ -90,10 +90,10 @@
 │   │   ├── tusk.yml
 │   │   └── vars.yml
 │   └── upx
-│       ├── Dockerfile
-│       ├── Dockerfile.tmpl
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── Dockerfile.tmpl
+│   ├── tusk.yml
+│   └── vars.yml
 ├── git
 │   ├── gitlab-ci-lint
 │   │   ├── Dockerfile
@@ -116,7 +116,7 @@
 │   │   ├── tusk.yml
 │   │   └── vars.yml
 │   └── tsrc
-│       └── repo.txt
+│   └── repo.txt
 ├── hashicorp
 │   ├── packer
 │   │   ├── archive
@@ -125,7 +125,7 @@
 │   │   │   ├── packer-builder-arm-image
 │   │   │   │   └── Dockerfile
 │   │   │   └── packer-provisioner-goss
-│   │   │       └── Dockerfile
+│   │   │   └── Dockerfile
 │   │   ├── Dockerfile
 │   │   ├── Dockerfile.tmpl
 │   │   ├── tusk.yml
@@ -150,7 +150,7 @@
 │   │   │   ├── tflint
 │   │   │   │   └── Dockerfile.tmpl.old
 │   │   │   └── tfsec
-│   │   │       └── Dockerfile.tmpl.old
+│   │   │   └── Dockerfile.tmpl.old
 │   │   ├── terraform-provider-healthchecksio
 │   │   │   ├── Dockerfile
 │   │   │   ├── Dockerfile.tmpl
@@ -171,36 +171,36 @@
 │   │   ├── tusk.yml
 │   │   └── vars.yml
 │   └── vault
-│       ├── archive
-│       │   ├── hashi-helper
-│       │   │   └── Dockerfile.tmpl.old
-│       │   ├── vault-sidekick
-│       │   │   └── Dockerfile.tmpl.old
-│       │   └── vaultenv
-│       │       └── Dockerfile.tmpl.old
-│       ├── vault-ssh-helper
-│       │   ├── Dockerfile
-│       │   ├── Dockerfile.tmpl
-│       │   ├── config.hcl
-│       │   ├── tusk.yml
-│       │   └── vars.yml
-│       ├── vault-sync
-│       │   ├── Dockerfile
-│       │   ├── Dockerfile.tmpl
-│       │   ├── tusk.yml
-│       │   └── vars.yml
-│       ├── vault-unseal
-│       │   ├── Dockerfile
-│       │   └── metadata.yml
-│       ├── vsh
-│       │   ├── Dockerfile
-│       │   ├── Dockerfile.tmpl
-│       │   ├── tusk.yml
-│       │   └── vars.yml
-│       ├── Dockerfile
-│       ├── Dockerfile.tmpl
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── archive
+│   │   ├── hashi-helper
+│   │   │   └── Dockerfile.tmpl.old
+│   │   ├── vault-sidekick
+│   │   │   └── Dockerfile.tmpl.old
+│   │   └── vaultenv
+│   │   └── Dockerfile.tmpl.old
+│   ├── vault-ssh-helper
+│   │   ├── Dockerfile
+│   │   ├── Dockerfile.tmpl
+│   │   ├── config.hcl
+│   │   ├── tusk.yml
+│   │   └── vars.yml
+│   ├── vault-sync
+│   │   ├── Dockerfile
+│   │   ├── Dockerfile.tmpl
+│   │   ├── tusk.yml
+│   │   └── vars.yml
+│   ├── vault-unseal
+│   │   ├── Dockerfile
+│   │   └── metadata.yml
+│   ├── vsh
+│   │   ├── Dockerfile
+│   │   ├── Dockerfile.tmpl
+│   │   ├── tusk.yml
+│   │   └── vars.yml
+│   ├── Dockerfile
+│   ├── Dockerfile.tmpl
+│   ├── tusk.yml
+│   └── vars.yml
 ├── media
 │   ├── diagrams
 │   │   └── repo.txt
@@ -224,9 +224,9 @@
 │   │   ├── tusk.yml
 │   │   └── vars.yml
 │   └── wkhtmltopdf
-│       ├── Dockerfile
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── tusk.yml
+│   └── vars.yml
 ├── network
 │   ├── apprise
 │   │   ├── Dockerfile
@@ -252,7 +252,7 @@
 │   │   ├── tusk.yml
 │   │   └── vars.yml
 │   └── sherlock
-│       └── repo.txt
+│   └── repo.txt
 ├── syntax
 │   ├── general
 │   │   ├── goodcheck
@@ -271,10 +271,10 @@
 │   │   │   ├── tusk.yml
 │   │   │   └── vars.yml
 │   │   └── natural_docs
-│   │       ├── Dockerfile
-│   │       ├── Dockerfile.tmpl
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── Dockerfile.tmpl
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   ├── go
 │   │   ├── glide
 │   │   │   ├── Dockerfile
@@ -282,9 +282,9 @@
 │   │   │   ├── tusk.yml
 │   │   │   └── vars.yml
 │   │   └── golang
-│   │       ├── Dockerfile
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   ├── gomplate
 │   │   ├── Dockerfile
 │   │   ├── Dockerfile.tmpl
@@ -308,10 +308,10 @@
 │   │   │   ├── tusk.yml
 │   │   │   └── vars.yml
 │   │   └── show-struct
-│   │       ├── Dockerfile
-│   │       ├── show_struct.py
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── show_struct.py
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   ├── markdown
 │   │   ├── lint
 │   │   │   ├── markdown-magic
@@ -326,14 +326,14 @@
 │   │   │   │   ├── tusk.yml
 │   │   │   │   └── vars.yml
 │   │   │   └── remark-lint
-│   │   │       ├── Dockerfile
-│   │   │       ├── metadata.yml
-│   │   │       └── package.json
+│   │   │   ├── Dockerfile
+│   │   │   ├── metadata.yml
+│   │   │   └── package.json
 │   │   └── markdown-pdf
-│   │       ├── Dockerfile
-│   │       ├── Dockerfile.tmpl
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── Dockerfile.tmpl
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   ├── shell
 │   │   ├── lint
 │   │   │   ├── bashate
@@ -347,37 +347,37 @@
 │   │   │   │   ├── tusk.yml
 │   │   │   │   └── vars.yml
 │   │   │   └── shellcheck
-│   │   │       ├── Dockerfile
-│   │   │       ├── Dockerfile.tmpl
-│   │   │       ├── tusk.yml
-│   │   │       └── vars.yml
+│   │   │   ├── Dockerfile
+│   │   │   ├── Dockerfile.tmpl
+│   │   │   ├── tusk.yml
+│   │   │   └── vars.yml
 │   │   └── tools
-│   │       ├── argbash
-│   │       │   ├── Dockerfile
-│   │       │   ├── Dockerfile.tmpl
-│   │       │   ├── tusk.yml
-│   │       │   └── vars.yml
-│   │       └── rash
-│   │           ├── Dockerfile
-│   │           ├── Dockerfile.tmpl
-│   │           ├── tusk.yml
-│   │           └── vars.yml
+│   │   ├── argbash
+│   │   │   ├── Dockerfile
+│   │   │   ├── Dockerfile.tmpl
+│   │   │   ├── tusk.yml
+│   │   │   └── vars.yml
+│   │   └── rash
+│   │   ├── Dockerfile
+│   │   ├── Dockerfile.tmpl
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   ├── yaml
 │   │   ├── archive
 │   │   │   ├── lint
 │   │   │   │   ├── ruamel.yaml.cmd
 │   │   │   │   │   └── Dockerfile.tmpl.old
 │   │   │   │   └── yamllint
-│   │   │   │       └── Dockerfile.tmpl.old
+│   │   │   │   └── Dockerfile.tmpl.old
 │   │   │   └── tools
-│   │   │       ├── yamale
-│   │   │       │   └── Dockerfile.tmpl.old
-│   │   │       ├── yaml-tools
-│   │   │       │   └── Dockerfile.tmpl.old
-│   │   │       ├── yq
-│   │   │       │   └── Dockerfile.tmpl.old
-│   │   │       └── ytt
-│   │   │           └── Dockerfile.tmpl.old
+│   │   │   ├── yamale
+│   │   │   │   └── Dockerfile.tmpl.old
+│   │   │   ├── yaml-tools
+│   │   │   │   └── Dockerfile.tmpl.old
+│   │   │   ├── yq
+│   │   │   │   └── Dockerfile.tmpl.old
+│   │   │   └── ytt
+│   │   │   └── Dockerfile.tmpl.old
 │   │   ├── Dockerfile
 │   │   ├── Dockerfile.tmpl
 │   │   ├── tusk.yml
@@ -401,7 +401,7 @@
 │   │   ├── task
 │   │   │   └── Dockerfile
 │   │   └── tusk
-│   │       └── Dockerfile
+│   │   └── Dockerfile
 │   ├── Dockerfile
 │   ├── Dockerfile.tmpl
 │   ├── tusk.yml
@@ -429,10 +429,10 @@
 │   │   ├── tusk.yml
 │   │   └── vars.yml
 │   └── inspec
-│       ├── Dockerfile
-│       ├── Dockerfile.tmpl
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── Dockerfile.tmpl
+│   ├── tusk.yml
+│   └── vars.yml
 ├── unsorted
 │   ├── bashful
 │   │   └── Dockerfile
@@ -467,8 +467,8 @@
 │   ├── rome
 │   │   └── Dockerfile
 │   └── vuls
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── tusk.yml
+│   └── vars.yml
 ├── README.md
 ├── google.png
 ├── mkdocs.yml

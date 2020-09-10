@@ -7,6 +7,7 @@ include:
   - local: .meta/pipelines/docker/lint/dockerfile_lint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/lint/dockerfilelint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/markdown/lint/remark-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/lint/mdl/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/lint/markdown-magic/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/markdown-pdf/build.gitlab-ci.yml
@@ -21,7 +22,9 @@ include:
   - local: .meta/pipelines/syntax/shell/lint/sh/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/lint/bashate/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/lint/shellcheck/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/yaml/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/natural_docs/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/goodcheck/build.gitlab-ci.yml

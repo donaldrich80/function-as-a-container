@@ -9,4 +9,3 @@ FROM alpine
 RUN apk add fzf bash git
 
 COPY --from=navi-builder /usr/local/bin/navi /usr/local/bin/navi
-

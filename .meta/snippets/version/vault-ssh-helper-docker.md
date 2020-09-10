@@ -13,7 +13,6 @@
 [32mCommand: python: exit-status: matches expectation: [0][0m
 [32mCommand: ginstall.sh: exit-status: matches expectation: [0][0m
 
-
 Total Duration: 0.037s
 [32mCount: 14, Failed: 0, Skipped: 0
 [0m

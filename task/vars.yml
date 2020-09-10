@@ -52,7 +52,7 @@ commands:
   #   prefix: mask
   #   help: --help
   #   version: --version
-      # github: jakedeichert/mask
+  # github: jakedeichert/mask
 extra: ""
 links:
   awesomeopensource: https://awesomeopensource.com/projects/task-runner

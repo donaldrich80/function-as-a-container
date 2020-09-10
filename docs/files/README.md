@@ -18,6 +18,14 @@ source: files/Dockerfile
 
 * [:octicons-mark-github-16: fzf](https://github.com/fzf)
 
+### Ginstall
+
+* [:octicons-mark-github-16: whalehub/ginstall.sh](https://github.com/whalehub/ginstall.sh)
+
+### Horcrux
+
+* [:octicons-mark-github-16: jesseduffield/horcrux](https://github.com/jesseduffield/horcrux)
+
 ### Ncdu
 
 * [:octicons-book-16: Docs](https://dev.yorhel.nl/ncdu)

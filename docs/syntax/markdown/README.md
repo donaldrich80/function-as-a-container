@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/markdown/Dockerfile
-
 ---
 
 # markdown
@@ -12,15 +11,15 @@ source: syntax/markdown/Dockerfile
 
 ### Markdown-Magic
 
-* [:octicons-mark-github-16: DavidWells/markdown-magic](https://github.com/DavidWells/markdown-magic)
+- [:octicons-mark-github-16: DavidWells/markdown-magic](https://github.com/DavidWells/markdown-magic)
 
 ### Markdown-Pdf
 
-* [:octicons-mark-github-16: alanshaw/markdown-pdf](https://github.com/alanshaw/markdown-pdf)
+- [:octicons-mark-github-16: alanshaw/markdown-pdf](https://github.com/alanshaw/markdown-pdf)
 
 ### Markdownlint
 
-* [:octicons-mark-github-16: DavidAnson/markdownlint](https://github.com/DavidAnson/markdownlint)
+- [:octicons-mark-github-16: DavidAnson/markdownlint](https://github.com/DavidAnson/markdownlint)
 
 ## Image Commands
 

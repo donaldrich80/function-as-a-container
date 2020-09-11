@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/general/natural_docs/Dockerfile
-
 ---
 
 # naturaldocs
@@ -12,9 +11,9 @@ source: syntax/general/natural_docs/Dockerfile
 
 ### Naturaldocs
 
-* [:octicons-book-16: Docs](https://www.naturaldocs.org/reference)
+- [:octicons-book-16: Docs](https://www.naturaldocs.org/reference)
 
-* [site](https://www.naturaldocs.org)
+- [site](https://www.naturaldocs.org)
 
 ## Image Commands
 

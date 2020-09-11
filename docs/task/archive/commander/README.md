@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: task/archive/commander/Dockerfile
-
 ---
 
 # commander
@@ -12,7 +11,7 @@ source: task/archive/commander/Dockerfile
 
 ### Commander
 
-* [:octicons-mark-github-16: commander-cli/commander](https://github.com/commander-cli/commander)
+- [:octicons-mark-github-16: commander-cli/commander](https://github.com/commander-cli/commander)
 
 ## Image Commands
 

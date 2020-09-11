@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: git/gitlab/Dockerfile
-
 ---
 
 # gitlab
@@ -12,13 +11,13 @@ source: git/gitlab/Dockerfile
 
 ### Gitlab-Ci-Local
 
-* [:octicons-mark-github-16: firecow/gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
+- [:octicons-mark-github-16: firecow/gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
 
 ### Glab
 
-* [:octicons-book-16: Docs](https://clementsam.tech/glab)
+- [:octicons-book-16: Docs](https://clementsam.tech/glab)
 
-* [:octicons-mark-github-16: profclems/glab](https://github.com/profclems/glab)
+- [:octicons-mark-github-16: profclems/glab](https://github.com/profclems/glab)
 
 ## Image Commands
 

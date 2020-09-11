@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/shell/tools/rash/Dockerfile
-
 ---
 
 # rash
@@ -12,9 +11,9 @@ source: syntax/shell/tools/rash/Dockerfile
 
 ### Rash
 
-* [:octicons-book-16: Docs](https://rash.sh/)
+- [:octicons-book-16: Docs](https://rash.sh/)
 
-* [:octicons-mark-github-16: rash-sh/rash](https://github.com/rash-sh/rash)
+- [:octicons-mark-github-16: rash-sh/rash](https://github.com/rash-sh/rash)
 
 ## Image Commands
 

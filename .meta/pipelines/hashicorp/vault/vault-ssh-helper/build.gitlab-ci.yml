@@ -1,28 +1,28 @@
 .buildx-prebuild: &buildx-prebuild
-- docker context create default_tls
-- docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
-- docker buildx inspect --bootstrap
-- docker buildx ls
+  - docker context create default_tls
+  - docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
+  - docker buildx inspect --bootstrap
+  - docker buildx ls
 
 .registry-login: &registry-login
-- echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
-- echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+  - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
+  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
 
 .var-print: &var-print
-- echo $REGISTRY
-- echo $REGISTRY_IMAGE
-- echo $CI_REGISTRY_IMAGE
-- echo $IMAGE_TAG
-- echo $IMAGE_NAME
-- echo $CI_BUILD_ARCHS
-- echo $DOCKERFILE
-- echo $DOCKER_BUILD_DIR
-- echo $DOCKERHUB_USER
-- echo $REPO_URL
-- echo $DOCKER_HOST
-- echo $DOCKER_TLS_CERTDIR
-- echo $DOCKER_CLI_EXPERIMENTAL
-- echo $DOCKER_DRIVER
+  - echo $REGISTRY
+  - echo $REGISTRY_IMAGE
+  - echo $CI_REGISTRY_IMAGE
+  - echo $IMAGE_TAG
+  - echo $IMAGE_NAME
+  - echo $CI_BUILD_ARCHS
+  - echo $DOCKERFILE
+  - echo $DOCKER_BUILD_DIR
+  - echo $DOCKERHUB_USER
+  - echo $REPO_URL
+  - echo $DOCKER_HOST
+  - echo $DOCKER_TLS_CERTDIR
+  - echo $DOCKER_CLI_EXPERIMENTAL
+  - echo $DOCKER_DRIVER
 
 build:vault-ssh-helper:
   retry: 2
@@ -52,9 +52,6 @@ build:vault-ssh-helper:
       command: ["--experimental"]
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: hashicorp/vault/vault-ssh-helper
-#    DOCKER_BUILD_CONTEXT: hashicorp/vault/vault-ssh-helper
-#    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_VERIFY: 1
@@ -63,7 +60,7 @@ build:vault-ssh-helper:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "hashicorp/vault/vault-ssh-helper/*"
+        - "hashicorp/vault/vault-ssh-helper/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
@@ -74,7 +71,7 @@ build:vault-ssh-helper:
 
 docs:vault-ssh-helper:
   needs:
-  - build:vault-ssh-helper
+    - build:vault-ssh-helper
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
@@ -91,12 +88,9 @@ docs:vault-ssh-helper:
     - docker run --rm donaldrich/function:vault-ssh-helper help > $CI_PROJECT_DIR/.meta/snippets/config/vault-ssh-helper.md || true
     - docker run --rm donaldrich/function:vault-ssh-helper validate > $CI_PROJECT_DIR/.meta/snippets/version/vault-ssh-helper-docker.md || true
     - docker image inspect donaldrich/function:vault-ssh-helper | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/vault-ssh-helper.md
-   #  - docker history donaldrich/function:vault-ssh-helper > $CI_PROJECT_DIR/.meta/snippets/layers/vault-ssh-helper.md || true
+    #  - docker history donaldrich/function:vault-ssh-helper > $CI_PROJECT_DIR/.meta/snippets/layers/vault-ssh-helper.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: hashicorp/vault/vault-ssh-helper
-#    DOCKER_BUILD_CONTEXT: hashicorp/vault/vault-ssh-helper
-#    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_VERIFY: 1
@@ -105,7 +99,7 @@ docs:vault-ssh-helper:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "hashicorp/vault/vault-ssh-helper/*"
+        - "hashicorp/vault/vault-ssh-helper/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

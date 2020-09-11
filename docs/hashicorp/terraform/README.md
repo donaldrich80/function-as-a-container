@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/terraform/Dockerfile
-
 ---
 
 # terraform
@@ -12,33 +11,33 @@ source: hashicorp/terraform/Dockerfile
 
 ### Terraform
 
-* [:octicons-book-16: Docs](https://www.terraform.io/docs)
+- [:octicons-book-16: Docs](https://www.terraform.io/docs)
 
-* [:octicons-mark-github-16: hashicorp/terraform](https://github.com/hashicorp/terraform)
+- [:octicons-mark-github-16: hashicorp/terraform](https://github.com/hashicorp/terraform)
 
 ### Terraformer
 
-* [:octicons-mark-github-16: GoogleCloudPlatform/terraformer](https://github.com/GoogleCloudPlatform/terraformer)
+- [:octicons-mark-github-16: GoogleCloudPlatform/terraformer](https://github.com/GoogleCloudPlatform/terraformer)
 
 ### Terragrunt
 
-* [:octicons-book-16: Docs](https://terragrunt.gruntwork.io)
+- [:octicons-book-16: Docs](https://terragrunt.gruntwork.io)
 
-* [:octicons-mark-github-16: gruntwork-io/terragrunt](https://github.com/gruntwork-io/terragrunt)
+- [:octicons-mark-github-16: gruntwork-io/terragrunt](https://github.com/gruntwork-io/terragrunt)
 
 ### Terrahelp
 
-* [:octicons-mark-github-16: opencredo/terrahelp](https://github.com/opencredo/terrahelp)
+- [:octicons-mark-github-16: opencredo/terrahelp](https://github.com/opencredo/terrahelp)
 
 ### Tflint
 
-* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/wata727/tflint)
+- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/wata727/tflint)
 
-* [:octicons-mark-github-16: terraform-linters/tflint](https://github.com/terraform-linters/tflint)
+- [:octicons-mark-github-16: terraform-linters/tflint](https://github.com/terraform-linters/tflint)
 
 ### Tfsec
 
-* [:octicons-mark-github-16: liamg/tfsec](https://github.com/liamg/tfsec)
+- [:octicons-mark-github-16: liamg/tfsec](https://github.com/liamg/tfsec)
 
 ## Image Commands
 

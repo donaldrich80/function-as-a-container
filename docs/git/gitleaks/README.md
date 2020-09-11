@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: git/gitleaks/Dockerfile
-
 ---
 
 # gitleaks
@@ -12,9 +11,9 @@ source: git/gitleaks/Dockerfile
 
 ### Gitleaks
 
-* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/zricethezav/gitleaks)
+- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/zricethezav/gitleaks)
 
-* [:octicons-mark-github-16: zricethezav/gitleaks](https://github.com/zricethezav/gitleaks)
+- [:octicons-mark-github-16: zricethezav/gitleaks](https://github.com/zricethezav/gitleaks)
 
 ## Image Commands
 

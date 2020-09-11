@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/json/json2hcl/Dockerfile
-
 ---
 
 # json2hcl
@@ -12,7 +11,7 @@ source: syntax/json/json2hcl/Dockerfile
 
 ### Json2hcl
 
-* [:octicons-mark-github-16: kvz/json2hcl](https://github.com/kvz/json2hcl)
+- [:octicons-mark-github-16: kvz/json2hcl](https://github.com/kvz/json2hcl)
 
 ## Image Commands
 

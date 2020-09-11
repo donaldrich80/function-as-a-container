@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/prettier/Dockerfile
-
 ---
 
 # prettier
@@ -12,9 +11,9 @@ source: syntax/prettier/Dockerfile
 
 ### Prettier
 
-* [:octicons-book-16: Docs](https://prettier.io)
+- [:octicons-book-16: Docs](https://prettier.io)
 
-* [:octicons-mark-github-16: prettier/prettier](https://github.com/prettier/prettier)
+- [:octicons-mark-github-16: prettier/prettier](https://github.com/prettier/prettier)
 
 ## Image Commands
 

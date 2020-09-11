@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/general/goodcheck/Dockerfile
-
 ---
 
 # goodcheck
@@ -12,9 +11,9 @@ source: syntax/general/goodcheck/Dockerfile
 
 ### Goodcheck
 
-* [:octicons-book-16: Docs](https://sider.github.io/goodcheck)
+- [:octicons-book-16: Docs](https://sider.github.io/goodcheck)
 
-* [:octicons-mark-github-16: sider/goodcheck](https://github.com/sider/goodcheck)
+- [:octicons-mark-github-16: sider/goodcheck](https://github.com/sider/goodcheck)
 
 ## Image Commands
 

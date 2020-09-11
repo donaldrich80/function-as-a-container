@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/terraform/terraform-provider-healthchecksio/Dockerfile
-
 ---
 
 # terraform-provider-healthchecksio
@@ -12,7 +11,7 @@ source: hashicorp/terraform/terraform-provider-healthchecksio/Dockerfile
 
 ### Terraform-Provider-Healthchecksio
 
-* [:octicons-mark-github-16: kristofferahl/terraform-provider-healthchecksio](https://github.com/kristofferahl/terraform-provider-healthchecksio)
+- [:octicons-mark-github-16: kristofferahl/terraform-provider-healthchecksio](https://github.com/kristofferahl/terraform-provider-healthchecksio)
 
 ## Image Commands
 

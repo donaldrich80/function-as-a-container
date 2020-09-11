@@ -1,28 +1,28 @@
 .buildx-prebuild: &buildx-prebuild
-- docker context create default_tls
-- docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
-- docker buildx inspect --bootstrap
-- docker buildx ls
+  - docker context create default_tls
+  - docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
+  - docker buildx inspect --bootstrap
+  - docker buildx ls
 
 .registry-login: &registry-login
-- echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
-- echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+  - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
+  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
 
 .var-print: &var-print
-- echo $REGISTRY
-- echo $REGISTRY_IMAGE
-- echo $CI_REGISTRY_IMAGE
-- echo $IMAGE_TAG
-- echo $IMAGE_NAME
-- echo $CI_BUILD_ARCHS
-- echo $DOCKERFILE
-- echo $DOCKER_BUILD_DIR
-- echo $DOCKERHUB_USER
-- echo $REPO_URL
-- echo $DOCKER_HOST
-- echo $DOCKER_TLS_CERTDIR
-- echo $DOCKER_CLI_EXPERIMENTAL
-- echo $DOCKER_DRIVER
+  - echo $REGISTRY
+  - echo $REGISTRY_IMAGE
+  - echo $CI_REGISTRY_IMAGE
+  - echo $IMAGE_TAG
+  - echo $IMAGE_NAME
+  - echo $CI_BUILD_ARCHS
+  - echo $DOCKERFILE
+  - echo $DOCKER_BUILD_DIR
+  - echo $DOCKERHUB_USER
+  - echo $REPO_URL
+  - echo $DOCKER_HOST
+  - echo $DOCKER_TLS_CERTDIR
+  - echo $DOCKER_CLI_EXPERIMENTAL
+  - echo $DOCKER_DRIVER
 
 build:json2hcl:
   retry: 2
@@ -52,9 +52,6 @@ build:json2hcl:
       command: ["--experimental"]
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: syntax/json/json2hcl
-#    DOCKER_BUILD_CONTEXT: syntax/json/json2hcl
-#    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_VERIFY: 1
@@ -63,7 +60,7 @@ build:json2hcl:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "syntax/json/json2hcl/*"
+        - "syntax/json/json2hcl/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
@@ -74,7 +71,7 @@ build:json2hcl:
 
 docs:json2hcl:
   needs:
-  - build:json2hcl
+    - build:json2hcl
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
@@ -91,12 +88,9 @@ docs:json2hcl:
     - docker run --rm donaldrich/function:json2hcl help > $CI_PROJECT_DIR/.meta/snippets/config/json2hcl.md || true
     - docker run --rm donaldrich/function:json2hcl validate > $CI_PROJECT_DIR/.meta/snippets/version/json2hcl-docker.md || true
     - docker image inspect donaldrich/function:json2hcl | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/json2hcl.md
-   #  - docker history donaldrich/function:json2hcl > $CI_PROJECT_DIR/.meta/snippets/layers/json2hcl.md || true
+    #  - docker history donaldrich/function:json2hcl > $CI_PROJECT_DIR/.meta/snippets/layers/json2hcl.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: syntax/json/json2hcl
-#    DOCKER_BUILD_CONTEXT: syntax/json/json2hcl
-#    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_VERIFY: 1
@@ -105,7 +99,7 @@ docs:json2hcl:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "syntax/json/json2hcl/*"
+        - "syntax/json/json2hcl/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

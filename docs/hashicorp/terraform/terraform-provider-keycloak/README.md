@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/terraform/terraform-provider-keycloak/Dockerfile
-
 ---
 
 # terraform-provider-keycloak
@@ -12,9 +11,9 @@ source: hashicorp/terraform/terraform-provider-keycloak/Dockerfile
 
 ### Terraform-Provider-Keycloak
 
-* [:octicons-book-16: Docs](https://mrparkers.github.io/terraform-provider-keycloak)
+- [:octicons-book-16: Docs](https://mrparkers.github.io/terraform-provider-keycloak)
 
-* [:octicons-mark-github-16: mrparkers/terraform-provider-keycloak](https://github.com/mrparkers/terraform-provider-keycloak)
+- [:octicons-mark-github-16: mrparkers/terraform-provider-keycloak](https://github.com/mrparkers/terraform-provider-keycloak)
 
 ## Image Commands
 

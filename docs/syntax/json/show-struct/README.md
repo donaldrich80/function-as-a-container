@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/json/show-struct/Dockerfile
-
 ---
 
 # show-struct
@@ -12,7 +11,7 @@ source: syntax/json/show-struct/Dockerfile
 
 ### Show-Struct
 
-* [:octicons-mark-github-16: ilyash/show-struct](https://github.com/ilyash/show-struct)
+- [:octicons-mark-github-16: ilyash/show-struct](https://github.com/ilyash/show-struct)
 
 ## Image Commands
 

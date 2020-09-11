@@ -1,28 +1,28 @@
 .buildx-prebuild: &buildx-prebuild
-- docker context create default_tls
-- docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
-- docker buildx inspect --bootstrap
-- docker buildx ls
+  - docker context create default_tls
+  - docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
+  - docker buildx inspect --bootstrap
+  - docker buildx ls
 
 .registry-login: &registry-login
-- echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
-- echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+  - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
+  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
 
 .var-print: &var-print
-- echo $REGISTRY
-- echo $REGISTRY_IMAGE
-- echo $CI_REGISTRY_IMAGE
-- echo $IMAGE_TAG
-- echo $IMAGE_NAME
-- echo $CI_BUILD_ARCHS
-- echo $DOCKERFILE
-- echo $DOCKER_BUILD_DIR
-- echo $DOCKERHUB_USER
-- echo $REPO_URL
-- echo $DOCKER_HOST
-- echo $DOCKER_TLS_CERTDIR
-- echo $DOCKER_CLI_EXPERIMENTAL
-- echo $DOCKER_DRIVER
+  - echo $REGISTRY
+  - echo $REGISTRY_IMAGE
+  - echo $CI_REGISTRY_IMAGE
+  - echo $IMAGE_TAG
+  - echo $IMAGE_NAME
+  - echo $CI_BUILD_ARCHS
+  - echo $DOCKERFILE
+  - echo $DOCKER_BUILD_DIR
+  - echo $DOCKERHUB_USER
+  - echo $REPO_URL
+  - echo $DOCKER_HOST
+  - echo $DOCKER_TLS_CERTDIR
+  - echo $DOCKER_CLI_EXPERIMENTAL
+  - echo $DOCKER_DRIVER
 
 build:{{ (datasource "data").image.tag }}:
   retry: 2
@@ -52,9 +52,6 @@ build:{{ (datasource "data").image.tag }}:
       command: ["--experimental"]
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: {{ (datasource "data").image.dir | default (datasource "path").path }}
-#    DOCKER_BUILD_CONTEXT: {{ (datasource "data").image.context | default (datasource "path").path }}
-#    DOCKERFILE: {{ (datasource "data").image.dockerfile | default "Dockerfile" }}
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_VERIFY: 1
@@ -63,7 +60,7 @@ build:{{ (datasource "data").image.tag }}:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "{{ (datasource "path").path }}/*"
+        - "{{ (datasource "path").path }}/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
@@ -94,9 +91,6 @@ docs:{{ (datasource "data").image.tag }}:
    #  - docker history donaldrich/function:{{ (datasource "data").image.tag }} > $CI_PROJECT_DIR/.meta/snippets/layers/{{ (datasource "data").image.tag }}.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
-#    DOCKER_BUILD_DIR: {{ (datasource "data").image.dir | default (datasource "path").path }}
-#    DOCKER_BUILD_CONTEXT: {{ (datasource "data").image.context | default (datasource "path").path }}
-#    DOCKERFILE: {{ (datasource "data").image.dockerfile | default "Dockerfile" }}
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_VERIFY: 1
@@ -105,7 +99,7 @@ docs:{{ (datasource "data").image.tag }}:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "{{ (datasource "path").path }}/*"
+        - "{{ (datasource "path").path }}/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

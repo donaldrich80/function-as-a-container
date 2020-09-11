@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: media/imagemagick/Dockerfile
-
 ---
 
 # imagemagick
@@ -12,7 +11,7 @@ source: media/imagemagick/Dockerfile
 
 ### Imagemagick
 
-* [:octicons-mark-github-16: ImageMagick/ImageMagick](https://github.com/ImageMagick/ImageMagick)
+- [:octicons-mark-github-16: ImageMagick/ImageMagick](https://github.com/ImageMagick/ImageMagick)
 
 ## Image Commands
 

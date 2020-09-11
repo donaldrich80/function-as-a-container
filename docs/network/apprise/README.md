@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: network/apprise/Dockerfile
-
 ---
 
 # apprise
@@ -12,7 +11,7 @@ source: network/apprise/Dockerfile
 
 ### Apprise
 
-* [:octicons-mark-github-16: caronc/apprise](https://github.com/caronc/apprise)
+- [:octicons-mark-github-16: caronc/apprise](https://github.com/caronc/apprise)
 
 ## Image Commands
 

@@ -10,7 +10,7 @@ source: go/golang/Dockerfile
 
 ## Documentation
 
-### Golang
+### Go
 
 ## Image Commands
 

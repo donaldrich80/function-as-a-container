@@ -4,8 +4,8 @@ image:
   dir: ""
   dockerfile: ""
 commands:
-  golang:
-    prefix: golang
+  go:
+    prefix: go
     help: help
     version: version
   # github: golang

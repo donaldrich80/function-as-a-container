@@ -1,0 +1,13 @@
+image:
+  tag: converge
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  converge:
+    prefix: converge
+    help: --help
+    version: --version
+    github: asteris-llc/converge
+    docs: http://converge.aster.is
+extra: ""

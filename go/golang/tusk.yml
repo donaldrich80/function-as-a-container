@@ -17,11 +17,11 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: golang version
-          print: "\e[32mgolang\e[0m"
+          exec: go version
+          print: "\e[32mgo\e[0m"
   help:
     usage: see config options
     run:
       - command:
-          exec: golang help
-          print: "\e[32mgolang\e[0m"
+          exec: go help
+          print: "\e[32mgo\e[0m"

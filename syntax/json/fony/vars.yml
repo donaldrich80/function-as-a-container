@@ -1,12 +1,12 @@
 image:
-  tag: markdown-magic
+  tag: fony
   context: ""
   dir: ""
   dockerfile: ""
 commands:
-  markdown-magic:
-    prefix: markdown
+  fony:
+    prefix: fony
     help: --help
     version: --version
-    github: DavidWells/markdown-magic
+    github: captainsafia/fony
 extra: ""

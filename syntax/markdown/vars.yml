@@ -14,4 +14,9 @@ commands:
     help: --help
     version: --version
     github: alanshaw/markdown-pdf
+  markdownlint:
+    prefix: markdownlint
+    help: --help
+    version: --version
+    github: DavidAnson/markdownlint
 extra: ""

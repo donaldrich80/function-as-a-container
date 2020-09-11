@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: task/Dockerfile
+
 ---
 
 # task
@@ -13,35 +14,35 @@ Various task runners
 
 ### Commander
 
-- [:octicons-mark-github-16: commander-cli/commander](https://github.com/commander-cli/commander)
+* [:octicons-mark-github-16: commander-cli/commander](https://github.com/commander-cli/commander)
 
 ### Just
 
-- [:octicons-mark-github-16: casey/just](https://github.com/casey/just)
+* [:octicons-mark-github-16: casey/just](https://github.com/casey/just)
 
 ### Navi
 
-- [:octicons-mark-github-16: denisidoro/navi](https://github.com/denisidoro/navi)
+* [:octicons-mark-github-16: denisidoro/navi](https://github.com/denisidoro/navi)
 
 ### Orbit
 
-- [:octicons-mark-github-16: gulien/orbit](https://github.com/gulien/orbit)
+* [:octicons-mark-github-16: gulien/orbit](https://github.com/gulien/orbit)
 
 ### Robo
 
-- [:octicons-mark-github-16: tj/robo](https://github.com/tj/robo)
+* [:octicons-mark-github-16: tj/robo](https://github.com/tj/robo)
 
 ### Task
 
-- [:octicons-book-16: Docs](https://taskfile.dev)
+* [:octicons-book-16: Docs](https://taskfile.dev)
 
-- [:octicons-mark-github-16: go-task/task](https://github.com/go-task/task)
+* [:octicons-mark-github-16: go-task/task](https://github.com/go-task/task)
 
 ### Tusk
 
-- [:octicons-book-16: Docs](https://rliebz.github.io/tusk)
+* [:octicons-book-16: Docs](https://rliebz.github.io/tusk)
 
-- [:octicons-mark-github-16: rliebz/tusk](https://github.com/rliebz/tusk)
+* [:octicons-mark-github-16: rliebz/tusk](https://github.com/rliebz/tusk)
 
 ## Image Commands
 

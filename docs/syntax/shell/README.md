@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: syntax/shell/Dockerfile
+
 ---
 
 # shell
@@ -11,17 +12,17 @@ source: syntax/shell/Dockerfile
 
 ### Bashate
 
-- [:octicons-mark-github-16: openstack/bashate](https://github.com/openstack/bashate)
+* [:octicons-mark-github-16: openstack/bashate](https://github.com/openstack/bashate)
 
 ### Shellcheck
 
-- [:octicons-mark-github-16: koalaman/shellcheck](https://github.com/koalaman/shellcheck)
+* [:octicons-mark-github-16: koalaman/shellcheck](https://github.com/koalaman/shellcheck)
 
 ### Shfmt
 
-- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/mvdan/sh)
+* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/mvdan/sh)
 
-- [:octicons-mark-github-16: mvdan/sh](https://github.com/mvdan/sh)
+* [:octicons-mark-github-16: mvdan/sh](https://github.com/mvdan/sh)
 
 ## Image Commands
 

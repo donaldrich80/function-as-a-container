@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: unsorted/maid/Dockerfile
+
 ---
 
 # maid
@@ -11,7 +12,7 @@ source: unsorted/maid/Dockerfile
 
 ### Maid
 
-- [:octicons-mark-github-16: egoist/maid](https://github.com/egoist/maid)
+* [:octicons-mark-github-16: egoist/maid](https://github.com/egoist/maid)
 
 ## Image Commands
 

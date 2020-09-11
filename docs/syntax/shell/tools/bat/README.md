@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: syntax/shell/tools/bat/Dockerfile
+
 ---
 
 # bat
@@ -11,7 +12,7 @@ source: syntax/shell/tools/bat/Dockerfile
 
 ### Bat
 
-- [:octicons-mark-github-16: sharkdp/bat](https://github.com/sharkdp/bat)
+* [:octicons-mark-github-16: sharkdp/bat](https://github.com/sharkdp/bat)
 
 ## Image Commands
 

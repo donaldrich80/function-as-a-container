@@ -1,28 +1,28 @@
 .buildx-prebuild: &buildx-prebuild
-  - docker context create default_tls
-  - docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
-  - docker buildx inspect --bootstrap
-  - docker buildx ls
+- docker context create default_tls
+- docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
+- docker buildx inspect --bootstrap
+- docker buildx ls
 
 .registry-login: &registry-login
-  - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
-  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+- echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
+- echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
 
 .var-print: &var-print
-  - echo $REGISTRY
-  - echo $REGISTRY_IMAGE
-  - echo $CI_REGISTRY_IMAGE
-  - echo $IMAGE_TAG
-  - echo $IMAGE_NAME
-  - echo $CI_BUILD_ARCHS
-  - echo $DOCKERFILE
-  - echo $DOCKER_BUILD_DIR
-  - echo $DOCKERHUB_USER
-  - echo $REPO_URL
-  - echo $DOCKER_HOST
-  - echo $DOCKER_TLS_CERTDIR
-  - echo $DOCKER_CLI_EXPERIMENTAL
-  - echo $DOCKER_DRIVER
+- echo $REGISTRY
+- echo $REGISTRY_IMAGE
+- echo $CI_REGISTRY_IMAGE
+- echo $IMAGE_TAG
+- echo $IMAGE_NAME
+- echo $CI_BUILD_ARCHS
+- echo $DOCKERFILE
+- echo $DOCKER_BUILD_DIR
+- echo $DOCKERHUB_USER
+- echo $REPO_URL
+- echo $DOCKER_HOST
+- echo $DOCKER_TLS_CERTDIR
+- echo $DOCKER_CLI_EXPERIMENTAL
+- echo $DOCKER_DRIVER
 
 build:glab:
   retry: 2
@@ -52,9 +52,9 @@ build:glab:
       command: ["--experimental"]
   variables:
     REGISTRY: $DOCKERHUB_USER
-    #    DOCKER_BUILD_DIR: git/gitlab/archive/glab
-    #    DOCKER_BUILD_CONTEXT: git/gitlab/archive/glab
-    #    DOCKERFILE: Dockerfile
+#    DOCKER_BUILD_DIR: git/gitlab/archive/glab
+#    DOCKER_BUILD_CONTEXT: git/gitlab/archive/glab
+#    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_VERIFY: 1
@@ -63,7 +63,7 @@ build:glab:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "git/gitlab/archive/glab/*"
+      - "git/gitlab/archive/glab/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
@@ -74,7 +74,7 @@ build:glab:
 
 docs:glab:
   needs:
-    - build:glab
+  - build:glab
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
@@ -91,12 +91,12 @@ docs:glab:
     - docker run --rm donaldrich/function:glab help > $CI_PROJECT_DIR/.meta/snippets/config/glab.md || true
     - docker run --rm donaldrich/function:glab validate > $CI_PROJECT_DIR/.meta/snippets/version/glab-docker.md || true
     - docker image inspect donaldrich/function:glab | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/glab.md
-    #  - docker history donaldrich/function:glab > $CI_PROJECT_DIR/.meta/snippets/layers/glab.md || true
+   #  - docker history donaldrich/function:glab > $CI_PROJECT_DIR/.meta/snippets/layers/glab.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
-    #    DOCKER_BUILD_DIR: git/gitlab/archive/glab
-    #    DOCKER_BUILD_CONTEXT: git/gitlab/archive/glab
-    #    DOCKERFILE: Dockerfile
+#    DOCKER_BUILD_DIR: git/gitlab/archive/glab
+#    DOCKER_BUILD_CONTEXT: git/gitlab/archive/glab
+#    DOCKERFILE: Dockerfile
     GIT_STRATEGY: fetch
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_VERIFY: 1
@@ -105,7 +105,7 @@ docs:glab:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "git/gitlab/archive/glab/*"
+      - "git/gitlab/archive/glab/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: docker/tools/docker-shell/Dockerfile
+
 ---
 
 # docker-shell
@@ -11,7 +12,7 @@ source: docker/tools/docker-shell/Dockerfile
 
 ### Docker-Shell
 
-- [:octicons-mark-github-16: Trendyol/docker-shell](https://github.com/Trendyol/docker-shell)
+* [:octicons-mark-github-16: Trendyol/docker-shell](https://github.com/Trendyol/docker-shell)
 
 ## Image Commands
 

@@ -9,25 +9,19 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
-      - id: trailing-whitespace
-  # - repo: local
-  #   hooks:
-  #     - id: detect-secrets
-  #       name: Detect secrets
-  #       description: Detects high entropy strings that are likely to be passwords.
-  #       entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
-  #       # args: ['scan', '--base64-limit', '4.5', '--hex-limit', '3']
-  #       args: ["scan"]
-  #       language: docker_image
-  #       files: .*
-  - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: 22d0ae23e1845cab31d25146d4b74e89e66cdac1
+        args: ["--fix=lf"]
+  - repo: local
     hooks:
-      - id: secrets-gitleaks
-      - id: secrets-yelp
-      - id: lint-markdown-markdownlint
-      - id: lint-yaml-yamllint
-      - id: lint-markdown-misspell
+      - id: gitleaks
+        name: Gitleaks
+        entry: zricethezav/gitleaks
+        language: docker_image
+  # -   repo: local
+  #     hooks:
+  #     -   id: check-x
+  #         name: Check X
+  #         entry: ./run-all.sh
+  #         language: script
   - repo: https://github.com/prettier/prettier
     rev: 2.1.2
     hooks:

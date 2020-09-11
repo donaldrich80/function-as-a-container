@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: network/httpie/Dockerfile
+
 ---
 
 # httpie
@@ -11,9 +12,9 @@ source: network/httpie/Dockerfile
 
 ### Httpie
 
-- [:octicons-book-16: Docs](https://httpie.org)
+* [:octicons-book-16: Docs](https://httpie.org)
 
-- [:octicons-mark-github-16: jakubroztocil/httpie](https://github.com/jakubroztocil/httpie)
+* [:octicons-mark-github-16: jakubroztocil/httpie](https://github.com/jakubroztocil/httpie)
 
 ## Image Commands
 

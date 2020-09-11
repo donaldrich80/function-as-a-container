@@ -88,7 +88,7 @@ docs:packer:
     - docker run --rm donaldrich/function:packer help > $CI_PROJECT_DIR/.meta/snippets/config/packer.md || true
     - docker run --rm donaldrich/function:packer validate > $CI_PROJECT_DIR/.meta/snippets/version/packer-docker.md || true
     - docker image inspect donaldrich/function:packer | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/packer.md
-    #  - docker history donaldrich/function:packer > $CI_PROJECT_DIR/.meta/snippets/layers/packer.md || true
+# - docker history donaldrich/function:packer > $CI_PROJECT_DIR/.meta/snippets/layers/packer.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

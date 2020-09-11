@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: aws/cloud-nuke/Dockerfile
+
 ---
 
 # cloud-nuke
@@ -11,7 +12,7 @@ source: aws/cloud-nuke/Dockerfile
 
 ### Cloud-Nuke
 
-- [:octicons-mark-github-16: gruntwork-io/cloud-nuke](https://github.com/gruntwork-io/cloud-nuke)
+* [:octicons-mark-github-16: gruntwork-io/cloud-nuke](https://github.com/gruntwork-io/cloud-nuke)
 
 ## Image Commands
 

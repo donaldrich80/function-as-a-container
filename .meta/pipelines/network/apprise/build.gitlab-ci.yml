@@ -88,7 +88,7 @@ docs:apprise:
     - docker run --rm donaldrich/function:apprise help > $CI_PROJECT_DIR/.meta/snippets/config/apprise.md || true
     - docker run --rm donaldrich/function:apprise validate > $CI_PROJECT_DIR/.meta/snippets/version/apprise-docker.md || true
     - docker image inspect donaldrich/function:apprise | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/apprise.md
-    #  - docker history donaldrich/function:apprise > $CI_PROJECT_DIR/.meta/snippets/layers/apprise.md || true
+# - docker history donaldrich/function:apprise > $CI_PROJECT_DIR/.meta/snippets/layers/apprise.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

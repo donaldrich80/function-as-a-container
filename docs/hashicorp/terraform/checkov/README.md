@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: hashicorp/terraform/checkov/Dockerfile
+
 ---
 
 # checkov
@@ -11,9 +12,9 @@ source: hashicorp/terraform/checkov/Dockerfile
 
 ### Checkov
 
-- [:octicons-book-16: Docs](https://www.checkov.io)
+* [:octicons-book-16: Docs](https://www.checkov.io)
 
-- [:octicons-mark-github-16: bridgecrewio/checkov](https://github.com/bridgecrewio/checkov)
+* [:octicons-mark-github-16: bridgecrewio/checkov](https://github.com/bridgecrewio/checkov)
 
 ## Image Commands
 

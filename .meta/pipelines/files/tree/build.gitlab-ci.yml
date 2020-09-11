@@ -88,7 +88,7 @@ docs:tree:
     - docker run --rm donaldrich/function:tree help > $CI_PROJECT_DIR/.meta/snippets/config/tree.md || true
     - docker run --rm donaldrich/function:tree validate > $CI_PROJECT_DIR/.meta/snippets/version/tree-docker.md || true
     - docker image inspect donaldrich/function:tree | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/tree.md
-    #  - docker history donaldrich/function:tree > $CI_PROJECT_DIR/.meta/snippets/layers/tree.md || true
+# - docker history donaldrich/function:tree > $CI_PROJECT_DIR/.meta/snippets/layers/tree.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

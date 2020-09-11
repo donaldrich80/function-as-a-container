@@ -88,7 +88,7 @@ docs:fony:
     - docker run --rm donaldrich/function:fony help > $CI_PROJECT_DIR/.meta/snippets/config/fony.md || true
     - docker run --rm donaldrich/function:fony validate > $CI_PROJECT_DIR/.meta/snippets/version/fony-docker.md || true
     - docker image inspect donaldrich/function:fony | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/fony.md
-    #  - docker history donaldrich/function:fony > $CI_PROJECT_DIR/.meta/snippets/layers/fony.md || true
+# - docker history donaldrich/function:fony > $CI_PROJECT_DIR/.meta/snippets/layers/fony.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

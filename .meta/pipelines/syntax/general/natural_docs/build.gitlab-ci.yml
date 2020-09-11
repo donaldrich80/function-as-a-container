@@ -88,7 +88,7 @@ docs:naturaldocs:
     - docker run --rm donaldrich/function:naturaldocs help > $CI_PROJECT_DIR/.meta/snippets/config/naturaldocs.md || true
     - docker run --rm donaldrich/function:naturaldocs validate > $CI_PROJECT_DIR/.meta/snippets/version/naturaldocs-docker.md || true
     - docker image inspect donaldrich/function:naturaldocs | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/naturaldocs.md
-    #  - docker history donaldrich/function:naturaldocs > $CI_PROJECT_DIR/.meta/snippets/layers/naturaldocs.md || true
+# - docker history donaldrich/function:naturaldocs > $CI_PROJECT_DIR/.meta/snippets/layers/naturaldocs.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

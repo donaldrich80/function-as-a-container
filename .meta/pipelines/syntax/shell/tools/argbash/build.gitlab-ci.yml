@@ -88,7 +88,7 @@ docs:argbash:
     - docker run --rm donaldrich/function:argbash help > $CI_PROJECT_DIR/.meta/snippets/config/argbash.md || true
     - docker run --rm donaldrich/function:argbash validate > $CI_PROJECT_DIR/.meta/snippets/version/argbash-docker.md || true
     - docker image inspect donaldrich/function:argbash | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/argbash.md
-    #  - docker history donaldrich/function:argbash > $CI_PROJECT_DIR/.meta/snippets/layers/argbash.md || true
+# - docker history donaldrich/function:argbash > $CI_PROJECT_DIR/.meta/snippets/layers/argbash.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

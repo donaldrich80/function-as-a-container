@@ -88,7 +88,7 @@ docs:json2hcl:
     - docker run --rm donaldrich/function:json2hcl help > $CI_PROJECT_DIR/.meta/snippets/config/json2hcl.md || true
     - docker run --rm donaldrich/function:json2hcl validate > $CI_PROJECT_DIR/.meta/snippets/version/json2hcl-docker.md || true
     - docker image inspect donaldrich/function:json2hcl | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/json2hcl.md
-    #  - docker history donaldrich/function:json2hcl > $CI_PROJECT_DIR/.meta/snippets/layers/json2hcl.md || true
+# - docker history donaldrich/function:json2hcl > $CI_PROJECT_DIR/.meta/snippets/layers/json2hcl.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

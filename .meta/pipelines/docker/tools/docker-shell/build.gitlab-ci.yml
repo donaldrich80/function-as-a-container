@@ -88,7 +88,7 @@ docs:docker-shell:
     - docker run --rm donaldrich/function:docker-shell help > $CI_PROJECT_DIR/.meta/snippets/config/docker-shell.md || true
     - docker run --rm donaldrich/function:docker-shell validate > $CI_PROJECT_DIR/.meta/snippets/version/docker-shell-docker.md || true
     - docker image inspect donaldrich/function:docker-shell | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/docker-shell.md
-    #  - docker history donaldrich/function:docker-shell > $CI_PROJECT_DIR/.meta/snippets/layers/docker-shell.md || true
+# - docker history donaldrich/function:docker-shell > $CI_PROJECT_DIR/.meta/snippets/layers/docker-shell.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

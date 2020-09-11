@@ -88,7 +88,7 @@ docs:terraform-provider-keycloak:
     - docker run --rm donaldrich/function:terraform-provider-keycloak help > $CI_PROJECT_DIR/.meta/snippets/config/terraform-provider-keycloak.md || true
     - docker run --rm donaldrich/function:terraform-provider-keycloak validate > $CI_PROJECT_DIR/.meta/snippets/version/terraform-provider-keycloak-docker.md || true
     - docker image inspect donaldrich/function:terraform-provider-keycloak | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/terraform-provider-keycloak.md
-    #  - docker history donaldrich/function:terraform-provider-keycloak > $CI_PROJECT_DIR/.meta/snippets/layers/terraform-provider-keycloak.md || true
+# - docker history donaldrich/function:terraform-provider-keycloak > $CI_PROJECT_DIR/.meta/snippets/layers/terraform-provider-keycloak.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

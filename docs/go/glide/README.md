@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: go/glide/Dockerfile
-
 ---
 
 # glide
@@ -12,9 +11,9 @@ source: go/glide/Dockerfile
 
 ### Glide
 
-* [:octicons-book-16: Docs](https://glide.sh)
+- [:octicons-book-16: Docs](https://glide.sh)
 
-* [:octicons-mark-github-16: Masterminds/glide](https://github.com/Masterminds/glide)
+- [:octicons-mark-github-16: Masterminds/glide](https://github.com/Masterminds/glide)
 
 ## Image Commands
 

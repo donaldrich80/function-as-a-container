@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: docker/lint/dockerfilelint/Dockerfile
-
 ---
 
 # dockerfilelint
@@ -12,9 +11,9 @@ source: docker/lint/dockerfilelint/Dockerfile
 
 ### Dockerfilelint
 
-* [:octicons-mark-github-16: replicatedhq/dockerfilelint](https://github.com/replicatedhq/dockerfilelint)
+- [:octicons-mark-github-16: replicatedhq/dockerfilelint](https://github.com/replicatedhq/dockerfilelint)
 
-* [site](https://www.fromlatest.io)
+- [site](https://www.fromlatest.io)
 
 ## Image Commands
 

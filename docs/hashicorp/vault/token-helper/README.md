@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/vault/token-helper/Dockerfile
-
 ---
 
 # vault-token-helper
@@ -12,7 +11,7 @@ source: hashicorp/vault/token-helper/Dockerfile
 
 ### Vault-Token-Helper
 
-* [:octicons-mark-github-16: joemiller/vault-token-helper](https://github.com/joemiller/vault-token-helper)
+- [:octicons-mark-github-16: joemiller/vault-token-helper](https://github.com/joemiller/vault-token-helper)
 
 ## Image Commands
 

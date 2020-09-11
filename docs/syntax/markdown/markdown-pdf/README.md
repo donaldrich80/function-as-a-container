@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/markdown/markdown-pdf/Dockerfile
-
 ---
 
 # markdown-pdf
@@ -12,7 +11,7 @@ source: syntax/markdown/markdown-pdf/Dockerfile
 
 ### Markdown-Pdf
 
-* [:octicons-mark-github-16: alanshaw/markdown-pdf](https://github.com/alanshaw/markdown-pdf)
+- [:octicons-mark-github-16: alanshaw/markdown-pdf](https://github.com/alanshaw/markdown-pdf)
 
 ## Image Commands
 

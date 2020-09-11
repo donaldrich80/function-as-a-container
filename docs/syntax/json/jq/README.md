@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/json/jq/Dockerfile
-
 ---
 
 # jq
@@ -12,11 +11,11 @@ source: syntax/json/jq/Dockerfile
 
 ### Jq
 
-* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/stedolan/jq)
+- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/stedolan/jq)
 
-* [:octicons-book-16: Docs](https://stedolan.github.io/jq)
+- [:octicons-book-16: Docs](https://stedolan.github.io/jq)
 
-* [:octicons-mark-github-16: stedolan/jq](https://github.com/stedolan/jq)
+- [:octicons-mark-github-16: stedolan/jq](https://github.com/stedolan/jq)
 
 ## Image Commands
 

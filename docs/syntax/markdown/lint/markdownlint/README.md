@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/markdown/lint/markdownlint/Dockerfile
-
 ---
 
 # markdownlint
@@ -12,7 +11,7 @@ source: syntax/markdown/lint/markdownlint/Dockerfile
 
 ### Markdownlint
 
-* [:octicons-mark-github-16: DavidAnson/markdownlint](https://github.com/DavidAnson/markdownlint)
+- [:octicons-mark-github-16: DavidAnson/markdownlint](https://github.com/DavidAnson/markdownlint)
 
 ## Image Commands
 

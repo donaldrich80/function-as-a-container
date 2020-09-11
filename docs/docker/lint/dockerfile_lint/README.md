@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: docker/lint/dockerfile_lint/Dockerfile
-
 ---
 
 # dockerfile_lint
@@ -12,7 +11,7 @@ source: docker/lint/dockerfile_lint/Dockerfile
 
 ### Dockerfile_lint
 
-* [:octicons-mark-github-16: https://github.com/projectatomic/dockerfile_lint](https://github.com/https://github.com/projectatomic/dockerfile_lint)
+- [:octicons-mark-github-16: https://github.com/projectatomic/dockerfile_lint](https://github.com/https://github.com/projectatomic/dockerfile_lint)
 
 ## Image Commands
 

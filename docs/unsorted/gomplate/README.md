@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: unsorted/gomplate/Dockerfile
-
 ---
 
 # gomplate
@@ -12,9 +11,9 @@ source: unsorted/gomplate/Dockerfile
 
 ### Gomplate
 
-* [:octicons-book-16: Docs](https://docs.gomplate.ca)
+- [:octicons-book-16: Docs](https://docs.gomplate.ca)
 
-* [:octicons-mark-github-16: hairyhenderson/gomplate](https://github.com/hairyhenderson/gomplate)
+- [:octicons-mark-github-16: hairyhenderson/gomplate](https://github.com/hairyhenderson/gomplate)
 
 ## Image Commands
 

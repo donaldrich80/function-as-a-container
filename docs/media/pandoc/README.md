@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: media/pandoc/Dockerfile
-
 ---
 
 # pandoc
@@ -12,7 +11,7 @@ source: media/pandoc/Dockerfile
 
 ### Pandoc
 
-* [:octicons-mark-github-16: jgm/pandoc](https://github.com/jgm/pandoc)
+- [:octicons-mark-github-16: jgm/pandoc](https://github.com/jgm/pandoc)
 
 ## Image Commands
 

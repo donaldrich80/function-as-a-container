@@ -1,1 +1,1 @@
-{ path : syntax/markdown/lint/markdownlint }
+{ "path": syntax / markdown / lint / markdownlint }

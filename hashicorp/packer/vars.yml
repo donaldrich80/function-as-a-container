@@ -9,7 +9,7 @@ references:
     help: --help
     version: version
     github: YaleUniversity/packer-provisioner-goss
-    download: https://github.com/YaleUniversity/packer-provisioner-goss/releases/latest/download/packer-provisioner-goss-v1.3.0-linux-amd64
+    download: https://github.com/YaleUniversity/packer-provisioner-goss/releases/download/v2.0.0/packer-provisioner-goss-v2.0.0-linux-amd64.tar.gz
   packer-builder-arm-image:
     prefix: packer-builder-arm
     help: null

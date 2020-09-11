@@ -10,7 +10,7 @@ FROM    donaldrich/builder:latest                  AS packer-builder-arm-image-b
 COPY    --from=packer-builder-arm-image /bin/packer-builder-arm-image usr/local/bin/packer-builder-arm-image
 
 FROM donaldrich/builder:latest AS packer-provisioner-goss-builder
-RUN wget "https://github.com/YaleUniversity/packer-provisioner-goss/releases/latest/download/packer-provisioner-goss-v1.3.0-linux-amd64" -O /usr/local/bin/packer-provisioner-goss
+RUN wget "https://github.com/YaleUniversity/packer-provisioner-goss/releases/latest/download/packer-provisioner-goss-v2.0.0-linux-amd64" -O /usr/local/bin/packer-provisioner-goss
 RUN chmod +rx /usr/local/bin/packer-provisioner-goss
 RUN upx /usr/local/bin/packer-provisioner-goss
 

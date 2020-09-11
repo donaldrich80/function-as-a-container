@@ -19,6 +19,8 @@ include:
   - local: .meta/pipelines/hashicorp/terraform/archive/terraform-provider-proxmox/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/terraform-provider-healthchecksio/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/terraform/checkov/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/terraform/terraform-provider-keycloak/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/token-helper/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/vault-ssh-helper/build.gitlab-ci.yml
@@ -40,15 +42,12 @@ include:
   - local: .meta/pipelines/syntax/general/natural_docs/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/hcl2json/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/jq/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/fony/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/json2hcl/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/jsonnet/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/show-struct/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/markdown/lint/markdown-magic/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/markdown/lint/markdownlint/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/json/fony/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/lint/mdl/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/lint/remark-lint/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/markdown/markdown-pdf/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/tools/argbash/build.gitlab-ci.yml

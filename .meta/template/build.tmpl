@@ -71,7 +71,7 @@ build:{{ (datasource "data").image.tag }}:
 
 docs:{{ (datasource "data").image.tag }}:
   needs:
-  - build:{{ (datasource "data").image.tag }}
+    - build:{{ (datasource "data").image.tag }}
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
@@ -88,7 +88,7 @@ docs:{{ (datasource "data").image.tag }}:
     - docker run --rm donaldrich/function:{{ (datasource "data").image.tag }} help > $CI_PROJECT_DIR/.meta/snippets/config/{{ (datasource "data").image.tag }}.md || true
     - docker run --rm donaldrich/function:{{ (datasource "data").image.tag }} validate > $CI_PROJECT_DIR/.meta/snippets/version/{{ (datasource "data").image.tag }}-docker.md || true
     - docker image inspect donaldrich/function:{{ (datasource "data").image.tag }} | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/{{ (datasource "data").image.tag }}.md
-   #  - docker history donaldrich/function:{{ (datasource "data").image.tag }} > $CI_PROJECT_DIR/.meta/snippets/layers/{{ (datasource "data").image.tag }}.md || true
+# - docker history donaldrich/function:{{ (datasource "data").image.tag }} > $CI_PROJECT_DIR/.meta/snippets/layers/{{ (datasource "data").image.tag }}.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

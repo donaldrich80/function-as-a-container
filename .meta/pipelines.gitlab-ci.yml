@@ -56,7 +56,6 @@ include:
   - local: .meta/pipelines/syntax/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/yaml/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
-  - local: .meta/pipelines/task/archive/commander/build.gitlab-ci.yml
   - local: .meta/pipelines/task/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/container-structure-test/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/converge/build.gitlab-ci.yml

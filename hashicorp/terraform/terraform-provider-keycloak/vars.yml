@@ -1,0 +1,14 @@
+image:
+  tag: terraform-provider-keycloak
+  context: ""
+  dir: ""
+  dockerfile: ""
+  download: https://github.com/mrparkers/terraform-provider-keycloak/releases/download/1.20.0/terraform-provider-keycloak_v1.20.0_linux_amd64.zip
+commands:
+  terraform-provider-keycloak:
+    prefix: terraform-provider-keycloak
+    help: null
+    version: null
+    github: mrparkers/terraform-provider-keycloak
+    docs: https://mrparkers.github.io/terraform-provider-keycloak
+extra: ""

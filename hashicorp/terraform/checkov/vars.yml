@@ -1,0 +1,13 @@
+image:
+  tag: checkov
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  checkov:
+    prefix: checkov
+    help: null
+    version: null
+    github: bridgecrewio/checkov
+    docs: https://www.checkov.io
+extra: ""

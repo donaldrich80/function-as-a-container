@@ -1,0 +1,12 @@
+image:
+  tag: fony
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  fony:
+    prefix: fony
+    help: --help
+    version: --version
+    github: captainsafia/fony
+extra: ""

@@ -1,0 +1,33 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:markdown .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:markdown validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:markdown
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: markdown --version
+          print: "\e[32mmarkdown\e[0m"
+      - command:
+          exec: markdown-pdf --version
+          print: "\e[32mmarkdown-pdf\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: markdown --help
+          print: "\e[32mmarkdown\e[0m"
+      - command:
+          exec: markdown-pdf --help
+          print: "\e[32mmarkdown-pdf\e[0m"

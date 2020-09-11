@@ -1,13 +1,11 @@
+Usage: dockerfile_lint [options] [command]
 
-  Usage: dockerfile_lint [options] [command]
-
-
-  Commands:
+Commands:
 
     image <imageid>  Lint a local docker image matching <imageid>.
      The --dockerfile option is ignored when this command is used.
 
-  Options:
+Options:
 
     -h, --help                                output usage information
     -j, --json                                Show results in JSON format

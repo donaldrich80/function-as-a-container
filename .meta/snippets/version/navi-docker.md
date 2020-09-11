@@ -13,7 +13,6 @@
 [32mCommand: tar: exit-status: matches expectation: [0][0m
 [32mCommand: openssl: exit-status: matches expectation: [0][0m
 
-
 Total Duration: 0.044s
 [32mCount: 14, Failed: 0, Skipped: 0
 [0m

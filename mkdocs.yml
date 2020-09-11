@@ -12,7 +12,7 @@ extra_css:
 
 # extra_javascript:
 #   - https://unpkg.com/mermaid/dist/mermaid.min.js
- 
+
 docs_dir: docs
 theme:
   favicon: .meta/theme/assets/images/favicon.png

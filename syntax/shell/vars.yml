@@ -14,4 +14,11 @@ commands:
     help: --help
     version: --version
     github: openstack/bashate
+  shfmt:
+    prefix: shfmt
+    help: -h
+    version: -version
+    github: mvdan/sh
+    docker: mvdan/sh
+    base: mvdan/shfmt
 extra: ""

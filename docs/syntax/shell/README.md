@@ -18,6 +18,12 @@ source: syntax/shell/Dockerfile
 
 * [:octicons-mark-github-16: koalaman/shellcheck](https://github.com/koalaman/shellcheck)
 
+### Shfmt
+
+* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/mvdan/sh)
+
+* [:octicons-mark-github-16: mvdan/sh](https://github.com/mvdan/sh)
+
 ## Image Commands
 
 ### Container shell

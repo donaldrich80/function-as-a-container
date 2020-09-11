@@ -38,8 +38,8 @@ commands:
   #   version: version
   #   github: fishi0x01/vsh
   #   download: https://github.com/fishi0x01/vsh/releases/download/v0.6.2/vsh_linux_amd64
-#   vault-unseal:
-#     github: blockloop/vault-unseal-docker
+  #   vault-unseal:
+  #     github: blockloop/vault-unseal-docker
   vaultenv:
     prefix: vaultenv
     help: --help

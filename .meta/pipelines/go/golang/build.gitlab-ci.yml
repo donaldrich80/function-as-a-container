@@ -88,7 +88,7 @@ docs:golang:
     - docker run --rm donaldrich/function:golang help > $CI_PROJECT_DIR/.meta/snippets/config/golang.md || true
     - docker run --rm donaldrich/function:golang validate > $CI_PROJECT_DIR/.meta/snippets/version/golang-docker.md || true
     - docker image inspect donaldrich/function:golang | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/golang.md
-    #  - docker history donaldrich/function:golang > $CI_PROJECT_DIR/.meta/snippets/layers/golang.md || true
+# - docker history donaldrich/function:golang > $CI_PROJECT_DIR/.meta/snippets/layers/golang.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

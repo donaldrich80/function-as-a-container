@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: homebrew/Dockerfile
+
 ---
 
 # homebrew
@@ -11,11 +12,11 @@ source: homebrew/Dockerfile
 
 ### Homebrew
 
-- [:octicons-book-16: Docs](https://docs.brew.sh)
+* [:octicons-book-16: Docs](https://docs.brew.sh)
 
-- [:octicons-mark-github-16: Homebrew/brew](https://github.com/Homebrew/brew)
+* [:octicons-mark-github-16: Homebrew/brew](https://github.com/Homebrew/brew)
 
-- [site](https://brew.sh)
+* [site](https://brew.sh)
 
 ## Image Commands
 

@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: files/duc/Dockerfile
+
 ---
 
 # duc
@@ -11,9 +12,9 @@ source: files/duc/Dockerfile
 
 ### Duc
 
-- [:octicons-book-16: Docs](http://duc.zevv.nl)
+* [:octicons-book-16: Docs](http://duc.zevv.nl)
 
-- [:octicons-mark-github-16: zevv/duc](https://github.com/zevv/duc)
+* [:octicons-mark-github-16: zevv/duc](https://github.com/zevv/duc)
 
 ## Image Commands
 

@@ -88,7 +88,7 @@ docs:man:
     - docker run --rm donaldrich/function:man help > $CI_PROJECT_DIR/.meta/snippets/config/man.md || true
     - docker run --rm donaldrich/function:man validate > $CI_PROJECT_DIR/.meta/snippets/version/man-docker.md || true
     - docker image inspect donaldrich/function:man | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/man.md
-    #  - docker history donaldrich/function:man > $CI_PROJECT_DIR/.meta/snippets/layers/man.md || true
+# - docker history donaldrich/function:man > $CI_PROJECT_DIR/.meta/snippets/layers/man.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

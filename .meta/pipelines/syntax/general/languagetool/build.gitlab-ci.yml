@@ -88,7 +88,7 @@ docs:languagetool:
     - docker run --rm donaldrich/function:languagetool help > $CI_PROJECT_DIR/.meta/snippets/config/languagetool.md || true
     - docker run --rm donaldrich/function:languagetool validate > $CI_PROJECT_DIR/.meta/snippets/version/languagetool-docker.md || true
     - docker image inspect donaldrich/function:languagetool | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/languagetool.md
-    #  - docker history donaldrich/function:languagetool > $CI_PROJECT_DIR/.meta/snippets/layers/languagetool.md || true
+# - docker history donaldrich/function:languagetool > $CI_PROJECT_DIR/.meta/snippets/layers/languagetool.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

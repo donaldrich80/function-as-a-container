@@ -88,7 +88,7 @@ docs:checkov:
     - docker run --rm donaldrich/function:checkov help > $CI_PROJECT_DIR/.meta/snippets/config/checkov.md || true
     - docker run --rm donaldrich/function:checkov validate > $CI_PROJECT_DIR/.meta/snippets/version/checkov-docker.md || true
     - docker image inspect donaldrich/function:checkov | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/checkov.md
-    #  - docker history donaldrich/function:checkov > $CI_PROJECT_DIR/.meta/snippets/layers/checkov.md || true
+# - docker history donaldrich/function:checkov > $CI_PROJECT_DIR/.meta/snippets/layers/checkov.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

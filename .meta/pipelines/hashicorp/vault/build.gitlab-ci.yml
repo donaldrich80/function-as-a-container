@@ -88,7 +88,7 @@ docs:vault:
     - docker run --rm donaldrich/function:vault help > $CI_PROJECT_DIR/.meta/snippets/config/vault.md || true
     - docker run --rm donaldrich/function:vault validate > $CI_PROJECT_DIR/.meta/snippets/version/vault-docker.md || true
     - docker image inspect donaldrich/function:vault | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/vault.md
-    #  - docker history donaldrich/function:vault > $CI_PROJECT_DIR/.meta/snippets/layers/vault.md || true
+# - docker history donaldrich/function:vault > $CI_PROJECT_DIR/.meta/snippets/layers/vault.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

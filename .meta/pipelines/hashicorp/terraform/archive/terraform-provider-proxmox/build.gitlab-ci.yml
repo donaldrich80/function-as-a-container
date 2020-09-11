@@ -88,7 +88,7 @@ docs:terraform-provider-proxmox:
     - docker run --rm donaldrich/function:terraform-provider-proxmox help > $CI_PROJECT_DIR/.meta/snippets/config/terraform-provider-proxmox.md || true
     - docker run --rm donaldrich/function:terraform-provider-proxmox validate > $CI_PROJECT_DIR/.meta/snippets/version/terraform-provider-proxmox-docker.md || true
     - docker image inspect donaldrich/function:terraform-provider-proxmox | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/terraform-provider-proxmox.md
-    #  - docker history donaldrich/function:terraform-provider-proxmox > $CI_PROJECT_DIR/.meta/snippets/layers/terraform-provider-proxmox.md || true
+# - docker history donaldrich/function:terraform-provider-proxmox > $CI_PROJECT_DIR/.meta/snippets/layers/terraform-provider-proxmox.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

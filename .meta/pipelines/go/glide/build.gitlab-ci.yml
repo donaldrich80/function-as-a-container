@@ -88,7 +88,7 @@ docs:glide:
     - docker run --rm donaldrich/function:glide help > $CI_PROJECT_DIR/.meta/snippets/config/glide.md || true
     - docker run --rm donaldrich/function:glide validate > $CI_PROJECT_DIR/.meta/snippets/version/glide-docker.md || true
     - docker image inspect donaldrich/function:glide | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/glide.md
-    #  - docker history donaldrich/function:glide > $CI_PROJECT_DIR/.meta/snippets/layers/glide.md || true
+# - docker history donaldrich/function:glide > $CI_PROJECT_DIR/.meta/snippets/layers/glide.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

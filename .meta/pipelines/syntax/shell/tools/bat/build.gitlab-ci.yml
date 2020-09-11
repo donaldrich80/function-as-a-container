@@ -88,7 +88,7 @@ docs:bat:
     - docker run --rm donaldrich/function:bat help > $CI_PROJECT_DIR/.meta/snippets/config/bat.md || true
     - docker run --rm donaldrich/function:bat validate > $CI_PROJECT_DIR/.meta/snippets/version/bat-docker.md || true
     - docker image inspect donaldrich/function:bat | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/bat.md
-    #  - docker history donaldrich/function:bat > $CI_PROJECT_DIR/.meta/snippets/layers/bat.md || true
+# - docker history donaldrich/function:bat > $CI_PROJECT_DIR/.meta/snippets/layers/bat.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

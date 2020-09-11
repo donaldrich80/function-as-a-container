@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: syntax/general/languagetool/Dockerfile
+
 ---
 
 # languagetool
@@ -11,9 +12,9 @@ source: syntax/general/languagetool/Dockerfile
 
 ### Languagetool
 
-- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/silviof/docker-languagetool)
+* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/silviof/docker-languagetool)
 
-- [:octicons-book-16: Docs](https://www.languagetool.org)
+* [:octicons-book-16: Docs](https://www.languagetool.org)
 
 ## Image Commands
 

@@ -88,7 +88,7 @@ docs:realize:
     - docker run --rm donaldrich/function:realize help > $CI_PROJECT_DIR/.meta/snippets/config/realize.md || true
     - docker run --rm donaldrich/function:realize validate > $CI_PROJECT_DIR/.meta/snippets/version/realize-docker.md || true
     - docker image inspect donaldrich/function:realize | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/realize.md
-    #  - docker history donaldrich/function:realize > $CI_PROJECT_DIR/.meta/snippets/layers/realize.md || true
+# - docker history donaldrich/function:realize > $CI_PROJECT_DIR/.meta/snippets/layers/realize.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

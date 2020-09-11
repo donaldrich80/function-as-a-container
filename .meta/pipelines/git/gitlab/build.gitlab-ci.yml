@@ -88,7 +88,7 @@ docs:gitlab:
     - docker run --rm donaldrich/function:gitlab help > $CI_PROJECT_DIR/.meta/snippets/config/gitlab.md || true
     - docker run --rm donaldrich/function:gitlab validate > $CI_PROJECT_DIR/.meta/snippets/version/gitlab-docker.md || true
     - docker image inspect donaldrich/function:gitlab | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/gitlab.md
-    #  - docker history donaldrich/function:gitlab > $CI_PROJECT_DIR/.meta/snippets/layers/gitlab.md || true
+# - docker history donaldrich/function:gitlab > $CI_PROJECT_DIR/.meta/snippets/layers/gitlab.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

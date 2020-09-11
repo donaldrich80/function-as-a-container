@@ -88,7 +88,7 @@ docs:td4a:
     - docker run --rm donaldrich/function:td4a help > $CI_PROJECT_DIR/.meta/snippets/config/td4a.md || true
     - docker run --rm donaldrich/function:td4a validate > $CI_PROJECT_DIR/.meta/snippets/version/td4a-docker.md || true
     - docker image inspect donaldrich/function:td4a | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/td4a.md
-    #  - docker history donaldrich/function:td4a > $CI_PROJECT_DIR/.meta/snippets/layers/td4a.md || true
+# - docker history donaldrich/function:td4a > $CI_PROJECT_DIR/.meta/snippets/layers/td4a.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

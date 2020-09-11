@@ -88,7 +88,7 @@ docs:rash:
     - docker run --rm donaldrich/function:rash help > $CI_PROJECT_DIR/.meta/snippets/config/rash.md || true
     - docker run --rm donaldrich/function:rash validate > $CI_PROJECT_DIR/.meta/snippets/version/rash-docker.md || true
     - docker image inspect donaldrich/function:rash | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/rash.md
-    #  - docker history donaldrich/function:rash > $CI_PROJECT_DIR/.meta/snippets/layers/rash.md || true
+# - docker history donaldrich/function:rash > $CI_PROJECT_DIR/.meta/snippets/layers/rash.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

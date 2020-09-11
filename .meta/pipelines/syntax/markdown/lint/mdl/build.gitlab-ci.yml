@@ -88,7 +88,7 @@ docs:mdl:
     - docker run --rm donaldrich/function:mdl help > $CI_PROJECT_DIR/.meta/snippets/config/mdl.md || true
     - docker run --rm donaldrich/function:mdl validate > $CI_PROJECT_DIR/.meta/snippets/version/mdl-docker.md || true
     - docker image inspect donaldrich/function:mdl | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/mdl.md
-    #  - docker history donaldrich/function:mdl > $CI_PROJECT_DIR/.meta/snippets/layers/mdl.md || true
+# - docker history donaldrich/function:mdl > $CI_PROJECT_DIR/.meta/snippets/layers/mdl.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

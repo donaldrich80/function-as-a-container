@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: testing/goss/Dockerfile
+
 ---
 
 # goss
@@ -11,9 +12,9 @@ source: testing/goss/Dockerfile
 
 ### Goss
 
-- [:octicons-book-16: Docs](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md)
+* [:octicons-book-16: Docs](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md)
 
-- [:octicons-mark-github-16: aelsabbahy/goss](https://github.com/aelsabbahy/goss)
+* [:octicons-mark-github-16: aelsabbahy/goss](https://github.com/aelsabbahy/goss)
 
 ## Image Commands
 

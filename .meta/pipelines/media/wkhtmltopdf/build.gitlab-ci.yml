@@ -88,7 +88,7 @@ docs:wkhtmltopdf:
     - docker run --rm donaldrich/function:wkhtmltopdf help > $CI_PROJECT_DIR/.meta/snippets/config/wkhtmltopdf.md || true
     - docker run --rm donaldrich/function:wkhtmltopdf validate > $CI_PROJECT_DIR/.meta/snippets/version/wkhtmltopdf-docker.md || true
     - docker image inspect donaldrich/function:wkhtmltopdf | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/wkhtmltopdf.md
-    #  - docker history donaldrich/function:wkhtmltopdf > $CI_PROJECT_DIR/.meta/snippets/layers/wkhtmltopdf.md || true
+# - docker history donaldrich/function:wkhtmltopdf > $CI_PROJECT_DIR/.meta/snippets/layers/wkhtmltopdf.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

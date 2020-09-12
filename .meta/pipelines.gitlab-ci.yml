@@ -3,7 +3,6 @@ include:
   - local: .meta/pipelines/files/tree/build.gitlab-ci.yml
   - local: .meta/pipelines/files/duc/build.gitlab-ci.yml
   - local: .meta/pipelines/aws/cloud-nuke/build.gitlab-ci.yml
-  - local: .meta/pipelines/docker/tools/docker-shell/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/lint/dockerfile_lint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/lint/dockerfilelint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/build.gitlab-ci.yml

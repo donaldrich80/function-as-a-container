@@ -17,6 +17,9 @@ tasks:
     usage: check package versions
     run:
       - command:
+          exec: duc --version
+          print: "\e[32mduc\e[0m"
+      - command:
           exec: fetch --version
           print: "\e[32mfetch\e[0m"
       - command:
@@ -35,11 +38,17 @@ tasks:
           exec: restic version
           print: "\e[32mrestic\e[0m"
       - command:
+          exec: tree --version
+          print: "\e[32mtree\e[0m"
+      - command:
           exec: upx --version
           print: "\e[32mupx\e[0m"
   help:
     usage: see config options
     run:
+      - command:
+          exec: duc --help
+          print: "\e[32mduc\e[0m"
       - command:
           exec: fetch --help
           print: "\e[32mfetch\e[0m"
@@ -58,6 +67,9 @@ tasks:
       - command:
           exec: restic --help
           print: "\e[32mrestic\e[0m"
+      - command:
+          exec: tree --help
+          print: "\e[32mtree\e[0m"
       - command:
           exec: upx --help
           print: "\e[32mupx\e[0m"

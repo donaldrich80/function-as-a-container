@@ -58,8 +58,14 @@ FROM donaldrich/builder:latest AS docker-slim-builder
 COPY --from=dslim/docker-slim /bin/docker-slim /usr/local/bin/docker-slim
 RUN upx /usr/local/bin/docker-slim
 
+FROM donaldrich/builder:go AS docker-shell-builder
+RUN git clone https://github.com/Trendyol/docker-shell.git /docker-shell
+WORKDIR /docker-shell
+RUN go build -o /usr/local/bin/docker-shell .
+
 FROM alpine
 
+COPY --from=docker-shell-builder  /usr/local/bin/docker-shell  /usr/local/bin/docker-shell
 COPY --from=docker-slim-builder /usr/local/bin/docker-slim /usr/local/bin/docker-slim
 COPY --from=docker-gen-builder /usr/local/bin/docker-gen /usr/local/bin/docker-gen
 COPY --from=dockerfile-generator-builder  /usr/local/bin/dfg  /usr/local/bin/dfg

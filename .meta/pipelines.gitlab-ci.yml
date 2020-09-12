@@ -1,9 +1,6 @@
 include:
   - local: .meta/pipelines/files/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/tree/build.gitlab-ci.yml
-  - local: .meta/pipelines/files/duc/build.gitlab-ci.yml
   - local: .meta/pipelines/aws/cloud-nuke/build.gitlab-ci.yml
-  - local: .meta/pipelines/docker/tools/docker-shell/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/lint/dockerfile_lint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/lint/dockerfilelint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/build.gitlab-ci.yml
@@ -16,7 +13,6 @@ include:
   - local: .meta/pipelines/syntax/json/json2hcl/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/show-struct/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/jsonnet/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/shell/tools/rash/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/tools/bat/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/tools/argbash/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/build.gitlab-ci.yml

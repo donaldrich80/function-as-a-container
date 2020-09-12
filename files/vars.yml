@@ -38,6 +38,16 @@ commands:
     version: --version
     docs: https://dev.yorhel.nl/ncdu
     download: https://dev.yorhel.nl/download/ncdu-linux-x86_64-1.14.2.tar.gz
+  tree:
+    prefix: tree
+    help: --help
+    version: --version
+  duc:
+    prefix: duc
+    help: --help
+    version: --version
+    github: zevv/duc
+    docs: http://duc.zevv.nl
   fetch:
     prefix: fetch
     help: --help

@@ -10,3 +10,6 @@ RUN chmod a+x /usr/local/bin/rash
 FROM alpine
 
 COPY --from=builder   /usr/local/bin/rash  /usr/local/bin/rash
+
+FROM rustagainshell/rash AS rash-builder
+COPY --from=rash-builder /bin/rash /usr/local/bin/rash

@@ -90,6 +90,11 @@ commands:
     version: --help
     github: ozankasikci/dockerfile-generator
     download: https://github.com/ozankasikci/dockerfile-generator/releases/download/v1.0.0/dfg_v1.0.0_linux_amd64
+  # docker-shell:
+  #   prefix: docker-shell
+  #   help: --help
+  #   version: --version
+  #   github: Trendyol/docker-shell
 references:
   buildx:
     misc: https://codefresh.io/docker-tutorial/announcing-docker-buildkit-support/

@@ -1,4 +1,3 @@
-
 FROM matejak/argbash as argbash-builder
 
 FROM alpine

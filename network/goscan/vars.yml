@@ -1,0 +1,12 @@
+image:
+  tag: goscan
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  goscan:
+    prefix: goscan
+    help: --help
+    version: --version
+    github: marco-lancini/goscan
+extra: ""

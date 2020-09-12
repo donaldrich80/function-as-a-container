@@ -10,6 +10,12 @@ source: files/Dockerfile
 
 ## Documentation
 
+### Duc
+
+* [:octicons-book-16: Docs](http://duc.zevv.nl)
+
+* [:octicons-mark-github-16: zevv/duc](https://github.com/zevv/duc)
+
 ### Fetch
 
 * [:octicons-mark-github-16: gruntwork-io/fetch](https://github.com/gruntwork-io/fetch)
@@ -33,6 +39,8 @@ source: files/Dockerfile
 ### Restic
 
 * [:octicons-mark-github-16: restic/restic](https://github.com/restic/restic)
+
+### Tree
 
 ### Upx
 

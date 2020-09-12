@@ -78,6 +78,12 @@ Docker related tools and utilities
 
 * [:octicons-mark-github-16: theupdateframework/notary](https://github.com/theupdateframework/notary)
 
+### Rash
+
+* [:octicons-book-16: Docs](https://rash.sh/)
+
+* [:octicons-mark-github-16: rash-sh/rash](https://github.com/rash-sh/rash)
+
 ## Image Commands
 
 ### Container shell

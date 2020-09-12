@@ -58,10 +58,6 @@ FROM donaldrich/builder:latest AS docker-slim-builder
 COPY --from=dslim/docker-slim /bin/docker-slim /usr/local/bin/docker-slim
 RUN upx /usr/local/bin/docker-slim
 
-FROM donaldrich/builder:latest AS rash-builder
-COPY --from=rustagainshell/rash /bin/rash /usr/local/bin/rash
-RUN upx /usr/local/bin/rash
-
 FROM donaldrich/builder:go AS docker-shell-builder
 RUN git clone https://github.com/Trendyol/docker-shell.git /docker-shell
 WORKDIR /docker-shell
@@ -74,7 +70,6 @@ COPY --from=docker-slim-builder /usr/local/bin/docker-slim /usr/local/bin/docker
 COPY --from=docker-gen-builder /usr/local/bin/docker-gen /usr/local/bin/docker-gen
 COPY --from=dockerfile-generator-builder  /usr/local/bin/dfg  /usr/local/bin/dfg
 COPY --from=hadolint-builder  /usr/local/bin/hadolint  /usr/local/bin/hadolint
-COPY --from=rust-builder /usr/local/bin/rust  /usr/local/bin/rust
 COPY --from=dobi-builder /usr/local/bin/dobi /usr/local/bin/dobi
 COPY --from=dive-builder  /usr/local/bin/dive  /usr/local/bin/dive
 COPY --from=dockfmt-builder  /usr/local/bin/dockfmt  /usr/local/bin/dockfmt

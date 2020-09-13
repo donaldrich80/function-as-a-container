@@ -1,0 +1,12 @@
+image:
+  tag: codespell
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  misspell:
+    prefix: codespell
+    help: --help
+    version: --version
+    github: codespell-project/codespell
+extra: ""

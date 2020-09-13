@@ -1,1 +1,0 @@
-Goss Provisioner for Packer

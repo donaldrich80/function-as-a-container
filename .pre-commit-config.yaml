@@ -21,7 +21,7 @@ repos:
   - repo: https://gitlab.com/donaldrich/function-as-a-container
     rev: 1719e2fa2574b7cf7116dfe3c2135246ed2d56c3
     hooks:
-      # - id: lint-markdown-markdownlint
+      - id: lint-markdown-markdownlint
       - id: lint-yaml-yamllint
       - id: gitleaks
       # - id: lint-markdown-misspell

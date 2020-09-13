@@ -45,7 +45,7 @@
   name: misspell
   entry: --entrypoint misspell donaldrich/function:misspell
   language: docker_image
-  args: ["."]
+  args: ["-w ."]
   types: [markdown]
 
 - id: mdspell

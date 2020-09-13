@@ -14,12 +14,13 @@ repos:
         name: gitleaks
         entry: zricethezav/gitleaks
         language: docker_image
-  # -   repo: local
-  #     hooks:
-  #     -   id: check-x
-  #         name: Check X
-  #         entry: ./run-all.sh
-  #         language: script
+  - repo: https://gitlab.com/donaldrich/function-as-a-container
+    rev: master
+    hooks:
+      - id: lint-markdown-markdownlint
+      # - id: lint-dockerfile-hadolint
+      - id: gitleaks
+      # - id: lint-markdown-misspell
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:

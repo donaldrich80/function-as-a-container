@@ -19,4 +19,9 @@ commands:
     help: --help
     version: --version
     github: DavidAnson/markdownlint
+  # markdown-spellcheck:
+  #   prefix: mdspell
+  #   help: --help
+  #   version: --version
+  #   github: lukeapage/node-markdown-spellcheck
 extra: ""

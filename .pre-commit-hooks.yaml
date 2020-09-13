@@ -27,11 +27,11 @@
   args: ["."]
   types: [markdown]
 
-- id: yamllint
+- id: lint-yaml-yamllint
   name: Lint yaml
   description: yamllint
   language: docker_image
-  entry: pipelinecomponents/yamllint yamllint
+  entry: --entrypoint yamllint pipelinecomponents/yamllint
   args: ["."]
   types: [yaml]
 
@@ -45,7 +45,7 @@
   name: misspell
   entry: --entrypoint misspell donaldrich/function:misspell
   language: docker_image
-  args: ["-w ."]
+  args: [-w, "."]
   types: [markdown]
 
 - id: mdspell

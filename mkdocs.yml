@@ -1,7 +1,11 @@
+# prettier-ignore
 site_name: !!python/object/apply:os.getenv ["CI_PROJECT_TITLE"]
+# prettier-ignore
 site_url: !!python/object/apply:os.getenv ["CI_PAGES_URL"]
 site_description: Functional Docker Images
+# prettier-ignore
 repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
+# prettier-ignore
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 repo_name: GitLab
 edit_uri: tree/master
@@ -41,10 +45,6 @@ plugins:
   - markdownextradata: {}
 
 extra:
-  external_links:
-    functions: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
-    web: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
-    pages: !!python/object/apply:os.getenv ["CI_PAGES_DOMAIN"]
   social:
     - icon: fontawesome/brands/gitlab
       link: https://gitlab.com/donaldrich/
@@ -59,8 +59,6 @@ markdown_extensions:
   - admonition:
   - codehilite:
   - footnotes:
-#   - markdown.extensions.toc:
-#       slugify: !!python/name:pymdownx.slugs.uslugify
   - markdown.extensions.smarty:
       smart_quotes: false
   - markdown.extensions.attr_list:
@@ -78,27 +76,22 @@ markdown_extensions:
   - pymdownx.critic:
   - pymdownx.details:
   - pymdownx.emoji:
+      # prettier-ignore
       emoji_index: !!python/name:materialx.emoji.twemoji
+      # prettier-ignore
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.inlinehilite:
   - pymdownx.magiclink:
-      # repo_url_shortener: true
-      # repo_url_shorthand: true
-      # social_url_shorthand: true
-      # social_url_shortener: true
-      # provider: 'gitlab'
-      # user: 'donaldrich'
-      # repo: 'modular-gitlab-ci'
   - pymdownx.mark:
   - pymdownx.progressbar:
   - pymdownx.smartsymbols:
   - pymdownx.snippets:
       base_path: meta/.snippets
   - pymdownx.superfences:
-      # make exceptions to highlighting of code:
       custom_fences:
         - name: mermaid
           class: mermaid
+          # prettier-ignore
           format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.tasklist:
       custom_checkbox: true

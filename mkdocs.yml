@@ -7,7 +7,7 @@ site_description: Functional Docker Images
 repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 # prettier-ignore
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
-repo_name: GitLab
+# repo_name: GitLab
 edit_uri: tree/master
 
 extra_css:

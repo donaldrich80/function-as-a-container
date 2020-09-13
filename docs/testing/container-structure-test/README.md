@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: testing/container-structure-test/Dockerfile
-
 ---
 
 # container-structure-test
@@ -12,9 +11,9 @@ source: testing/container-structure-test/Dockerfile
 
 ### Container-Structure-Test
 
-* [:octicons-book-16: Docs](https://github.com/GoogleContainerTools/container-structure-test#readme)
+- [:octicons-book-16: Docs](https://github.com/GoogleContainerTools/container-structure-test#readme)
 
-* [:octicons-mark-github-16: GoogleContainerTools/container-structure-test](https://github.com/GoogleContainerTools/container-structure-test)
+- [:octicons-mark-github-16: GoogleContainerTools/container-structure-test](https://github.com/GoogleContainerTools/container-structure-test)
 
 ## Image Commands
 

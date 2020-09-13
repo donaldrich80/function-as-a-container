@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: files/Dockerfile
-
 ---
 
 # files
@@ -12,41 +11,41 @@ source: files/Dockerfile
 
 ### Duc
 
-* [:octicons-book-16: Docs](http://duc.zevv.nl)
+- [:octicons-book-16: Docs](http://duc.zevv.nl)
 
-* [:octicons-mark-github-16: zevv/duc](https://github.com/zevv/duc)
+- [:octicons-mark-github-16: zevv/duc](https://github.com/zevv/duc)
 
 ### Fetch
 
-* [:octicons-mark-github-16: gruntwork-io/fetch](https://github.com/gruntwork-io/fetch)
+- [:octicons-mark-github-16: gruntwork-io/fetch](https://github.com/gruntwork-io/fetch)
 
 ### Fzf
 
-* [:octicons-mark-github-16: fzf](https://github.com/fzf)
+- [:octicons-mark-github-16: fzf](https://github.com/fzf)
 
 ### Ginstall
 
-* [:octicons-mark-github-16: whalehub/ginstall.sh](https://github.com/whalehub/ginstall.sh)
+- [:octicons-mark-github-16: whalehub/ginstall.sh](https://github.com/whalehub/ginstall.sh)
 
 ### Horcrux
 
-* [:octicons-mark-github-16: jesseduffield/horcrux](https://github.com/jesseduffield/horcrux)
+- [:octicons-mark-github-16: jesseduffield/horcrux](https://github.com/jesseduffield/horcrux)
 
 ### Ncdu
 
-* [:octicons-book-16: Docs](https://dev.yorhel.nl/ncdu)
+- [:octicons-book-16: Docs](https://dev.yorhel.nl/ncdu)
 
 ### Restic
 
-* [:octicons-mark-github-16: restic/restic](https://github.com/restic/restic)
+- [:octicons-mark-github-16: restic/restic](https://github.com/restic/restic)
 
 ### Tree
 
 ### Upx
 
-* [:octicons-book-16: Docs](https://upx.github.io)
+- [:octicons-book-16: Docs](https://upx.github.io)
 
-* [:octicons-mark-github-16: upx/upx](https://github.com/upx/upx)
+- [:octicons-mark-github-16: upx/upx](https://github.com/upx/upx)
 
 ## Image Commands
 

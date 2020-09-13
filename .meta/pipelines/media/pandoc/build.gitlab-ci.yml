@@ -88,7 +88,7 @@ docs:pandoc:
     - docker run --rm donaldrich/function:pandoc help > $CI_PROJECT_DIR/.meta/snippets/config/pandoc.md || true
     - docker run --rm donaldrich/function:pandoc validate > $CI_PROJECT_DIR/.meta/snippets/version/pandoc-docker.md || true
     - docker image inspect donaldrich/function:pandoc | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/pandoc.md
-# - docker history donaldrich/function:pandoc > $CI_PROJECT_DIR/.meta/snippets/layers/pandoc.md || true
+  # - docker history donaldrich/function:pandoc > $CI_PROJECT_DIR/.meta/snippets/layers/pandoc.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

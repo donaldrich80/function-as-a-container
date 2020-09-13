@@ -88,7 +88,7 @@ docs:terraform:
     - docker run --rm donaldrich/function:terraform help > $CI_PROJECT_DIR/.meta/snippets/config/terraform.md || true
     - docker run --rm donaldrich/function:terraform validate > $CI_PROJECT_DIR/.meta/snippets/version/terraform-docker.md || true
     - docker image inspect donaldrich/function:terraform | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/terraform.md
-# - docker history donaldrich/function:terraform > $CI_PROJECT_DIR/.meta/snippets/layers/terraform.md || true
+  # - docker history donaldrich/function:terraform > $CI_PROJECT_DIR/.meta/snippets/layers/terraform.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

@@ -88,7 +88,7 @@ docs:goscan:
     - docker run --rm donaldrich/function:goscan help > $CI_PROJECT_DIR/.meta/snippets/config/goscan.md || true
     - docker run --rm donaldrich/function:goscan validate > $CI_PROJECT_DIR/.meta/snippets/version/goscan-docker.md || true
     - docker image inspect donaldrich/function:goscan | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/goscan.md
-# - docker history donaldrich/function:goscan > $CI_PROJECT_DIR/.meta/snippets/layers/goscan.md || true
+  # - docker history donaldrich/function:goscan > $CI_PROJECT_DIR/.meta/snippets/layers/goscan.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

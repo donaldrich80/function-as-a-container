@@ -88,7 +88,7 @@ docs:gitlab-ci-local:
     - docker run --rm donaldrich/function:gitlab-ci-local help > $CI_PROJECT_DIR/.meta/snippets/config/gitlab-ci-local.md || true
     - docker run --rm donaldrich/function:gitlab-ci-local validate > $CI_PROJECT_DIR/.meta/snippets/version/gitlab-ci-local-docker.md || true
     - docker image inspect donaldrich/function:gitlab-ci-local | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/gitlab-ci-local.md
-# - docker history donaldrich/function:gitlab-ci-local > $CI_PROJECT_DIR/.meta/snippets/layers/gitlab-ci-local.md || true
+  # - docker history donaldrich/function:gitlab-ci-local > $CI_PROJECT_DIR/.meta/snippets/layers/gitlab-ci-local.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

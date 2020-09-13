@@ -88,7 +88,7 @@ docs:misspell:
     - docker run --rm donaldrich/function:misspell help > $CI_PROJECT_DIR/.meta/snippets/config/misspell.md || true
     - docker run --rm donaldrich/function:misspell validate > $CI_PROJECT_DIR/.meta/snippets/version/misspell-docker.md || true
     - docker image inspect donaldrich/function:misspell | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/misspell.md
-# - docker history donaldrich/function:misspell > $CI_PROJECT_DIR/.meta/snippets/layers/misspell.md || true
+  # - docker history donaldrich/function:misspell > $CI_PROJECT_DIR/.meta/snippets/layers/misspell.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

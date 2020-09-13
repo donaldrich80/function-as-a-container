@@ -88,7 +88,7 @@ docs:diagrams:
     - docker run --rm donaldrich/function:diagrams help > $CI_PROJECT_DIR/.meta/snippets/config/diagrams.md || true
     - docker run --rm donaldrich/function:diagrams validate > $CI_PROJECT_DIR/.meta/snippets/version/diagrams-docker.md || true
     - docker image inspect donaldrich/function:diagrams | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/diagrams.md
-# - docker history donaldrich/function:diagrams > $CI_PROJECT_DIR/.meta/snippets/layers/diagrams.md || true
+  # - docker history donaldrich/function:diagrams > $CI_PROJECT_DIR/.meta/snippets/layers/diagrams.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

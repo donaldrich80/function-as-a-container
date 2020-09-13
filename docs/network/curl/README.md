@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: network/curl/Dockerfile
-
 ---
 
 # curl
@@ -12,11 +11,11 @@ source: network/curl/Dockerfile
 
 ### Curl
 
-* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/curlimages/curl)
+- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/curlimages/curl)
 
-* [:octicons-book-16: Docs](https://curl.haxx.se)
+- [:octicons-book-16: Docs](https://curl.haxx.se)
 
-* [:octicons-mark-github-16: curl/curl](https://github.com/curl/curl)
+- [:octicons-mark-github-16: curl/curl](https://github.com/curl/curl)
 
 ## Image Commands
 

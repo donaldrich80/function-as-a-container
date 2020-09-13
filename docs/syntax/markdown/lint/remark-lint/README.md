@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/markdown/lint/remark-lint/Dockerfile
-
 ---
 
 # remark-lint
@@ -12,7 +11,7 @@ source: syntax/markdown/lint/remark-lint/Dockerfile
 
 ### Remark
 
-* [:octicons-mark-github-16: remarkjs/remark-lint](https://github.com/remarkjs/remark-lint)
+- [:octicons-mark-github-16: remarkjs/remark-lint](https://github.com/remarkjs/remark-lint)
 
 ## Image Commands
 

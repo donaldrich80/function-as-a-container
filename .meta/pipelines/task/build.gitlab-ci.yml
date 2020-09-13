@@ -88,7 +88,7 @@ docs:task:
     - docker run --rm donaldrich/function:task help > $CI_PROJECT_DIR/.meta/snippets/config/task.md || true
     - docker run --rm donaldrich/function:task validate > $CI_PROJECT_DIR/.meta/snippets/version/task-docker.md || true
     - docker image inspect donaldrich/function:task | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/task.md
-# - docker history donaldrich/function:task > $CI_PROJECT_DIR/.meta/snippets/layers/task.md || true
+  # - docker history donaldrich/function:task > $CI_PROJECT_DIR/.meta/snippets/layers/task.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

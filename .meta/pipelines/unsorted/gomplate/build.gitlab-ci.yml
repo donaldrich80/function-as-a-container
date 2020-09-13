@@ -88,7 +88,7 @@ docs:gomplate:
     - docker run --rm donaldrich/function:gomplate help > $CI_PROJECT_DIR/.meta/snippets/config/gomplate.md || true
     - docker run --rm donaldrich/function:gomplate validate > $CI_PROJECT_DIR/.meta/snippets/version/gomplate-docker.md || true
     - docker image inspect donaldrich/function:gomplate | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/gomplate.md
-# - docker history donaldrich/function:gomplate > $CI_PROJECT_DIR/.meta/snippets/layers/gomplate.md || true
+  # - docker history donaldrich/function:gomplate > $CI_PROJECT_DIR/.meta/snippets/layers/gomplate.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

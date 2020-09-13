@@ -88,7 +88,7 @@ docs:homebrew:
     - docker run --rm donaldrich/function:homebrew help > $CI_PROJECT_DIR/.meta/snippets/config/homebrew.md || true
     - docker run --rm donaldrich/function:homebrew validate > $CI_PROJECT_DIR/.meta/snippets/version/homebrew-docker.md || true
     - docker image inspect donaldrich/function:homebrew | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/homebrew.md
-# - docker history donaldrich/function:homebrew > $CI_PROJECT_DIR/.meta/snippets/layers/homebrew.md || true
+  # - docker history donaldrich/function:homebrew > $CI_PROJECT_DIR/.meta/snippets/layers/homebrew.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

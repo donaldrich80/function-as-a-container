@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/json/fony/Dockerfile
-
 ---
 
 # fony
@@ -12,7 +11,7 @@ source: syntax/json/fony/Dockerfile
 
 ### Fony
 
-* [:octicons-mark-github-16: captainsafia/fony](https://github.com/captainsafia/fony)
+- [:octicons-mark-github-16: captainsafia/fony](https://github.com/captainsafia/fony)
 
 ## Image Commands
 

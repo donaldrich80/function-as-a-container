@@ -62,6 +62,8 @@ tasks:
 
   repo-update:
     run:
+      - command: pre-commit run -a || true
+      - command: pre-commit run -a
       - command: git add .
       - command: git commit -m "repo template regenerate"
       - command: git push origin master
@@ -69,6 +71,7 @@ tasks:
   repo:
     usage: check package versions
     run:
+      - command: git pull origin master
       - task: clean
       - task: template
       - task: repo-update

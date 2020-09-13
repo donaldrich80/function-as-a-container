@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/vault/vault-ssh-helper/Dockerfile
-
 ---
 
 # vault-ssh-helper
@@ -12,7 +11,7 @@ source: hashicorp/vault/vault-ssh-helper/Dockerfile
 
 ### Vault-Ssh-Helper
 
-* [:octicons-mark-github-16: hashicorp/vault-ssh-helper](https://github.com/hashicorp/vault-ssh-helper)
+- [:octicons-mark-github-16: hashicorp/vault-ssh-helper](https://github.com/hashicorp/vault-ssh-helper)
 
 ## Image Commands
 

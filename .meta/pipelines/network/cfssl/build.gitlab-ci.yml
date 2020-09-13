@@ -88,7 +88,7 @@ docs:cfssl:
     - docker run --rm donaldrich/function:cfssl help > $CI_PROJECT_DIR/.meta/snippets/config/cfssl.md || true
     - docker run --rm donaldrich/function:cfssl validate > $CI_PROJECT_DIR/.meta/snippets/version/cfssl-docker.md || true
     - docker image inspect donaldrich/function:cfssl | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/cfssl.md
-# - docker history donaldrich/function:cfssl > $CI_PROJECT_DIR/.meta/snippets/layers/cfssl.md || true
+  # - docker history donaldrich/function:cfssl > $CI_PROJECT_DIR/.meta/snippets/layers/cfssl.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

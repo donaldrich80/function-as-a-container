@@ -88,7 +88,7 @@ docs:container-structure-test:
     - docker run --rm donaldrich/function:container-structure-test help > $CI_PROJECT_DIR/.meta/snippets/config/container-structure-test.md || true
     - docker run --rm donaldrich/function:container-structure-test validate > $CI_PROJECT_DIR/.meta/snippets/version/container-structure-test-docker.md || true
     - docker image inspect donaldrich/function:container-structure-test | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/container-structure-test.md
-# - docker history donaldrich/function:container-structure-test > $CI_PROJECT_DIR/.meta/snippets/layers/container-structure-test.md || true
+  # - docker history donaldrich/function:container-structure-test > $CI_PROJECT_DIR/.meta/snippets/layers/container-structure-test.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

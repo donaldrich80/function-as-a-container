@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/terraform/archive/terraform-provider-proxmox/Dockerfile
-
 ---
 
 # terraform-provider-proxmox
@@ -12,7 +11,7 @@ source: hashicorp/terraform/archive/terraform-provider-proxmox/Dockerfile
 
 ### Terraform-Provider-Proxmox
 
-* [:octicons-mark-github-16: Telmate/terraform-provider-proxmox](https://github.com/Telmate/terraform-provider-proxmox)
+- [:octicons-mark-github-16: Telmate/terraform-provider-proxmox](https://github.com/Telmate/terraform-provider-proxmox)
 
 ## Image Commands
 

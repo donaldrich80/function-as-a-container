@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: network/bitwarden-cli/Dockerfile
-
 ---
 
 # bw
@@ -12,7 +11,7 @@ source: network/bitwarden-cli/Dockerfile
 
 ### Bitwarden-Cli
 
-* [:octicons-mark-github-16: bitwarden/cli](https://github.com/bitwarden/cli)
+- [:octicons-mark-github-16: bitwarden/cli](https://github.com/bitwarden/cli)
 
 ## Image Commands
 

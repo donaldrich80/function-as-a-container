@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: testing/inspec/Dockerfile
-
 ---
 
 # inspec
@@ -12,7 +11,7 @@ source: testing/inspec/Dockerfile
 
 ### Inspec
 
-* [:octicons-mark-github-16: inspec/inspec](https://github.com/inspec/inspec)
+- [:octicons-mark-github-16: inspec/inspec](https://github.com/inspec/inspec)
 
 ## Image Commands
 

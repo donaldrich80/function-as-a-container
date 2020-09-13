@@ -88,7 +88,7 @@ docs:inspec:
     - docker run --rm donaldrich/function:inspec help > $CI_PROJECT_DIR/.meta/snippets/config/inspec.md || true
     - docker run --rm donaldrich/function:inspec validate > $CI_PROJECT_DIR/.meta/snippets/version/inspec-docker.md || true
     - docker image inspect donaldrich/function:inspec | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/inspec.md
-# - docker history donaldrich/function:inspec > $CI_PROJECT_DIR/.meta/snippets/layers/inspec.md || true
+  # - docker history donaldrich/function:inspec > $CI_PROJECT_DIR/.meta/snippets/layers/inspec.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

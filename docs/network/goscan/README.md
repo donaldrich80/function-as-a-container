@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: network/goscan/Dockerfile
-
 ---
 
 # goscan
@@ -12,7 +11,7 @@ source: network/goscan/Dockerfile
 
 ### Goscan
 
-* [:octicons-mark-github-16: marco-lancini/goscan](https://github.com/marco-lancini/goscan)
+- [:octicons-mark-github-16: marco-lancini/goscan](https://github.com/marco-lancini/goscan)
 
 ## Image Commands
 

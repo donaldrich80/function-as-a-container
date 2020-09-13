@@ -88,7 +88,7 @@ docs:vault-ssh-helper:
     - docker run --rm donaldrich/function:vault-ssh-helper help > $CI_PROJECT_DIR/.meta/snippets/config/vault-ssh-helper.md || true
     - docker run --rm donaldrich/function:vault-ssh-helper validate > $CI_PROJECT_DIR/.meta/snippets/version/vault-ssh-helper-docker.md || true
     - docker image inspect donaldrich/function:vault-ssh-helper | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/vault-ssh-helper.md
-# - docker history donaldrich/function:vault-ssh-helper > $CI_PROJECT_DIR/.meta/snippets/layers/vault-ssh-helper.md || true
+  # - docker history donaldrich/function:vault-ssh-helper > $CI_PROJECT_DIR/.meta/snippets/layers/vault-ssh-helper.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

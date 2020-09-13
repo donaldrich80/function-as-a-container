@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: unsorted/td4a/Dockerfile
-
 ---
 
 # td4a
@@ -12,7 +11,7 @@ source: unsorted/td4a/Dockerfile
 
 ### Td4a
 
-* [:octicons-mark-github-16: cidrblock/td4a](https://github.com/cidrblock/td4a)
+- [:octicons-mark-github-16: cidrblock/td4a](https://github.com/cidrblock/td4a)
 
 ## Image Commands
 

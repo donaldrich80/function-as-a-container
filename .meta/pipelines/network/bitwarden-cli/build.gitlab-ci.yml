@@ -88,7 +88,7 @@ docs:bw:
     - docker run --rm donaldrich/function:bw help > $CI_PROJECT_DIR/.meta/snippets/config/bw.md || true
     - docker run --rm donaldrich/function:bw validate > $CI_PROJECT_DIR/.meta/snippets/version/bw-docker.md || true
     - docker image inspect donaldrich/function:bw | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/bw.md
-# - docker history donaldrich/function:bw > $CI_PROJECT_DIR/.meta/snippets/layers/bw.md || true
+  # - docker history donaldrich/function:bw > $CI_PROJECT_DIR/.meta/snippets/layers/bw.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

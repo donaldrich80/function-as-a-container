@@ -88,7 +88,7 @@ docs:prettier:
     - docker run --rm donaldrich/function:prettier help > $CI_PROJECT_DIR/.meta/snippets/config/prettier.md || true
     - docker run --rm donaldrich/function:prettier validate > $CI_PROJECT_DIR/.meta/snippets/version/prettier-docker.md || true
     - docker image inspect donaldrich/function:prettier | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/prettier.md
-# - docker history donaldrich/function:prettier > $CI_PROJECT_DIR/.meta/snippets/layers/prettier.md || true
+  # - docker history donaldrich/function:prettier > $CI_PROJECT_DIR/.meta/snippets/layers/prettier.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

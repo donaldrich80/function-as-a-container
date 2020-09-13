@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: media/diagrams/Dockerfile
-
 ---
 
 # diagrams
@@ -12,7 +11,7 @@ source: media/diagrams/Dockerfile
 
 ### Diagrams
 
-* [:octicons-mark-github-16: mingrammer/diagrams](https://github.com/mingrammer/diagrams)
+- [:octicons-mark-github-16: mingrammer/diagrams](https://github.com/mingrammer/diagrams)
 
 ## Image Commands
 

@@ -88,7 +88,7 @@ docs:goss:
     - docker run --rm donaldrich/function:goss help > $CI_PROJECT_DIR/.meta/snippets/config/goss.md || true
     - docker run --rm donaldrich/function:goss validate > $CI_PROJECT_DIR/.meta/snippets/version/goss-docker.md || true
     - docker image inspect donaldrich/function:goss | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/goss.md
-# - docker history donaldrich/function:goss > $CI_PROJECT_DIR/.meta/snippets/layers/goss.md || true
+  # - docker history donaldrich/function:goss > $CI_PROJECT_DIR/.meta/snippets/layers/goss.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: git/gitlab/archive/glab/Dockerfile
-
 ---
 
 # glab
@@ -12,9 +11,9 @@ source: git/gitlab/archive/glab/Dockerfile
 
 ### Glab
 
-* [:octicons-book-16: Docs](https://clementsam.tech/glab)
+- [:octicons-book-16: Docs](https://clementsam.tech/glab)
 
-* [:octicons-mark-github-16: profclems/glab](https://github.com/profclems/glab)
+- [:octicons-mark-github-16: profclems/glab](https://github.com/profclems/glab)
 
 ## Image Commands
 

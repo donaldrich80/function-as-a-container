@@ -27,7 +27,6 @@
   args: ["."]
   types: [markdown]
 
-
 - id: yamllint
   name: Lint yaml
   description: yamllint
@@ -35,7 +34,6 @@
   entry: pipelinecomponents/yamllint yamllint
   args: ["."]
   types: [yaml]
-
 
 - id: prettier
   name: prettier

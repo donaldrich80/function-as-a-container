@@ -88,7 +88,7 @@ docs:gitleaks:
     - docker run --rm donaldrich/function:gitleaks help > $CI_PROJECT_DIR/.meta/snippets/config/gitleaks.md || true
     - docker run --rm donaldrich/function:gitleaks validate > $CI_PROJECT_DIR/.meta/snippets/version/gitleaks-docker.md || true
     - docker image inspect donaldrich/function:gitleaks | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/gitleaks.md
-# - docker history donaldrich/function:gitleaks > $CI_PROJECT_DIR/.meta/snippets/layers/gitleaks.md || true
+  # - docker history donaldrich/function:gitleaks > $CI_PROJECT_DIR/.meta/snippets/layers/gitleaks.md || true
   variables:
     REGISTRY: $DOCKERHUB_USER
     GIT_STRATEGY: fetch

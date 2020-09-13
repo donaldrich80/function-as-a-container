@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/vault/Dockerfile
-
 ---
 
 # vault
@@ -12,7 +11,7 @@ source: hashicorp/vault/Dockerfile
 
 ### Hashi-Helper
 
-* [:octicons-mark-github-16: seatgeek/hashi-helper](https://github.com/seatgeek/hashi-helper)
+- [:octicons-mark-github-16: seatgeek/hashi-helper](https://github.com/seatgeek/hashi-helper)
 
 ### Tusk
 
@@ -20,13 +19,13 @@ source: hashicorp/vault/Dockerfile
 
 ### Vault-Sidekick
 
-* [:octicons-mark-github-16: UKHomeOffice/vault-sidekick](https://github.com/UKHomeOffice/vault-sidekick)
+- [:octicons-mark-github-16: UKHomeOffice/vault-sidekick](https://github.com/UKHomeOffice/vault-sidekick)
 
-* [:fontawesome-brands-docker: Quay](https://quay.io/https://quay.io/repository/ukhomeofficedigital/vault-sidekick)
+- [:fontawesome-brands-docker: Quay](https://quay.io/https://quay.io/repository/ukhomeofficedigital/vault-sidekick)
 
 ### Vaultenv
 
-* [:octicons-mark-github-16: channable/vaultenv](https://github.com/channable/vaultenv)
+- [:octicons-mark-github-16: channable/vaultenv](https://github.com/channable/vaultenv)
 
 ## Image Commands
 

@@ -134,7 +134,7 @@ A summary of options is included below.
     	 The page rotation setting can cause pdftk to rotate pages and
     	 documents.  Each option sets the page rotation as follows (in
     	 degrees): north: 0, east: 90, south: 180, west: 270, left:
-    	 -90, right: +90, down: +180. left, right, and down make rela-
+    	 -90, right: +90, down: +180. left, right, and down make real-
     	 tive adjustments to a page's rotation.
 
     	 If no arguments are passed to cat, then pdftk combines all

@@ -26,8 +26,8 @@
   entry: pipelinecomponents/remark-lint remark
   args: ["."]
   types: [markdown]
-  
-  
+
+
 - id: yamllint
   name: Lint yaml
   description: yamllint
@@ -36,7 +36,20 @@
   args: ["."]
   types: [yaml]
 
-  
+
+- id: prettier
+  name: prettier
+  entry: --entrypoint prettier donaldrich/function:prettier
+  language: docker_image
+  args: [--write, --list-different, --ignore-unknown]
+
+- id: lint-markdown-misspell
+  name: misspell
+  entry: --entrypoint misspell donaldrich/function:misspell
+  language: docker_image
+  args: ["."]
+  types: [markdown]
+
 - id: mdspell
   name: mdspell
   description: mdspell

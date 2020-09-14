@@ -19,6 +19,7 @@ include:
   - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/yaml/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/general/codespell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/natural_docs/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/goodcheck/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/misspell/build.gitlab-ci.yml

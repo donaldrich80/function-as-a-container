@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:codespell .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:codespell validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:codespell
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: codespell --version
+          print: "\e[32mcodespell\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: codespell --help
+          print: "\e[32mcodespell\e[0m"

@@ -63,6 +63,10 @@ RUN git clone https://github.com/Trendyol/docker-shell.git /docker-shell
 WORKDIR /docker-shell
 RUN go build -o /usr/local/bin/docker-shell .
 
+FROM donaldrich/builder:latest AS rash-builder
+COPY --from=rustagainshell/rash /bin/rash /usr/local/bin/rash
+RUN upx /usr/local/bin/rash
+
 FROM alpine
 
 COPY --from=docker-shell-builder  /usr/local/bin/docker-shell  /usr/local/bin/docker-shell
@@ -80,6 +84,7 @@ COPY --from=docker-machine-builder  /usr/local/bin/docker-machine  /usr/local/bi
 COPY --from=buildx-builder  /root/.docker/cli-plugins/docker-buildx  /root/.docker/cli-plugins/docker-buildx
 COPY --from=docker-credential-vault-login-builder /etc/docker-credential-vault-login/config.hcl /etc/docker-credential-vault-login/config.hcl
 COPY --from=docker-credential-vault-login-builder /build/bin/docker-credential-vault-login /usr/local/bin/docker-credential-vault-login
+COPY --from=rash-builder  /usr/local/bin/rash  /usr/local/bin/rash
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 COPY ./tusk.yml ./tusk.yml

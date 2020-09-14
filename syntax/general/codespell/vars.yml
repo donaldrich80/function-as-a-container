@@ -4,7 +4,7 @@ image:
   dir: ""
   dockerfile: ""
 commands:
-  misspell:
+  codespell:
     prefix: codespell
     help: --help
     version: --version

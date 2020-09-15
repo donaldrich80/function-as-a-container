@@ -1,6 +1,6 @@
 - id: gitleaks
-  name: Checks commits for secrets w Gitleaks
-  description: Checks commits for secrets w Gitleaks
+  name: Checks commits for secrets w gitleaks
+  description: Checks commits for secrets w gitleaks
   entry: zricethezav/gitleaks
   language: docker_image
 

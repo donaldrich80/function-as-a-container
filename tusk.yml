@@ -44,6 +44,7 @@ tasks:
       - command: rm -r docs/files | true
       - command: rm -r docs/network | true
       - command: rm -r docs/task | true
+      - command: rm -r docs/testing | true
       - command: rm -r .meta/pipelines | true
 
   template:

@@ -4,9 +4,15 @@ FROM donaldrich/builder:latest AS shellcheck-builder
 RUN ginstall.sh shellcheck latest
 RUN upx /usr/local/bin/shellcheck
 
+FROM matejak/argbash as argbash-builder
+
 FROM python:alpine
 
 RUN pip install --no-cache-dir bashate
+
+COPY --from=argbash-builder /usr/local/bin/argbash /usr/local/bin/argbash
+COPY --from=argbash-builder /usr/local/bin/argbash-1to2 /usr/local/bin/argbash-1to2
+COPY --from=argbash-builder /usr/local/bin/argbash-init /usr/local/bin/argbash-init
 
 COPY --from=shellcheck-builder /usr/local/bin/shellcheck /usr/local/bin/shellcheck
 

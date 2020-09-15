@@ -11,7 +11,7 @@ source: syntax/shell/tools/argbash/Dockerfile
 
 ### Argbash
 
-- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/https://hub.docker.com/r/matejak/argbash)
+- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/matejak/argbash)
 
 - [:octicons-mark-github-16: matejak/argbash](https://github.com/matejak/argbash)
 

@@ -9,6 +9,14 @@ source: syntax/shell/Dockerfile
 
 ## Documentation
 
+### Argbash
+
+- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/matejak/argbash)
+
+- [:octicons-mark-github-16: matejak/argbash](https://github.com/matejak/argbash)
+
+- [site](https://argbash.io/generate)
+
 ### Bashate
 
 - [:octicons-mark-github-16: openstack/bashate](https://github.com/openstack/bashate)

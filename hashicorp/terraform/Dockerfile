@@ -33,8 +33,12 @@ RUN wget "https://github.com/GoogleCloudPlatform/terraformer/releases/download/0
 RUN chmod +rx /usr/local/bin/terraformer
 RUN upx /usr/local/bin/terraformer
 
-FROM alpine
+FROM donaldrich/builder:go AS converge-builder
+RUN go get github.com/asteris-llc/converge
 
+FROM ubuntu
+
+COPY --from=converge-builder /root/go/bin/converge /usr/local/bin/converge
 COPY --from=terraformer-builder /usr/local/bin/terraformer /usr/local/bin/terraformer
 COPY --from=terragrunt-builder /usr/local/bin/terragrunt /usr/local/bin/terragrunt
 COPY --from=terraform-provider-proxmox-builder  /root/go/bin/terraform-provider-proxmox  /.terraform.d/plugins/terraform-provider-proxmox

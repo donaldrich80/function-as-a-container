@@ -33,12 +33,12 @@ Using `docker cp`, it's possible to install binaries from containers to the host
 One of the awesome aspects of docker image building, is being able to borrow layers from existing containers, as it doesn't add unneccesary bloat to overall image size. In fact, more than few layers in this collection are borrowed from other images.
 
 !!! note
-Functions which can be utilized as a dependency-free layer in Dockerfiles are preferred, but some inevitably have dependencies and can't be utilized as standalone layers
+    Functions which can be utilized as a dependency-free layer in Dockerfiles are preferred, but some inevitably have dependencies and can't be utilized as standalone layers
 
 ### Pre-Commit Hooks
 
 !!! warning
-Currently under development, and not much functionality yet.
+    Currently under development, and not much functionality yet.
 
 I like pre-commit hooks, but hate installing lots of dependencies. This repository comes with a pre-commit hook library whoch has just one dependency, docker.
 

@@ -1,0 +1,12 @@
+image:
+  tag: gitversion
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  gitversion:
+    prefix: gitversion
+    help: --help
+    version: --version
+    github: GitTools/GitVersion
+extra: ""

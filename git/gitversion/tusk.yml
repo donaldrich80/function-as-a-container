@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:gitversion .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:gitversion validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:gitversion
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: gitversion --version
+          print: "\e[32mgitversion\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: gitversion --help
+          print: "\e[32mgitversion\e[0m"

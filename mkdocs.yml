@@ -37,8 +37,8 @@ plugins:
       filename: .pages
       collapse_single_pages: true
   - markdownextradata: {}
-  - simple:
-      ignore_folders: [".meta","docs"]
+  # - simple:
+  #     ignore_folders: [".meta","docs"]
 
 extra:
   social:

@@ -31,7 +31,7 @@ Using `docker cp`, it's possible to install binaries from containers to the host
 
 ### Modular Dockerfile Building
 
-One of the awesome aspects of docker image building, is being able to borrow layers from existing containers, as it doesn't add unneccesary bloat to overall image size. In fact, more than few layers in this collection are borrowed from other images.
+One of the awesome aspects of docker image building, is being able to borrow layers from existing containers, as it doesn't add unnecessary bloat to overall image size. In fact, more than few layers in this collection are borrowed from other images.
 
 !!! note
     Functions which can be utilized as a dependency-free layer in Dockerfiles are preferred, but some inevitably have dependencies and can't be utilized as standalone layers

@@ -1,19 +1,19 @@
 - id: gitleaks
-  name: gitleaks
-  description: Checks commits for secrets
+  name: Checks commits for secrets w Gitleaks
+  description: Checks commits for secrets w Gitleaks
   entry: zricethezav/gitleaks
   language: docker_image
 
 - id: lint-dockerfile-hadolint
-  name: Lint Dockerfiles
-  description: Runs hadolint Docker image to lint Dockerfiles
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
   language: docker_image
   entry: hadolint/hadolint hadolint
   files: Dockerfile
 
 - id: lint-markdown-markdownlint
-  name: Lint markdown
-  description: lintmarkdown
+  name: Lint Markdown w markdownlint
+  description: Lint Markdown w markdownlint
   language: docker_image
   entry: donaldrich/function:markdown markdownlint
   types: [markdown]
@@ -28,8 +28,8 @@
   types: [markdown]
 
 - id: lint-yaml-yamllint
-  name: Lint yaml
-  description: yamllint
+  name: Lint YAML w yamllint
+  description: Lint YAML w yamllint
   language: docker_image
   entry: --entrypoint yamllint pipelinecomponents/yamllint
   args: ["."]
@@ -52,9 +52,10 @@
   name: mdspell
   description: mdspell
   language: docker_image
-  entry: pipelinecomponents/markdown-spellcheck mdspell
+  entry: --entrypoint mdspell pipelinecomponents/markdown-spellcheck mdspell
   args: [--report '**/*.md']
   types: [markdown]
+
 - id: ansible-lint
   name: ansible-lint
   description: ansible-lint
@@ -62,6 +63,7 @@
   entry: pipelinecomponents/ansible-lint ansible-lint
   args: ["*"]
   types: [yaml]
+
 - id: tflint
   name: tflint
   language: docker_image

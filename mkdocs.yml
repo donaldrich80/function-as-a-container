@@ -33,12 +33,11 @@ theme:
 
 plugins:
   - search:
-  # - macros:
   - mermaid2:
       arguments:
         theme: 'dark'
-  # - minify:
-  #     minify_html: true
+  - minify:
+      minify_html: true
   - awesome-pages:
       filename: .pages
       collapse_single_pages: true

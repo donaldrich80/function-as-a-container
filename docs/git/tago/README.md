@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: git/tago/Dockerfile
-
 ---
 
 # tago
@@ -12,7 +11,7 @@ source: git/tago/Dockerfile
 
 ### Tago
 
-* [:octicons-mark-github-16: FalcoSuessgott/tago](https://github.com/FalcoSuessgott/tago)
+- [:octicons-mark-github-16: FalcoSuessgott/tago](https://github.com/FalcoSuessgott/tago)
 
 ## Image Commands
 

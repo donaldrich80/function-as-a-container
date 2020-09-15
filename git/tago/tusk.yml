@@ -1,6 +1,5 @@
 ---
 tasks:
-
   build:
     usage: build docker image
     run: docker build --pull --rm -t function:tago .
@@ -8,7 +7,6 @@ tasks:
   test:
     usage: build docker image
     run: docker run -it --rm function:tago validate
-
 
   dive:
     usage: inspect docker image

@@ -24,6 +24,7 @@ include:
   - local: .meta/pipelines/syntax/general/goodcheck/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/misspell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/languagetool/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/standard-version/build.gitlab-ci.yml
   - local: .meta/pipelines/git/tago/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitlab/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitlab/archive/gitlab-ci-local/build.gitlab-ci.yml

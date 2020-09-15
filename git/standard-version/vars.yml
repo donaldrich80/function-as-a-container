@@ -1,0 +1,12 @@
+image:
+  tag: standard-version
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  standard-version:
+    prefix: standard-version
+    help: --help
+    version: --version
+    github: conventional-changelog/standard-version
+extra: ""

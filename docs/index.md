@@ -1,6 +1,6 @@
 ---
 title: Home
-description: Lightweight docker containers built for performance of single functions.
+description: Lightweight docker images built to performance functions.
 path: tree/master
 source: README.md
 ---
@@ -9,11 +9,12 @@ source: README.md
 
 ## About
 
-A library of lightweight docker images which exist to perform a wide-array of simple function (or a group of similar functions).
+A collection of lightweight docker images intended to perform simple, useful functions without dependencies (except docker.)
+
+!!! note
+Related functions are grouped into single images (when possible.)
 
 ## Usage
-
-These images can be used in a variety of ways.
 
 - [x] CI/CD Executors
 - [x] Installation-free application
@@ -33,12 +34,12 @@ Using `docker cp`, it's possible to install binaries from containers to the host
 One of the awesome aspects of docker image building, is being able to borrow layers from existing containers, as it doesn't add unneccesary bloat to overall image size. In fact, more than few layers in this collection are borrowed from other images.
 
 !!! note
-    Functions which can be utilized as a dependency-free layer in Dockerfiles are preferred, but some inevitably have dependencies and can't be utilized as standalone layers
+Functions which can be utilized as a dependency-free layer in Dockerfiles are preferred, but some inevitably have dependencies and can't be utilized as standalone layers
 
 ### Pre-Commit Hooks
 
 !!! warning
-    Currently under development, and not much functionality yet.
+Currently under development, and not much functionality yet.
 
 I like pre-commit hooks, but hate installing lots of dependencies. This repository comes with a pre-commit hook library whoch has just one dependency, docker.
 
@@ -56,7 +57,7 @@ A collection of stackable, extendable templates for use in GitLab-CI. Those temp
 
 ### CICDevs
 
-Docker images intended as function runners in CI/CD pipelines, but also designed and documented to allow easy use for in-container development, testing, sandbox, etc.
+Docker images intended as function runners in CI/CD pipelines, but also designed and documented to allow easy use for in-container development, testing, sandbox, etc. Most of the layers used in those images are borrowed from this library.
 
 - [:fontawesome-brands-gitlab: GitLab](https://gitlab.com/donaldrich/cicdevs)
 

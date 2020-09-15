@@ -27,7 +27,6 @@ include:
   - local: .meta/pipelines/git/gitlab/gitlab-ci-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitversion/build.gitlab-ci.yml
-  - local: .meta/pipelines/go/golang/build.gitlab-ci.yml
   - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
   - local: .meta/pipelines/gitlab/build.gitlab-ci.yml
   - local: .meta/pipelines/gitlab/archive/gitlab-ci-local/build.gitlab-ci.yml

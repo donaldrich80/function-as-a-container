@@ -1,6 +1,7 @@
 ---
 path: tree/master
-source: syntax/prettier/Dockerfile
+source: unsorted/prettier/Dockerfile
+
 ---
 
 # prettier

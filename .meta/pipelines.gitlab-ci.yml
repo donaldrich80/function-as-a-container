@@ -16,7 +16,6 @@ include:
   - local: .meta/pipelines/syntax/shell/tools/bat/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/yaml/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/codespell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/natural_docs/build.gitlab-ci.yml
@@ -43,12 +42,11 @@ include:
   - local: .meta/pipelines/unsorted/td4a/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/vuls/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/dump-env/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/gomplate/build.gitlab-ci.yml
   - local: .meta/pipelines/task/build.gitlab-ci.yml
-  - local: .meta/pipelines/homebrew/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/goss/build.gitlab-ci.yml
-  - local: .meta/pipelines/testing/inspec/build.gitlab-ci.yml
-  - local: .meta/pipelines/testing/container-structure-test/build.gitlab-ci.yml
+  - local: .meta/pipelines/testing/archive/inspec/build.gitlab-ci.yml
   - local: .meta/pipelines/network/bitwarden-cli/build.gitlab-ci.yml
   - local: .meta/pipelines/network/httpie/build.gitlab-ci.yml
   - local: .meta/pipelines/network/goscan/build.gitlab-ci.yml

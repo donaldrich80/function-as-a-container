@@ -9,6 +9,12 @@ source: testing/goss/Dockerfile
 
 ## Documentation
 
+### Container-Structure-Test
+
+- [:octicons-book-16: Docs](https://github.com/GoogleContainerTools/container-structure-test#readme)
+
+- [:octicons-mark-github-16: GoogleContainerTools/container-structure-test](https://github.com/GoogleContainerTools/container-structure-test)
+
 ### Goss
 
 - [:octicons-book-16: Docs](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md)

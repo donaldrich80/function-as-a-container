@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:container-structure-test:
+build:prettier:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:container-structure-test:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:container-structure-test
+      --cache-from $REGISTRY/function:prettier
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:container-structure-test
-      --file testing/container-structure-test/Dockerfile
-      testing/container-structure-test
+      --tag $REGISTRY/function:prettier
+      --file unsorted/prettier/Dockerfile
+      unsorted/prettier
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:container-structure-test:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "testing/container-structure-test/*"
+        - "unsorted/prettier/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "container-structure-test"'
+    - if: '$TRIGGER_VAR1 == "prettier"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

@@ -1,6 +1,7 @@
 ---
 path: tree/master
-source: testing/inspec/Dockerfile
+source: testing/archive/inspec/Dockerfile
+
 ---
 
 # inspec

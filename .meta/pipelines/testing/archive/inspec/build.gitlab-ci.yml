@@ -45,8 +45,8 @@ build:inspec:
       --cache-from $REGISTRY/function:inspec
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $REGISTRY/function:inspec
-      --file testing/inspec/Dockerfile
-      testing/inspec
+      --file testing/archive/inspec/Dockerfile
+      testing/archive/inspec
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,7 +60,7 @@ build:inspec:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "testing/inspec/*"
+        - "testing/archive/inspec/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

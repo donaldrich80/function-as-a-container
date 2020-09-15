@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: git/gitlab/gitlab-ci-lint/Dockerfile
-
 ---
 
 # gitlab-ci-lint
@@ -12,7 +11,7 @@ source: git/gitlab/gitlab-ci-lint/Dockerfile
 
 ### Gitlab-Ci-Lint
 
-* [:octicons-mark-github-16: BuBuaBu/gitlab-ci-lint](https://github.com/BuBuaBu/gitlab-ci-lint)
+- [:octicons-mark-github-16: BuBuaBu/gitlab-ci-lint](https://github.com/BuBuaBu/gitlab-ci-lint)
 
 ## Image Commands
 

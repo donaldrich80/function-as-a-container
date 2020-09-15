@@ -1,10 +1,6 @@
 ---
 path: tree/master
 source: git/gitversion/Dockerfile
-<<<<<<< HEAD
-=======
-
->>>>>>> semver
 ---
 
 # gitversion
@@ -15,11 +11,7 @@ source: git/gitversion/Dockerfile
 
 ### Gitversion
 
-<<<<<<< HEAD
 - [:octicons-mark-github-16: GitTools/GitVersion](https://github.com/GitTools/GitVersion)
-=======
-* [:octicons-mark-github-16: GitTools/GitVersion](https://github.com/GitTools/GitVersion)
->>>>>>> semver
 
 ## Image Commands
 

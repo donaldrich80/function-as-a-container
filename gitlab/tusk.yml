@@ -1,9 +1,5 @@
 ---
 tasks:
-<<<<<<< HEAD
-=======
-
->>>>>>> semver
   build:
     usage: build docker image
     run: docker build --pull --rm -t function:gitlab .
@@ -12,10 +8,6 @@ tasks:
     usage: build docker image
     run: docker run -it --rm function:gitlab validate
 
-<<<<<<< HEAD
-=======
-
->>>>>>> semver
   dive:
     usage: inspect docker image
     run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:gitlab

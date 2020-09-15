@@ -1,10 +1,6 @@
 ---
 path: tree/master
 source: gitlab/Dockerfile
-<<<<<<< HEAD
-=======
-
->>>>>>> semver
 ---
 
 # gitlab
@@ -15,7 +11,6 @@ source: gitlab/Dockerfile
 
 ### Gitlab-Ci-Local
 
-<<<<<<< HEAD
 - [:octicons-mark-github-16: firecow/gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
 
 ### Glab
@@ -23,15 +18,6 @@ source: gitlab/Dockerfile
 - [:octicons-book-16: Docs](https://clementsam.tech/glab)
 
 - [:octicons-mark-github-16: profclems/glab](https://github.com/profclems/glab)
-=======
-* [:octicons-mark-github-16: firecow/gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
-
-### Glab
-
-* [:octicons-book-16: Docs](https://clementsam.tech/glab)
-
-* [:octicons-mark-github-16: profclems/glab](https://github.com/profclems/glab)
->>>>>>> semver
 
 ## Image Commands
 

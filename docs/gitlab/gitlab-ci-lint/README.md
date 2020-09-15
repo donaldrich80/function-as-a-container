@@ -1,10 +1,6 @@
 ---
 path: tree/master
 source: gitlab/gitlab-ci-lint/Dockerfile
-<<<<<<< HEAD
-=======
-
->>>>>>> semver
 ---
 
 # gitlab-ci-lint
@@ -15,11 +11,7 @@ source: gitlab/gitlab-ci-lint/Dockerfile
 
 ### Gitlab-Ci-Lint
 
-<<<<<<< HEAD
 - [:octicons-mark-github-16: BuBuaBu/gitlab-ci-lint](https://github.com/BuBuaBu/gitlab-ci-lint)
-=======
-* [:octicons-mark-github-16: BuBuaBu/gitlab-ci-lint](https://github.com/BuBuaBu/gitlab-ci-lint)
->>>>>>> semver
 
 ## Image Commands
 

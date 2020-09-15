@@ -68,7 +68,7 @@
   name: tflint
   language: docker_image
   verbose: true
-  entry: --entrypoint tflint donaldrich/function:terraform
+  entry: --entrypoint tflint donaldrich/function:terraform # wata727/tflint
   files: \.tf$
   exclude:
     \.+.terraform\/.*$

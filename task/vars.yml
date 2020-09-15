@@ -48,6 +48,11 @@ commands:
     version: --version
     github: commander-cli/commander
     download: https://github.com/SimonBaeumer/commander/releases/download/v2.1.0/commander-linux-amd64
+  maid:
+    prefix: maid
+    help: --help
+    version: --version
+    github: egoist/maid
   # mask:
   #   prefix: mask
   #   help: --help

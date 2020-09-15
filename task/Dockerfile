@@ -35,10 +35,11 @@ RUN wget "https://github.com/SimonBaeumer/commander/releases/download/v2.1.0/com
 RUN chmod +rx /usr/local/bin/commander
 RUN upx /usr/local/bin/commander
 
-FROM alpine
+FROM node:alpine
+
+RUN npm install -g maid
 
 # RUN apk add fzf bash git
-
 
 COPY --from=commander-builder /usr/local/bin/commander /usr/local/bin/commander
 COPY --from=navi-builder /usr/local/bin/navi /usr/local/bin/navi

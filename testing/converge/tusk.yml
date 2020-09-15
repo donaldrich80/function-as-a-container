@@ -15,7 +15,7 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: converge --version
+          exec: converge version
           print: "\e[32mconverge\e[0m"
   help:
     usage: see config options

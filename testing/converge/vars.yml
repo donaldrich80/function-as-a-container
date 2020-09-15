@@ -7,7 +7,7 @@ commands:
   converge:
     prefix: converge
     help: --help
-    version: --version
+    version: version
     github: asteris-llc/converge
     docs: http://converge.aster.is
 extra: ""

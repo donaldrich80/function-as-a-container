@@ -42,7 +42,9 @@ One of the awesome aspects of docker image building, is being able to borrow lay
     Currently under development, and not much functionality yet.
 
 I like pre-commit hooks, but hate installing lots of dependencies. This repository comes with a pre-commit hook library whoch has just one dependency, docker.
-    
+
+I like pre-commit hooks, but hate installing lots of dependencies. This repository comes with a pre-commit hook library whoch has just one dependency, docker.
+
 ## Integration with my other projects
 
 This repository is tightly integrated with two of my other repositories.

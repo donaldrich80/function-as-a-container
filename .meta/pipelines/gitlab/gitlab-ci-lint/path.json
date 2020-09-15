@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+{ "path": gitlab / gitlab - ci - lint }
+=======
 { path : gitlab/gitlab-ci-lint }
+>>>>>>> semver

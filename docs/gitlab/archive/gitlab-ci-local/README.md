@@ -1,7 +1,10 @@
 ---
 path: tree/master
 source: gitlab/archive/gitlab-ci-local/Dockerfile
+<<<<<<< HEAD
+=======
 
+>>>>>>> semver
 ---
 
 # gitlab-ci-local
@@ -12,7 +15,11 @@ source: gitlab/archive/gitlab-ci-local/Dockerfile
 
 ### Gitlab-Ci-Local
 
+<<<<<<< HEAD
+- [:octicons-mark-github-16: firecow/gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
+=======
 * [:octicons-mark-github-16: firecow/gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
+>>>>>>> semver
 
 ## Image Commands
 

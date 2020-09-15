@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+{ "path": gitlab / archive / glab }
+=======
 { path : gitlab/archive/glab }
+>>>>>>> semver

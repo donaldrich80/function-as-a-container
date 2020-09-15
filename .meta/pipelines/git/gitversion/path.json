@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+{ "path": git / gitversion }
+=======
 { path : git/gitversion }
+>>>>>>> semver

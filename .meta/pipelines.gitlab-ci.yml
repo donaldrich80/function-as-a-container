@@ -14,7 +14,6 @@ include:
   - local: .meta/pipelines/syntax/json/show-struct/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/jsonnet/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/tools/bat/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/shell/tools/argbash/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/prettier/build.gitlab-ci.yml
@@ -26,6 +25,10 @@ include:
   - local: .meta/pipelines/syntax/general/languagetool/build.gitlab-ci.yml
   - local: .meta/pipelines/git/standard-version/build.gitlab-ci.yml
   - local: .meta/pipelines/git/tago/build.gitlab-ci.yml
+<<<<<<< HEAD
+  - local: .meta/pipelines/git/gitleaks/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitversion/build.gitlab-ci.yml
+=======
   - local: .meta/pipelines/git/gitlab/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitlab/archive/gitlab-ci-local/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitlab/archive/glab/build.gitlab-ci.yml
@@ -33,6 +36,7 @@ include:
   - local: .meta/pipelines/git/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitversion/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitlab-ci-lint/build.gitlab-ci.yml
+>>>>>>> semver
   - local: .meta/pipelines/go/golang/build.gitlab-ci.yml
   - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
   - local: .meta/pipelines/gitlab/build.gitlab-ci.yml
@@ -55,7 +59,6 @@ include:
   - local: .meta/pipelines/task/build.gitlab-ci.yml
   - local: .meta/pipelines/homebrew/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/goss/build.gitlab-ci.yml
-  - local: .meta/pipelines/testing/converge/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/inspec/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/container-structure-test/build.gitlab-ci.yml
   - local: .meta/pipelines/network/bitwarden-cli/build.gitlab-ci.yml

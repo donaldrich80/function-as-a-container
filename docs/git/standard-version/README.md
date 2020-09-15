@@ -1,7 +1,10 @@
 ---
 path: tree/master
 source: git/standard-version/Dockerfile
+<<<<<<< HEAD
+=======
 
+>>>>>>> semver
 ---
 
 # standard-version
@@ -12,7 +15,11 @@ source: git/standard-version/Dockerfile
 
 ### Standard-Version
 
+<<<<<<< HEAD
+- [:octicons-mark-github-16: conventional-changelog/standard-version](https://github.com/conventional-changelog/standard-version)
+=======
 * [:octicons-mark-github-16: conventional-changelog/standard-version](https://github.com/conventional-changelog/standard-version)
+>>>>>>> semver
 
 ## Image Commands
 

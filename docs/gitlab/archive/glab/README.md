@@ -1,7 +1,10 @@
 ---
 path: tree/master
 source: gitlab/archive/glab/Dockerfile
+<<<<<<< HEAD
+=======
 
+>>>>>>> semver
 ---
 
 # glab
@@ -12,9 +15,15 @@ source: gitlab/archive/glab/Dockerfile
 
 ### Glab
 
+<<<<<<< HEAD
+- [:octicons-book-16: Docs](https://clementsam.tech/glab)
+
+- [:octicons-mark-github-16: profclems/glab](https://github.com/profclems/glab)
+=======
 * [:octicons-book-16: Docs](https://clementsam.tech/glab)
 
 * [:octicons-mark-github-16: profclems/glab](https://github.com/profclems/glab)
+>>>>>>> semver
 
 ## Image Commands
 

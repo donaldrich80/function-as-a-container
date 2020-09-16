@@ -8,6 +8,6 @@ commands:
   conform:
     prefix: conform
     help: --help
-    version: version
+    version: --version
     github: talos-systems/conform
 extra: ""

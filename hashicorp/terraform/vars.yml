@@ -52,4 +52,17 @@ commands:
     version: version
     github: asteris-llc/converge
     docs: http://converge.aster.is
+  # terraform-provider-keycloak:
+  #   prefix: terraform-provider-keycloak
+  #   help: null
+  #   version: null
+  #   github: mrparkers/terraform-provider-keycloak
+  #   docs: https://mrparkers.github.io/terraform-provider-keycloak
+  #   download: https://github.com/mrparkers/terraform-provider-keycloak/releases/download/1.20.0/terraform-provider-keycloak_v1.20.0_linux_amd64.zip
+  # terraform-provider-proxmox:
+  #   prefix: terraform-provider-proxmox
+  #   help: null
+  #   version: null
+  #   github: Telmate/terraform-provider-proxmox
 extra: ""
+links: https://yetiops.net/posts/proxmox-terraform-cloudinit-saltstack-prometheus

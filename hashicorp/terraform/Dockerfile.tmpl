@@ -45,7 +45,7 @@ RUN mv terraform-provider-keycloak /usr/local/bin/
 
 FROM ubuntu
 
-COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /usr/local/bin/terraform-provider-keycloak
+COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /.terraform.d/plugins/terraform-provider-keycloak
 COPY --from=converge-builder /root/go/bin/converge /usr/local/bin/converge
 COPY --from=terraformer-builder /usr/local/bin/terraformer /usr/local/bin/terraformer
 COPY --from=terragrunt-builder /usr/local/bin/terragrunt /usr/local/bin/terragrunt

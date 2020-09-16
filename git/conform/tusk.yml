@@ -17,7 +17,7 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: conform --version
+          exec: conform version
           print: "\e[32mconform\e[0m"
   help:
     usage: see config options

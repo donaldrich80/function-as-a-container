@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 FROM gittools/gitversion:5.3.8-linux-alpine.3.10-x64-netcoreapp2.1
-=======
-FROM gittools/gitversion:5.3.8-linux-alpine.3.10-x64-netcoreapp2.1
->>>>>>> semver

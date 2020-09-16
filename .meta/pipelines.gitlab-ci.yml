@@ -22,9 +22,9 @@ include:
   - local: .meta/pipelines/syntax/general/goodcheck/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/misspell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/languagetool/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/conform/build.gitlab-ci.yml
   - local: .meta/pipelines/git/standard-version/build.gitlab-ci.yml
   - local: .meta/pipelines/git/tago/build.gitlab-ci.yml
-  - local: .meta/pipelines/git/gitlab/gitlab-ci-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitversion/build.gitlab-ci.yml
   - local: .meta/pipelines/go/glide/build.gitlab-ci.yml

@@ -1,1 +1,0 @@
-https://github.com/conventional-changelog/standard-version

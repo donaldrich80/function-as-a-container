@@ -1,5 +1,6 @@
 ---
 tasks:
+
   build:
     usage: build docker image
     run: docker build --pull --rm -t function:gitlab-ci-local .
@@ -7,6 +8,7 @@ tasks:
   test:
     usage: build docker image
     run: docker run -it --rm function:gitlab-ci-local validate
+
 
   dive:
     usage: inspect docker image

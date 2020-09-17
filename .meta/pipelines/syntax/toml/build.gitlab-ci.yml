@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:gitlab-ci-lint:
+build:toml-sort:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:gitlab-ci-lint:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:gitlab-ci-lint
+      --cache-from $REGISTRY/function:toml-sort
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:gitlab-ci-lint
-      --file git/gitlab/gitlab-ci-lint/Dockerfile
-      git/gitlab/gitlab-ci-lint
+      --tag $REGISTRY/function:toml-sort
+      --file syntax/toml/Dockerfile
+      syntax/toml
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:gitlab-ci-lint:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "git/gitlab/gitlab-ci-lint/*"
+        - "syntax/toml/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "gitlab-ci-lint"'
+    - if: '$TRIGGER_VAR1 == "toml-sort"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

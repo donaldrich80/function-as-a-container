@@ -13,6 +13,7 @@ include:
   - local: .meta/pipelines/syntax/json/json2hcl/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/show-struct/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/jsonnet/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/toml/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/tools/bat/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
@@ -46,6 +47,7 @@ include:
   - local: .meta/pipelines/unsorted/gomplate/build.gitlab-ci.yml
   - local: .meta/pipelines/task/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/goss/build.gitlab-ci.yml
+  - local: .meta/pipelines/testing/converge/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/archive/inspec/build.gitlab-ci.yml
   - local: .meta/pipelines/network/bitwarden-cli/build.gitlab-ci.yml
   - local: .meta/pipelines/network/httpie/build.gitlab-ci.yml
@@ -60,6 +62,4 @@ include:
   - local: .meta/pipelines/hashicorp/packer/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/terraform-provider-healthchecksio/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/terraform/terraform-provider-keycloak/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/checkov/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/terraform/archive/terraform-provider-proxmox/build.gitlab-ci.yml

@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/terraform/Dockerfile
-
 ---
 
 # terraform

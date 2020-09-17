@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:terraform-provider-proxmox:
+build:converge:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:terraform-provider-proxmox:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:terraform-provider-proxmox
+      --cache-from $REGISTRY/function:converge
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:terraform-provider-proxmox
-      --file hashicorp/terraform/archive/terraform-provider-proxmox/Dockerfile
-      hashicorp/terraform/archive/terraform-provider-proxmox
+      --tag $REGISTRY/function:converge
+      --file testing/converge/Dockerfile
+      testing/converge
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:terraform-provider-proxmox:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "hashicorp/terraform/archive/terraform-provider-proxmox/*"
+        - "testing/converge/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "terraform-provider-proxmox"'
+    - if: '$TRIGGER_VAR1 == "converge"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

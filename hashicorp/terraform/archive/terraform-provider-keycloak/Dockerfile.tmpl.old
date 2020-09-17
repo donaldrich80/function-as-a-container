@@ -12,4 +12,3 @@ RUN mv terraform-provider-keycloak /usr/local/bin/
 FROM alpine
 
 COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /usr/local/bin/terraform-provider-keycloak
-

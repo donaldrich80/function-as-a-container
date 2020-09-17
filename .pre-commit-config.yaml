@@ -16,7 +16,8 @@ repos:
         name: Detect secrets
         description: Detects high entropy strings that are likely to be passwords.
         entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
-        args: ['--base64-limit', '4.5', '--hex-limit', '3']
+        # args: ['scan', '--base64-limit', '4.5', '--hex-limit', '3']
+        args: ["scan"]
         language: docker_image
         files: .*
   - repo: https://gitlab.com/donaldrich/function-as-a-container

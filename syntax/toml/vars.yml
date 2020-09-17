@@ -1,0 +1,12 @@
+image:
+  tag: toml-sort
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  toml-sort:
+    prefix: toml-sort
+    help: --help
+    version: --version
+    github: pappasam/toml-sort
+extra: ""

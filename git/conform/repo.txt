@@ -1,1 +1,0 @@
-https://github.com/talos-systems/conform/releases/download/v0.1.0-alpha.19/conform-linux-amd64

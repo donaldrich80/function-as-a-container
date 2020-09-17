@@ -1,1 +1,0 @@
-https://blog.gitguardian.com/secrets-credentials-api-git/

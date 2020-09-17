@@ -1,0 +1,8 @@
+FROM donaldrich/builder:go AS realize-builder
+RUN go get github.com/oxequa/realize
+
+FROM ubuntu
+
+COPY --from=realize-builder /root/go/bin/realize /usr/local/bin/realize
+
+{{- template "validate" }}

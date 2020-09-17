@@ -21,4 +21,12 @@ commands:
     github: mvdan/sh
     docker: mvdan/sh
     base: mvdan/shfmt
+  # argbash:
+  #   prefix: argbash
+  #   help: --help
+  #   version: --version
+  #   github: matejak/argbash
+  #   docker: matejak/argbash
+  #   site: https://argbash.io/generate
+  #   base: matejak/argbash
 extra: ""

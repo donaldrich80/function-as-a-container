@@ -12,7 +12,7 @@ source: syntax/general/codespell/Dockerfile
 
 ### Codespell
 
-* [:octicons-mark-github-16: codespell-project/codespell](https://github.com/codespell-project/codespell)
+- [:octicons-mark-github-16: codespell-project/codespell](https://github.com/codespell-project/codespell)
 
 ## Image Commands
 

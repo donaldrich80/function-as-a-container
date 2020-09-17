@@ -1,0 +1,27 @@
+---
+tasks:
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:glab .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:glab validate
+
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:glab
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: glab version
+          print: "\e[32mglab\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: glab help
+          print: "\e[32mglab\e[0m"

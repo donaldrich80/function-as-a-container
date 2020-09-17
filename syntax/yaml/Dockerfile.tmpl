@@ -15,12 +15,6 @@ FROM python:alpine
 
 RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale
 
-# RUN pip install --no-cache-dir ruamel.yaml.cmd
-
-# RUN pip install --no-cache-dir yamllint
-
-# RUN pip install --no-cache-dir yamale
-
 COPY --from=yaml-tools-builder /usr/local/bin/yaml-tools /usr/local/bin/yaml-tools
 
 COPY --from=yq-builder /usr/local/bin/yq /usr/local/bin/yq

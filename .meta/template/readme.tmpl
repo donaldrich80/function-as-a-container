@@ -86,32 +86,32 @@ docker pull donaldrich/function:{{ (datasource "data").image.tag }} && docker hi
 {{- range $name, $links := $links}}
 {{- if eq $name "github"}}
 
-* [:octicons-mark-github-16: {{$links}}](https://github.com/{{$links}})
+- [:octicons-mark-github-16: {{$links}}](https://github.com/{{$links}})
 
 {{- end}}
 {{- if eq $name "docs"}}
 
-* [:octicons-book-16: Docs]({{$links}})
+- [:octicons-book-16: Docs]({{$links}})
 
 {{- end}}
 {{- if eq $name "docker"}}
 
-* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/{{$links}})
+- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/{{$links}})
 
 {{- end}}
 {{- if eq $name "quay"}}
 
-* [:fontawesome-brands-docker: Quay](https://quay.io/{{$links}})
+- [:fontawesome-brands-docker: Quay](https://quay.io/{{$links}})
 
   {{- end}}
 {{- if eq $name "link"}}
 
-* [$name]({{$links}})
+- [$name]({{$links}})
 
 {{- end}}
 {{- if eq $name "site"}}
 
-* [site]({{$links}})
+- [site]({{$links}})
 
 {{- end}}
 {{- end}}

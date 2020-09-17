@@ -22,10 +22,6 @@ tasks:
     usage: yq test
     run: cat metadata.yml | yq r - tag
 
-  pre-commit:
-    usage: run all
-    run: pre-commit run --all-files
-
   gitleaks:
     usage: gitleaks de
     run: docker run -it --rm --name=gitleaks -v $PWD:/code zricethezav/gitleaks -v --repo-path=/code
@@ -37,18 +33,10 @@ tasks:
   clean:
     usage: template
     run:
-      - command: rm -r docs/ansible | true
-      - command: rm -r docs/docker | true
-      - command: rm -r docs/git | true
-      - command: rm -r docs/hashicorp | true
-      - command: rm -r docs/syntax | true
-      - command: rm -r docs/tools | true
-      - command: rm -r docs/media | true
-      - command: rm -r docs/unsorted | true
-      - command: rm -r docs/files | true
-      - command: rm -r docs/network | true
-      - command: rm -r docs/task | true
+      - command: rm -r docs | true
       - command: rm -r .meta/pipelines | true
+      - command: mkdir docs
+      - command: cp .meta/index.md docs
 
   template:
     usage: template
@@ -60,10 +48,13 @@ tasks:
       - task: clean
       - task: template
 
-  repo-update:
+  pre-commit:
     run:
       - command: pre-commit run -a || true
       - command: pre-commit run -a
+
+  commit:
+    run:
       - command: git add .
       - command: git commit -m "repo template regenerate"
       - command: git push origin master
@@ -74,4 +65,12 @@ tasks:
       - command: git pull origin master
       - task: clean
       - task: template
-      - task: repo-update
+      - task: pre-commit
+      - task: commit
+
+  remote:
+    usage: check package versions
+    run:
+      - task: clean
+      - task: template
+      - task: pre-commit

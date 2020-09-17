@@ -1,5 +1,6 @@
 ---
 tasks:
+
   build:
     usage: build docker image
     run: docker build --pull --rm -t function:terraform .
@@ -8,12 +9,16 @@ tasks:
     usage: build docker image
     run: docker run -it --rm function:terraform validate
 
+
   dive:
     usage: inspect docker image
     run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:terraform
   validate:
     usage: check package versions
     run:
+      - command:
+          exec: converge version
+          print: "\e[32mconverge\e[0m"
       - command:
           exec: terraform version
           print: "\e[32mterraform\e[0m"
@@ -35,6 +40,9 @@ tasks:
   help:
     usage: see config options
     run:
+      - command:
+          exec: converge --help
+          print: "\e[32mconverge\e[0m"
       - command:
           exec: terraform -h
           print: "\e[32mterraform\e[0m"

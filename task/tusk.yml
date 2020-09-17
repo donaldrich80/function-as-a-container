@@ -1,5 +1,6 @@
 ---
 tasks:
+
   build:
     usage: build docker image
     run: docker build --pull --rm -t function:task .
@@ -7,6 +8,7 @@ tasks:
   test:
     usage: build docker image
     run: docker run -it --rm function:task validate
+
 
   dive:
     usage: inspect docker image
@@ -20,6 +22,9 @@ tasks:
       - command:
           exec: just --version
           print: "\e[32mjust\e[0m"
+      - command:
+          exec: maid --version
+          print: "\e[32mmaid\e[0m"
       - command:
           exec: navi --version
           print: "\e[32mnavi\e[0m"
@@ -44,6 +49,9 @@ tasks:
       - command:
           exec: just --help
           print: "\e[32mjust\e[0m"
+      - command:
+          exec: maid --help
+          print: "\e[32mmaid\e[0m"
       - command:
           exec: navi --help
           print: "\e[32mnavi\e[0m"

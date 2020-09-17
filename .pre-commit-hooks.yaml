@@ -1,7 +1,16 @@
-- id: gitleaks
+# Secret Detection
+- id: secrets-gitleaks
   name: Checks commits for secrets w gitleaks
   description: Checks commits for secrets w gitleaks
   entry: zricethezav/gitleaks
+  language: docker_image
+
+- id: secrets-yelp
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  # args: ['scan', '--base64-limit', '4.5', '--hex-limit', '3']
+  args: ["scan"]
   language: docker_image
 
 - id: lint-dockerfile-hadolint
@@ -83,6 +92,5 @@
   #     name: ...
   #     language: docker_image
   #     entry: my.registry.example.com/docker-image-3:latest my-exe
-
 
   # -v $pwd:"/work"

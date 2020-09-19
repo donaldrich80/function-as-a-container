@@ -79,14 +79,13 @@
   verbose: true
   entry: --entrypoint tflint donaldrich/function:terraform # wata727/tflint
   files: \.tf$
-  exclude:
-    \.+.terraform\/.*$
+  exclude: \.+.terraform\/.*$
 
 - id: lint-shell-shfmt
   name: shfmt
   entry: --entrypoint shfmt donaldrich/function:shell
   language: docker_image
-  args: ['-w', '.']
+  args: ["-w", "."]
   # types: [markdown]
 
 - id: lint-shell-dockerfile_lint
@@ -95,12 +94,13 @@
   language: docker_image
   args: [--dockerfile]
   files: Dockerfile.*
-  
+
 - id: terraform-checkov
   name: checkov
   entry: --entrypoint checkov donaldrich/function:checkov
   language: docker_image
-  args: ['-d', '.']
+  args:
+    ["-d", "."]
 
     # args: ["-style=Google"]
   # -   id: dockerfile-no-entrypoint-1

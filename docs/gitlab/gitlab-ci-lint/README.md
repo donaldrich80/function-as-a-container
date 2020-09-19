@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: gitlab/gitlab-ci-lint/Dockerfile
+
 ---
 
 # gitlab-ci-lint

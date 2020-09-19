@@ -21,10 +21,10 @@ repos:
   #       language: docker_image
   #       files: .*
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: 1719e2fa2574b7cf7116dfe3c2135246ed2d56c3
+    rev: 22d0ae23e1845cab31d25146d4b74e89e66cdac1
     hooks:
-      # - id: secrets-gitleaks
-      # - id: secrets-yelp
+      - id: secrets-gitleaks
+      - id: secrets-yelp
       - id: lint-markdown-markdownlint
       - id: lint-yaml-yamllint
       - id: lint-markdown-misspell

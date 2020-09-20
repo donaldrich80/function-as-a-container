@@ -1,1 +1,1 @@
-{ path : syntax/toml }
+{ "path": syntax / toml }

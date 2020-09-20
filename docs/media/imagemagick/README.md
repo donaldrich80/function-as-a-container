@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: media/imagemagick/Dockerfile
-
 ---
 
 # imagemagick

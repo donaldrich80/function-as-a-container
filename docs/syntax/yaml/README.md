@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/yaml/Dockerfile
-
 ---
 
 # yaml

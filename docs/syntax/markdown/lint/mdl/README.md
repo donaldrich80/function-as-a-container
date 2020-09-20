@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/markdown/lint/mdl/Dockerfile
-
 ---
 
 # mdl

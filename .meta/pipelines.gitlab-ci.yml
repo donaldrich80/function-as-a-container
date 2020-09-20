@@ -61,5 +61,6 @@ include:
   - local: .meta/pipelines/hashicorp/vault/token-helper/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/packer/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/terraform-provider-healthchecksio/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/terraform/terratag/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/checkov/build.gitlab-ci.yml

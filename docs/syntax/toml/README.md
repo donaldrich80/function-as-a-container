@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/toml/Dockerfile
-
 ---
 
 # toml-sort

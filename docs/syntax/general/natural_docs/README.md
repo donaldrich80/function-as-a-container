@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/general/natural_docs/Dockerfile
-
 ---
 
 # naturaldocs

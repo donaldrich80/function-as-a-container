@@ -1,0 +1,13 @@
+image:
+  tag: terratag
+  context: ""
+  dir: ""
+  dockerfile: ""
+  download: https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz
+commands:
+  terratag:
+    prefix: terratag
+    version: --version
+    help: --help
+    github: env0/terratag
+extra: ""

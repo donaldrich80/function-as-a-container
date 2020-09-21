@@ -13,13 +13,6 @@
   args: ["scan"]
   language: docker_image
 
-- id: lint-dockerfile-hadolint
-  name: Lint Dockerfiles w hadolint
-  description: Lint Dockerfiles w hadolint
-  language: docker_image
-  entry: hadolint/hadolint hadolint
-  files: Dockerfile
-
 - id: lint-markdown-markdownlint
   name: Lint Markdown w markdownlint
   description: Lint Markdown w markdownlint
@@ -48,7 +41,7 @@
   name: prettier
   entry: --entrypoint prettier donaldrich/function:prettier
   language: docker_image
-  args: [--write, --list-different, --ignore-unknown]
+  args: ['--write', '--list-different', '--ignore-unknown']
 
 - id: lint-markdown-misspell
   name: misspell
@@ -102,6 +95,18 @@
   args:
     ["-d", "."]
 
+- id: lint-dockerfile-dockerfilelint
+  name: Lint Dockerfiles w dockerfilelint linter
+  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
+  language: docker_image
+  files: Dockerfile.*    
+
+- id: lint-dockerfile-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile
     # args: ["-style=Google"]
   # -   id: dockerfile-no-entrypoint-1
   #     name: ...

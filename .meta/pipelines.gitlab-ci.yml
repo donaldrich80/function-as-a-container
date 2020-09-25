@@ -31,8 +31,6 @@ include:
   - local: .meta/pipelines/git/gitversion/build.gitlab-ci.yml
   - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
   - local: .meta/pipelines/gitlab/build.gitlab-ci.yml
-  - local: .meta/pipelines/gitlab/archive/gitlab-ci-local/build.gitlab-ci.yml
-  - local: .meta/pipelines/gitlab/archive/glab/build.gitlab-ci.yml
   - local: .meta/pipelines/gitlab/gitlab-ci-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/media/pdftk/build.gitlab-ci.yml
   - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml

@@ -15,6 +15,9 @@ tasks:
     usage: check package versions
     run:
       - command:
+          exec: gitlab-ci-lint --version
+          print: "\e[32mgitlab-ci-lint\e[0m"
+      - command:
           exec: gitlab-ci-local --version
           print: "\e[32mgitlab-ci-local\e[0m"
       - command:
@@ -23,6 +26,9 @@ tasks:
   help:
     usage: see config options
     run:
+      - command:
+          exec: gitlab-ci-lint --help
+          print: "\e[32mgitlab-ci-lint\e[0m"
       - command:
           exec: gitlab-ci-local --help
           print: "\e[32mgitlab-ci-local\e[0m"

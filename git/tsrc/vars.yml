@@ -1,13 +1,13 @@
 image:
-  tag: semantic-release
+  tag: tsrc
   context: ""
   dir: ""
   dockerfile: ""
 commands:
-  semantic-release:
-    prefix: semantic-release
+  tsrc:
+    prefix: tsrc
     help: -h
     version: -v
-    github: semantic-release/semantic-release
-    docs: https://semantic-release.gitbook.io/semantic-release
+    github: TankerHQ/tsrc
+    docs: https://tankerhq.github.io/tsrc
 extra: ""

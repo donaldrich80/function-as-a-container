@@ -1,6 +1,7 @@
 ---
 path: tree/master
-source: git/semantic-release/Dockerfile
+source: git/tsrc/Dockerfile
+
 ---
 
 # semantic-release

@@ -9,7 +9,7 @@ FROM donaldrich/builder AS glab-builder
 RUN curl -sL https://j.mp/glab-i | bash
 
 # FROM alpine
-FROM node:slim
+FROM node:alpine
 RUN npm install -g gitlab-ci-lint
 
 COPY --from=glab-builder /usr/local/bin/glab /usr/local/bin/glab

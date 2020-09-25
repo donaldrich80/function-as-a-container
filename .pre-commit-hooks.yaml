@@ -3,6 +3,7 @@
   name: Checks commits for secrets w gitleaks
   description: Checks commits for secrets w gitleaks
   entry: zricethezav/gitleaks
+  args: ["--verbose", "--pretty"]
   language: docker_image
 
 - id: secrets-yelp
@@ -55,7 +56,7 @@
   description: mdspell
   language: docker_image
   entry: --entrypoint mdspell pipelinecomponents/markdown-spellcheck mdspell
-  args: [--report '**/*.md']
+  args: ["--report", "**/*.md"]
   types: [markdown]
 
 - id: ansible-lint

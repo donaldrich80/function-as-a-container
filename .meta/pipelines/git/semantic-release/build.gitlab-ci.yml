@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:container:
+build:semantic-release:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:container:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:container
+      --cache-from $REGISTRY/function:semantic-release
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:container
-      --file testing/goss/Dockerfile
-      testing/goss
+      --tag $REGISTRY/function:semantic-release
+      --file git/semantic-release/Dockerfile
+      git/semantic-release
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:container:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "testing/goss/*"
+        - "git/semantic-release/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "container"'
+    - if: '$TRIGGER_VAR1 == "semantic-release"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

@@ -26,6 +26,7 @@ include:
   - local: .meta/pipelines/git/detect-secrets/build.gitlab-ci.yml
   - local: .meta/pipelines/git/conform/build.gitlab-ci.yml
   - local: .meta/pipelines/git/standard-version/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/semantic-release/build.gitlab-ci.yml
   - local: .meta/pipelines/git/tago/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitversion/build.gitlab-ci.yml

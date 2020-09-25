@@ -8,5 +8,5 @@ commands:
     prefix: semantic-release
     help: -h
     version: -v
-    github:  semantic-release/semantic-release
+    github: semantic-release/semantic-release
 extra: ""

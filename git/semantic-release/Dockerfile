@@ -18,6 +18,7 @@ RUN npm install -g --save-dev \
   @semantic-release/git@latest \
   @semantic-release/gitlab@latest \
 # core configs
+  @innovationnorway/semantic-release-terraform-config@latest \
   @semantic-release/apm-config@latest \
   @semantic-release/gitlab-config@latest
 

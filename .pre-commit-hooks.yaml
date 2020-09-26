@@ -132,6 +132,7 @@
 #   entry: hashicorp/terraform:light
 #   pass_filenames: false
 #   args: ["fmt", "-recursive=true"]
+  # args = ["fmt", "-check", "-list", "-recursive"]
 #   types: [terraform]
 #   exclude: \.terraform\/.*$
 #   files: (\.tf|\.tfvars)$

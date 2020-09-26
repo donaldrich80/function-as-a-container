@@ -1,0 +1,13 @@
+image:
+  tag: bunkerized-nginx
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  bunkerized-nginx:
+    prefix: bunkerized-nginx
+    help: null
+    version: null
+    github: bunkerity/bunkerized-nginx
+    docker: bunkerity/bunkerized-nginx
+extra: ""

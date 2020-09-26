@@ -1,0 +1,1 @@
+FROM bunkerity/bunkerized-nginx

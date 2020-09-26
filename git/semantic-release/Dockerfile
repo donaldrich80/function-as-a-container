@@ -17,6 +17,8 @@ RUN npm install -g --save-dev \
   @semantic-release/exec@latest \
   @semantic-release/git@latest \
   @semantic-release/gitlab@latest \
+  @semantic-release/commit-analyzer \
+  @semantic-release/release-notes-generator \
 # core configs
   @semantic-release/apm-config@latest \
   @semantic-release/gitlab-config@latest

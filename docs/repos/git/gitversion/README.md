@@ -1,6 +1,7 @@
 ---
 path: tree/master
 source: repos/git/gitversion/Dockerfile
+
 ---
 
 # gitversion

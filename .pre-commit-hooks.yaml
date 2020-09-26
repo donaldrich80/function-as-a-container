@@ -102,14 +102,14 @@
   entry: hadolint/hadolint hadolint
   files:
     Dockerfile
-    # args: ["-style=Google"]
 
-- id: git-conform
-  name: git-conform
+- id: lint-git-conform
+  name: lint-git-conform
   entry: --entrypoint conform donaldrich/function:conform
   language: docker_image
-  verbose: true
   args: ["enforce"]
+  verbose: true
+  # args: ["enforce", "--commit-msg-file"]
   pass_filenames: false
   stages:
     - commit-msg

@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: repos/git/semantic-release/Dockerfile
-
 ---
 
 # semantic-release

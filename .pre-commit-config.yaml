@@ -12,10 +12,6 @@ repos:
         args: ["--fix=lf"]
   - repo: local
     hooks:
-      # - id: gitleaks
-      #   name: Gitleaks
-      #   entry: zricethezav/gitleaks
-      #   language: docker_image
       - id: lint-git-conform
         name: lint-git-conform
         entry: --entrypoint conform donaldrich/function:conform

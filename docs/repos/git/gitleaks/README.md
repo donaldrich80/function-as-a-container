@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: repos/git/gitleaks/Dockerfile
-
 ---
 
 # gitleaks

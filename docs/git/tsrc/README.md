@@ -1,58 +1,57 @@
 ---
 path: tree/master
 source: git/tsrc/Dockerfile
-
 ---
 
-# semantic-release
+# tsrc
 
-[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/function/semantic-release?color=blue&label=donaldrich/function:semantic-release&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/function/semantic-release)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/function/tsrc?color=blue&label=donaldrich/function:tsrc&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/function/tsrc)
 
 ## Documentation
 
-### Semantic-Release
+### Tsrc
 
-- [:octicons-book-16: Docs](https://semantic-release.gitbook.io/semantic-release)
+- [:octicons-book-16: Docs](https://tankerhq.github.io/tsrc)
 
-- [:octicons-mark-github-16: semantic-release/semantic-release](https://github.com/semantic-release/semantic-release)
+- [:octicons-mark-github-16: TankerHQ/tsrc](https://github.com/TankerHQ/tsrc)
 
 ## Image Commands
 
 ### Container shell
 
 ```sh
-docker pull donaldrich/function:semantic-release
+docker pull donaldrich/function:tsrc
 docker run -it --rm \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v "$(pwd)":"/work" -w "/work" \
---hostname=semantic-release \
+--hostname=tsrc \
 --entrypoint="/bin/sh" \
 --net="host" \
-donaldrich/function:semantic-release
+donaldrich/function:tsrc
 ```
 
 ### Check versions
 
 ```sh
-docker pull donaldrich/function:semantic-release && docker run -it --rm  donaldrich/function:semantic-release validate
+docker pull donaldrich/function:tsrc && docker run -it --rm  donaldrich/function:tsrc validate
 ```
 
 ### See config options
 
 ```sh
-docker pull donaldrich/function:semantic-release && docker run -it --rm  donaldrich/function:semantic-release help
+docker pull donaldrich/function:tsrc && docker run -it --rm  donaldrich/function:tsrc help
 ```
 
 ### Dive into Image
 
 ```sh
-docker pull donaldrich/function:semantic-release && dive donaldrich/function:semantic-release
+docker pull donaldrich/function:tsrc && dive donaldrich/function:tsrc
 ```
 
 ### See Layer Info
 
 ```sh
-docker pull donaldrich/function:semantic-release && docker history donaldrich/function:semantic-release
+docker pull donaldrich/function:tsrc && docker history donaldrich/function:tsrc
 ```
 
 ## Image Details
@@ -62,13 +61,13 @@ docker pull donaldrich/function:semantic-release && docker history donaldrich/fu
     === "Image"
         ```json
         --8<--
-        image-info/semantic-release.md
+        image-info/tsrc.md
         --8<--
         ```
 
     === "Layers"
         ```md
         --8<--
-        layers/semantic-release.md
+        layers/tsrc.md
         --8<--
         ```

@@ -14,6 +14,7 @@ RUN npm install -g --save-dev \
   conventional-changelog-conventionalcommits \
   @semantic-release/commit-analyzer@latest \
   @semantic-release/release-notes-generator@latest \
+  # @semantic-release/exec
 # core configs
   # @innovationnorway/semantic-release-terraform-config@latest \
   @semantic-release/apm-config@latest \
@@ -40,4 +41,4 @@ RUN npm install -g --save-dev \
 # RUN npm install -g \
 #   @jedmao/semantic-release-npm-github-config@latest
 
-ENTRYPOINT [ "semantic-release" ]
+# ENTRYPOINT [ "semantic-release" ]

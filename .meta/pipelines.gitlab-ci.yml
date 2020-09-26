@@ -15,8 +15,10 @@ include:
   - local: .meta/pipelines/syntax/json/jsonnet/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/toml/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/tools/bat/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/shell/tools/argbash/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/yaml/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/codespell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/natural_docs/build.gitlab-ci.yml
@@ -29,11 +31,18 @@ include:
   - local: .meta/pipelines/git/semantic-release/build.gitlab-ci.yml
   - local: .meta/pipelines/git/tsrc/build.gitlab-ci.yml
   - local: .meta/pipelines/git/tago/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitlab/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitlab/archive/gitlab-ci-local/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitlab/archive/glab/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitversion/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/gitlab-ci-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/github/build.gitlab-ci.yml
+  - local: .meta/pipelines/go/golang/build.gitlab-ci.yml
   - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
   - local: .meta/pipelines/gitlab/build.gitlab-ci.yml
+  - local: .meta/pipelines/gitlab/archive/gitlab-ci-local/build.gitlab-ci.yml
+  - local: .meta/pipelines/gitlab/archive/glab/build.gitlab-ci.yml
   - local: .meta/pipelines/gitlab/gitlab-ci-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/media/pdftk/build.gitlab-ci.yml
   - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml
@@ -44,12 +53,18 @@ include:
   - local: .meta/pipelines/unsorted/td4a/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/vuls/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/dump-env/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/realize/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/menu_commander/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/gomplate/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/maid/build.gitlab-ci.yml
   - local: .meta/pipelines/task/build.gitlab-ci.yml
+  - local: .meta/pipelines/homebrew/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/goss/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/converge/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/archive/inspec/build.gitlab-ci.yml
+  - local: .meta/pipelines/testing/inspec/build.gitlab-ci.yml
+  - local: .meta/pipelines/testing/container-structure-test/build.gitlab-ci.yml
   - local: .meta/pipelines/network/bitwarden-cli/build.gitlab-ci.yml
   - local: .meta/pipelines/network/httpie/build.gitlab-ci.yml
   - local: .meta/pipelines/network/goscan/build.gitlab-ci.yml
@@ -65,4 +80,6 @@ include:
   - local: .meta/pipelines/hashicorp/terraform/terraform-provider-healthchecksio/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/terratag/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/terraform/terraform-provider-keycloak/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/checkov/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/terraform/archive/terraform-provider-proxmox/build.gitlab-ci.yml

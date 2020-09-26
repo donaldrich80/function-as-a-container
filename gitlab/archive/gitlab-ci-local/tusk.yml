@@ -1,0 +1,25 @@
+---
+tasks:
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:gitlab-ci-local .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:gitlab-ci-local validate
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:gitlab-ci-local
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: gitlab-ci-local --version
+          print: "\e[32mgitlab-ci-local\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: gitlab-ci-local --help
+          print: "\e[32mgitlab-ci-local\e[0m"

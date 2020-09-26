@@ -1,7 +1,13 @@
+# FROM node:alpine
+
+# # RUN apk --update --no-cache add git git-lfs openssh
+# RUN apk --update --no-cache add git
+# RUN npm install --save-dev semantic-release
+
 FROM node:alpine
 
-RUN apk --update --no-cache add ca-certificates git
-# git-lfs openssh
+# node:alpine doesn't come with certificates or git, so we need to grab those
+RUN apk add --no-cache ca-certificates git
 
 RUN npm install -g --save-dev \
   semantic-release@latest \
@@ -17,6 +23,9 @@ RUN npm install -g --save-dev \
   @commitlint/config-conventional@latest \
   @commitlint/cli@latest \
   commitizen@latest
+# core configs
+  @semantic-release/apm-config@latest \
+  @semantic-release/gitlab-config@latest
 
 # community plugins
 # RUN npm install -g \
@@ -39,4 +48,3 @@ RUN npm install -g --save-dev \
 # RUN npm install -g \
 #   @jedmao/semantic-release-npm-github-config@latest
 
-# ENTRYPOINT [ "semantic-release" ]

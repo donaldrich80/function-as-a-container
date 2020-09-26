@@ -47,4 +47,3 @@ RUN npm install -g --save-dev \
 # # community configs
 # RUN npm install -g \
 #   @jedmao/semantic-release-npm-github-config@latest
-

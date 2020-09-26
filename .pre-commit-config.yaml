@@ -10,25 +10,33 @@ repos:
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args: ["--fix=lf"]
+  - repo: local
+    hooks:
+      # - id: gitleaks
+      #   name: Gitleaks
+      #   entry: zricethezav/gitleaks
+      #   language: docker_image
+      - id: lint-git-conform
+        name: lint-git-conform
+        entry: --entrypoint conform donaldrich/function:conform
+        language: docker_image
+        args: ["enforce"]
+        # args: ["enforce", "--commit-msg-file"]
+        pass_filenames: false
+        # stages: [commit-msg]
+  #     -   id: check-x
+  #         name: Check X
+  #         entry: ./run-all.sh
+  #         language: script
+  # npx commitlint --from HEAD~1 --to HEAD --verbose
+  # - repo: https://github.com/prettier/prettier
+  #   rev: 2.1.2
+  #   hooks:
+  #     - id: prettier
+
   # - repo: https://github.com/talos-systems/conform
   #   rev: v0.1.0-alpha.20
   #   hooks:
   #     - id: conform
   #       stages:
   #         - commit-msg
-  - repo: local
-    hooks:
-      - id: gitleaks
-        name: Gitleaks
-        entry: zricethezav/gitleaks
-        language: docker_image
-  # -   repo: local
-  #     hooks:
-  #     -   id: check-x
-  #         name: Check X
-  #         entry: ./run-all.sh
-  #         language: script
-  - repo: https://github.com/prettier/prettier
-    rev: 2.1.2
-    hooks:
-      - id: prettier

@@ -114,6 +114,14 @@
   stages:
     - commit-msg
 
+- id: lint-git-commitlint
+  name: lint-git-commitlint
+  entry: --entrypoint commitlint donaldrich/function:semantic-release
+  language: docker_image
+  args: ["--verbose"]
+  # stages:
+  #   - prepare-commit-msg
+
 - id: lint-shell-shellcheck
   name: lint-shell-shellcheck
   entry: koalaman/shellcheck:stable

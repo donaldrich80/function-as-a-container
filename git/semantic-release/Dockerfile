@@ -12,13 +12,11 @@ RUN npm install -g --save-dev \
   @semantic-release/git@latest \
   @semantic-release/gitlab@latest \
   conventional-changelog-conventionalcommits \
-  @semantic-release/commit-analyzer@latest \
-  @semantic-release/release-notes-generator@latest \
-  # @semantic-release/exec
-# core configs
-  # @innovationnorway/semantic-release-terraform-config@latest \
   @semantic-release/apm-config@latest \
-  @semantic-release/gitlab-config@latest
+  @semantic-release/gitlab-config@latest \
+  @commitlint/config-conventional@latest \
+  @commitlint/cli@latest \
+  commitizen@latest
 
 # community plugins
 # RUN npm install -g \

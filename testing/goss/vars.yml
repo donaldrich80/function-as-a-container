@@ -1,5 +1,5 @@
 image:
-  tag: goss
+  tag: container
   context: ""
   dir: ""
   dockerfile: ""

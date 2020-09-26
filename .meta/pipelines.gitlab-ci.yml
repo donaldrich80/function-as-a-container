@@ -26,13 +26,14 @@ include:
   - local: .meta/pipelines/git/detect-secrets/build.gitlab-ci.yml
   - local: .meta/pipelines/git/conform/build.gitlab-ci.yml
   - local: .meta/pipelines/git/standard-version/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/semantic-release/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/tsrc/build.gitlab-ci.yml
   - local: .meta/pipelines/git/tago/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/git/gitversion/build.gitlab-ci.yml
+  - local: .meta/pipelines/github/build.gitlab-ci.yml
   - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
   - local: .meta/pipelines/gitlab/build.gitlab-ci.yml
-  - local: .meta/pipelines/gitlab/archive/gitlab-ci-local/build.gitlab-ci.yml
-  - local: .meta/pipelines/gitlab/archive/glab/build.gitlab-ci.yml
   - local: .meta/pipelines/gitlab/gitlab-ci-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/media/pdftk/build.gitlab-ci.yml
   - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml

@@ -3,9 +3,9 @@ path: tree/master
 source: testing/goss/Dockerfile
 ---
 
-# goss
+# container
 
-[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/function/goss?color=blue&label=donaldrich/function:goss&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/function/goss)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/function/container?color=blue&label=donaldrich/function:container&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/function/container)
 
 ## Documentation
 
@@ -26,38 +26,38 @@ source: testing/goss/Dockerfile
 ### Container shell
 
 ```sh
-docker pull donaldrich/function:goss
+docker pull donaldrich/function:container
 docker run -it --rm \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v "$(pwd)":"/work" -w "/work" \
---hostname=goss \
+--hostname=container \
 --entrypoint="/bin/sh" \
 --net="host" \
-donaldrich/function:goss
+donaldrich/function:container
 ```
 
 ### Check versions
 
 ```sh
-docker pull donaldrich/function:goss && docker run -it --rm -v "$(pwd):/src" donaldrich/function:goss validate
+docker pull donaldrich/function:container && docker run -it --rm -v "$(pwd):/src" donaldrich/function:container validate
 ```
 
 ### See config options
 
 ```sh
-docker pull donaldrich/function:goss && docker run -it --rm -v "$(pwd):/src" donaldrich/function:goss help
+docker pull donaldrich/function:container && docker run -it --rm -v "$(pwd):/src" donaldrich/function:container help
 ```
 
 ### Dive into Image
 
 ```sh
-docker pull donaldrich/function:goss && dive donaldrich/function:goss
+docker pull donaldrich/function:container && dive donaldrich/function:container
 ```
 
 ### See Layer Info
 
 ```sh
-docker pull donaldrich/function:goss && docker history donaldrich/function:goss
+docker pull donaldrich/function:container && docker history donaldrich/function:container
 ```
 
 ## Image Details
@@ -67,13 +67,13 @@ docker pull donaldrich/function:goss && docker history donaldrich/function:goss
     === "Image"
         ```json
         --8<--
-        image-info/goss.md
+        image-info/container.md
         --8<--
         ```
 
     === "Layers"
         ```md
         --8<--
-        layers/goss.md
+        layers/container.md
         --8<--
         ```

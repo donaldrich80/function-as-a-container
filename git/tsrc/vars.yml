@@ -1,0 +1,13 @@
+image:
+  tag: tsrc
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  tsrc:
+    prefix: tsrc
+    help: -h
+    version: -v
+    github: TankerHQ/tsrc
+    docs: https://tankerhq.github.io/tsrc
+extra: ""

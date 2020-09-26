@@ -15,4 +15,9 @@ commands:
     help: --help
     version: --version
     github: firecow/gitlab-ci-local
+  gitlab-ci-lint:
+    prefix: gitlab-ci-lint
+    help: --help
+    version: --version
+    github: BuBuaBu/gitlab-ci-lint
 extra: ""

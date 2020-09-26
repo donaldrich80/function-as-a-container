@@ -5,9 +5,12 @@ RUN mv linux /usr/local/bin/gitlab-ci-local
 RUN chmod +x /usr/local/bin/gitlab-ci-local
 
 FROM donaldrich/builder AS glab-builder
-RUN curl -sL https://j.mp/glab-i | sudo bash
+# RUN curl -sL https://j.mp/glab-i | sudo bash
+RUN curl -sL https://j.mp/glab-i | bash
 
-FROM alpine
+# FROM alpine
+FROM node:alpine
+RUN npm install -g gitlab-ci-lint
 
 COPY --from=glab-builder /usr/local/bin/glab /usr/local/bin/glab
 COPY --from=gitlab-ci-local-builder /usr/local/bin/gitlab-ci-local /usr/local/bin/gitlab-ci-local

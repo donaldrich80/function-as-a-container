@@ -3,6 +3,8 @@
   name: Checks commits for secrets w gitleaks
   description: Checks commits for secrets w gitleaks
   entry: zricethezav/gitleaks
+  args: ["--verbose", "--pretty"]
+  pass_filenames: false
   language: docker_image
 
 - id: secrets-yelp
@@ -41,7 +43,7 @@
   name: prettier
   entry: --entrypoint prettier donaldrich/function:prettier
   language: docker_image
-  args: ['--write', '--list-different', '--ignore-unknown']
+  args: ["--write", "--list-different", "--ignore-unknown"]
 
 - id: lint-markdown-misspell
   name: misspell
@@ -55,7 +57,7 @@
   description: mdspell
   language: docker_image
   entry: --entrypoint mdspell pipelinecomponents/markdown-spellcheck mdspell
-  args: [--report '**/*.md']
+  args: ["--report", "**/*.md"]
   types: [markdown]
 
 - id: ansible-lint
@@ -74,13 +76,6 @@
   files: \.tf$
   exclude: \.+.terraform\/.*$
 
-- id: lint-shell-shfmt
-  name: shfmt
-  entry: --entrypoint shfmt donaldrich/function:shell
-  language: docker_image
-  args: ["-w", "."]
-  # types: [markdown]
-
 - id: lint-shell-dockerfile_lint
   name: dockerfile_lint
   entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
@@ -92,30 +87,80 @@
   name: checkov
   entry: --entrypoint checkov donaldrich/function:checkov
   language: docker_image
-  args:
-    ["-d", "."]
+  args: ["-d", "."]
 
 - id: lint-dockerfile-dockerfilelint
   name: Lint Dockerfiles w dockerfilelint linter
   entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
   language: docker_image
-  files: Dockerfile.*    
+  files: Dockerfile.*
 
 - id: lint-dockerfile-hadolint
   name: Lint Dockerfiles w hadolint
   description: Lint Dockerfiles w hadolint
   language: docker_image
   entry: hadolint/hadolint hadolint
-  files: Dockerfile
+  files:
+    Dockerfile
     # args: ["-style=Google"]
-  # -   id: dockerfile-no-entrypoint-1
-  #     name: ...
-  #     language: docker_image
-  #     entry: --entrypoint my-exe my.registry.example.com/docker-image-2:latest
-  # # Alternative equivalent solution
-  # -   id: dockerfile-no-entrypoint-2
-  #     name: ...
-  #     language: docker_image
-  #     entry: my.registry.example.com/docker-image-3:latest my-exe
 
-  # -v $pwd:"/work"
+- id: git-conform
+  name: git-conform
+  entry: --entrypoint conform donaldrich/function:conform
+  language: docker_image
+  verbose: true
+  args: ["enforce"]
+  pass_filenames: false
+  stages:
+    - commit-msg
+
+- id: lint-shell-shellcheck
+  name: lint-shell-shellcheck
+  entry: koalaman/shellcheck:stable
+  language: docker_image
+  types: [shell]
+
+- id: lint-shell-shfmt
+  name: lint-shell-shfmt
+  entry: --entrypoint shfmt donaldrich/function:shell
+  language: docker_image
+  args: ["-w", "."]
+  types: [shell]
+# - id: tffmt
+#   name: terraform -- format the code
+#   language: docker_image
+#   entry: hashicorp/terraform:light
+#   pass_filenames: false
+#   args: ["fmt", "-recursive=true"]
+#   types: [terraform]
+#   exclude: \.terraform\/.*$
+#   files: (\.tf|\.tfvars)$
+
+# - id: tflint
+#   name: terraform -- lint the code
+#   language: docker_image
+#   types: [terraform]
+#   entry: wata727/tflint
+#   exclude: \.terraform\/.*$
+#   files: (\.tf|\.tfvars)$
+
+# - id: markdownlint_docker
+#   name: Markdownlint Docker
+#   description: Run markdown lint on your Markdown files using the project docker image
+#   language: docker_image
+#   files: \.(md|mdown|markdown)$
+#   entry: markdownlint/markdownlint mdl
+
+# - id: terragrunt-hclfmt
+#   name: Terragrunt HCL format
+#   files: \.hcl$
+#   language: docker_image
+#   entry: lowess/terragrunt:0.12.24 terragrunt hclfmt
+
+# - id: terraform-fmt
+#   name: Terraform format
+#   files: \.tf$
+#   exclude: \.+.terraform\/.*$
+#   language: docker_image
+#   always_run: true
+#   entry: lowess/terragrunt:0.12.24 terraform fmt

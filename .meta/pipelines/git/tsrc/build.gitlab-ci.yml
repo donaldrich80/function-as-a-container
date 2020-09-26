@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:gitlab-ci-local:
+build:semantic-release:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:gitlab-ci-local:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:gitlab-ci-local
+      --cache-from $REGISTRY/function:semantic-release
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:gitlab-ci-local
-      --file gitlab/archive/gitlab-ci-local/Dockerfile
-      gitlab/archive/gitlab-ci-local
+      --tag $REGISTRY/function:semantic-release
+      --file git/tsrc/Dockerfile
+      git/tsrc
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:gitlab-ci-local:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "gitlab/archive/gitlab-ci-local/*"
+        - "git/tsrc/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "gitlab-ci-local"'
+    - if: '$TRIGGER_VAR1 == "semantic-release"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

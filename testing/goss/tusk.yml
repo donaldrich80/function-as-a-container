@@ -2,15 +2,15 @@
 tasks:
   build:
     usage: build docker image
-    run: docker build --pull --rm -t function:goss .
+    run: docker build --pull --rm -t function:container .
 
   test:
     usage: build docker image
-    run: docker run -it --rm function:goss validate
+    run: docker run -it --rm function:container validate
 
   dive:
     usage: inspect docker image
-    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:goss
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:container
   validate:
     usage: check package versions
     run:

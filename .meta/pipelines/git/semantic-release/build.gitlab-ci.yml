@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:glab:
+build:semantic-release:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:glab:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:glab
+      --cache-from $REGISTRY/function:semantic-release
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:glab
-      --file gitlab/archive/glab/Dockerfile
-      gitlab/archive/glab
+      --tag $REGISTRY/function:semantic-release
+      --file git/semantic-release/Dockerfile
+      git/semantic-release
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:glab:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "gitlab/archive/glab/*"
+        - "git/semantic-release/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "glab"'
+    - if: '$TRIGGER_VAR1 == "semantic-release"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

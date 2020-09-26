@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:container:
+build:github-cli:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:container:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:container
+      --cache-from $REGISTRY/function:github-cli
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:container
-      --file testing/goss/Dockerfile
-      testing/goss
+      --tag $REGISTRY/function:github-cli
+      --file github/Dockerfile
+      github
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:container:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "testing/goss/*"
+        - "github/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "container"'
+    - if: '$TRIGGER_VAR1 == "github-cli"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

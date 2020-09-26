@@ -55,6 +55,7 @@ include:
   - local: .meta/pipelines/network/goscan/build.gitlab-ci.yml
   - local: .meta/pipelines/network/curl/build.gitlab-ci.yml
   - local: .meta/pipelines/network/apprise/build.gitlab-ci.yml
+  - local: .meta/pipelines/network/bunkerized/build.gitlab-ci.yml
   - local: .meta/pipelines/network/cfssl/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/sentinel/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/build.gitlab-ci.yml

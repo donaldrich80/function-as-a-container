@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:tsrc:
+build:bunkerized-nginx:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:tsrc:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:tsrc
+      --cache-from $REGISTRY/function:bunkerized-nginx
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:tsrc
-      --file git/tsrc/Dockerfile
-      git/tsrc
+      --tag $REGISTRY/function:bunkerized-nginx
+      --file network/bunkerized/Dockerfile
+      network/bunkerized
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:tsrc:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "git/tsrc/*"
+        - "network/bunkerized/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "tsrc"'
+    - if: '$TRIGGER_VAR1 == "bunkerized-nginx"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

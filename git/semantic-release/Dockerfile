@@ -1,13 +1,7 @@
-# FROM node:alpine
-
-# # RUN apk --update --no-cache add git git-lfs openssh
-# RUN apk --update --no-cache add git
-# RUN npm install --save-dev semantic-release
-
 FROM node:alpine
 
-# node:alpine doesn't come with certificates or git, so we need to grab those
-RUN apk add --no-cache ca-certificates git
+RUN apk --update --no-cache add ca-certificates git
+# git-lfs openssh
 
 RUN npm install -g --save-dev \
   semantic-release@latest \
@@ -17,9 +11,12 @@ RUN npm install -g --save-dev \
   @semantic-release/exec@latest \
   @semantic-release/git@latest \
   @semantic-release/gitlab@latest \
-  @semantic-release/commit-analyzer \
-  @semantic-release/release-notes-generator \
+  conventional-changelog-conventionalcommits \
+  @semantic-release/commit-analyzer@latest \
+  @semantic-release/release-notes-generator@latest \
+  # @semantic-release/exec
 # core configs
+  # @innovationnorway/semantic-release-terraform-config@latest \
   @semantic-release/apm-config@latest \
   @semantic-release/gitlab-config@latest
 
@@ -44,4 +41,4 @@ RUN npm install -g --save-dev \
 # RUN npm install -g \
 #   @jedmao/semantic-release-npm-github-config@latest
 
-ENTRYPOINT [ "semantic-release" ]
+# ENTRYPOINT [ "semantic-release" ]

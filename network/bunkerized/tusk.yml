@@ -1,0 +1,25 @@
+---
+tasks:
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:bunkerized-nginx .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:bunkerized-nginx validate
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:bunkerized-nginx
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: bunkerized-nginx <no value>
+          print: "\e[32mbunkerized-nginx\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: bunkerized-nginx <no value>
+          print: "\e[32mbunkerized-nginx\e[0m"

@@ -4,6 +4,7 @@
   description: Checks commits for secrets w gitleaks
   entry: zricethezav/gitleaks
   args: ["--verbose", "--pretty"]
+  pass_filenames: false
   language: docker_image
 
 - id: secrets-yelp

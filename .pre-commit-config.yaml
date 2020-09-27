@@ -22,6 +22,7 @@ repos:
         entry: --entrypoint commitlint donaldrich/function:semantic-release
         language: docker_image
         args: ["--from=HEAD~1"]
+        verbose: true
         stages:
           - prepare-commit-msg
       # - id: lint-git-conform

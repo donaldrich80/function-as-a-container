@@ -15,10 +15,11 @@ repos:
   #   hooks:
   #     - id: prettier
   #       verbose: true
-  # - repo: https://gitlab.com/donaldrich/function-as-a-container
-  #   rev: v1.0.3
-  #   hooks:
-  #     - id: repo-policy-commitlint
+  - repo: https://gitlab.com/donaldrich/function-as-a-container
+    rev: v1.0.3
+    hooks:
+      - id: repo-scan-yelp
+      - id: repo-scan-gitleaks
 
   # - id: repo-semver-semantic-release
   #   name: repo-semver-semantic-release

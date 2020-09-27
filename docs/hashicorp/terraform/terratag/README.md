@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/terraform/terratag/Dockerfile
-
 ---
 
 # terratag

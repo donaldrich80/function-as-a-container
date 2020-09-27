@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/json/hcl2json/Dockerfile
-
 ---
 
 # hcl2json

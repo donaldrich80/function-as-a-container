@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: hashicorp/vault/token-helper/Dockerfile
-
 ---
 
 # vault-token-helper

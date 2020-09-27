@@ -10,19 +10,17 @@ repos:
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args: ["--fix=lf"]
-  # - repo: https://github.com/prettier/prettier
-  #   rev: 2.1.2
-  #   hooks:
-  #     - id: prettier
+
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v1.1.2
+    rev: v1.1.3
     hooks:
       - id: repo-scan-yelp
       - id: repo-scan-gitleaks
       - id: repo-policy-commitizen
-        stages: [commit-msg]
-      - id: repo-policy-commitlint
-        stages: [commit-msg]
+        stages: [prepare-commit-msg]
+      # - id: repo-policy-commitlint
+      #   stages: [commit-msg]
+      - id: lint-shell-shellcheck
 
   # - repo: https://github.com/talos-systems/conform
   #   rev: v0.1.0-alpha.20
@@ -35,3 +33,9 @@ repos:
   #         name: Check X
   #         entry: ./run-all.sh
   #         language: script
+
+  # - repo: https://github.com/prettier/prettier
+  #   rev: 2.1.2
+  #   hooks:
+  #     - id: prettier
+  #       stages: [commit-msg]

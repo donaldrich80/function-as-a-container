@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: go/glide/Dockerfile
-
 ---
 
 # glide

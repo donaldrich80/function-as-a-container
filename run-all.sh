@@ -8,10 +8,11 @@ sed 's/^.\{2\}//' Dockerfile2.txt > Dockerfile3.txt;
 sed 's/.$//' Dockerfile3.txt > Dockerfile-paths.txt;
 rm Dockerfile1.txt Dockerfile2.txt Dockerfile3.txt;
 
-cat Dockerfile-paths.txt | while read line;
+# cat Dockerfile-paths.txt | while read line;
+while read -r line;
 do
   ./run-dockerfile.sh "$line";
-done;
+done < Dockerfile-paths.txt
 
 find . -name \*vars.yml > pre1.txt;
 sed 's:[^/]*$::' pre1.txt > pre2.txt;
@@ -19,10 +20,11 @@ sed 's/^.\{2\}//' pre2.txt > pre3.txt;
 sed 's/.$//' pre3.txt > ci-paths.txt;
 rm pre1.txt pre2.txt pre3.txt;
 
-cat ci-paths.txt | while read line;
+# cat ci-paths.txt | while read line;
+while read -r line;
 do
   ./run.sh "$line";
-done;
+done < ci-paths.txt
 
 find . -name \*build.gitlab-ci.yml > pipe1.txt;
 

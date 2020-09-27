@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: repos/git/detect-secrets/Dockerfile
-
 ---
 
 # detect-secrets

@@ -42,5 +42,5 @@ plugins:
     - changelogFile: .meta/CHANGELOG.md
   - - "@semantic-release/git"
     - assets:
-      - .meta/CHANGELOG.md
+        - .meta/CHANGELOG.md
       message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"

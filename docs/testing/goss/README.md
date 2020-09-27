@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: testing/goss/Dockerfile
-
 ---
 
 # container

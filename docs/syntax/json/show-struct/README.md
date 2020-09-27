@@ -1,7 +1,6 @@
 ---
 path: tree/master
 source: syntax/json/show-struct/Dockerfile
-
 ---
 
 # show-struct

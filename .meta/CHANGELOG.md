@@ -1,3 +1,10 @@
+### [1.2.2](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.1...v1.2.2) (2020-09-27)
+
+
+### Bug Fixes
+
+* test ([5dd69bc](https://gitlab.com/donaldrich/function-as-a-container/commit/5dd69bc35576b951b56f0b23a9f26da35cc825cb))
+
 ### [1.2.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.0...v1.2.1) (2020-09-27)
 
 ### Bug Fixes

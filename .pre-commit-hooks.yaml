@@ -1,19 +1,4 @@
-# Secret Detection
-- id: secrets-gitleaks
-  name: Checks commits for secrets w gitleaks
-  description: Checks commits for secrets w gitleaks
-  entry: zricethezav/gitleaks
-  args: ["--verbose", "--pretty"]
-  pass_filenames: false
-  language: docker_image
 
-- id: secrets-yelp
-  name: Detect secrets
-  description: Detects high entropy strings that are likely to be passwords.
-  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
-  # args: ['scan', '--base64-limit', '4.5', '--hex-limit', '3']
-  args: ["scan"]
-  language: docker_image
 
 - id: lint-markdown-markdownlint
   name: Lint Markdown w markdownlint
@@ -76,12 +61,7 @@
   files: \.tf$
   exclude: \.+.terraform\/.*$
 
-- id: lint-shell-dockerfile_lint
-  name: dockerfile_lint
-  entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
-  language: docker_image
-  args: [--dockerfile]
-  files: Dockerfile.*
+
 
 - id: terraform-checkov
   name: checkov
@@ -89,30 +69,9 @@
   language: docker_image
   args: ["-d", "."]
 
-- id: lint-dockerfile-dockerfilelint
-  name: Lint Dockerfiles w dockerfilelint linter
-  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
-  language: docker_image
-  files: Dockerfile.*
 
-- id: lint-dockerfile-hadolint
-  name: Lint Dockerfiles w hadolint
-  description: Lint Dockerfiles w hadolint
-  language: docker_image
-  entry: hadolint/hadolint hadolint
-  files:
-    Dockerfile
-    # args: ["-style=Google"]
 
-- id: git-conform
-  name: git-conform
-  entry: --entrypoint conform donaldrich/function:conform
-  language: docker_image
-  verbose: true
-  args: ["enforce"]
-  pass_filenames: false
-  stages:
-    - commit-msg
+
 
 - id: lint-shell-shellcheck
   name: lint-shell-shellcheck
@@ -165,3 +124,65 @@
 #   language: docker_image
 #   always_run: true
 #   entry: lowess/terragrunt:0.12.24 terraform fmt
+
+- id:  docker-lint-dockerfile_lint
+  name: dockerfile_lint
+  entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
+  language: docker_image
+  args: [--dockerfile]
+  files: Dockerfile.*
+
+- id:  docker-lint-dockerfilelint
+  name: Lint Dockerfiles w dockerfilelint linter
+  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
+  language: docker_image
+  files: Dockerfile.*
+
+- id: docker-lint-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile.*
+
+- id: repo-policy-conform
+  name: repo-policy-conform
+  entry: --entrypoint conform donaldrich/function:conform
+  language: docker_image
+  args: ["enforce"]
+  verbose: true
+  # args: ["enforce", "--commit-msg-file"]
+  pass_filenames: false
+  stages:
+    - commit-msg
+
+- id: repo-policy-commitlint
+  name: repo-policy-commitlint
+  entry: --entrypoint commitlint donaldrich/function:semantic-release
+  language: docker_image
+  args: ["--verbose"]
+  # stages:
+  #   - prepare-commit-msg
+
+- id: repo-policy-prettier
+  name: repo-policy-rettier
+  entry: --entrypoint prettier donaldrich/function:prettier
+  language: docker_image
+  args: ["--write", "--list-different", "--ignore-unknown"]
+
+# Secret Detection
+- id: repo-scan-gitleaks
+  name: Checks commits for secrets w gitleaks
+  description: Checks commits for secrets w gitleaks
+  entry: zricethezav/gitleaks
+  args: ["--verbose", "--pretty"]
+  pass_filenames: false
+  language: docker_image
+
+- id: repo-scan-yelp
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  # args: ['scan', '--base64-limit', '4.5', '--hex-limit', '3']
+  args: ["scan"]
+  language: docker_image

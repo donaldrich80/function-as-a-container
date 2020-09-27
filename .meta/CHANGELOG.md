@@ -1,3 +1,10 @@
+### [1.1.4](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.3...v1.1.4) (2020-09-27)
+
+
+### Bug Fixes
+
+* **repo:** readme ([ae84a6d](https://gitlab.com/donaldrich/function-as-a-container/commit/ae84a6df2d84c29604d39dbf82b57c8b338bde5c))
+
 ### [1.1.3](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.2...v1.1.3) (2020-09-27)
 
 

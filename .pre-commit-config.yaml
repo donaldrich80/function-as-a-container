@@ -21,10 +21,9 @@ repos:
         name: repo-policy-commitlint
         entry: --entrypoint commitlint donaldrich/function:semantic-release
         language: docker_image
-        # args: ["--from=HEAD~1"]
+        args: ["-e"]
         # verbose: true
-        stages:
-          - commit-msg
+        stages: [commit-msg]
       # - id: lint-git-conform
       #   name: lint-git-conform
       #   entry: --entrypoint conform donaldrich/function:conform

@@ -15,7 +15,7 @@ repos:
   #   hooks:
   #     - id: prettier
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v1.1.1
+    rev: v1.1.2
     hooks:
       - id: repo-scan-yelp
       - id: repo-scan-gitleaks

@@ -1,3 +1,10 @@
+### [1.1.2](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.1...v1.1.2) (2020-09-27)
+
+
+### Bug Fixes
+
+* **hooks:** commitizen ([5168d4d](https://gitlab.com/donaldrich/function-as-a-container/commit/5168d4d955981ad4c044b023a831f1714e9f21e4))
+
 ### [1.1.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.0...v1.1.1) (2020-09-27)
 
 

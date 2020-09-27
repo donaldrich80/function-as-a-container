@@ -47,7 +47,6 @@ variables:
 #   - changes:
 #     - "**/*/*"
 
-
 fetch-semantic-version:
   image:
     name: donaldrich/function:semantic-release

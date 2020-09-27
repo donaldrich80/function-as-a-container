@@ -7,7 +7,7 @@ preset: conventionalcommits
 tagFormat: v${version}
 repositoryUrl: https://gitlab.com/donaldrich/function-as-a-container.git
 plugins:
-  - - '@semantic-release/commit-analyzer'
+  - - "@semantic-release/commit-analyzer"
     - preset: conventionalcommits
       releaseRules:
         - type: docs
@@ -27,14 +27,14 @@ plugins:
           - BREAKING CHANGE
           - BREAKING CHANGES
           - BREAKING
-  - - '@semantic-release/release-notes-generator'
+  - - "@semantic-release/release-notes-generator"
     - preset: conventionalcommits
       parserOpts:
         noteKeywords:
           - BREAKING CHANGE
           - BREAKING CHANGES
           - BREAKING
-  - '@semantic-release/gitlab'
+  - "@semantic-release/gitlab"
 # - - "@semantic-release/exec"
 #   - verifyConditionsCmd: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 #     verifyReleaseCmd: |
@@ -57,11 +57,6 @@ plugins:
 # branch: master
 # repositoryUrl: https://github.com/bycedric/docker.git
 # tagFormat: ${version}
-
-# analyzeCommits:
-#   path: '@semantic-release/commit-analyzer'
-#   preset: peakfijn
-#   releaseRules: release-rules-peakfijn
 
 # generateNotes:
 #   - path: '@semantic-release/release-notes-generator'

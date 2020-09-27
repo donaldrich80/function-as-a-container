@@ -20,6 +20,7 @@ repos:
       - id: repo-scan-yelp
       - id: repo-scan-gitleaks
       - id: repo-policy-commitizen
+        stages: [commit-msg]
 
   # - id: repo-semver-semantic-release
   #   name: repo-semver-semantic-release

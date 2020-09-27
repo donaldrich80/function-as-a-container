@@ -7,9 +7,34 @@ preset: conventionalcommits
 tagFormat: v${version}
 repositoryUrl: https://gitlab.com/donaldrich/function-as-a-container.git
 plugins:
-  - "@semantic-release/commit-analyzer"
-  - "@semantic-release/release-notes-generator"
-  - "@semantic-release/gitlab"
+  - - '@semantic-release/commit-analyzer'
+    - preset: conventionalcommits
+      releaseRules:
+        - type: docs
+          # scope: README
+          release: patch
+        - type: refactor
+          release: patch
+        - type: perf
+          scope: repo
+          release: minor
+        - type: chore
+          release: false
+        - scope: auto
+          release: false
+      parserOpts:
+        noteKeywords:
+          - BREAKING CHANGE
+          - BREAKING CHANGES
+          - BREAKING
+  - - '@semantic-release/release-notes-generator'
+    - preset: conventionalcommits
+      parserOpts:
+        noteKeywords:
+          - BREAKING CHANGE
+          - BREAKING CHANGES
+          - BREAKING
+  - '@semantic-release/gitlab'
 # - - "@semantic-release/exec"
 #   - verifyConditionsCmd: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 #     verifyReleaseCmd: |

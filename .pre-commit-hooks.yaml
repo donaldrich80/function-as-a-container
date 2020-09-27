@@ -151,7 +151,6 @@
   language: docker_image
   args: ["enforce"]
   verbose: true
-  # args: ["enforce", "--commit-msg-file"]
   pass_filenames: false
   stages:
     - commit-msg
@@ -169,6 +168,14 @@
   entry: --entrypoint prettier donaldrich/function:prettier
   language: docker_image
   args: ["--write", "--list-different", "--ignore-unknown"]
+
+- id: repo-semver-semantic-release
+  name: repo-semver-semantic-release
+  entry: --entrypoint semantic-release donaldrich/function:semantic-release
+  language: docker_image
+  args: ["--generate-notes", "false" ,"--dry-run"]
+  pass_filenames: false
+  verbose: true
 
 # Secret Detection
 - id: repo-scan-gitleaks

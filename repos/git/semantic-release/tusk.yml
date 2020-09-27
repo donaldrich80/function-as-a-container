@@ -15,11 +15,17 @@ tasks:
     usage: check package versions
     run:
       - command:
+          exec: commitlint -v
+          print: "\e[32mcommitlint\e[0m"
+      - command:
           exec: semantic-release -v
           print: "\e[32msemantic-release\e[0m"
   help:
     usage: see config options
     run:
+      - command:
+          exec: commitlint -h
+          print: "\e[32mcommitlint\e[0m"
       - command:
           exec: semantic-release -h
           print: "\e[32msemantic-release\e[0m"

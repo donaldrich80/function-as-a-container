@@ -10,4 +10,9 @@ commands:
     version: -v
     github: semantic-release/semantic-release
     docs: https://semantic-release.gitbook.io/semantic-release
+  commitlint:
+    prefix: commitlint
+    help: -h
+    version: -v
+    github: conventional-changelog/commitlint
 extra: ""

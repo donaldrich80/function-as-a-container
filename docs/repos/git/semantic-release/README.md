@@ -10,6 +10,10 @@ source: repos/git/semantic-release/Dockerfile
 
 ## Documentation
 
+### Commitlint
+
+- [:octicons-mark-github-16: conventional-changelog/commitlint](https://github.com/conventional-changelog/commitlint)
+
 ### Semantic-Release
 
 - [:octicons-book-16: Docs](https://semantic-release.gitbook.io/semantic-release)

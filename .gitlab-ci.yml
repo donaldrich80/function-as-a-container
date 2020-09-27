@@ -60,7 +60,7 @@ fetch-semantic-version:
     # - /^(([0-9]+)\.)?([0-9]+)\.x/ # This matches maintenance branches
     # - /^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/ # This matches pre-releases
   script:
-    - npx semantic-release --generate-notes false --dry-run
+    - semantic-release --generate-notes false --dry-run
   artifacts:
     paths:
       - VERSION.txt
@@ -98,4 +98,4 @@ release:
     # # This matches pre-releases
     # - /^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/
   script:
-    - npx semantic-release
+    - semantic-release

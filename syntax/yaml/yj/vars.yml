@@ -1,0 +1,13 @@
+image:
+  tag: yj
+  context: ""
+  dir: ""
+  dockerfile: ""
+  download: https://github.com/sclevine/yj/releases/download/v5.0.0/yj-linux
+commands:
+  yj:
+    prefix: yj
+    help: --help
+    version: --version
+    github: sclevine/yj
+extra: ""

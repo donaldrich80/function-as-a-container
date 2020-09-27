@@ -24,8 +24,8 @@ RUN npm install -g --save-dev \
   @commitlint/cli@latest \
   commitizen@latest
 # core configs
-  @semantic-release/apm-config@latest \
-  @semantic-release/gitlab-config@latest
+  # @semantic-release/apm-config@latest \
+  # @semantic-release/gitlab-config@latest
 
 # community plugins
 # RUN npm install -g \

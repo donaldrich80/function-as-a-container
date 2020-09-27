@@ -16,6 +16,7 @@ RUN npm install -g --save-dev \
   conventional-changelog-conventionalcommits \
   @commitlint/cli@latest \
   @commitlint/prompt@latest \
+  @commitlint/prompt-cli@latest \
   commitizen@latest \
   cz-conventional-changelog@latest \
   cz-customizable@latest

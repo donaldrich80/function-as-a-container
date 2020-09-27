@@ -12,18 +12,19 @@ repos:
         args: ["--fix=lf"]
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v1.1.3
+    rev: v1.1.4
     hooks:
+      - id: lint-shell-shellcheck
       - id: repo-scan-yelp
       - id: repo-scan-gitleaks
-      - id: repo-policy-commitizen
-        stages: [prepare-commit-msg]
+      # - id: repo-policy-commitizen
+      #   stages: [prepare-commit-msg]
       # - id: repo-policy-commitlint
       #   stages: [commit-msg]
-      - id: lint-shell-shellcheck
+
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: master
+    rev: v2.4.0
     hooks:
       - id: commitizen
         stages: [commit-msg]

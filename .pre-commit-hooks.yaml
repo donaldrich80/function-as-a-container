@@ -150,8 +150,8 @@
   name: commitizen check
   entry: --entrypoint cz donaldrich/function:commitizen
   language: docker_image
-  args: ["check", "--commit-msg-file"]
-  pass_filenames: false
+  args: ["check"]
+  # pass_filenames: false
   verbose: true
   # stages: [commit-msg]
 

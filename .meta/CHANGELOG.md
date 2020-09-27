@@ -1,3 +1,10 @@
+### [1.1.3](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.2...v1.1.3) (2020-09-27)
+
+
+### Bug Fixes
+
+* **ci:** moved semver to template ([0a02a57](https://gitlab.com/donaldrich/function-as-a-container/commit/0a02a57f5d14f1625b74626cabd49101d6f72aa9))
+
 ### [1.1.2](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.1...v1.1.2) (2020-09-27)
 
 

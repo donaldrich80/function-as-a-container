@@ -21,14 +21,8 @@ repos:
       - id: repo-scan-gitleaks
       - id: repo-policy-commitizen
         stages: [commit-msg]
-
-  # - id: repo-semver-semantic-release
-  #   name: repo-semver-semantic-release
-  #   entry: --entrypoint semantic-release donaldrich/function:semantic-release
-  #   language: docker_image
-  #   args: ["--generate-notes", "false" ,"--dry-run"]
-  #   pass_filenames: false
-  #   verbose: true
+      - id: repo-policy-commitlint
+        stages: [commit-msg]
 
   # - repo: https://github.com/talos-systems/conform
   #   rev: v0.1.0-alpha.20

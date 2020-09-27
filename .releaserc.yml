@@ -22,6 +22,9 @@ plugins:
           release: false
         - scope: auto
           release: false
+        - type: feat
+          scope: image
+          release: minor
       parserOpts:
         noteKeywords:
           - BREAKING CHANGE

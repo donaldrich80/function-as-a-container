@@ -14,6 +14,10 @@ RUN npm install -g --save-dev \
   @semantic-release/gitlab-config@latest \
   @commitlint/config-conventional@latest \
   conventional-changelog-conventionalcommits \
-  # @commitlint/core@latest \
   @commitlint/cli@latest \
-  commitizen@latest
+  @commitlint/prompt@latest \
+  commitizen@latest \
+  cz-conventional-changelog@latest \
+  cz-customizable@latest
+
+RUN echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc

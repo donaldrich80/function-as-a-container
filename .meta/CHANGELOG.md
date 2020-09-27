@@ -1,3 +1,10 @@
+## [1.2.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.4...v1.2.0) (2020-09-27)
+
+
+### Features
+
+* **image:** semantic has commitizen ([349fe77](https://gitlab.com/donaldrich/function-as-a-container/commit/349fe777165cd849da83ffe9cfbccdcdb580d540))
+
 ### [1.1.4](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.3...v1.1.4) (2020-09-27)
 
 

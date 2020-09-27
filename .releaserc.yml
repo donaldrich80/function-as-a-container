@@ -3,30 +3,13 @@ branches:
   # - "+([0-9])?(.{+([0-9]),x}).x"
   # - name: "alpha"
   #   prerelease: "alpha"
-preset: conventionalcommits # https://www.conventionalcommits.org/
+preset: conventionalcommits
 tagFormat: v${version}
 repositoryUrl: https://gitlab.com/donaldrich/function-as-a-container.git
 plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/gitlab"
-# branch: master
-# preset: conventionalcommits # https://www.conventionalcommits.org/
-# tagFormat: "v${version}"
-# plugins:
-# - "@semantic-release/commit-analyzer"
-# - "@semantic-release/release-notes-generator"
-# - - "@google/semantic-release-replace-plugin"
-#   - replacements:
-#     - files: [ "setup.py "]
-#       from: "version=\"dev\""
-#       to: "version=\"${nextRelease.version}\""
-#       countMatches: true
-#       results:
-#         - file: "setup.py"
-#           hasChanged: true
-#           numMatches: 1
-#           numReplacements: 1
 # - - "@semantic-release/exec"
 #   - verifyConditionsCmd: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 #     verifyReleaseCmd: |

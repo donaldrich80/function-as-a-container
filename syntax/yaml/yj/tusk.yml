@@ -15,11 +15,11 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: yj --version
+          exec: yj -v
           print: "\e[32myj\e[0m"
   help:
     usage: see config options
     run:
       - command:
-          exec: yj --help
+          exec: yj -h
           print: "\e[32myj\e[0m"

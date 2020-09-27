@@ -7,7 +7,7 @@ image:
 commands:
   yj:
     prefix: yj
-    help: --help
-    version: --version
+    help: -h
+    version: -v
     github: sclevine/yj
 extra: ""

@@ -35,33 +35,12 @@ plugins:
           - BREAKING CHANGES
           - BREAKING
   - "@semantic-release/gitlab"
-# - - "@semantic-release/exec"
-#   - verifyConditionsCmd: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-#     verifyReleaseCmd: |
-#       MAJOR_MINOR_PATCH=${/^((\d+)\.\d+)\.\d+$/.exec(nextRelease.version)}
-#       if [ -z $MAJOR_MINOR_PATCH ]; then echo "Only SemVer versions with version core (major.minor.patch) supported!"; exit 1; fi
-#     prepareCmd: docker build -t $IMAGE_NAME:latest .
-#     publishCmd: |
-#       MAJOR_MINOR_PATCH=${/^((\d+)\.\d+)\.\d+$/.exec(nextRelease.version)[0]}
-#       MAJOR_MINOR=${      /^((\d+)\.\d+)\.\d+$/.exec(nextRelease.version)[1]}
-#       MAJOR=${            /^((\d+)\.\d+)\.\d+$/.exec(nextRelease.version)[2]}
-#       docker tag $IMAGE_NAME:latest $IMAGE_NAME:$MAJOR_MINOR_PATCH
-#       docker tag $IMAGE_NAME:latest $IMAGE_NAME:$MAJOR_MINOR
-#       docker tag $IMAGE_NAME:latest $IMAGE_NAME:$MAJOR
-#       docker push $IMAGE_NAME:latest
-#       docker push $IMAGE_NAME:$MAJOR_MINOR_PATCH
-#       docker push $IMAGE_NAME:$MAJOR_MINOR
-#       docker push $IMAGE_NAME:$MAJOR
-# - "@semantic-release/github"
+  - - "@semantic-release/changelog"
+    - changelogFile: .meta/CHANGELOG.md
 
-# branch: master
-# repositoryUrl: https://github.com/bycedric/docker.git
-# tagFormat: ${version}
-
-# generateNotes:
-#   - path: '@semantic-release/release-notes-generator'
-#     preset: peakfijn
-
+    # ["@semantic-release/git", {
+    #   "assets": ["docs/CHANGELOG.md"]
+    # }],
 # verifyConditions:
 #   - '@semantic-release/changelog'
 #   - '@semantic-release/npm'

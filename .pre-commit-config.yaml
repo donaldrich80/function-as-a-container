@@ -15,30 +15,18 @@ repos:
   #   hooks:
   #     - id: prettier
   #       verbose: true
-  - repo: local
-    hooks:
-      - id: repo-policy-commitlint
-        name: repo-policy-commitlint
-        entry: --entrypoint commitlint donaldrich/function:semantic-release
-        language: docker_image
-        args: ["-e"]
-        # verbose: true
-        stages: [commit-msg]
-      # - id: lint-git-conform
-      #   name: lint-git-conform
-      #   entry: --entrypoint conform donaldrich/function:conform
-      #   language: docker_image
-      #   args: ["enforce"]
-      #   # args: ["enforce", "--commit-msg-file"]
-      #   pass_filenames: false
-      # stages: [commit-msg]
-      # - id: repo-semver-semantic-release
-      #   name: repo-semver-semantic-release
-      #   entry: --entrypoint semantic-release donaldrich/function:semantic-release
-      #   language: docker_image
-      #   args: ["--generate-notes", "false" ,"--dry-run"]
-      #   pass_filenames: false
-      #   verbose: true
+  # - repo: https://gitlab.com/donaldrich/function-as-a-container
+  #   rev: v1.0.3
+  #   hooks:
+  #     - id: repo-policy-commitlint
+
+  # - id: repo-semver-semantic-release
+  #   name: repo-semver-semantic-release
+  #   entry: --entrypoint semantic-release donaldrich/function:semantic-release
+  #   language: docker_image
+  #   args: ["--generate-notes", "false" ,"--dry-run"]
+  #   pass_filenames: false
+  #   verbose: true
 
   # - repo: https://github.com/talos-systems/conform
   #   rev: v0.1.0-alpha.20

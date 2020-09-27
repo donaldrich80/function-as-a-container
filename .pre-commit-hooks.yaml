@@ -144,16 +144,15 @@
   args: ["enforce"]
   verbose: true
   pass_filenames: false
-  stages:
-    - commit-msg
+  stages: [commit-msg]
 
 - id: repo-policy-commitlint
   name: repo-policy-commitlint
   entry: --entrypoint commitlint donaldrich/function:semantic-release
   language: docker_image
-  args: ["--verbose"]
-  stages:
-    - prepare-commit-msg
+  args: [-e]
+  pass_filenames: false
+  stages: [commit-msg]
 
 - id: repo-policy-prettier
   name: repo-policy-rettier

@@ -22,6 +22,10 @@ tasks:
     usage: yq test
     run: cat metadata.yml | yq r - tag
 
+  git-hooks:
+    usage: hooks
+    run: pre-commit install --hook-type commit-msg
+
   gitleaks:
     usage: gitleaks de
     run: docker run -it --rm --name=gitleaks -v $PWD:/code zricethezav/gitleaks -v --repo-path=/code

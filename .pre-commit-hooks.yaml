@@ -148,7 +148,7 @@
 
 - id: repo-policy-commitizen
   name: commitizen check
-  entry: --entrypoint cz donaldrich/function:commitizen
+  entry: --entrypoint cz donaldrich/function:semantic-release
   language: docker_image
   args: ["check"]
   # pass_filenames: false

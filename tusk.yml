@@ -56,7 +56,7 @@ tasks:
   commit:
     run:
       - command: git add .
-      - command: git commit -m "repo template regenerate"
+      - command: 'git commit -m "chore: regenerate templated files"'
       - command: git push origin master
 
   repo:

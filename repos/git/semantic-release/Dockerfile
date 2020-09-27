@@ -10,9 +10,10 @@ RUN npm install -g --save-dev \
   @semantic-release/git@latest \
   @semantic-release/gitlab@latest \
   semantic-release-docker@latest \
-  conventional-changelog-conventionalcommits \
   @semantic-release/apm-config@latest \
   @semantic-release/gitlab-config@latest \
   @commitlint/config-conventional@latest \
+  conventional-changelog-conventionalcommits \
+  # @commitlint/core@latest \
   @commitlint/cli@latest \
   commitizen@latest

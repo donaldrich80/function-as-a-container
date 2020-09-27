@@ -1,0 +1,78 @@
+branches:
+  - "master"
+  # - "+([0-9])?(.{+([0-9]),x}).x"
+  # - name: "alpha"
+  #   prerelease: "alpha"
+preset: conventionalcommits # https://www.conventionalcommits.org/
+tagFormat: v${version}
+repositoryUrl: https://gitlab.com/donaldrich/function-as-a-container.git
+plugins:
+  - "@semantic-release/commit-analyzer"
+  - "@semantic-release/release-notes-generator"
+  - "@semantic-release/gitlab"
+# branch: master
+# preset: conventionalcommits # https://www.conventionalcommits.org/
+# tagFormat: "v${version}"
+# plugins:
+# - "@semantic-release/commit-analyzer"
+# - "@semantic-release/release-notes-generator"
+# - - "@google/semantic-release-replace-plugin"
+#   - replacements:
+#     - files: [ "setup.py "]
+#       from: "version=\"dev\""
+#       to: "version=\"${nextRelease.version}\""
+#       countMatches: true
+#       results:
+#         - file: "setup.py"
+#           hasChanged: true
+#           numMatches: 1
+#           numReplacements: 1
+# - - "@semantic-release/exec"
+#   - verifyConditionsCmd: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#     verifyReleaseCmd: |
+#       MAJOR_MINOR_PATCH=${/^((\d+)\.\d+)\.\d+$/.exec(nextRelease.version)}
+#       if [ -z $MAJOR_MINOR_PATCH ]; then echo "Only SemVer versions with version core (major.minor.patch) supported!"; exit 1; fi
+#     prepareCmd: docker build -t $IMAGE_NAME:latest .
+#     publishCmd: |
+#       MAJOR_MINOR_PATCH=${/^((\d+)\.\d+)\.\d+$/.exec(nextRelease.version)[0]}
+#       MAJOR_MINOR=${      /^((\d+)\.\d+)\.\d+$/.exec(nextRelease.version)[1]}
+#       MAJOR=${            /^((\d+)\.\d+)\.\d+$/.exec(nextRelease.version)[2]}
+#       docker tag $IMAGE_NAME:latest $IMAGE_NAME:$MAJOR_MINOR_PATCH
+#       docker tag $IMAGE_NAME:latest $IMAGE_NAME:$MAJOR_MINOR
+#       docker tag $IMAGE_NAME:latest $IMAGE_NAME:$MAJOR
+#       docker push $IMAGE_NAME:latest
+#       docker push $IMAGE_NAME:$MAJOR_MINOR_PATCH
+#       docker push $IMAGE_NAME:$MAJOR_MINOR
+#       docker push $IMAGE_NAME:$MAJOR
+# - "@semantic-release/github"
+
+# branch: master
+# repositoryUrl: https://github.com/bycedric/docker.git
+# tagFormat: ${version}
+
+# analyzeCommits:
+#   path: '@semantic-release/commit-analyzer'
+#   preset: peakfijn
+#   releaseRules: release-rules-peakfijn
+
+# generateNotes:
+#   - path: '@semantic-release/release-notes-generator'
+#     preset: peakfijn
+
+# verifyConditions:
+#   - '@semantic-release/changelog'
+#   - '@semantic-release/npm'
+#   - '@semantic-release/github'
+#   - semantic-release-git-branches
+
+# prepare:
+#   - '@semantic-release/changelog'
+#   - path: '@semantic-release/npm'
+#     npmPublish: false
+#   - path: semantic-release-git-branches
+#     branchMerges: [develop, master]
+#     message: |-
+#       release: create new version ${nextRelease.version}
+#       ${nextRelease.notes}
+# publish:
+#   - '@semantic-release/github'

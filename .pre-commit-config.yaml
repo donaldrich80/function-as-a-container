@@ -14,7 +14,6 @@ repos:
   #   rev: 2.1.2
   #   hooks:
   #     - id: prettier
-  #       verbose: true
   - repo: https://gitlab.com/donaldrich/function-as-a-container
     rev: v1.0.3
     hooks:

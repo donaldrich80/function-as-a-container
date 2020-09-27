@@ -5,7 +5,7 @@ branches:
   #   prerelease: "alpha"
 preset: conventionalcommits
 tagFormat: v${version}
-repositoryUrl: https://gitlab.com/donaldrich/function-as-a-container.git
+repositoryUrl: https://gitlab.com/donaldrich/function-as-a-container
 plugins:
   - - "@semantic-release/commit-analyzer"
     - preset: conventionalcommits
@@ -37,24 +37,7 @@ plugins:
   - "@semantic-release/gitlab"
   - - "@semantic-release/changelog"
     - changelogFile: .meta/CHANGELOG.md
-
-    # ["@semantic-release/git", {
-    #   "assets": ["docs/CHANGELOG.md"]
-    # }],
-# verifyConditions:
-#   - '@semantic-release/changelog'
-#   - '@semantic-release/npm'
-#   - '@semantic-release/github'
-#   - semantic-release-git-branches
-
-# prepare:
-#   - '@semantic-release/changelog'
-#   - path: '@semantic-release/npm'
-#     npmPublish: false
-#   - path: semantic-release-git-branches
-#     branchMerges: [develop, master]
-#     message: |-
-#       release: create new version ${nextRelease.version}
-#       ${nextRelease.notes}
-# publish:
-#   - '@semantic-release/github'
+  - - "@semantic-release/git"
+    - assets:
+      - .meta/CHANGELOG.md
+      message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"

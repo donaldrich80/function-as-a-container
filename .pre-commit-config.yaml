@@ -14,11 +14,12 @@ repos:
   #   rev: 2.1.2
   #   hooks:
   #     - id: prettier
-  - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v1.0.3
-    hooks:
-      - id: repo-scan-yelp
-      - id: repo-scan-gitleaks
+  # - repo: https://gitlab.com/donaldrich/function-as-a-container
+  #   rev: master
+  #   hooks:
+  #     - id: repo-scan-yelp
+  #     - id: repo-scan-gitleaks
+      # - id: repo-policy-commitizen
 
   # - id: repo-semver-semantic-release
   #   name: repo-semver-semantic-release

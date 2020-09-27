@@ -146,10 +146,13 @@
   pass_filenames: false
   stages: [commit-msg]
 
-- id: commitizen
+- id: repo-policy-commitizen
   name: commitizen check
-  description: "Check whether the commit message follows commiting rules"
-  entry: cz check --commit-msg-file
+  entry: --entrypoint cz donaldrich/function:commitizen
+  language: docker_image
+  args: ["check", "--commit-msg-file"]
+  pass_filenames: false
+  stages: [commit-msg]
 
 - id: repo-policy-commitlint
   name: repo-policy-commitlint

@@ -1,30 +1,26 @@
 ### [1.2.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.0...v1.2.1) (2020-09-27)
 
-
 ### Bug Fixes
 
-* **image:** semver ([cbdce07](https://gitlab.com/donaldrich/function-as-a-container/commit/cbdce07b2f823bb8c6fcc12dff333e452630d2ba))
+- **image:** semver ([cbdce07](https://gitlab.com/donaldrich/function-as-a-container/commit/cbdce07b2f823bb8c6fcc12dff333e452630d2ba))
 
 ## [1.2.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.4...v1.2.0) (2020-09-27)
 
-
 ### Features
 
-* **image:** semantic has commitizen ([349fe77](https://gitlab.com/donaldrich/function-as-a-container/commit/349fe777165cd849da83ffe9cfbccdcdb580d540))
+- **image:** semantic has commitizen ([349fe77](https://gitlab.com/donaldrich/function-as-a-container/commit/349fe777165cd849da83ffe9cfbccdcdb580d540))
 
 ### [1.1.4](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.3...v1.1.4) (2020-09-27)
 
-
 ### Bug Fixes
 
-* **repo:** readme ([ae84a6d](https://gitlab.com/donaldrich/function-as-a-container/commit/ae84a6df2d84c29604d39dbf82b57c8b338bde5c))
+- **repo:** readme ([ae84a6d](https://gitlab.com/donaldrich/function-as-a-container/commit/ae84a6df2d84c29604d39dbf82b57c8b338bde5c))
 
 ### [1.1.3](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.2...v1.1.3) (2020-09-27)
 
-
 ### Bug Fixes
 
-* **ci:** moved semver to template ([0a02a57](https://gitlab.com/donaldrich/function-as-a-container/commit/0a02a57f5d14f1625b74626cabd49101d6f72aa9))
+- **ci:** moved semver to template ([0a02a57](https://gitlab.com/donaldrich/function-as-a-container/commit/0a02a57f5d14f1625b74626cabd49101d6f72aa9))
 
 ### [1.1.2](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.1...v1.1.2) (2020-09-27)
 

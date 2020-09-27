@@ -15,11 +15,11 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: npx prettier --version
-          print: "\e[32mnpx prettier\e[0m"
+          exec: prettier --version
+          print: "\e[32mprettier\e[0m"
   help:
     usage: see config options
     run:
       - command:
-          exec: npx prettier --help
-          print: "\e[32mnpx prettier\e[0m"
+          exec: prettier --help
+          print: "\e[32mprettier\e[0m"

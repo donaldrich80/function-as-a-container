@@ -1,3 +1,3 @@
 FROM node:alpine
 
-RUN npm install --save-dev --save-exact prettier
+RUN npm install -g --save-dev --save-exact prettier

@@ -1,1 +1,1 @@
-{ path : network/cfssl }
+{ "path": network / cfssl }

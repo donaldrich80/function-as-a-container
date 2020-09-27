@@ -5,7 +5,7 @@ image:
   dockerfile: ""
 commands:
   prettier:
-    prefix: npx prettier
+    prefix: prettier
     help: --help
     version: --version
     github: prettier/prettier

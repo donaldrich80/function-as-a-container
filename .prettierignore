@@ -1,3 +1,5 @@
 /.meta/template/
 .meta/index.md
 docs/index.md
+.git
+.git/COMMIT_EDITMSG

@@ -163,8 +163,8 @@
   pass_filenames: false
   # stages: [commit-msg]
 
-- id: repo-policy-prettier
-  name: repo-policy-rettier
+- id: repo-prettier
+  name: repo-prettier
   entry: --entrypoint prettier donaldrich/function:prettier
   language: docker_image
   args: ["--write", "--list-different", "--ignore-unknown"]

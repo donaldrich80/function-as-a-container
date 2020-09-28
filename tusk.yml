@@ -24,7 +24,9 @@ tasks:
 
   git-hooks:
     usage: hooks
-    run: pre-commit install --hook-type commit-msg
+    run:
+      - command: pre-commit install --hook-type commit-msg
+      - command: pre-commit install --hook-type prepare-commit-msg
 
   gitleaks:
     usage: gitleaks de

@@ -32,11 +32,12 @@ repos:
     hooks:
       - id: repo-policy-commitizen
         name: commitizen check
-        entry: --entrypoint cz donaldrich/function:semver
+        entry: --entrypoint git-cz donaldrich/function:semver
         language: docker_image
-        # args: ["commit"]
+        # args: ["--hook"]
         # pass_filenames: false
         verbose: true
+        stages: [commit-msg]
 
   # stages: [commit-msg]
   # - repo: https://github.com/talos-systems/conform

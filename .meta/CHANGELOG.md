@@ -1,3 +1,10 @@
+### [1.2.4](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.3...v1.2.4) (2020-09-28)
+
+
+### Bug Fixes
+
+* **image:** semver ([c9c34c0](https://gitlab.com/donaldrich/function-as-a-container/commit/c9c34c0a1ba5eac5d479ab28c0960c51fe97f85b))
+
 ### [1.2.3](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.2...v1.2.3) (2020-09-28)
 
 

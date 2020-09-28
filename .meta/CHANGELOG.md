@@ -1,3 +1,10 @@
+### [1.2.3](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.2...v1.2.3) (2020-09-28)
+
+
+### Bug Fixes
+
+* **image:** consolidate semver into one image ([c783656](https://gitlab.com/donaldrich/function-as-a-container/commit/c7836564d27904bd5b4520541f319d9587fa4d1b))
+
 ### [1.2.2](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.1...v1.2.2) (2020-09-27)
 
 

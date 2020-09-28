@@ -1,0 +1,12 @@
+image:
+  tag: remarshal
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  remarshal:
+    prefix: remarshal.py
+    help: -h
+    version: -v
+    github: dbohdan/remarshal
+extra: ""

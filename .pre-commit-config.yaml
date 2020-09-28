@@ -17,13 +17,15 @@ repos:
       - id: lint-shell-shellcheck
       - id: repo-scan-yelp
       - id: repo-scan-gitleaks
-      # - id: repo-policy-commitizen
+      # - id: docker-lint-hadolint
+      #   files: Dockerfile
+      #   exclude: Dockerfile.tmpl.*
+      # - id: repo-policy-commitlint
       #   stages: [prepare-commit-msg]
       - id: repo-policy-commitlint
-        stages: [prepare-commit-msg]
-      - id: repo-policy-commitlint
         stages: [commit-msg]
-
+      # - id: repo-policy-commitizen
+      #   stages: [prepare-commit-msg]
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v2.4.0
     hooks:

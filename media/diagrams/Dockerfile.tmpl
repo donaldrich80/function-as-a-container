@@ -1,5 +1,5 @@
 FROM python:slim
 
-RUN apt update -y && apt install graphviz -y
+RUN apt-get update -y && apt-get install --no-install-recommends graphviz -y && rm -rf /var/lib/apt/lists/*
 
 RUN pip install diagrams

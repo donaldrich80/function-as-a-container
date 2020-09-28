@@ -22,7 +22,7 @@ RUN upx /usr/local/bin/container-structure-test
 
 FROM alpine
 COPY --from=container-structure-test-builder  /usr/local/bin/container-structure-test  /usr/local/bin/container-structure-test
-RUN apk add bash
+RUN apk add --no-cache bash
 
 COPY --from=container-structure-test-builder  /usr/local/bin/container-structure-test  /usr/local/bin/container-structure-test
 COPY --from=docker  /usr/local/bin/docker  /usr/local/bin/docker

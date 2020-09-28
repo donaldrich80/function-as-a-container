@@ -2,7 +2,7 @@ FROM ubuntu:focal
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update -y && apt-get install xvfb libfontconfig wkhtmltopdf -y
+RUN apt-get update -y && apt-get install --no-install-recommends xvfb libfontconfig wkhtmltopdf -y
 
 
 RUN mkdir -pv ~/.cache/xdgr

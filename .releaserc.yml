@@ -8,7 +8,6 @@ plugins:
     - preset: conventionalcommits
       releaseRules:
         - type: docs
-          # scope: README
           release: patch
         - type: refactor
           release: patch
@@ -22,6 +21,9 @@ plugins:
         - type: feat
           scope: image
           release: minor
+        - type: fix
+          scope: image
+          release: false
       parserOpts:
         noteKeywords:
           - BREAKING CHANGE
@@ -29,6 +31,19 @@ plugins:
           - BREAKING
   - - "@semantic-release/release-notes-generator"
     - preset: conventionalcommits
+      types:
+        - type: feat
+          section: Features
+        - type: fix
+          section: Bug Fixes
+        - type: repo
+          hidden: true
+        - type: chore
+          hidden: true
+        - type: docs
+          hidden: true
+        - type: perf
+          hidden: true
       parserOpts:
         noteKeywords:
           - BREAKING CHANGE

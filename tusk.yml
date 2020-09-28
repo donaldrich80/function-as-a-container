@@ -60,7 +60,7 @@ tasks:
   commit:
     run:
       - command: git add .
-      - command: 'git commit -m "chore: regenerate templated files"'
+      - command: 'git commit -m "auto: repo templates refreshed"'
       - command: git push origin master
 
   repo:

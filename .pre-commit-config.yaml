@@ -1,4 +1,13 @@
 repos:
+  - repo: local
+    hooks:
+      - id: tusk-regenerate
+        name: tusk-regenerate
+        entry: tusk
+        args: ["regenerate"]
+        language: system
+        pass_filenames: false
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
@@ -32,14 +41,7 @@ repos:
   #     - id: commitizen
   #       stages: [commit-msg]
 
-  - repo: local
-    hooks:
-      - id: tusk-regenerate
-        name: tusk-regenerate
-        entry: tusk
-        args: ["regenerate"]
-        language: system
-        pass_filenames: false
+
   #     - id: repo-policy-commitizen
   #       name: commitizen check
   #       entry: --entrypoint git-cz donaldrich/function:semver

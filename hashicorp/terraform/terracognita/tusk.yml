@@ -1,0 +1,25 @@
+---
+tasks:
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:terracognita .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:terracognita validate
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:terracognita
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: terracognita --version
+          print: "\e[32mterracognita\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: terracognita --help
+          print: "\e[32mterracognita\e[0m"

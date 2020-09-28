@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:standard-version:
+build:semver:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:standard-version:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:standard-version
+      --cache-from $REGISTRY/function:semver
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:standard-version
-      --file repos/git/standard-version/Dockerfile
-      repos/git/standard-version
+      --tag $REGISTRY/function:semver
+      --file repos/semver/Dockerfile
+      repos/semver
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:standard-version:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "repos/git/standard-version/*"
+        - "repos/semver/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "standard-version"'
+    - if: '$TRIGGER_VAR1 == "semver"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

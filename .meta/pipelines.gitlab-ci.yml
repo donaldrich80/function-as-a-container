@@ -25,11 +25,8 @@ include:
   - local: .meta/pipelines/syntax/general/misspell/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/general/languagetool/build.gitlab-ci.yml
   - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/git/commitizen/build.gitlab-ci.yml
+  - local: .meta/pipelines/repos/semver/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/detect-secrets/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/git/conform/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/git/standard-version/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/git/semantic-release/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/tsrc/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/tago/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/gitleaks/build.gitlab-ci.yml

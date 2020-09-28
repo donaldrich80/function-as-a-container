@@ -2,30 +2,48 @@
 tasks:
   build:
     usage: build docker image
-    run: docker build --pull --rm -t function:semantic-release .
+    run: docker build --pull --rm -t function:semver .
 
   test:
     usage: build docker image
-    run: docker run -it --rm function:semantic-release validate
+    run: docker run -it --rm function:semver validate
 
   dive:
     usage: inspect docker image
-    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:semantic-release
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:semver
   validate:
     usage: check package versions
     run:
       - command:
+          exec: cz --version
+          print: "\e[32mcz\e[0m"
+      - command:
           exec: commitlint -v
           print: "\e[32mcommitlint\e[0m"
       - command:
+          exec: conform --version
+          print: "\e[32mconform\e[0m"
+      - command:
           exec: semantic-release -v
           print: "\e[32msemantic-release\e[0m"
+      - command:
+          exec: standard-version --version
+          print: "\e[32mstandard-version\e[0m"
   help:
     usage: see config options
     run:
       - command:
+          exec: cz --help
+          print: "\e[32mcz\e[0m"
+      - command:
           exec: commitlint -h
           print: "\e[32mcommitlint\e[0m"
       - command:
+          exec: conform --help
+          print: "\e[32mconform\e[0m"
+      - command:
           exec: semantic-release -h
           print: "\e[32msemantic-release\e[0m"
+      - command:
+          exec: standard-version --help
+          print: "\e[32mstandard-version\e[0m"

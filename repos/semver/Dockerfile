@@ -7,7 +7,7 @@ FROM node:alpine
 
 COPY --from=conform-builder  /usr/local/bin/conform  /usr/local/bin/conform
 
-RUN apk --update --no-cache add ca-certificates git git-lfs openssh
+RUN apk --update --no-cache add ca-certificates git git-lfs openssh python3 py3-pip
 RUN npm install -g --save-dev \
   semantic-release@latest \
 # core plugins

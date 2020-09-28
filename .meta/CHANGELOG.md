@@ -1,3 +1,10 @@
+## [1.4.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.3.0...v1.4.0) (2020-09-28)
+
+
+### Features
+
+* **image:** terracognita ([f541652](https://gitlab.com/donaldrich/function-as-a-container/commit/f5416529d45c8354b464dfd36266850398f7c647))
+
 ## [1.3.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.5...v1.3.0) (2020-09-28)
 
 

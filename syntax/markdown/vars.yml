@@ -19,6 +19,12 @@ commands:
     help: --help
     version: --version
     github: DavidAnson/markdownlint
+  remark:
+    prefix: bash
+    help: --help
+    version: --version
+    github: remarkjs/remark-lint
+    docs: https://remark.js.org
   # markdown-spellcheck:
   #   prefix: mdspell
   #   help: --help

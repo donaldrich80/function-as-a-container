@@ -23,6 +23,9 @@ tasks:
       - command:
           exec: markdownlint --version
           print: "\e[32mmarkdownlint\e[0m"
+      - command:
+          exec: bash --version
+          print: "\e[32mbash\e[0m"
   help:
     usage: see config options
     run:
@@ -35,3 +38,6 @@ tasks:
       - command:
           exec: markdownlint --help
           print: "\e[32mmarkdownlint\e[0m"
+      - command:
+          exec: bash --help
+          print: "\e[32mbash\e[0m"

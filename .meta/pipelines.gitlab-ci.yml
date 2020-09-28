@@ -5,8 +5,6 @@ include:
   - local: .meta/pipelines/docker/lint/dockerfilelint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/remarshall/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/markdown/lint/remark-lint/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/markdown/lint/mdl/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/markdown/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/hcl2json/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/jq/build.gitlab-ci.yml

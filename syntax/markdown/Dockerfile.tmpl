@@ -7,3 +7,7 @@ RUN npm install -g markdown-pdf --ignore-scripts
 RUN npm install markdownlint --save-dev
 
 RUN npm install -g markdownlint-cli
+
+RUN npm install --save remark-cli remark-preset-lint-recommended
+
+COPY package.json ./

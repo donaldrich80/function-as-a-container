@@ -22,7 +22,7 @@ plugins:
           scope: image
           release: minor
         - type: fix
-          scope: image
+          scope: repo
           release: false
       parserOpts:
         noteKeywords:

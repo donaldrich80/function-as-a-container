@@ -1,3 +1,10 @@
+## [1.3.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.5...v1.3.0) (2020-09-28)
+
+
+### Features
+
+* **image:** remarshall ([104a8f3](https://gitlab.com/donaldrich/function-as-a-container/commit/104a8f3cbe81d0edfed9fc6e062a31e958adbc92))
+
 ### [1.2.5](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.4...v1.2.5) (2020-09-28)
 
 

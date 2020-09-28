@@ -148,7 +148,7 @@
 
 - id: repo-policy-commitizen
   name: commitizen check
-  entry: --entrypoint cz donaldrich/function:semantic-release
+  entry: --entrypoint cz donaldrich/function:semver
   language: docker_image
   args: ["check"]
   # pass_filenames: false
@@ -157,7 +157,7 @@
 
 - id: repo-policy-commitlint
   name: repo-policy-commitlint
-  entry: --entrypoint commitlint donaldrich/function:semantic-release
+  entry: --entrypoint commitlint donaldrich/function:semver
   language: docker_image
   args: ["--edit"]
   pass_filenames: false
@@ -185,6 +185,7 @@
   args: ["--verbose", "--pretty"]
   pass_filenames: false
   language: docker_image
+  verbose: true
 
 - id: repo-scan-yelp
   name: Detect secrets

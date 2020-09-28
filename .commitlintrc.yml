@@ -1,1 +1,58 @@
+
+# rules:
+#     header-max-length: [ 2, 'always', 96 ]
+#     body-leading-blank: [ 1, 'always' ]
+#     footer-leading-blank: [ 1, 'always' ]
+#     scope-case: [ 2, 'always', 'lower-case' ]
+#     subject-case: [ 2, 'never', ['sentence-case', 'start-case', 'pascal-case', 'upper-case']]
+#     subject-empty: [ 2, 'never' ]
+#     subject-full-stop: [ 2, 'never', '.' ]
+#     type-case: [ 2, 'always', 'lower-case' ]
+#     type-empty: [ 2, 'never' ]
+#     type-enum: [ 2, 'always', [ 'build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test' ] ]
 extends: ["@commitlint/config-conventional"]
+
+rules:
+  header-max-length: [1, 'always', 72]
+  subject-empty: [ 0, 'always' ]
+  type-enum:
+    - 2
+    - always
+    - - chore
+      - ci
+      - feat
+      - fix
+      - docs
+      - style
+      - mod
+      - perf
+      - test
+      - clean
+      - revert
+  scope-case: [ 2, 'always', 'lower-case' ]
+  scope-enum:
+    - 2
+    - always
+    - - image
+      - repo
+      - feat
+      - fix
+      - docs
+      - style
+      - ci
+      - perf
+      - test
+      - revert
+
+help: |
+  **Possible types**:
+  `chore`:    Change build process, tooling or dependencies.
+  `ci`:       Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+  `feat`:     Adds a new feature.
+  `fix`:      Solves a bug.
+  `docs`:     Adds or alters documentation.
+  `style`:    Improves formatting, white-space.
+  `refactor`: Rewrites code without feature, performance or bug changes.
+  `perf`:     Improves performance.
+  `test`:     Adds or modifies tests.
+  `revert`:   Changes that reverting other changes

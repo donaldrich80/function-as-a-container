@@ -18,23 +18,21 @@ tasks:
     usage: analyze built image
     run: docker system prune --all --force
 
-  yq:
-    usage: yq test
-    run: cat metadata.yml | yq r - tag
-
   git-hooks:
     usage: hooks
     run:
+      - command: pre-commit install
+      - command: pre-commit autoupdate
       - command: pre-commit install --hook-type commit-msg
       - command: pre-commit install --hook-type prepare-commit-msg
 
-  gitleaks:
-    usage: gitleaks de
-    run: docker run -it --rm --name=gitleaks -v $PWD:/code zricethezav/gitleaks -v --repo-path=/code
+  # gitleaks:
+  #   usage: gitleaks de
+  #   run: docker run -it --rm --name=gitleaks -v $PWD:/code zricethezav/gitleaks -v --repo-path=/code
 
-  gitlab:
-    usage: gitlab
-    run: docker run -it --rm -v $PWD:/code donaldrich/function:gitlab-ci-lint /code/.gitlab-ci.yml
+  # gitlab:
+  #   usage: gitlab
+  #   run: docker run -it --rm -v $PWD:/code donaldrich/function:gitlab-ci-lint /code/.gitlab-ci.yml
 
   clean:
     usage: template

@@ -22,13 +22,7 @@ repos:
       #   entry: tusk template
       #   language: system
       #   pass_filenames: false
-      - id: lint-yaml-yamllint
-        name: Lint YAML w yamllint
-        description: Lint YAML w yamllint
-        language: docker_image
-        entry: --entrypoint yamllint pipelinecomponents/yamllint
-        args: [--format, parsable, --strict]
-        types: [yaml]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
@@ -47,10 +41,14 @@ repos:
     rev: v1.4.0
     hooks:
       - id: lint-shell-shellcheck
+        stages: [commit]
       - id: repo-scan-yelp
         stages: [commit]
       - id: repo-scan-gitleaks
         stages: [commit]
+      - id: lint-yaml-yamllint
+        stages: [commit]
+        # function-yaml-yq
       # - id: repo-policy-commitlint
       #   stages: [commit-msg]
 

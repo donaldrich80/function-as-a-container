@@ -10,24 +10,13 @@ repos:
         name: Use yq
         description: Use yq
         entry: --entrypoint yq mikefarah/yq
-        args: ["merge", "-i", "hook-test.yaml"]
-        files: test-hook.yml
+        args: ["merge", "-a"]
+        files: git-hooks.yml
         language: docker_image
         verbose: true
-        # log_file: hook-test.yaml
-        stages: [commit]
-  - repo: meta
-    hooks:
-      - id: identity
-        name: Use yq
-        description: Use yq
-        # entry: --entrypoint yq mikefarah/yq
-        args: ["merge", "-i", "hook-test.yaml"]
-        files: test-hook.yml
-        # language: docker_image
-        verbose: true
-        # log_file: hook-test.yaml
-        stages: [commit]
+        log_file: hook-test.yaml
+        stages: [manual]
+
   # - id: tusk-template
   #   name: tusk-template
   #   entry: tusk template
@@ -93,3 +82,16 @@ repos:
   #     - id: conform
   #       stages:
   #         - commit-msg
+
+  # - repo: meta
+  #   hooks:
+  #     - id: identity
+  #       name: Use yq
+  #       description: Use yq
+  #       # entry: --entrypoint yq mikefarah/yq
+  #       args: ["merge", "-i", "hook-test.yaml"]
+  #       files: git-hooks.yml
+  #       # language: docker_image
+  #       verbose: true
+  #       # log_file: hook-test.yaml
+  #       stages: [commit]

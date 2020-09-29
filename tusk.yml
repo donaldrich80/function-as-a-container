@@ -43,21 +43,22 @@ tasks:
       - command: pre-commit install --hook-type prepare-commit-msg
       - command: pre-commit run -a || true
 
-  yt-test:
-    usage: cleans repo
+  repo-hook-list:
+    usage: repo-hook-list
     run:
       - command: git add .
       - command: pre-commit autoupdate
       - command: rm hook-test.yaml | true
       - command: touch hook-test.yaml | true
-      - command: pre-commit run hook-test
+      - command: pre-commit run --hook-stage manual hook-test -a
       - command: git add .
-      - command: pre-commit run identity
+
   full:
     run:
       - task: clean-repo
       - task: apply-template
       - task: update-hooks
+      - task: repo-hook-list
       - task: commit-to-remote
       # - command: git add .
       # - command: pre-commit autoupdate
@@ -71,7 +72,7 @@ tasks:
   commit-to-remote:
     run:
       - command: git add .
-      - command: 'git commit -m "chore: repo templates refreshed"'
+      - command: 'git commit -m "chore: repo"'
       - command: git push origin master
 
   repo:

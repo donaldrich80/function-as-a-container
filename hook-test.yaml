@@ -1,5 +1,72 @@
-"0":
-  id: test1
-  name: commitizen check
-  entry: --entrypoint cz donaldrich/function:semver
+- id: packer-fix
+  name: Fix Packer template(s) with backwards incompatibilities
+  entry: hashicorp/packer:light fix
   language: docker_image
+  types: [json]
+  files: ^packer.json$
+  always_run: false
+  verbose: false
+  pass_filenames: true
+  description: Attempts to fix incompatibilities in a template
+  minimum_pre_commit_version: 1.15.0
+  args:
+    - --dockerfile
+  exclude: \.+.terraform\/.*$
+- id: packer-validate
+  name: Validate Packer template(s)
+  entry: hashicorp/packer:light validate
+  language: docker_image
+  types: [json]
+  files: ^packer.json$
+  always_run: false
+  verbose: false
+  pass_filenames: true
+  description: Validates a template against builders, provisioners
+  minimum_pre_commit_version: 1.15.0
+  args: [-syntax-only, "."]
+- id: docker-lint-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile.*
+- id: docker-lint-dockerfile_lint
+  name: dockerfile_lint
+  entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
+  language: docker_image
+  args: [--dockerfile]
+  files: Dockerfile.*
+- id: docker-lint-dockerfilelint
+  name: Lint Dockerfiles w dockerfilelint linter
+  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
+  language: docker_image
+  files: Dockerfile.*
+- id: docker-lint-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile.*
+- id: tflint
+  name: tflint
+  language: docker_image
+  verbose: true
+  entry: --entrypoint tflint donaldrich/function:terraform # wata727/tflint
+  files: \.tf$
+  exclude: \.+.terraform\/.*$
+- id: terraform-checkov
+  name: checkov
+  entry: --entrypoint checkov donaldrich/function:checkov
+  language: docker_image
+  args: ["-d", "."]
+- id: lint-shell-shellcheck
+  name: lint-shell-shellcheck
+  entry: koalaman/shellcheck:stable
+  language: docker_image
+  types: [shell]
+- id: lint-shell-shfmt
+  name: lint-shell-shfmt
+  entry: --entrypoint shfmt donaldrich/function:shell
+  language: docker_image
+  args: ["-w", "."]
+  types: [shell]

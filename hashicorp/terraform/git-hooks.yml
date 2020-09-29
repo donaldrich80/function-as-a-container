@@ -1,45 +1,112 @@
-- id: tflint
-  name: tflint
+- id: terraform-fmt-check
+  name: Terraform fmt
+  description: Rewrites all Terraform configuration files to a canonical format.
+  entry: --entrypoint terraform donaldrich/function:terraform
+  args: ["fmt", "-check", "-recursive"]
+  pass_filenames: false
   language: docker_image
-  verbose: true
-  entry: --entrypoint tflint donaldrich/function:terraform # wata727/tflint
-  files: \.tf$
-  exclude: \.+.terraform\/.*$
-
-- id: terraform-checkov
-  name: checkov
-  entry: --entrypoint checkov donaldrich/function:checkov
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
+  # types: [terraform]
+- id: terraform-fmt
+  name: Terraform fmt
+  description: Rewrites all Terraform configuration files to a canonical format.
+  entry: --entrypoint terraform donaldrich/function:terraform
+  args: ["fmt", "-recursive"]
+  pass_filenames: false
   language: docker_image
-  args: ["-d", "."]
-# - id: tffmt
-#   name: terraform -- format the code
-#   language: docker_image
-#   entry: hashicorp/terraform:light
-#   pass_filenames: false
-#   args: ["fmt", "-recursive=true"]
-# args = ["fmt", "-check", "-list", "-recursive"]
-#   types: [terraform]
-#   exclude: \.terraform\/.*$
-#   files: (\.tf|\.tfvars)$
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
 
-# - id: tflint
-#   name: terraform -- lint the code
-#   language: docker_image
-#   types: [terraform]
-#   entry: wata727/tflint
-#   exclude: \.terraform\/.*$
-#   files: (\.tf|\.tfvars)$
+- id: terraform-tflint
+  name: Terraform validate with tflint
+  description: Validates all Terraform configuration files with TFLint.
+  entry: --entrypoint tflint donaldrich/function:terraform
+  pass_filenames: false
+  language: docker_image
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
 
+- id: terraform-tfsec
+  name: Terraform validate with tfsec
+  description: Validates all Terraform configuration files with TFLint.
+  entry: --entrypoint tfsec donaldrich/function:terraform
+  pass_filenames: false
+  language: docker_image
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
+
+- id: terraform-validate
+  name: Terraform validate with tfsec
+  description: Validates all Terraform configuration files with TFLint.
+  entry: --entrypoint terraform donaldrich/function:terraform
+  args: ["validate"]
+  pass_filenames: false
+  language: docker_image
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
 # - id: terragrunt-hclfmt
 #   name: Terragrunt HCL format
 #   files: \.hcl$
 #   language: docker_image
 #   entry: lowess/terragrunt:0.12.24 terragrunt hclfmt
 
-# - id: terraform-fmt
-#   name: Terraform format
+# - id: terraform_docs
+#   name: Terraform docs
+#   description: Inserts input and output documentation into README.md (using terraform-docs).
+#   require_serial: true
+#   entry: terraform_docs.sh
+#   language: script
+#   files: (\.tf)$
+#   exclude: \.terraform\/.*$
+
+# - id: terraform_docs_without_aggregate_type_defaults
+#   name: Terraform docs (without aggregate type defaults)
+#   description: Inserts input and output documentation into README.md (using terraform-docs). Identical to terraform_docs.
+#   require_serial: true
+#   entry: terraform_docs.sh
+#   language: script
+#   files: (\.tf)$
+#   exclude: \.terraform\/.*$
+
+# - id: terraform_docs_replace
+#   name: Terraform docs (overwrite README.md)
+#   description: Overwrite content of README.md with terraform-docs.
+#   require_serial: true
+#   entry: terraform_docs_replace
+#   language: python
+#   files: (\.tf)$
+#   exclude: \.terraform\/.*$
+
+# - id: terragrunt_fmt
+#   name: Terragrunt fmt
+#   description: Rewrites all Terragrunt configuration files to a canonical format.
+#   entry: terragrunt_fmt.sh
+#   language: script
+#   files: (\.hcl)$
+#   exclude: \.terraform\/.*$
+
+# - id: terragrunt_validate
+#   name: Terragrunt validate
+#   description: Validates all Terragrunt configuration files.
+#   entry: terragrunt_validate.sh
+#   language: script
+#   files: (\.hcl)$
+#   exclude: \.terraform\/.*$
+
+# - id: checkov
+#   name: Checkov
+#   description: Runs checkov on Terraform templates.
+#   entry: checkov -d .
+#   language: python
+#   pass_filenames: false
+#   always_run: false
 #   files: \.tf$
 #   exclude: \.+.terraform\/.*$
+#   require_serial: true
+
+# - id: terraform-checkov
+#   name: checkov
+#   entry: --entrypoint checkov donaldrich/function:checkov
 #   language: docker_image
-#   always_run: true
-#   entry: lowess/terragrunt:0.12.24 terraform fmt
+#   args: ["-d", "."]

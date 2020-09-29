@@ -1,0 +1,108 @@
+- id: repo-secrets-yelp
+  name: Detect secrets
+  description: secrets high entropy strings that are likely to be passwords.
+  entry: --secrets detect-secrets donaldrich/function:detect-secrets
+  # args: ["scan"]
+  # language: docker_image
+- id: repo-scan-yelp
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  # args: ["scan"]
+  # language: docker_image
+- id: repo-scan-detect-secrets
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  args: ["scan"]
+  # args: [--baseline, ci/secrets.baseline]
+  language: docker_image
+- id: docker-lint-dockerfile_lint
+  name: dockerfile_lint
+  entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
+  language: docker_image
+  args: [--dockerfile]
+  files: Dockerfile.*
+- id: docker-lint-dockerfilelint
+  name: Lint Dockerfiles w dockerfilelint linter
+  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
+  language: docker_image
+  files: Dockerfile.*
+- id: docker-lint-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile.*
+- id: repo-secrets-yelp
+  name: Detect secrets
+  description: secrets high entropy strings that are likely to be passwords.
+  entry: --secrets detect-secrets donaldrich/function:detect-secrets
+  # args: ["scan"]
+  # language: docker_image
+- id: repo-scan-yelp
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  # args: ["scan"]
+  # language: docker_image
+- id: repo-scan-detect-secrets
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  args: ["scan"]
+  # args: [--baseline, ci/secrets.baseline]
+  language: docker_image
+- id: docker-lint-dockerfile_lint
+  name: dockerfile_lint
+  entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
+  language: docker_image
+  args: [--dockerfile]
+  files: Dockerfile.*
+- id: docker-lint-dockerfilelint
+  name: Lint Dockerfiles w dockerfilelint linter
+  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
+  language: docker_image
+  files: Dockerfile.*
+- id: docker-lint-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile.*
+- id: repo-secrets-yelp
+  name: Detect secrets
+  description: secrets high entropy strings that are likely to be passwords.
+  entry: --secrets detect-secrets donaldrich/function:detect-secrets
+  # args: ["scan"]
+  # language: docker_image
+- id: repo-scan-yelp
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  # args: ["scan"]
+  # language: docker_image
+- id: repo-scan-detect-secrets
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  args: ["scan"]
+  # args: [--baseline, ci/secrets.baseline]
+  language: docker_image
+- id: docker-lint-dockerfile_lint
+  name: dockerfile_lint
+  entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
+  language: docker_image
+  args: [--dockerfile]
+  files: Dockerfile.*
+- id: docker-lint-dockerfilelint
+  name: Lint Dockerfiles w dockerfilelint linter
+  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
+  language: docker_image
+  files: Dockerfile.*
+- id: docker-lint-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile.*

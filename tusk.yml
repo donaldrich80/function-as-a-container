@@ -18,49 +18,50 @@ tasks:
     usage: analyze built image
     run: docker system prune --all --force
 
-  git-hooks:
-    usage: hooks
-    run:
-      - command: pre-commit install
-      - command: pre-commit autoupdate
-      - command: pre-commit install --hook-type commit-msg
-      - command: pre-commit install --hook-type prepare-commit-msg
-
-  # gitleaks:
-  #   usage: gitleaks de
-  #   run: docker run -it --rm --name=gitleaks -v $PWD:/code zricethezav/gitleaks -v --repo-path=/code
-
-  # gitlab:
-  #   usage: gitlab
-  #   run: docker run -it --rm -v $PWD:/code donaldrich/function:gitlab-ci-lint /code/.gitlab-ci.yml
-
-  clean:
-    usage: template
+  clean-repo:
+    usage: cleans repo
     run:
       - command: rm -r docs | true
       - command: rm -r .meta/pipelines | true
-      - command: mkdir docs
+      - command: rm .pre-commit-hooks.yaml | true
+      - command: mkdir docs | true
       - command: cp .meta/index.md docs
+      - command: cp .meta/CHANGELOG.md docs
 
-  template:
-    usage: template
+  apply-template:
+    usage: applys template
     run:
       - command: ./run-all.sh
 
-  regenerate:
+  update-hooks:
+    usage: hooks
     run:
-      - task: clean
-      - task: template
-
-  pre-commit:
-    run:
+      - command: pre-commit install
+      # - command: pre-commit autoupdate --bleeding-edge
+      - command: pre-commit autoupdate
+      - command: pre-commit install --hook-type commit-msg
+      - command: pre-commit install --hook-type prepare-commit-msg
       - command: pre-commit run -a || true
-      - command: pre-commit run -a
 
-  commit:
+  full:
+    run:
+      - task: clean-repo
+      - task: apply-template
+      - task: update-hooks
+      - task: commit-to-remote
+      # - command: git add .
+      # - command: pre-commit autoupdate
+      # - command: pre-commit run -a || true
+
+  # pre-commit:
+  #   run:
+  #     - command: pre-commit run -a || true
+  #     - command: pre-commit run -a
+
+  commit-to-remote:
     run:
       - command: git add .
-      - command: 'git commit -m "auto: repo templates refreshed"'
+      - command: 'git commit -m "chore: repo templates refreshed"'
       - command: git push origin master
 
   repo:

@@ -1,0 +1,46 @@
+- id: tflint
+  name: tflint
+  language: docker_image
+  verbose: true
+  entry: --entrypoint tflint donaldrich/function:terraform # wata727/tflint
+  files: \.tf$
+  exclude: \.+.terraform\/.*$
+
+- id: terraform-checkov
+  name: checkov
+  entry: --entrypoint checkov donaldrich/function:checkov
+  language: docker_image
+  args: ["-d", "."]
+
+# - id: tffmt
+#   name: terraform -- format the code
+#   language: docker_image
+#   entry: hashicorp/terraform:light
+#   pass_filenames: false
+#   args: ["fmt", "-recursive=true"]
+# args = ["fmt", "-check", "-list", "-recursive"]
+#   types: [terraform]
+#   exclude: \.terraform\/.*$
+#   files: (\.tf|\.tfvars)$
+
+# - id: tflint
+#   name: terraform -- lint the code
+#   language: docker_image
+#   types: [terraform]
+#   entry: wata727/tflint
+#   exclude: \.terraform\/.*$
+#   files: (\.tf|\.tfvars)$
+
+# - id: terragrunt-hclfmt
+#   name: Terragrunt HCL format
+#   files: \.hcl$
+#   language: docker_image
+#   entry: lowess/terragrunt:0.12.24 terragrunt hclfmt
+
+# - id: terraform-fmt
+#   name: Terraform format
+#   files: \.tf$
+#   exclude: \.+.terraform\/.*$
+#   language: docker_image
+#   always_run: true
+#   entry: lowess/terragrunt:0.12.24 terraform fmt

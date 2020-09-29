@@ -3,36 +3,29 @@ repos:
     hooks:
       # - id: tusk-regenerate
       #   name: tusk-regenerate
-      #   entry: tusk
-      #   args: ["regenerate"]
+      #   entry: tusk clean-repo
       #   language: system
       #   pass_filenames: false
-      - id: touch-hooks
-        name: touch-hooks
-        entry: touch
-        args: [".pre-commit-hooks.yaml"]
-        language: system
-        pass_filenames: false
       - id: function-yq-merge
         name: Use yq
         description: Use yq
         entry: --entrypoint yq mikefarah/yq
-        args: [merge, -a, .pre-commit-hooks.yaml]
-        # args: [merge, -a, .meta/git-hooks/**/git-hook.yml, '>', out.yml]
-        files: git-hook.*
+        args: [merge, -i]
+        files: git-hooks.*
         language: docker_image
-        pass_filenames: false
-  - repo: meta
-    hooks:
-      - id: identity
-        args: [merge, -a, out.yml]
-        files: git-hook.*
-        types: [yaml]
+        verbose: true
+        log_file: .pre-commit-hooks.yaml
+      # - id: tusk-template
+      #   name: tusk-template
+      #   entry: tusk template
+      #   language: system
+      #   pass_filenames: false
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
       - id: check-added-large-files
+        verbose: true
       - id: check-executables-have-shebangs
       - id: check-yaml
         exclude: mkdocs.yml
@@ -42,13 +35,13 @@ repos:
         args: ["--fix=lf"]
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v1.2.5
+    rev: v1.4.0
     hooks:
       - id: lint-shell-shellcheck
       - id: repo-scan-yelp
       - id: repo-scan-gitleaks
-      - id: repo-policy-commitlint
-        stages: [commit-msg]
+      # - id: repo-policy-commitlint
+      #   stages: [commit-msg]
 
 
 

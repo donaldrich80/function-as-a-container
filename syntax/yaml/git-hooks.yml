@@ -1,0 +1,17 @@
+- id: lint-yaml-yamllint
+  name: Lint YAML w yamllint
+  description: Lint YAML w yamllint
+  language: docker_image
+  entry: --entrypoint yamllint pipelinecomponents/yamllint
+  # args: ["."]
+  args: [--format, parsable, --strict]
+  types: [yaml]
+
+- id: sort-yaml-yml_sorter
+  name: Sort YAML files
+  description: This hook sorts YAML files
+  entry: --entrypoint yml-sorter -i
+  language: docker_image
+  types: [yaml]
+  files: "(yml|yaml)"
+  args: ["-i"]

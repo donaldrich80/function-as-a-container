@@ -1,0 +1,29 @@
+- id: lint-markdown-markdownlint
+  name: Lint Markdown w markdownlint
+  description: Lint Markdown w markdownlint
+  language: docker_image
+  entry: donaldrich/function:markdown markdownlint
+  types: [markdown]
+  exclude: .meta/snippets/layout.md
+
+- id: lint-markdown-remarklint
+  name: Lint markdown w remark
+  description: remark-lint
+  language: docker_image
+  entry: pipelinecomponents/remark-lint remark
+  args: ["."]
+  types: [markdown]
+
+- id: mdspell
+  name: mdspell
+  description: mdspell
+  language: docker_image
+  entry: --entrypoint mdspell pipelinecomponents/markdown-spellcheck mdspell
+  args: ["--report", "**/*.md"]
+  types: [markdown]
+# - id: markdownlint_docker
+#   name: Markdownlint Docker
+#   description: Run markdown lint on your Markdown files using the project docker image
+#   language: docker_image
+#   files: \.(md|mdown|markdown)$
+#   entry: markdownlint/markdownlint mdl

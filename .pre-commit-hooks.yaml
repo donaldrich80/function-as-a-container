@@ -1,0 +1,160 @@
+- id: docker-lint-dockerfile_lint
+  name: dockerfile_lint
+  entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
+  language: docker_image
+  args: [--dockerfile]
+  files: Dockerfile.*
+- id: docker-lint-dockerfilelint
+  name: Lint Dockerfiles w dockerfilelint linter
+  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
+  language: docker_image
+  files: Dockerfile.*
+- id: docker-lint-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile.*
+- id: lint-markdown-markdownlint
+  name: Lint Markdown w markdownlint
+  description: Lint Markdown w markdownlint
+  language: docker_image
+  entry: donaldrich/function:markdown markdownlint
+  types: [markdown]
+  exclude: .meta/snippets/layout.md
+- id: lint-markdown-remarklint
+  name: Lint markdown w remark
+  description: remark-lint
+  language: docker_image
+  entry: pipelinecomponents/remark-lint remark
+  args: ["."]
+  types: [markdown]
+- id: mdspell
+  name: mdspell
+  description: mdspell
+  language: docker_image
+  entry: --entrypoint mdspell pipelinecomponents/markdown-spellcheck mdspell
+  args: ["--report", "**/*.md"]
+  types: [markdown]
+# Secret Detection
+- id: repo-scan-gitleaks
+  name: Checks commits for secrets w gitleaks
+  description: Checks commits for secrets w gitleaks
+  entry: zricethezav/gitleaks
+  args: ["--verbose", "--pretty"]
+  pass_filenames: false
+  language: docker_image
+  verbose: true
+- id: repo-scan-detect-secrets
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  args: ["scan", "--base64-limit", "4.5", "--hex-limit", "3"]
+  # args: [--baseline, ci/secrets.baseline]
+  language: docker_image
+  # for backward compatibility
+  # files: .*
+- id: lint-shell-shellcheck
+  name: lint-shell-shellcheck
+  entry: koalaman/shellcheck:stable
+  language: docker_image
+  types: [shell]
+- id: lint-shell-shfmt
+  name: lint-shell-shfmt
+  entry: --entrypoint shfmt donaldrich/function:shell
+  language: docker_image
+  args: ["-w", "."]
+  types: [shell]
+- id: tflint
+  name: tflint
+  language: docker_image
+  verbose: true
+  entry: --entrypoint tflint donaldrich/function:terraform # wata727/tflint
+  files: \.tf$
+  exclude: \.+.terraform\/.*$
+- id: terraform-checkov
+  name: checkov
+  entry: --entrypoint checkov donaldrich/function:checkov
+  language: docker_image
+  args: ["-d", "."]
+- id: packer-fix
+  name: Fix Packer template(s) with backwards incompatibilities
+  entry: hashicorp/packer:light fix
+  language: docker_image
+  types: [json]
+  files: ^packer.json$
+  always_run: false
+  verbose: false
+  pass_filenames: true
+  description: Attempts to fix incompatibilities in a template
+  minimum_pre_commit_version: 1.15.0
+  args:
+    - --dockerfile
+  exclude: \.+.terraform\/.*$
+- id: packer-validate
+  name: Validate Packer template(s)
+  entry: hashicorp/packer:light validate
+  language: docker_image
+  types: [json]
+  files: ^packer.json$
+  always_run: false
+  verbose: false
+  pass_filenames: true
+  description: Validates a template against builders, provisioners
+  minimum_pre_commit_version: 1.15.0
+  args: [-syntax-only, "."]
+- id: docker-lint-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile.*
+- id: repo-semantic-release
+  name: repo-semver-semantic-release
+  entry: --entrypoint semantic-release donaldrich/function:semantic-release
+  language: docker_image
+  args: ["--generate-notes", "false", "--dry-run"]
+  pass_filenames: false
+  verbose: true
+- id: repo-policy-commitizen
+  name: commitizen check
+  entry: --entrypoint cz donaldrich/function:semver
+  language: docker_image
+  args: ["check"]
+  # pass_filenames: false
+  verbose: true
+  # stages: [commit-msg]
+- id: repo-policy-commitlint
+  name: repo-policy-commitlint
+  entry: --entrypoint commitlint donaldrich/function:semver
+  language: docker_image
+  args: ["--edit"]
+  pass_filenames: false
+  stages: [commit-msg]
+- id: lint-yaml-yamllint
+  name: Lint YAML w yamllint
+  description: Lint YAML w yamllint
+  language: docker_image
+  entry: --entrypoint yamllint pipelinecomponents/yamllint
+  # args: ["."]
+  args: [--format, parsable, --strict]
+  types: [yaml]
+- id: sort-yaml-yml_sorter
+  name: Sort YAML files
+  description: This hook sorts YAML files
+  entry: --entrypoint yml-sorter -i
+  language: docker_image
+  types: [yaml]
+  files: "(yml|yaml)"
+  args: ["-i"]
+
+# - id: tffmt
+#   name: terraform -- format the code
+#   language: docker_image
+#   entry: hashicorp/terraform:light
+#   pass_filenames: false
+#   args: ["fmt", "-recursive=true"]
+# args = ["fmt", "-check", "-list", "-recursive"]
+#   types: [terraform]
+#   exclude: \.terraform\/.*$
+#   files: (\.tf|\.tfvars)$

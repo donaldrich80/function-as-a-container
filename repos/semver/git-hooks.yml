@@ -1,0 +1,24 @@
+- id: repo-semantic-release
+  name: repo-semver-semantic-release
+  entry: --entrypoint semantic-release donaldrich/function:semantic-release
+  language: docker_image
+  args: ["--generate-notes", "false", "--dry-run"]
+  pass_filenames: false
+  verbose: true
+
+- id: repo-policy-commitizen
+  name: commitizen check
+  entry: --entrypoint cz donaldrich/function:semver
+  language: docker_image
+  args: ["check"]
+  # pass_filenames: false
+  verbose: true
+  # stages: [commit-msg]
+
+- id: repo-policy-commitlint
+  name: repo-policy-commitlint
+  entry: --entrypoint commitlint donaldrich/function:semver
+  language: docker_image
+  args: ["--edit"]
+  pass_filenames: false
+  stages: [commit-msg]

@@ -48,8 +48,8 @@ tasks:
     run:
       - command: git add .
       - command: pre-commit autoupdate
-      - command: rm hook-test.yaml | true
-      - command: touch hook-test.yaml | true
+      - command: rm .pre-commit-hooks.yaml | true
+      - command: touch .pre-commit-hooks.yaml | true
       - command: pre-commit run --hook-stage manual hook-test -a
       - command: git add .
 

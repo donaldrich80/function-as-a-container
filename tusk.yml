@@ -46,12 +46,13 @@ tasks:
   repo-hook-list:
     usage: repo-hook-list
     run:
-      - command: git add .
-      - command: pre-commit autoupdate
+      # - command: git add .
+      # - command: pre-commit autoupdate
       - command: rm .pre-commit-hooks.yaml | true
       - command: touch .pre-commit-hooks.yaml | true
       - command: pre-commit run --hook-stage manual hook-test -a
       - command: git add .
+      - command: 'git commit -m "chore(hooks): refresh hook list"'
 
   full:
     run:

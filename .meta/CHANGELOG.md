@@ -1,3 +1,10 @@
+## [1.6.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.5.0...v1.6.0) (2020-09-29)
+
+
+### Features
+
+* **hook:** shell hooks ([8820221](https://gitlab.com/donaldrich/function-as-a-container/commit/8820221c5df211c0b4eca4047f606b493a1c7fea))
+
 ## [1.5.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.4.0...v1.5.0) (2020-09-29)
 
 ### Features

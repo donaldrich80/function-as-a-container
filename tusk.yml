@@ -53,6 +53,7 @@ tasks:
       - command: pre-commit run --hook-stage manual hook-test -a
       - command: git add .
       - command: 'git commit -m "chore(hooks): refresh hook list"'
+      - command: git push origin master
 
   full:
     run:

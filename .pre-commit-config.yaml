@@ -37,29 +37,23 @@ repos:
       - id: mixed-line-ending
         args: ["--fix=lf"]
 
-  - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v1.4.0
-    hooks:
-      - id: lint-shell-shellcheck
-        stages: [commit]
-      - id: repo-scan-yelp
-        stages: [commit]
-      - id: repo-scan-gitleaks
-        stages: [commit]
-      - id: lint-yaml-yamllint
-        stages: [commit]
-        # function-yaml-yq
-      # - id: repo-policy-commitlint
-      #   stages: [commit-msg]
-
-      # - id: docker-lint-hadolint
-      #   files: Dockerfile
-      #   exclude: Dockerfile.tmpl.*
-      # - id: repo-policy-commitlint
-      #   stages: [prepare-commit-msg]
-
-      # - id: repo-policy-commitizen
-      #   stages: [prepare-commit-msg]
+  # - repo: https://gitlab.com/donaldrich/function-as-a-container
+  #   rev: v1.4.0
+  #   hooks:
+  #     - id: shell-lint-shellcheck
+  #       stages: [commit]
+  #     - id: shell-lint-shfmt
+  #       stages: [commit]
+  #     - id: shell-lint-bashate
+  #       stages: [commit]
+  #     - id: secrets-detect-secrets
+  #       stages: [commit]
+  #     - id: secrets-gitleaks
+  #       stages: [commit]
+  #     - id: yaml-yamllint
+  #       stages: [commit]
+  #     - id: docker-lint-hadolint
+  #       exclude: Dockerfile.tmpl.*
 
   - repo: https://github.com/prettier/prettier
     rev: 2.1.2
@@ -81,15 +75,12 @@ repos:
   #       stages:
   #         - commit-msg
 
-  # - repo: meta
-  #   hooks:
-  #     - id: identity
-  #       name: Use yq
-  #       description: Use yq
-  #       # entry: --entrypoint yq mikefarah/yq
-  #       args: ["merge", "-i", "hook-test.yaml"]
-  #       files: git-hooks.yml
-  #       # language: docker_image
-  #       verbose: true
-  #       # log_file: hook-test.yaml
-  #       stages: [commit]
+  # function-yaml-yq
+  # - id: repo-policy-commitlint
+  #   stages: [commit-msg]
+
+  # - id: repo-policy-commitlint
+  #   stages: [prepare-commit-msg]
+
+  # - id: repo-policy-commitizen
+  #   stages: [prepare-commit-msg]

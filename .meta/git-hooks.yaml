@@ -1,35 +1,6 @@
-- id: prettier
-  name: prettier
-  entry: --entrypoint prettier donaldrich/function:prettier
-  language: docker_image
-  args: ["--write", "--list-different", "--ignore-unknown"]
-
-- id: lint-markdown-misspell
-  name: misspell
-  entry: --entrypoint misspell donaldrich/function:misspell
-  language: docker_image
-  args: [-w, "."]
-  types: [markdown]
-
 - id: ansible-lint
   name: ansible-lint
   description: ansible-lint
   language: docker_image
   entry: pipelinecomponents/ansible-lint ansible-lint
-  args: ["*"]
   types: [yaml]
-
-- id: repo-policy-conform
-  name: repo-policy-conform
-  entry: --entrypoint conform donaldrich/function:conform
-  language: docker_image
-  args: ["enforce"]
-  verbose: true
-  pass_filenames: false
-  # stages: [commit-msg]
-
-- id: repo-prettier
-  name: repo-prettier
-  entry: --entrypoint prettier donaldrich/function:prettier
-  language: docker_image
-  args: ["--write", "--list-different", "--ignore-unknown"]

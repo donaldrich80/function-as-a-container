@@ -21,6 +21,13 @@
   entry: --entrypoint mdspell pipelinecomponents/markdown-spellcheck mdspell
   args: ["--report", "**/*.md"]
   types: [markdown]
+
+- id: lint-markdown-misspell
+  name: misspell
+  entry: --entrypoint misspell donaldrich/function:misspell
+  language: docker_image
+  args: [-w, "."]
+  types: [markdown]
 # - id: markdownlint_docker
 #   name: Markdownlint Docker
 #   description: Run markdown lint on your Markdown files using the project docker image

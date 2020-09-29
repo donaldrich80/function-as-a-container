@@ -1,4 +1,4 @@
-- id: lint-yaml-yamllint
+- id: yaml-lint-yamllint
   name: Lint YAML w yamllint
   description: Lint YAML w yamllint
   language: docker_image
@@ -12,12 +12,18 @@
   entry: --entrypoint yml-sorter -i
   language: docker_image
   types: [yaml]
-  files: "(yml|yaml)"
+  # files: "(yml|yaml)"
   args: ["-i"]
 
-- id: function-yaml-yq
+- id: yaml-yq
   name: Use yq
   description: yq is a lightweight and portable command-line YAML processo
   entry: --entrypoint yq mikefarah/yq
   args: ["merge", "-a"]
+  language: docker_image
+
+- id: yaml-ytt
+  name: Use ytt
+  description: yq is a lightweight and portable command-line YAML processo
+  entry: --entrypoint ytt donaldrich/function:yaml
   language: docker_image

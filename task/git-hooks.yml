@@ -1,0 +1,7 @@
+- id: task-tusk
+  name: tusk
+  description: tusk
+  entry: --entrypoint tusk donaldrich/function:task
+  language: docker_image
+  pass_filenames: false
+  verbose: true

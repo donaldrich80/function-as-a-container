@@ -22,3 +22,23 @@
   args: ["--edit"]
   pass_filenames: false
   stages: [commit-msg]
+
+- id: repo-policy-conform
+  name: repo-policy-conform
+  entry: --entrypoint conform donaldrich/function:conform
+  language: docker_image
+  args: ["enforce"]
+  verbose: true
+  pass_filenames: false
+
+- id: repo-prettier
+  name: repo-prettier
+  entry: --entrypoint prettier donaldrich/function:prettier
+  language: docker_image
+  args: ["--write", "--list-different", "--ignore-unknown"]
+
+- id: prettier
+  name: prettier
+  entry: --entrypoint prettier donaldrich/function:prettier
+  language: docker_image
+  args: ["--write", "--list-different", "--ignore-unknown"]

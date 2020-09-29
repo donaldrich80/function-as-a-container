@@ -52,22 +52,12 @@
   args: ["*"]
   types: [yaml]
 
-
-
-
-
-
 # - id: markdownlint_docker
 #   name: Markdownlint Docker
 #   description: Run markdown lint on your Markdown files using the project docker image
 #   language: docker_image
 #   files: \.(md|mdown|markdown)$
 #   entry: markdownlint/markdownlint mdl
-
-
-
-
-
 - id: repo-policy-conform
   name: repo-policy-conform
   entry: --entrypoint conform donaldrich/function:conform
@@ -129,12 +119,11 @@
   name: Detect secrets
   description: Detects high entropy strings that are likely to be passwords.
   entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
-  args: ['scan', '--base64-limit', '4.5', '--hex-limit', '3']
+  args: ["scan", "--base64-limit", "4.5", "--hex-limit", "3"]
   # args: [--baseline, ci/secrets.baseline]
   language: docker_image
   # for backward compatibility
   # files: .*
-
 
 - id: sort-yaml-yml_sorter
   name: Sort YAML files

@@ -1,35 +1,42 @@
 repos:
-  - repo: local
-    hooks:
-      # - id: tusk-regenerate
-      #   name: tusk-regenerate
-      #   entry: tusk clean-repo
-      #   language: system
-      #   pass_filenames: false
-      - id: function-yq-merge
-        name: Use yq
-        description: Use yq
-        entry: --entrypoint yq mikefarah/yq
-        args: [merge, -i]
-        files: git-hooks.*
-        language: docker_image
-        verbose: true
-        log_file: .pre-commit-hooks.yaml
-      # - id: tusk-template
-      #   name: tusk-template
-      #   entry: tusk template
-      #   language: system
-      #   pass_filenames: false
-
+  # - repo: local
+  #   hooks:
+  # - id: tusk-regenerate
+  #   name: tusk-regenerate
+  #   entry: tusk clean-repo
+  #   language: system
+  #   pass_filenames: false
+  # - id: function-yq-merge
+  #   name: Use yq
+  #   description: Use yq
+  #   entry: --entrypoint yq mikefarah/yq
+  #   args: [merge]
+  #   files: git-hooks.*
+  #   language: docker_image
+  #   verbose: true
+  #   log_file: .pre-commit-hooks.yaml
+  # - id: tusk-template
+  #   name: tusk-template
+  #   entry: tusk template
+  #   language: system
+  #   pass_filenames: false
+  # - id: lint-yaml-yamllint
+  #   name: Lint YAML w yamllint
+  #   description: Lint YAML w yamllint
+  #   language: docker_image
+  #   entry: --entrypoint yamllint pipelinecomponents/yamllint
+  #   args: [--format, parsable, --strict]
+  #   types: [yaml]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
       - id: check-added-large-files
-        verbose: true
+        stages: [commit]
       - id: check-executables-have-shebangs
       - id: check-yaml
         exclude: mkdocs.yml
       - id: detect-private-key
+        stages: [commit]
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args: ["--fix=lf"]
@@ -39,12 +46,11 @@ repos:
     hooks:
       - id: lint-shell-shellcheck
       - id: repo-scan-yelp
+        stages: [commit]
       - id: repo-scan-gitleaks
+        stages: [commit]
       # - id: repo-policy-commitlint
       #   stages: [commit-msg]
-
-
-
 
       # - id: docker-lint-hadolint
       #   files: Dockerfile
@@ -59,7 +65,6 @@ repos:
   #   hooks:
   #     - id: commitizen
   #       stages: [commit-msg]
-
 
   #     - id: repo-policy-commitizen
   #       name: commitizen check
@@ -78,13 +83,8 @@ repos:
   #       stages:
   #         - commit-msg
 
-  #     -   id: check-x
-  #         name: Check X
-  #         entry: ./run-all.sh
-  #         language: script
-
-  # - repo: https://github.com/prettier/prettier
-  #   rev: 2.1.2
-  #   hooks:
-  #     - id: prettier
-        # stages: [prepare-commit-msg]
+  - repo: https://github.com/prettier/prettier
+    rev: 2.1.2
+    hooks:
+      - id: prettier
+        stages: [commit]

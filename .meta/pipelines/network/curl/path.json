@@ -1,1 +1,1 @@
-{ path : network/curl }
+{ "path": network / curl }

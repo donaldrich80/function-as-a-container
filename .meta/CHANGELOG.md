@@ -1,3 +1,10 @@
+## [1.5.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.4.0...v1.5.0) (2020-09-29)
+
+
+### Features
+
+* pre-commit master list ([3f1fec0](https://gitlab.com/donaldrich/function-as-a-container/commit/3f1fec0fe246a1c4f3c508f001cd9fc933fa47b0))
+
 ## [1.4.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.3.0...v1.4.0) (2020-09-28)
 
 ### Features

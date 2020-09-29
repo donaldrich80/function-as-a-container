@@ -1,1 +1,1 @@
-{ "path": docker / lint / dockerfile_lint }
+{ path : docker/lint/dockerfile_lint }

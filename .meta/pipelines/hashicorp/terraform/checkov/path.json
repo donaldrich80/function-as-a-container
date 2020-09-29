@@ -1,1 +1,1 @@
-{ "path": hashicorp / terraform / checkov }
+{ path : hashicorp/terraform/checkov }

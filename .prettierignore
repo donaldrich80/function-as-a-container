@@ -3,3 +3,4 @@
 docs/index.md
 .git
 .git/COMMIT_EDITMSG
+**/path.json

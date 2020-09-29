@@ -1,12 +1,33 @@
 repos:
   - repo: local
     hooks:
-      - id: tusk-regenerate
-        name: tusk-regenerate
-        entry: tusk
-        args: ["regenerate"]
+      # - id: tusk-regenerate
+      #   name: tusk-regenerate
+      #   entry: tusk
+      #   args: ["regenerate"]
+      #   language: system
+      #   pass_filenames: false
+      - id: touch-hooks
+        name: touch-hooks
+        entry: touch
+        args: [".pre-commit-hooks.yaml"]
         language: system
         pass_filenames: false
+      - id: function-yq-merge
+        name: Use yq
+        description: Use yq
+        entry: --entrypoint yq mikefarah/yq
+        args: [merge, -a, .pre-commit-hooks.yaml]
+        # args: [merge, -a, .meta/git-hooks/**/git-hook.yml, '>', out.yml]
+        files: git-hook.*
+        language: docker_image
+        pass_filenames: false
+  - repo: meta
+    hooks:
+      - id: identity
+        args: [merge, -a, out.yml]
+        files: git-hook.*
+        types: [yaml]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
@@ -26,13 +47,18 @@ repos:
       - id: lint-shell-shellcheck
       - id: repo-scan-yelp
       - id: repo-scan-gitleaks
+      - id: repo-policy-commitlint
+        stages: [commit-msg]
+
+
+
+
       # - id: docker-lint-hadolint
       #   files: Dockerfile
       #   exclude: Dockerfile.tmpl.*
       # - id: repo-policy-commitlint
       #   stages: [prepare-commit-msg]
-      - id: repo-policy-commitlint
-        stages: [commit-msg]
+
       # - id: repo-policy-commitizen
       #   stages: [prepare-commit-msg]
   # - repo: https://github.com/commitizen-tools/commitizen

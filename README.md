@@ -24,3 +24,5 @@ graph TD;
   B-->D;
   C-->D;
 ```
+
+docker run --rm -v ${PWD}:/workdir mikefarah/yq yq [flags] <command> FILE...

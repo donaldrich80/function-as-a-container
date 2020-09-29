@@ -1,1 +1,7 @@
 https://github.com/wfxr/forgit
+
+https://github.com/thoughtworks/talisman
+
+https://github.com/earthly/earthly
+
+https://github.com/harbur/captain

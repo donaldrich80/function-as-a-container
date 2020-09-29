@@ -1,0 +1,19 @@
+- id: docker-lint-dockerfile_lint
+  name: dockerfile_lint
+  entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
+  language: docker_image
+  args: [--dockerfile]
+  files: Dockerfile.*
+
+- id: docker-lint-dockerfilelint
+  name: Lint Dockerfiles w dockerfilelint linter
+  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
+  language: docker_image
+  files: Dockerfile.*
+
+- id: docker-lint-hadolint
+  name: Lint Dockerfiles w hadolint
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: hadolint/hadolint hadolint
+  files: Dockerfile.*

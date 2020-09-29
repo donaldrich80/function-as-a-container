@@ -1,0 +1,6 @@
+- id: repo-secrets-yelp
+  name: Detect secrets
+  description: secrets high entropy strings that are likely to be passwords.
+  entry: --secrets detect-secrets donaldrich/function:detect-secrets
+  # args: ["scan"]
+  # language: docker_image

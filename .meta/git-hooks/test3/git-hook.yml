@@ -1,0 +1,7 @@
+- id: repo-scan-detect-secrets
+  name: Detect secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  args: ["scan"]
+  # args: [--baseline, ci/secrets.baseline]
+  language: docker_image

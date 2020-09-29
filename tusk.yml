@@ -23,7 +23,7 @@ tasks:
     run:
       - command: rm -r docs | true
       - command: rm -r .meta/pipelines | true
-      - command: rm .pre-commit-hooks.yaml | true
+      - command: rm hook-test.yaml | true
       - command: mkdir docs | true
       - command: cp .meta/index.md docs
       - command: cp .meta/CHANGELOG.md docs
@@ -43,6 +43,16 @@ tasks:
       - command: pre-commit install --hook-type prepare-commit-msg
       - command: pre-commit run -a || true
 
+  yt-test:
+    usage: cleans repo
+    run:
+      - command: git add .
+      - command: pre-commit autoupdate
+      - command: rm hook-test.yaml | true
+      - command: touch hook-test.yaml | true
+      - command: pre-commit run hook-test
+      - command: git add .
+      - command: pre-commit run identity
   full:
     run:
       - task: clean-repo

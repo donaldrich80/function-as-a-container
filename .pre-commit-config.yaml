@@ -1,20 +1,33 @@
 repos:
-  # - repo: local
-  #   hooks:
-  # - id: tusk-regenerate
-  #   name: tusk-regenerate
-  #   entry: tusk clean-repo
-  #   language: system
-  #   pass_filenames: false
-  # - id: function-yq-merge
-  #   name: Use yq
-  #   description: Use yq
-  #   entry: --entrypoint yq mikefarah/yq
-  #   args: [merge]
-  #   files: git-hooks.*
-  #   language: docker_image
-  #   verbose: true
-  #   log_file: .pre-commit-hooks.yaml
+  - repo: local
+    hooks:
+      # - id: tusk-regenerate
+      #   name: tusk-regenerate
+      #   entry: tusk clean-repo
+      #   language: system
+      #   pass_filenames: false
+      - id: hook-test
+        name: Use yq
+        description: Use yq
+        entry: --entrypoint yq mikefarah/yq
+        args: ["merge", "-i", "hook-test.yaml"]
+        files: test-hook.yml
+        language: docker_image
+        verbose: true
+        # log_file: hook-test.yaml
+        stages: [commit]
+  - repo: meta
+    hooks:
+      - id: identity
+        name: Use yq
+        description: Use yq
+        # entry: --entrypoint yq mikefarah/yq
+        args: ["merge", "-i", "hook-test.yaml"]
+        files: test-hook.yml
+        # language: docker_image
+        verbose: true
+        # log_file: hook-test.yaml
+        stages: [commit]
   # - id: tusk-template
   #   name: tusk-template
   #   entry: tusk template
@@ -60,19 +73,17 @@ repos:
 
       # - id: repo-policy-commitizen
       #   stages: [prepare-commit-msg]
+
+  - repo: https://github.com/prettier/prettier
+    rev: 2.1.2
+    hooks:
+      - id: prettier
+        stages: [commit]
+
   # - repo: https://github.com/commitizen-tools/commitizen
   #   rev: v2.4.0
   #   hooks:
   #     - id: commitizen
-  #       stages: [commit-msg]
-
-  #     - id: repo-policy-commitizen
-  #       name: commitizen check
-  #       entry: --entrypoint git-cz donaldrich/function:semver
-  #       language: docker_image
-  #       # args: ["--hook"]
-  #       # pass_filenames: false
-  #       verbose: true
   #       stages: [commit-msg]
 
   # stages: [commit-msg]
@@ -82,9 +93,3 @@ repos:
   #     - id: conform
   #       stages:
   #         - commit-msg
-
-  - repo: https://github.com/prettier/prettier
-    rev: 2.1.2
-    hooks:
-      - id: prettier
-        stages: [commit]

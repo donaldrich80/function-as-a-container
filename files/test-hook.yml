@@ -1,0 +1,4 @@
+- id: test3
+  name: commitizen check
+  entry: --entrypoint cz donaldrich/function:semver
+  language: docker_image

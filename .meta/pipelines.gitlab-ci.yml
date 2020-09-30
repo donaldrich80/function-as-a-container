@@ -39,6 +39,7 @@ include:
   - local: .meta/pipelines/unsorted/bashful/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/zsh/build.gitlab-ci.yml
   - local: .meta/pipelines/task/build.gitlab-ci.yml
+  - local: .meta/pipelines/task/dunner/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/pdftk/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/markdown/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/pandoc/build.gitlab-ci.yml

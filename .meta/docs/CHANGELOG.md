@@ -1,9 +1,8 @@
 ## [1.7.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.6.4...v1.7.0) (2020-09-30)
 
-
 ### Features
 
-* structured text ([6cec658](https://gitlab.com/donaldrich/function-as-a-container/commit/6cec658f3c643bb94a5d96b40712ed061439b829))
+- structured text ([6cec658](https://gitlab.com/donaldrich/function-as-a-container/commit/6cec658f3c643bb94a5d96b40712ed061439b829))
 
 ### [1.6.4](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.6.3...v1.6.4) (2020-09-30)
 

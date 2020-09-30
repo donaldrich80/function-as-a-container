@@ -5,30 +5,6 @@
 fail_fast: false
 
 repos:
-  - repo: local
-    hooks:
-      - id: yamlfmt
-        name: Format YAML files
-        description: Format YAML files
-        entry: pre_commit_hooks/yamlfmt
-        language: python
-        types: [yaml]
-        additional_dependencies:
-          - ruamel.yaml
-        exclude: .pre-commit-hooks.yaml
-
-  - repo: local
-    hooks:
-      - id: yamlfmt
-        name: Format YAML files with overrides
-        description: Format YAML files with overrides
-        entry: pre_commit_hooks/yamlfmt
-        language: python
-        files: .pre-commit-hooks.yaml
-        additional_dependencies:
-          - ruamel.yaml
-        args: [--mapping, "2", --sequence, "2", --offset, "0"]
-
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 2.0.0
     hooks:

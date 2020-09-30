@@ -4,26 +4,9 @@ include:
   - local: .meta/pipelines/docker/lint/dockerfile_lint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/lint/dockerfilelint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/remarshall/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/markdown/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/hcl2json/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/jq/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/fony/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/json2hcl/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/show-struct/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/jsonnet/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/toml/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/shell/tools/bat/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/shell/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/zsh/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/yj/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/yaml/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/general/codespell/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/general/natural_docs/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/general/goodcheck/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/general/misspell/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/general/languagetool/build.gitlab-ci.yml
   - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
+  - local: .meta/pipelines/shell/tools/bat/build.gitlab-ci.yml
+  - local: .meta/pipelines/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/semver/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/tsrc/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/tago/build.gitlab-ci.yml
@@ -33,19 +16,36 @@ include:
   - local: .meta/pipelines/repos/gitlab/gitlab-ci-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/secrets/detect-secrets/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/secrets/gitleaks/build.gitlab-ci.yml
-  - local: .meta/pipelines/media/pdftk/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/remarshall/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/json/hcl2json/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/json/jq/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/json/fony/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/json/json2hcl/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/json/show-struct/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/json/jsonnet/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/toml/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/yj/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/prettier/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/yaml/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/gomplate/build.gitlab-ci.yml
   - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml
   - local: .meta/pipelines/media/wkhtmltopdf/build.gitlab-ci.yml
   - local: .meta/pipelines/media/diagrams/build.gitlab-ci.yml
-  - local: .meta/pipelines/media/pandoc/build.gitlab-ci.yml
   - local: .meta/pipelines/media/man/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/td4a/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/vuls/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/dump-env/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/bashful/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/prettier/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/gomplate/build.gitlab-ci.yml
+  - local: .meta/pipelines/unsorted/zsh/build.gitlab-ci.yml
   - local: .meta/pipelines/task/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/pdftk/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/markdown/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/pandoc/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/general/codespell/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/general/natural_docs/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/general/goodcheck/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/general/misspell/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/general/languagetool/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/goss/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/converge/build.gitlab-ci.yml
   - local: .meta/pipelines/testing/archive/inspec/build.gitlab-ci.yml

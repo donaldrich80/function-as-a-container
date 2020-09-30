@@ -2,7 +2,7 @@
   name: dockerfile_lint
   entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
   language: docker_image
-  args: [--dockerfile]
+  # args: [--dockerfile]
   files: Dockerfile.*
 
 - id: docker-lint-dockerfilelint

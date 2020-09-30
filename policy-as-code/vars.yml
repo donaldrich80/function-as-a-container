@@ -1,0 +1,17 @@
+image:
+  tag: openpolicyagent
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  opa:
+    prefix: opa
+    help: -h
+    version: -v
+    github: openpolicyagent/opa
+  conftest:
+    prefix: conftest
+    help: -h
+    version: -v
+    github: openpolicyagent/conftest
+extra: ""

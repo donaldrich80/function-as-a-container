@@ -1,7 +1,5 @@
 Kitchen-Terraform : A Test Kitchen plugin allowing to handle Terraform testing
 Inspec : The Chef Compliance as code test framework
-Open Policy Agent : Open Policy Agent, policy-based control through Terraform plan
-conftest : Run OPA tests through conftest to ease feedback interpretation
 
 https://github.com/rrey/terraform-runner
 
@@ -10,3 +8,5 @@ https://github.com/b4b4r07/stein/
 https://github.com/gocd/gocd
 
 https://github.com/picostack/pico
+
+https://github.com/TerraHubCorp/terrahub

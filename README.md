@@ -26,3 +26,5 @@ graph TD;
 ```
 
 docker run --rm -v \${PWD}:/workdir mikefarah/yq yq [flags] <command> FILE...
+
+docker run -d -e GO_SERVER_URL=http://192.168.1.101:8153/go gocd/gocd-agent-alpine-3.10:v20.8.0

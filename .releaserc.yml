@@ -7,23 +7,21 @@ plugins:
   - - "@semantic-release/commit-analyzer"
     - preset: conventionalcommits
       releaseRules:
-        - type: docs
-          release: patch
-        - type: refactor
-          release: patch
-        - type: perf
-          # scope: repo
+        - type: added
           release: minor
+        - type: fixed
+          release: patch
+        - type: changed
+          release: patch
+        - type: removed
+          release: minor
+        - type: ci
+          release: patch
+        - scope: improved
+          release: patch
         - type: chore
           release: false
-        - scope: auto
-          release: false
-        - type: feat
-          # scope: image
-          release: minor
-        - type: fix
-          # scope: repo
-          release: false
+
       parserOpts:
         noteKeywords:
           - BREAKING CHANGE
@@ -32,17 +30,19 @@ plugins:
   - - "@semantic-release/release-notes-generator"
     - preset: conventionalcommits
       types:
-        - type: feat
-          section: Features
-        - type: fix
-          section: Bug Fixes
-        - type: repo
-          section: Repository
+        - type: added
+          section: Added
+        - type: fixed
+          section: Fixed
+        - type: changed
+          section: Changed
+        - type: removed
+          section: Removed
+        - type: ci
+          section: CI
+        - type: improved
+          section: Improved
         - type: chore
-          hidden: true
-        - type: docs
-          hidden: true
-        - type: perf
           hidden: true
       parserOpts:
         noteKeywords:

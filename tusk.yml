@@ -7,61 +7,72 @@ options:
     usage: Folder containing Dockerfile
 
 tasks:
-  build:
-    usage: build docker image
-    run: docker build --pull --rm -f "${build-dir}/Dockerfile" -t donaldrich/function:test "${build-dir}"
-  dive:
-    usage: analyze built image
-    run: dive donaldrich/function:test
-
   prune:
     usage: analyze built image
     run: docker system prune --all --force
 
-  clean-repo:
+  repo-clean:
     usage: cleans repo
     run:
       - command: rm -r docs | true
       - command: rm -r .meta/pipelines | true
-      - command: rm hook-test.yaml | true
       - command: mkdir docs | true
-      - command: cp .meta/index.md docs
-      - command: cp .meta/CHANGELOG.md docs
+      - command: cp .meta/docs/index.md docs
+      - command: cp .meta/docs/CHANGELOG.md docs
 
-  apply-template:
+  repo-template:
     usage: applys template
     run:
       - command: ./run-all.sh
 
-  update-hooks:
+  repo-commit:
+    run:
+      - command: pre-commit run || true
+      - command: git add .
+      - command: 'git commit -m "chore(repo): repo"'
+      - command: git push origin master
+
+  repo-full:
+    run:
+      - task: repo-clean
+      - task: repo-template
+      - task: repo-commit
+
+  hooks-install:
     usage: hooks
     run:
       - command: pre-commit install
-      # - command: pre-commit autoupdate --bleeding-edge
-      - command: pre-commit autoupdate
+      - command: pre-commit autoupdate --bleeding-edge
       - command: pre-commit install --hook-type commit-msg
       - command: pre-commit install --hook-type prepare-commit-msg
       - command: pre-commit run -a || true
 
-  repo-hook-list:
+  hooks-list:
     usage: repo-hook-list
     run:
-      # - command: git add .
-      # - command: pre-commit autoupdate
       - command: rm .pre-commit-hooks.yaml | true
       - command: touch .pre-commit-hooks.yaml | true
       - command: pre-commit run --hook-stage manual hook-test -a
-      - command: git add .
-      - command: 'git commit -m "chore(hooks): refresh hook list"'
+
+  hooks-commit:
+    run:
+      - command: git add .pre-commit-hooks.yaml
+      - command: 'git commit -m "docs(hooks): refresh hook list"'
       - command: git push origin master
+
+  hooks-full:
+    run:
+      - task: hooks-install
+      - task: hooks-list
+      - task: hooks-commit
 
   full:
     run:
-      - task: clean-repo
-      - task: apply-template
-      - task: update-hooks
-      - task: repo-hook-list
-      - task: commit-to-remote
+      - task: repo-full
+      - task: hooks-full
+      # - task: update-hooks
+      # - task: repo-hook-list
+      # - task: commit-to-remote
       # - command: git add .
       # - command: pre-commit autoupdate
       # - command: pre-commit run -a || true

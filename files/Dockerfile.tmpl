@@ -36,7 +36,7 @@ RUN upx /usr/local/bin/ginstall.sh
 
 FROM ubuntu
 
-RUN apt-get update && apt-get install -y curl tar unzip tree duc
+RUN apt-get update && apt-get install --no-install-recommends -y curl tar unzip tree duc
 
 COPY --from=ginstall-builder /usr/local/bin/ginstall.sh /usr/local/bin/ginstall.sh
 

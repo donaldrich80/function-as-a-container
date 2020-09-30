@@ -24,7 +24,7 @@ repos:
       #   pass_filenames: false
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: 5bd9e74adfb59d8e14c8a88c36511eb60c59b36e
     hooks:
       - id: check-added-large-files
         stages: [commit]
@@ -37,26 +37,28 @@ repos:
       - id: mixed-line-ending
         args: ["--fix=lf"]
 
-  # - repo: https://gitlab.com/donaldrich/function-as-a-container
-  #   rev: v1.4.0
-  #   hooks:
-  #     - id: shell-lint-shellcheck
-  #       stages: [commit]
-  #     - id: shell-lint-shfmt
-  #       stages: [commit]
-  #     - id: shell-lint-bashate
-  #       stages: [commit]
-  #     - id: secrets-detect-secrets
-  #       stages: [commit]
-  #     - id: secrets-gitleaks
-  #       stages: [commit]
-  #     - id: yaml-yamllint
-  #       stages: [commit]
-  #     - id: docker-lint-hadolint
-  #       exclude: Dockerfile.tmpl.*
+  - repo: https://gitlab.com/donaldrich/function-as-a-container
+    rev: v1.6.0
+    hooks:
+      - id: shell-lint-shellcheck
+        stages: [commit]
+      # - id: shell-lint-shfmt
+      #   stages: [commit]
+      #   verbose: true
+      # - id: shell-lint-bashate
+      #   stages: [commit]
+      #   verbose: true
+      - id: secrets-detect-secrets
+        stages: [commit]
+      - id: secrets-gitleaks
+        stages: [commit]
+      - id: yaml-lint-yamllint
+        stages: [commit]
+      # - id: docker-lint-hadolint
+      #   exclude: Dockerfile.tmpl.*
 
   - repo: https://github.com/prettier/prettier
-    rev: 2.1.2
+    rev: 599b80331f2a49351e871a0d893df773e7b48770
     hooks:
       - id: prettier
         stages: [commit]

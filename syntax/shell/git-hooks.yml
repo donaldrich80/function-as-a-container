@@ -8,7 +8,7 @@
   name: lint-shell-shfmt
   entry: --entrypoint shfmt donaldrich/function:shell
   language: docker_image
-  args: ["-w", "."]
+  args: ["-w"]
   types: [shell]
 
 - id: shell-lint-bashate

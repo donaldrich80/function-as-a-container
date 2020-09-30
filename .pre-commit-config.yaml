@@ -38,7 +38,7 @@ repos:
         args: ["--fix=lf"]
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: 4b980c5c8d0e60602348519ff255b34a3cc8afa0
+    rev: 34c034931f0f13132cba70e55112f85602e94ef2
     hooks:
       - id: shell-lint-shellcheck
         stages: [commit]

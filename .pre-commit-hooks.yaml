@@ -43,22 +43,86 @@
   files: (\.tf|\.tfvars)$
   exclude: \.terraform\/.*$
 - id: docker-lint-dockerfile_lint
-  name: dockerfile_lint
+  name: Lint Dockerfiles with dockerfile_lint
   entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
   language: docker_image
   # args: [--dockerfile]
   files: Dockerfile.*
 - id: docker-lint-dockerfilelint
-  name: Lint Dockerfiles w dockerfilelint linter
+  name: Lint Dockerfiles with dockerfilelint
   entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
   language: docker_image
   files: Dockerfile.*
 - id: docker-lint-hadolint
-  name: Lint Dockerfiles w hadolint
+  name: Lint Dockerfiles with hadolint
   description: Lint Dockerfiles w hadolint
   language: docker_image
   entry: hadolint/hadolint hadolint
   files: Dockerfile.*
+# Secret Detection
+- id: secrets-gitleaks
+  name: Scan for secrets with gitleaks
+  description: Checks commits for secrets w gitleaks
+  entry: zricethezav/gitleaks
+  args: ["--verbose", "--pretty"]
+  pass_filenames: false
+  language: docker_image
+  verbose: true
+- id: secrets-detect-secrets
+  name: Scan for secrets with detect-secrets
+  description: Detects high entropy strings that are likely to be passwords.
+  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
+  args: ["scan", "--base64-limit", "4.5", "--hex-limit", "3"]
+  # args: [--baseline, ci/secrets.baseline]
+  language: docker_image
+- id: codespell
+  name: codespell
+  entry: --entrypoint codespell donaldrich/function:codespell
+  language: docker_image
+  types: [text]
+
+# - id: terragrunt-hclfmt
+#   name: Terragrunt HCL format
+#   files: \.hcl$
+#   language: docker_image
+#   entry: lowess/terragrunt:0.12.24 terragrunt hclfmt
+- id: gomplate
+  name: gomplate
+  description: gomplate
+  entry: --entrypoint gomplate donaldrich/function:gomplate
+  language: docker_image
+- id: yj
+  name: yj
+  description: Convert between YAML, TOML, JSON, and HCL
+  entry: --entrypoint yj donaldrich/function:yj
+  language: docker_image
+- id: lint-markdown-markdownlint
+  name: Lint Markdown w markdownlint
+  description: Lint Markdown w markdownlint
+  language: docker_image
+  entry: donaldrich/function:markdown markdownlint
+  types: [markdown]
+  exclude: .meta/snippets/layout.md
+- id: lint-markdown-remarklint
+  name: Lint markdown w remark
+  description: remark-lint
+  language: docker_image
+  entry: pipelinecomponents/remark-lint remark
+  args: ["."]
+  types: [markdown]
+- id: mdspell
+  name: mdspell
+  description: mdspell
+  language: docker_image
+  entry: --entrypoint mdspell pipelinecomponents/markdown-spellcheck mdspell
+  args: ["--report", "**/*.md"]
+  types: [markdown]
+- id: lint-markdown-misspell
+  name: misspell
+  entry: --entrypoint misspell donaldrich/function:misspell
+  language: docker_image
+  args: [-w, "."]
+  types: [markdown]
 - id: repo-semantic-release
   name: repo-semver-semantic-release
   entry: --entrypoint semantic-release donaldrich/function:semver
@@ -98,17 +162,50 @@
   entry: --entrypoint prettier donaldrich/function:prettier
   language: docker_image
   args: ["--write", "--list-different", "--ignore-unknown"]
-- id: codespell
-  name: codespell
-  entry: --entrypoint codespell donaldrich/function:codespell
+- id: packer-fix
+  name: Fix Packer template(s) with backwards incompatibilities
+  entry: hashicorp/packer:light fix
   language: docker_image
-  types: [text]
-
-# - id: terragrunt-hclfmt
-#   name: Terragrunt HCL format
-#   files: \.hcl$
-#   language: docker_image
-#   entry: lowess/terragrunt:0.12.24 terragrunt hclfmt
+  types: [json]
+  files: ^packer.json$
+  always_run: false
+  verbose: false
+  pass_filenames: true
+  description: Attempts to fix incompatibilities in a template
+- id: packer-validate
+  name: Validate Packer template(s)
+  entry: hashicorp/packer:light validate
+  language: docker_image
+  types: [json]
+  files: ^packer.json$
+  always_run: false
+  verbose: false
+  pass_filenames: true
+  description: Validates a template against builders, provisioners
+  args: [-syntax-only, "."]
+- id: task-tusk
+  name: tusk
+  description: tusk
+  entry: --entrypoint tusk donaldrich/function:task
+  language: docker_image
+  pass_filenames: false
+  verbose: true
+- id: shell-lint-shellcheck
+  name: Check scripts with shellcheck
+  entry: koalaman/shellcheck:stable
+  language: docker_image
+  types: [shell]
+- id: shell-lint-shfmt
+  name: Check scripts with shfmt
+  entry: --entrypoint shfmt donaldrich/function:shell
+  language: docker_image
+  args: ["-w"]
+  types: [shell]
+- id: shell-lint-bashate
+  name: Check scripts with bashate
+  entry: --entrypoint bashate donaldrich/function:shell
+  language: docker_image
+  types: [shell]
 - id: yaml-lint-yamllint
   name: Lint YAML w yamllint
   description: Lint YAML w yamllint
@@ -135,90 +232,3 @@
   description: yq is a lightweight and portable command-line YAML processo
   entry: --entrypoint ytt donaldrich/function:yaml
   language: docker_image
-# Secret Detection
-- id: secrets-gitleaks
-  name: Checks commits for secrets w gitleaks
-  description: Checks commits for secrets w gitleaks
-  entry: zricethezav/gitleaks
-  args: ["--verbose", "--pretty"]
-  pass_filenames: false
-  language: docker_image
-  verbose: true
-- id: secrets-detect-secrets
-  name: Detect secrets
-  description: Detects high entropy strings that are likely to be passwords.
-  entry: --entrypoint detect-secrets donaldrich/function:detect-secrets
-  args: ["scan", "--base64-limit", "4.5", "--hex-limit", "3"]
-  # args: [--baseline, ci/secrets.baseline]
-  language: docker_image
-- id: lint-markdown-markdownlint
-  name: Lint Markdown w markdownlint
-  description: Lint Markdown w markdownlint
-  language: docker_image
-  entry: donaldrich/function:markdown markdownlint
-  types: [markdown]
-  exclude: .meta/snippets/layout.md
-- id: lint-markdown-remarklint
-  name: Lint markdown w remark
-  description: remark-lint
-  language: docker_image
-  entry: pipelinecomponents/remark-lint remark
-  args: ["."]
-  types: [markdown]
-- id: mdspell
-  name: mdspell
-  description: mdspell
-  language: docker_image
-  entry: --entrypoint mdspell pipelinecomponents/markdown-spellcheck mdspell
-  args: ["--report", "**/*.md"]
-  types: [markdown]
-- id: lint-markdown-misspell
-  name: misspell
-  entry: --entrypoint misspell donaldrich/function:misspell
-  language: docker_image
-  args: [-w, "."]
-  types: [markdown]
-- id: packer-fix
-  name: Fix Packer template(s) with backwards incompatibilities
-  entry: hashicorp/packer:light fix
-  language: docker_image
-  types: [json]
-  files: ^packer.json$
-  always_run: false
-  verbose: false
-  pass_filenames: true
-  description: Attempts to fix incompatibilities in a template
-- id: packer-validate
-  name: Validate Packer template(s)
-  entry: hashicorp/packer:light validate
-  language: docker_image
-  types: [json]
-  files: ^packer.json$
-  always_run: false
-  verbose: false
-  pass_filenames: true
-  description: Validates a template against builders, provisioners
-  args: [-syntax-only, "."]
-- id: shell-lint-shellcheck
-  name: lint-shell-shellcheck
-  entry: koalaman/shellcheck:stable
-  language: docker_image
-  types: [shell]
-- id: shell-lint-shfmt
-  name: lint-shell-shfmt
-  entry: --entrypoint shfmt donaldrich/function:shell
-  language: docker_image
-  args: ["-w"]
-  types: [shell]
-- id: shell-lint-bashate
-  name: bashate
-  entry: --entrypoint bashate donaldrich/function:shell
-  language: docker_image
-  types: [shell]
-- id: task-tusk
-  name: tusk
-  description: tusk
-  entry: --entrypoint tusk donaldrich/function:task
-  language: docker_image
-  pass_filenames: false
-  verbose: true

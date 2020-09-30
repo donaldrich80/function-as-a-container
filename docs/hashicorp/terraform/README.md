@@ -15,6 +15,12 @@ source: hashicorp/terraform/Dockerfile
 
 - [:octicons-mark-github-16: asteris-llc/converge](https://github.com/asteris-llc/converge)
 
+### Terracognita
+
+- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/cycloid/terracognita)
+
+- [:octicons-mark-github-16: cycloidio/terracognita](https://github.com/cycloidio/terracognita)
+
 ### Terraform
 
 - [:octicons-book-16: Docs](https://www.terraform.io/docs)

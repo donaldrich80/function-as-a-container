@@ -52,6 +52,14 @@ commands:
     version: version
     github: asteris-llc/converge
     docs: http://converge.aster.is
+  terracognita:
+    prefix: terracognita
+    version: version
+    help: --help
+    github: cycloidio/terracognita
+    docker: cycloid/terracognita
+    download: https://github.com/cycloidio/terracognita/releases/download/v0.3.0/terracognita-linux-amd64.tar.gz
+
   # terraform-provider-keycloak:
   #   prefix: terraform-provider-keycloak
   #   help: null

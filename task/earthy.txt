@@ -1,5 +1,0 @@
-https://github.com/earthly/earthly
-
-https://github.com/picostack/pico
-
-https://github.com/shiwaforce/poco

@@ -43,8 +43,13 @@ RUN mv terraform-provider-keycloak_v1.20.0 terraform-provider-keycloak
 RUN chmod +rx terraform-provider-keycloak
 RUN mv terraform-provider-keycloak /usr/local/bin/
 
+FROM donaldrich/builder:latest AS terracognita-builder
+COPY --from=cycloid/terracognita /app/terracognita /usr/local/bin/terracognita
+RUN upx /usr/local/bin/terracognita
+
 FROM ubuntu
 
+COPY --from=terracognita-builder /usr/local/bin/terracognita /usr/local/bin/terracognita
 COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /.terraform.d/plugins/terraform-provider-keycloak
 COPY --from=converge-builder /root/go/bin/converge /usr/local/bin/converge
 COPY --from=terraformer-builder /usr/local/bin/terraformer /usr/local/bin/terraformer

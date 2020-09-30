@@ -18,6 +18,9 @@ tasks:
           exec: converge version
           print: "\e[32mconverge\e[0m"
       - command:
+          exec: terracognita version
+          print: "\e[32mterracognita\e[0m"
+      - command:
           exec: terraform version
           print: "\e[32mterraform\e[0m"
       - command:
@@ -41,6 +44,9 @@ tasks:
       - command:
           exec: converge --help
           print: "\e[32mconverge\e[0m"
+      - command:
+          exec: terracognita --help
+          print: "\e[32mterracognita\e[0m"
       - command:
           exec: terraform -h
           print: "\e[32mterraform\e[0m"

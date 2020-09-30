@@ -12,17 +12,17 @@ plugins:
         - type: refactor
           release: patch
         - type: perf
-          scope: repo
+          # scope: repo
           release: minor
         - type: chore
           release: false
         - scope: auto
           release: false
         - type: feat
-          scope: image
+          # scope: image
           release: minor
         - type: fix
-          scope: repo
+          # scope: repo
           release: false
       parserOpts:
         noteKeywords:

@@ -1,0 +1,7 @@
+FROM donaldrich/builder:latest AS terracognita-builder
+COPY --from=cycloid/terracognita /app/terracognita /usr/local/bin/terracognita
+RUN upx /usr/local/bin/terracognita
+
+FROM ubuntu
+
+COPY --from=terracognita-builder /usr/local/bin/terracognita /usr/local/bin/terracognita

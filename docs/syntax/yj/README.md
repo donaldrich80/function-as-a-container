@@ -1,6 +1,6 @@
 ---
 path: tree/master
-source: syntax/yaml/yj/Dockerfile
+source: syntax/yj/Dockerfile
 ---
 
 # yj

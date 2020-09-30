@@ -45,8 +45,8 @@ build:yj:
       --cache-from $REGISTRY/function:yj
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $REGISTRY/function:yj
-      --file syntax/yaml/yj/Dockerfile
-      syntax/yaml/yj
+      --file syntax/yj/Dockerfile
+      syntax/yj
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,7 +60,7 @@ build:yj:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "syntax/yaml/yj/*"
+        - "syntax/yj/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

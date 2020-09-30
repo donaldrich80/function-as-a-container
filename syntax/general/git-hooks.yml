@@ -1,0 +1,5 @@
+- id: codespell
+  name: codespell
+  entry: --entrypoint codespell donaldrich/function:codespell
+  language: docker_image
+  types: [text]

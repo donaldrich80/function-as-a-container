@@ -4,3 +4,9 @@ Open Policy Agent : Open Policy Agent, policy-based control through Terraform pl
 conftest : Run OPA tests through conftest to ease feedback interpretation
 
 https://github.com/rrey/terraform-runner
+
+https://github.com/b4b4r07/stein/
+
+https://github.com/gocd/gocd
+
+https://github.com/picostack/pico

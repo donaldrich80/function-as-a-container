@@ -1,0 +1,14 @@
+image:
+  tag: earthly
+  context: ""
+  dir: ""
+  dockerfile: ""
+  download: https://github.com/earthly/earthly/releases/latest/download/earth-linux-amd64
+commands:
+  earthly:
+    prefix: earthly
+    help: -h
+    version: -v
+    github: earthly/earthly
+    docs: https://earthly.dev # docker: golang
+extra: ""

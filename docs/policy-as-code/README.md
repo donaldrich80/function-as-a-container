@@ -17,6 +17,10 @@ source: policy-as-code/Dockerfile
 
 - [:octicons-mark-github-16: openpolicyagent/opa](https://github.com/openpolicyagent/opa)
 
+### Stein
+
+- [:octicons-mark-github-16: b4b4r07/stein](https://github.com/b4b4r07/stein)
+
 ## Image Commands
 
 ### Container shell

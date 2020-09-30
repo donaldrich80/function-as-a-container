@@ -54,8 +54,8 @@ repos:
         stages: [commit]
       - id: yaml-lint-yamllint
         stages: [commit]
-      - id: docker-lint-hadolint
-        exclude: Dockerfile.tmpl.*
+      # - id: docker-lint-hadolint
+      #   exclude: Dockerfile.tmpl.*
 
   - repo: https://github.com/prettier/prettier
     rev: 599b80331f2a49351e871a0d893df773e7b48770

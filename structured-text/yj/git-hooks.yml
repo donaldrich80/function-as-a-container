@@ -1,0 +1,5 @@
+- id: yj
+  name: yj
+  description: Convert between YAML, TOML, JSON, and HCL
+  entry: --entrypoint yj donaldrich/function:yj
+  language: docker_image

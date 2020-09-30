@@ -1,18 +1,18 @@
 - id: shell-lint-shellcheck
-  name: lint-shell-shellcheck
+  name: Check scripts with shellcheck
   entry: koalaman/shellcheck:stable
   language: docker_image
   types: [shell]
 
 - id: shell-lint-shfmt
-  name: lint-shell-shfmt
+  name: Check scripts with shfmt
   entry: --entrypoint shfmt donaldrich/function:shell
   language: docker_image
   args: ["-w"]
   types: [shell]
 
 - id: shell-lint-bashate
-  name: bashate
+  name: Check scripts with bashate
   entry: --entrypoint bashate donaldrich/function:shell
   language: docker_image
   types: [shell]

@@ -27,7 +27,8 @@ tasks:
 
   repo-commit:
     run:
-      - command: pre-commit run || true
+      - command: git pull origin master
+      - command: pre-commit run -a || true
       - command: git add .
       - command: 'git commit -m "chore(repo): repo"'
       - command: git push origin master

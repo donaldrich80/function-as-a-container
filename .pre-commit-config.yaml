@@ -38,7 +38,7 @@ repos:
         args: ["--fix=lf"]
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: 34c034931f0f13132cba70e55112f85602e94ef2
+    rev: 23a4f28f416e095e0bec0413ce1570aaa173a5b5
     hooks:
       - id: shell-lint-shellcheck
         stages: [commit]
@@ -58,7 +58,7 @@ repos:
       #   exclude: Dockerfile.tmpl.*
 
   - repo: https://github.com/prettier/prettier
-    rev: 599b80331f2a49351e871a0d893df773e7b48770
+    rev: 7c5a7d3c747c73b19f9f44757a7a75e9169afce4
     hooks:
       - id: prettier
         stages: [commit]

@@ -3,8 +3,6 @@ Inspec : The Chef Compliance as code test framework
 
 https://github.com/rrey/terraform-runner
 
-https://github.com/b4b4r07/stein/
-
 https://github.com/gocd/gocd
 
 https://github.com/picostack/pico
@@ -15,7 +13,5 @@ https://github.com/TerraHubCorp/terrahub
 https://github.com/earthly/earthly
 
 https://github.com/shiwaforce/poco
-
-https://github.com/leopardslab/dunner
 
 https://github.com/cloud66-oss/habitus

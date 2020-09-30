@@ -57,7 +57,7 @@ tasks:
 
   hooks-commit:
     run:
-      - command: git add .pre-commit-hooks.yaml
+      - command: git add .
       - command: 'git commit -m "docs(hooks): refresh hook list"'
       - command: git push origin master
 

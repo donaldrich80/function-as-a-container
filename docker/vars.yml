@@ -97,6 +97,13 @@ commands:
     github: rash-sh/rash
     docs: https://rash.sh/
     download: https://github.com/rash-sh/rash/releases/download/v1.0.0/rash-x86_64-unkown-linux-gnu.tar.gz
+  earthly:
+    prefix: earthly
+    help: --help
+    version: --version
+    github: earthly/earthly
+    docs: https://earthly.dev
+    download: https://github.com/earthly/earthly/releases/latest/download/earth-linux-amd64
   # docker-shell:
   #   prefix: docker-shell
   #   help: --help

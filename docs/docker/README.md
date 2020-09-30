@@ -65,6 +65,12 @@ Docker related tools and utilities
 
 - [:octicons-mark-github-16: jessfraz/dockfmt](https://github.com/jessfraz/dockfmt)
 
+### Earthly
+
+- [:octicons-book-16: Docs](https://earthly.dev)
+
+- [:octicons-mark-github-16: earthly/earthly](https://github.com/earthly/earthly)
+
 ### Hadolint
 
 - [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/hadolint/hadolint)

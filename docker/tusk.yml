@@ -45,6 +45,9 @@ tasks:
           exec: dockfmt version
           print: "\e[32mdockfmt\e[0m"
       - command:
+          exec: earthly --version
+          print: "\e[32mearthly\e[0m"
+      - command:
           exec: hadolint --version
           print: "\e[32mhadolint\e[0m"
       - command:
@@ -86,6 +89,9 @@ tasks:
       - command:
           exec: dockfmt -h
           print: "\e[32mdockfmt\e[0m"
+      - command:
+          exec: earthly --help
+          print: "\e[32mearthly\e[0m"
       - command:
           exec: hadolint --help
           print: "\e[32mhadolint\e[0m"

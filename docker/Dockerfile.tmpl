@@ -67,9 +67,15 @@ FROM donaldrich/builder:latest AS rash-builder
 COPY --from=rustagainshell/rash /bin/rash /usr/local/bin/rash
 RUN upx /usr/local/bin/rash
 
+FROM donaldrich/builder:latest AS earthly-builder
+RUN wget "https://github.com/earthly/earthly/releases/latest/download/earth-linux-amd64" -O /usr/local/bin/earthly
+RUN chmod +rx /usr/local/bin/earthly
+RUN upx /usr/local/bin/earthly
+
 FROM alpine
 
-COPY --from=docker-shell-builder  /usr/local/bin/docker-shell  /usr/local/bin/docker-shell
+COPY --from=earthly-builder /usr/local/bin/earthly /usr/local/bin/earthly
+COPY --from=docker-shell-builder /usr/local/bin/docker-shell /usr/local/bin/docker-shell
 COPY --from=docker-slim-builder /usr/local/bin/docker-slim /usr/local/bin/docker-slim
 COPY --from=docker-gen-builder /usr/local/bin/docker-gen /usr/local/bin/docker-gen
 COPY --from=dockerfile-generator-builder  /usr/local/bin/dfg  /usr/local/bin/dfg

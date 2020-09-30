@@ -1,3 +1,5 @@
+### [1.6.3](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.6.2...v1.6.3) (2020-09-30)
+
 ### [1.6.2](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.6.1...v1.6.2) (2020-09-30)
 
 ### [1.6.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.6.0...v1.6.1) (2020-09-30)

@@ -33,7 +33,7 @@ tasks:
       - command: 'git commit -m "chore(repo): repo"'
       - command: git push origin master
 
-  repo-full:
+  repo:
     run:
       - task: repo-clean
       - task: repo-template
@@ -89,14 +89,14 @@ tasks:
       - command: 'git commit -m "chore: repo"'
       - command: git push origin master
 
-  repo:
-    usage: check package versions
-    run:
-      - command: git pull origin master
-      - task: clean
-      - task: template
-      - task: pre-commit
-      - task: commit
+  # repo:
+  #   usage: check package versions
+  #   run:
+  #     - command: git pull origin master
+  #     - task: clean
+  #     - task: template
+  #     - task: pre-commit
+  #     - task: commit
 
   remote:
     usage: check package versions

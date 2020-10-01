@@ -18,6 +18,9 @@ tasks:
           exec: commander --version
           print: "\e[32mcommander\e[0m"
       - command:
+          exec: dunner -v
+          print: "\e[32mdunner\e[0m"
+      - command:
           exec: just --version
           print: "\e[32mjust\e[0m"
       - command:
@@ -44,6 +47,9 @@ tasks:
       - command:
           exec: commander --help
           print: "\e[32mcommander\e[0m"
+      - command:
+          exec: dunner -h
+          print: "\e[32mdunner\e[0m"
       - command:
           exec: just --help
           print: "\e[32mjust\e[0m"

@@ -3,6 +3,7 @@ image:
   context: ""
   dir: ""
   dockerfile: ""
+  download: https://github.com/wagoodman/bashful/releases/download/v0.1.1/bashful_0.1.1_linux_amd64.tar.gz
 commands:
   bashful:
     prefix: bashful

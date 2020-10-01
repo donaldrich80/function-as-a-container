@@ -4,6 +4,10 @@ include:
   - local: .meta/pipelines/docker/build.gitlab-ci.yml
   - local: .meta/pipelines/shell/tools/bat/build.gitlab-ci.yml
   - local: .meta/pipelines/shell/build.gitlab-ci.yml
+  - local: .meta/pipelines/image-validation/build.gitlab-ci.yml
+  - local: .meta/pipelines/image-validation/goss/build.gitlab-ci.yml
+  - local: .meta/pipelines/image-validation/converge/build.gitlab-ci.yml
+  - local: .meta/pipelines/image-validation/archive/inspec/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/semver/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/semantic-release/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/commitizen/build.gitlab-ci.yml
@@ -38,7 +42,6 @@ include:
   - local: .meta/pipelines/unsorted/bashful/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/zsh/build.gitlab-ci.yml
   - local: .meta/pipelines/task/build.gitlab-ci.yml
-  - local: .meta/pipelines/task/dunner/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/pdftk/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/markdown/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/pandoc/build.gitlab-ci.yml
@@ -47,9 +50,6 @@ include:
   - local: .meta/pipelines/documents/general/goodcheck/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/general/misspell/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/general/languagetool/build.gitlab-ci.yml
-  - local: .meta/pipelines/testing/goss/build.gitlab-ci.yml
-  - local: .meta/pipelines/testing/converge/build.gitlab-ci.yml
-  - local: .meta/pipelines/testing/archive/inspec/build.gitlab-ci.yml
   - local: .meta/pipelines/network/bitwarden-cli/build.gitlab-ci.yml
   - local: .meta/pipelines/network/httpie/build.gitlab-ci.yml
   - local: .meta/pipelines/network/goscan/build.gitlab-ci.yml

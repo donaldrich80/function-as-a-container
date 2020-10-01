@@ -15,6 +15,10 @@ Various task runners
 
 - [:octicons-mark-github-16: commander-cli/commander](https://github.com/commander-cli/commander)
 
+### Dunner
+
+- [:octicons-mark-github-16: leopardslab/dunner](https://github.com/leopardslab/dunner)
+
 ### Just
 
 - [:octicons-mark-github-16: casey/just](https://github.com/casey/just)

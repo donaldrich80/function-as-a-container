@@ -5,6 +5,12 @@ image:
   dir: ""
   dockerfile: ""
 commands:
+  dunner:
+    prefix: dunner
+    help: -h
+    version: -v
+    github: leopardslab/dunner
+    download: https://github.com/leopardslab/dunner/releases/download/v2.1.3/dunner_2.1.3_linux_x86_64.tar.gz
   tusk:
     description: "The modern task runner"
     prefix: tusk

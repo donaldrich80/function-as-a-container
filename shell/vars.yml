@@ -21,6 +21,11 @@ commands:
     github: mvdan/sh
     docker: mvdan/sh
     base: mvdan/shfmt
+  shellharden:
+    prefix: shellharden
+    help: --help
+    version: --version
+    github: anordal/shellharden
   # argbash:
   #   prefix: argbash
   #   help: --help

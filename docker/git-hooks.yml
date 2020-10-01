@@ -17,14 +17,14 @@
   language: docker_image
   entry: hadolint/hadolint hadolint
   files: Dockerfile.*
-  
+
 - id: docker-hadolint
   name: Lint Dockerfiles with hadolint
   description: Lint Dockerfiles w hadolint
   language: docker_image
   entry: hadolint/hadolint hadolint
   files: Dockerfile.*
-  
+
 - id: docker-dockfmt
   name: Format Dockerfiles with dockfmt
   description: Lint Dockerfiles w hadolint

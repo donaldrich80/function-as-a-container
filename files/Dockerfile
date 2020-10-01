@@ -40,7 +40,7 @@ RUN chmod +x /usr/local/bin/magicpak
 
 FROM ubuntu
 
-RUN apt-get update && apt-get install --no-install-recommends -y curl tar unzip tree duc \
+RUN apt-get update && apt-get install --no-install-recommends -y curl tar unzip tree duc ca-certificates \
 && rm -rf /tmp/* /usr/share/doc/* \
   /usr/share/locale/* /usr/share/man/* \
   /var/cache/debconf/* /var/cache/apt/* \
@@ -54,6 +54,7 @@ RUN ginstall.sh --first-run && ginstall.sh --self-update
 
 COPY ./extract.sh /usr/local/bin/extract
 COPY --from=horcrux-builder /usr/local/bin/horcrux /usr/local/bin/horcrux
+COPY --from=magicpak-builder /usr/local/bin/magicpak /usr/local/bin/magicpak
 COPY --from=fetch-builder  /usr/local/bin/fetch  /usr/local/bin/fetch
 COPY --from=ncdu-builder /usr/local/bin/ncdu /usr/local/bin/ncdu
 COPY --from=upx-builder /usr/local/bin/upx /usr/local/bin/upx

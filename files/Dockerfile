@@ -46,19 +46,14 @@ RUN apt-get update && apt-get install --no-install-recommends -y curl tar unzip 
   apt-get clean
 
 COPY --from=ginstall-builder /usr/local/bin/ginstall.sh /usr/local/bin/ginstall.sh
-
 RUN ginstall.sh --first-run && ginstall.sh --self-update
 
+COPY ./extract.sh /usr/local/bin/extract
 COPY --from=horcrux-builder /usr/local/bin/horcrux /usr/local/bin/horcrux
-
 COPY --from=fetch-builder  /usr/local/bin/fetch  /usr/local/bin/fetch
-
 COPY --from=ncdu-builder /usr/local/bin/ncdu /usr/local/bin/ncdu
-
 COPY --from=upx-builder /usr/local/bin/upx /usr/local/bin/upx
-
 COPY --from=restic-builder /usr/local/bin/restic /usr/local/bin/restic
-
 COPY --from=fzf-builder /usr/local/bin/fzf /usr/local/bin/fzf
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk

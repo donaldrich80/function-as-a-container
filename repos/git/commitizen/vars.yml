@@ -1,0 +1,12 @@
+image:
+  tag: commitizen
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  commitizen:
+    prefix: commitizen
+    help: --help
+    version: --version
+    github: commitizen
+extra: ""

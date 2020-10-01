@@ -14,3 +14,11 @@ https://github.com/shiwaforce/poco
 https://github.com/cloud66-oss/habitus
 
 https://github.com/coord-e/magicpak
+
+https://github.com/wfxr/forgit
+
+https://github.com/thoughtworks/talisman
+
+https://github.com/earthly/earthly
+
+https://github.com/harbur/captain

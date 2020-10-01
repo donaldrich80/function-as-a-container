@@ -1,9 +1,8 @@
 ### [1.7.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.7.0...v1.7.1) (2020-10-01)
 
-
 ### Bug Fixes
 
-* **ci:** test ([08e18a1](https://gitlab.com/donaldrich/function-as-a-container/commit/08e18a1beb023076a09351788ca0a436969b8362))
+- **ci:** test ([08e18a1](https://gitlab.com/donaldrich/function-as-a-container/commit/08e18a1beb023076a09351788ca0a436969b8362))
 
 ## [1.7.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.6.4...v1.7.0) (2020-09-30)
 

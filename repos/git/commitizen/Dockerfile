@@ -9,6 +9,7 @@ FROM node:alpine
 # RUN npm install -g commitizen
 
 RUN apk --update --no-cache add git openssh
-RUN npm install -g commitizen cz-conventional-changelog cz-customizable && \
-  npm cache clean --force && \
-  echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+RUN npm install -g commitizen
+# cz-conventional-changelog cz-customizable && \
+#   npm cache clean --force && \
+#   echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc

@@ -5,6 +5,7 @@ include:
   - local: .meta/pipelines/shell/tools/bat/build.gitlab-ci.yml
   - local: .meta/pipelines/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/semver/build.gitlab-ci.yml
+  - local: .meta/pipelines/repos/git/commitizen/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/tsrc/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/tago/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/git/gitversion/build.gitlab-ci.yml

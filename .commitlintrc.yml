@@ -1,14 +1,3 @@
-# rules:
-#     header-max-length: [ 2, 'always', 96 ]
-#     body-leading-blank: [ 1, 'always' ]
-#     footer-leading-blank: [ 1, 'always' ]
-#     scope-case: [ 2, 'always', 'lower-case' ]
-#     subject-case: [ 2, 'never', ['sentence-case', 'start-case', 'pascal-case', 'upper-case']]
-#     subject-empty: [ 2, 'never' ]
-#     subject-full-stop: [ 2, 'never', '.' ]
-#     type-case: [ 2, 'always', 'lower-case' ]
-#     type-empty: [ 2, 'never' ]
-#     type-enum: [ 2, 'always', [ 'build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test' ] ]
 extends: ["@commitlint/config-conventional"]
 
 rules:
@@ -55,3 +44,15 @@ help: |
   `perf`:     Improves performance.
   `test`:     Adds or modifies tests.
   `revert`:   Changes that reverting other changes
+
+# rules:
+#     header-max-length: [ 2, 'always', 96 ]
+#     body-leading-blank: [ 1, 'always' ]
+#     footer-leading-blank: [ 1, 'always' ]
+#     scope-case: [ 2, 'always', 'lower-case' ]
+#     subject-case: [ 2, 'never', ['sentence-case', 'start-case', 'pascal-case', 'upper-case']]
+#     subject-empty: [ 2, 'never' ]
+#     subject-full-stop: [ 2, 'never', '.' ]
+#     type-case: [ 2, 'always', 'lower-case' ]
+#     type-empty: [ 2, 'never' ]
+#     type-enum: [ 2, 'always', [ 'build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test' ] ]

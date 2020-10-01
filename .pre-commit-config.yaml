@@ -45,10 +45,10 @@ repos:
   - repo: https://gitlab.com/donaldrich/function-as-a-container
     rev: d2cd61867e4f24e19090b21ad5eb61f4a01730ef
     hooks:
-      - id: shell-lint-shellcheck
-        stages: [commit]
-      - id: shell-lint-shfmt
-        stages: [commit]
+      # - id: shell-lint-shellcheck
+      #   stages: [commit]
+      # - id: shell-lint-shfmt
+      #   stages: [commit]
       #   verbose: true
       # - id: shell-lint-bashate
       #   stages: [commit]

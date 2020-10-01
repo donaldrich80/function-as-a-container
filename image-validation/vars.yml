@@ -17,11 +17,11 @@ commands:
     github: GoogleContainerTools/container-structure-test
     docs: https://github.com/GoogleContainerTools/container-structure-test#readme
     download: https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64
-  converge:
-    prefix: /usr/local/bin/converge
-    help: version
-    version: version
-    github: asteris-llc/converge
-    docs: http://converge.aster.is
+  # converge:
+  #   prefix: /usr/local/bin/converge
+  #   help: version
+  #   version: version
+  #   github: asteris-llc/converge
+  #   docs: http://converge.aster.is
 extra: -v "$(pwd):/src"
 after: --gossfile "/src/goss.yml"

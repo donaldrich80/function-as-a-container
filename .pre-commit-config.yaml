@@ -1,80 +1,54 @@
 repos:
-  - repo: https://github.com/prettier/prettier
-    rev: 7c5a7d3c747c73b19f9f44757a7a75e9169afce4
-    hooks:
+  - hooks:
       - id: prettier
-        stages: [commit]
-  - repo: local
-    hooks:
-      # - id: tusk-regenerate
-      #   name: tusk-regenerate
-      #   entry: tusk clean-repo
-      #   language: system
-      #   pass_filenames: false
-      - id: hook-test
-        name: Use yq
+        stages:
+          - commit
+    repo: https://github.com/prettier/prettier
+    rev: 7c5a7d3c747c73b19f9f44757a7a75e9169afce4
+  - hooks:
+      - args:
+          - merge
+          - -a
         description: Use yq
         entry: --entrypoint yq mikefarah/yq
-        args: ["merge", "-a"]
         files: git-hooks.yml
+        id: hook-test
         language: docker_image
-        # verbose: true
         log_file: .pre-commit-hooks.yaml
-        stages: [manual]
-
-      # - id: tusk-template
-      #   name: tusk-template
-      #   entry: tusk template
-      #   language: system
-      #   pass_filenames: false
-
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: 5bd9e74adfb59d8e14c8a88c36511eb60c59b36e
-    hooks:
+        name: Use yq
+        stages:
+          - manual
+    repo: local
+  - hooks:
       - id: check-added-large-files
-        stages: [commit]
+        stages:
+          - commit
       - id: check-executables-have-shebangs
-      - id: check-yaml
-        exclude: mkdocs.yml
+      - exclude: mkdocs.yml
+        id: check-yaml
       - id: detect-private-key
-        stages: [commit]
+        stages:
+          - commit
       - id: end-of-file-fixer
-      # - id: mixed-line-ending
-      #   args: ["--fix=lf"]
-
-  - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: c39ddca20199959dfb68783b6c05aa071230604a
-    hooks:
-      # - id: shell-lint-shellcheck
-      #   stages: [commit]
-      # - id: shell-lint-shfmt
-      #   stages: [commit]
-      #   verbose: true
-      # - id: shell-lint-bashate
-      #   stages: [commit]
-      #   verbose: true
+    repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 5bd9e74adfb59d8e14c8a88c36511eb60c59b36e
+  - hooks:
       - id: secrets-detect-secrets
-        stages: [commit]
+        stages:
+          - commit
       - id: secrets-gitleaks
-        stages: [commit]
+        stages:
+          - commit
       - id: yaml-lint-yamllint
-        stages: [commit]
-      - id: docker-lint-hadolint
-        exclude: Dockerfile.tmpl.*
-  #     - id: repo-policy-commitlint
-  #       stages: [commit-msg]
-  #       verbose: true
-
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: d8e9badae9d5ab1c088d5bb0932f3977db24d442
-    hooks:
+        stages:
+          - commit
+      - exclude: Dockerfile.tmpl.*
+        id: docker-lint-hadolint
+    repo: https://gitlab.com/donaldrich/function-as-a-container
+    rev: c39ddca20199959dfb68783b6c05aa071230604a
+  - hooks:
       - id: commitizen
-        stages: [commit-msg]
-
-  # function-yaml-yq
-
-  # - id: repo-policy-commitlint
-  #   stages: [prepare-commit-msg]
-
-  # - id: repo-policy-commitizen
-  #   stages: [prepare-commit-msg]
+        stages:
+          - commit-msg
+    repo: https://github.com/commitizen-tools/commitizen
+    rev: d8e9badae9d5ab1c088d5bb0932f3977db24d442

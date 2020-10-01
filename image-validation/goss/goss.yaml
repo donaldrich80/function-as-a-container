@@ -1,4 +1,0 @@
-command:
-  goss:
-    exit-status: 0
-    exec: "goss --version"

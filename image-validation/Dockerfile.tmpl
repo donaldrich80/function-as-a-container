@@ -20,11 +20,15 @@ RUN wget "https://storage.googleapis.com/container-structure-test/latest/contain
 RUN chmod +rx /usr/local/bin/container-structure-test
 RUN upx /usr/local/bin/container-structure-test
 
+FROM donaldrich/builder:latest AS converge-builder
+RUN curl get.converge.sh | bash -
+
 FROM alpine
-COPY --from=container-structure-test-builder  /usr/local/bin/container-structure-test  /usr/local/bin/container-structure-test
+
 RUN apk add --no-cache bash
 
-COPY --from=container-structure-test-builder  /usr/local/bin/container-structure-test  /usr/local/bin/container-structure-test
+COPY --from=converge-builder /usr/local/bin/converge /usr/local/bin/converge
+COPY --from=container-structure-test-builder /usr/local/bin/container-structure-test /usr/local/bin/container-structure-test
 COPY --from=docker  /usr/local/bin/docker  /usr/local/bin/docker
 COPY --from=builder /usr/local/bin/dgoss /usr/local/bin/dgoss
 COPY --from=builder /usr/local/bin/goss /usr/local/bin/goss

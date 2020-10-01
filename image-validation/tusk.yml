@@ -18,6 +18,9 @@ tasks:
           exec: container-structure-test version
           print: "\e[32mcontainer-structure-test\e[0m"
       - command:
+          exec: converge version
+          print: "\e[32mconverge\e[0m"
+      - command:
           exec: goss --version
           print: "\e[32mgoss\e[0m"
   help:
@@ -26,6 +29,9 @@ tasks:
       - command:
           exec: container-structure-test --help
           print: "\e[32mcontainer-structure-test\e[0m"
+      - command:
+          exec: converge --help
+          print: "\e[32mconverge\e[0m"
       - command:
           exec: goss --help
           print: "\e[32mgoss\e[0m"

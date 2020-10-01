@@ -18,7 +18,7 @@ repos:
         args: ["merge", "-a"]
         files: git-hooks.yml
         language: docker_image
-        verbose: true
+        # verbose: true
         log_file: .pre-commit-hooks.yaml
         stages: [manual]
 
@@ -62,19 +62,11 @@ repos:
       - id: docker-lint-hadolint
         exclude: Dockerfile.tmpl.*
 
-  # - repo: https://github.com/commitizen-tools/commitizen
-  #   rev: v2.4.0
-  #   hooks:
-  #     - id: commitizen
-  #       stages: [commit-msg]
-
-  # stages: [commit-msg]
-  # - repo: https://github.com/talos-systems/conform
-  #   rev: v0.1.0-alpha.20
-  #   hooks:
-  #     - id: conform
-  #       stages:
-  #         - commit-msg
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: master
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
 
   # function-yaml-yq
   # - id: repo-policy-commitlint

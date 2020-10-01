@@ -36,7 +36,14 @@ RUN upx /usr/local/bin/ginstall.sh
 
 FROM ubuntu
 
-RUN apt-get update && apt-get install --no-install-recommends -y curl tar unzip tree duc
+RUN apt-get update && apt-get install --no-install-recommends -y curl tar unzip tree duc \
+&& rm -rf /tmp/* /usr/share/doc/* \
+  /usr/share/locale/* /usr/share/man/* \
+  /var/cache/debconf/* /var/cache/apt/* \
+  /var/tmp/* /var/log/* /var/lib/apt/lists/* \
+  apt-get autoclean && \
+  apt-get autoremove --purge && \
+  apt-get clean
 
 COPY --from=ginstall-builder /usr/local/bin/ginstall.sh /usr/local/bin/ginstall.sh
 

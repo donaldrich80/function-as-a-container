@@ -17,7 +17,6 @@ include:
   - local: .meta/pipelines/repos/secrets/detect-secrets/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/secrets/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/policy-as-code/build.gitlab-ci.yml
-  - local: .meta/pipelines/.meta/archive/image-validation/inspec/build.gitlab-ci.yml
   - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml
   - local: .meta/pipelines/media/wkhtmltopdf/build.gitlab-ci.yml
   - local: .meta/pipelines/media/diagrams/build.gitlab-ci.yml

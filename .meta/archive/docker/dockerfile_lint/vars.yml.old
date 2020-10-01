@@ -9,5 +9,6 @@ commands:
     prefix: dockerfile_lint
     help: --help
     version: --help
-    github: https://github.com/projectatomic/dockerfile_lint
+    github: projectatomic/dockerfile_lint
+    docker: projectatomic/dockerfile-lint
 extra: ""

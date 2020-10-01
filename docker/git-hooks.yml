@@ -1,13 +1,13 @@
 - id: docker-lint-dockerfile_lint
   name: Lint Dockerfiles with dockerfile_lint
-  entry: --entrypoint dockerfile_lint donaldrich/function:dockerfile_lint
+  entry: --entrypoint dockerfile_lint projectatomic/dockerfile-lint
   language: docker_image
   # args: [--dockerfile]
   files: Dockerfile.*
 
 - id: docker-lint-dockerfilelint
   name: Lint Dockerfiles with dockerfilelint
-  entry: --entrypoint dockerfilelint donaldrich/function:dockerfilelint
+  entry: --entrypoint dockerfilelint replicated/dockerfilelint
   language: docker_image
   files: Dockerfile.*
 

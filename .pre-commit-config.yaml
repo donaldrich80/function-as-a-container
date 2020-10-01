@@ -1,4 +1,9 @@
 repos:
+  - repo: https://github.com/prettier/prettier
+    rev: 7c5a7d3c747c73b19f9f44757a7a75e9169afce4
+    hooks:
+      - id: prettier
+        stages: [commit]
   - repo: local
     hooks:
       # - id: tusk-regenerate
@@ -34,11 +39,11 @@ repos:
       - id: detect-private-key
         stages: [commit]
       - id: end-of-file-fixer
-      - id: mixed-line-ending
-        args: ["--fix=lf"]
+      # - id: mixed-line-ending
+      #   args: ["--fix=lf"]
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: a251f0fb4313ab57f6cc1af8e0caee61e93dead2
+    rev: 59ee9f8f2307ab2c9608bf42c26b8aaaf6f3cb6c
     hooks:
       - id: shell-lint-shellcheck
         stages: [commit]
@@ -56,12 +61,6 @@ repos:
         stages: [commit]
       # - id: docker-lint-hadolint
       #   exclude: Dockerfile.tmpl.*
-
-  - repo: https://github.com/prettier/prettier
-    rev: 7c5a7d3c747c73b19f9f44757a7a75e9169afce4
-    hooks:
-      - id: prettier
-        stages: [commit]
 
   # - repo: https://github.com/commitizen-tools/commitizen
   #   rev: v2.4.0

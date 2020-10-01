@@ -12,4 +12,5 @@ commands:
     version: --version
     github: replicatedhq/dockerfilelint
     site: https://www.fromlatest.io
+    docker: replicated/dockerfilelint
 extra: ""

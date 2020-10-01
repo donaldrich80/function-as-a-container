@@ -1,11 +1,7 @@
 include:
   - local: .meta/pipelines/files/build.gitlab-ci.yml
   - local: .meta/pipelines/aws/cloud-nuke/build.gitlab-ci.yml
-  - local: .meta/pipelines/docker/lint/dockerfile_lint/build.gitlab-ci.yml
-  - local: .meta/pipelines/docker/lint/dockerfilelint/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/build.gitlab-ci.yml
-  - local: .meta/pipelines/docker/earthy/build.gitlab-ci.yml
-  - local: .meta/pipelines/go/glide/build.gitlab-ci.yml
   - local: .meta/pipelines/shell/tools/bat/build.gitlab-ci.yml
   - local: .meta/pipelines/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/semver/build.gitlab-ci.yml

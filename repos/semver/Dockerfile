@@ -19,10 +19,11 @@ RUN npm install -g --save-dev \
   semantic-release-docker@latest \
   @semantic-release/apm-config@latest \
   @semantic-release/gitlab-config@latest \
-  @commitlint/config-conventional@latest \
   conventional-changelog-conventionalcommits \
+  # commitlint
+  @commitlint/config-conventional@latest \
   @commitlint/cli@latest \
-  @commitlint/prompt@latest \
+  # @commitlint/prompt@latest \
   @commitlint/prompt-cli@latest \
   commitizen@latest \
   cz-conventional-changelog@latest \

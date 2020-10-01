@@ -46,9 +46,9 @@ repos:
         id: docker-lint-hadolint
     repo: https://gitlab.com/donaldrich/function-as-a-container
     rev: c39ddca20199959dfb68783b6c05aa071230604a
-  - hooks:
-      - id: commitizen
-        stages:
-          - commit-msg
-    repo: https://github.com/commitizen-tools/commitizen
-    rev: d8e9badae9d5ab1c088d5bb0932f3977db24d442
+  # - hooks:
+  #     - id: commitizen
+  #       stages:
+  #         - commit-msg
+  #   repo: https://github.com/commitizen-tools/commitizen
+  #   rev: d8e9badae9d5ab1c088d5bb0932f3977db24d442

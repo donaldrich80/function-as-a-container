@@ -34,6 +34,10 @@ RUN wget "https://github.com/whalehub/ginstall.sh/releases/download/v$VERSION/gi
 RUN chmod +rx /usr/local/bin/ginstall.sh
 RUN upx /usr/local/bin/ginstall.sh
 
+FROM donaldrich/builder:latest AS magicpak-builder
+ADD https://github.com/coord-e/magicpak/releases/latest/download/magicpak-x86_64-unknown-linux-musl /usr/local/bin/magicpak
+RUN chmod +x /usr/local/bin/magicpak
+
 FROM ubuntu
 
 RUN apt-get update && apt-get install --no-install-recommends -y curl tar unzip tree duc \

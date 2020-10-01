@@ -1,6 +1,6 @@
 ---
 path: tree/master
-source: image-validation/archive/inspec/Dockerfile
+source: .meta/archive/image-validation/inspec/Dockerfile
 ---
 
 # inspec

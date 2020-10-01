@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:converge:
+build:inspec:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:converge:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:converge
+      --cache-from $REGISTRY/function:inspec
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:converge
-      --file image-validation/converge/Dockerfile
-      image-validation/converge
+      --tag $REGISTRY/function:inspec
+      --file .meta/archive/image-validation/inspec/Dockerfile
+      .meta/archive/image-validation/inspec
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:converge:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "image-validation/converge/*"
+        - ".meta/archive/image-validation/inspec/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "converge"'
+    - if: '$TRIGGER_VAR1 == "inspec"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

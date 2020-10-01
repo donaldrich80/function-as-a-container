@@ -48,6 +48,12 @@ commands:
     version: --version
     github: zevv/duc
     docs: http://duc.zevv.nl
+  # magicpak:
+  #   prefix: magicpak
+  #   help: --help
+  #   version: --version
+  #   github: coord-e/magicpak
+  #   download: https://github.com/coord-e/magicpak/releases/latest/download/magicpak-x86_64-unknown-linux-musl
   fetch:
     prefix: fetch
     help: --help

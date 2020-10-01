@@ -43,7 +43,7 @@ repos:
       #   args: ["--fix=lf"]
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: 59ee9f8f2307ab2c9608bf42c26b8aaaf6f3cb6c
+    rev: d2cd61867e4f24e19090b21ad5eb61f4a01730ef
     hooks:
       - id: shell-lint-shellcheck
         stages: [commit]
@@ -59,8 +59,8 @@ repos:
         stages: [commit]
       - id: yaml-lint-yamllint
         stages: [commit]
-      # - id: docker-lint-hadolint
-      #   exclude: Dockerfile.tmpl.*
+      - id: docker-lint-hadolint
+        exclude: Dockerfile.tmpl.*
 
   # - repo: https://github.com/commitizen-tools/commitizen
   #   rev: v2.4.0

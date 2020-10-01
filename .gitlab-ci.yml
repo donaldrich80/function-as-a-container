@@ -3,8 +3,8 @@ include:
     file: templates/default.yml
   # - project: donaldrich/modular-gitlab-ci
   #   file: function/repo/auto-push.yml
-  - project: donaldrich/modular-gitlab-ci
-    file: function/repo/semantic-release.yml
+  # - project: donaldrich/modular-gitlab-ci
+  #   file: function/repo/semantic-release.yml
   - local: .meta/pipelines.gitlab-ci.yml
 
 cache:
@@ -16,9 +16,7 @@ stages:
   - pre
   - lint
   - debug
-  - fetch-version
   - build
-  - release
   - documentation
   - deploy
   - post

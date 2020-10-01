@@ -61,6 +61,8 @@ repos:
         stages: [commit]
       - id: docker-lint-hadolint
         exclude: Dockerfile.tmpl.*
+      - id: repo-policy-commitlint
+        stages: [commit-msg]
 
   - repo: https://github.com/commitizen-tools/commitizen
     rev: master
@@ -69,8 +71,6 @@ repos:
         stages: [commit-msg]
 
   # function-yaml-yq
-  # - id: repo-policy-commitlint
-  #   stages: [commit-msg]
 
   # - id: repo-policy-commitlint
   #   stages: [prepare-commit-msg]

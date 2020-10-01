@@ -1,5 +1,0 @@
-- id: gomplate
-  name: gomplate
-  description: gomplate
-  entry: --entrypoint gomplate donaldrich/function:gomplate
-  language: docker_image

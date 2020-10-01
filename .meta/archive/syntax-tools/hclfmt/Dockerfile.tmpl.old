@@ -1,0 +1,13 @@
+FROM donaldrich/builder:go AS hclfmt-builder
+
+RUN go get github.com/fatih/hclfmt
+RUN upx /root/go/bin/hclfmt
+
+FROM alpine
+
+COPY --from=hclfmt-builder /root/go/bin/hclfmt /usr/local/bin/hclfmt
+
+COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./tusk.yml ./tusk.yml
+RUN tusk validate
+ENTRYPOINT [ "tusk" ]

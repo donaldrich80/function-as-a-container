@@ -1,0 +1,41 @@
+- id: yaml-lint-yamllint
+  name: Lint YAML w yamllint
+  description: Lint YAML w yamllint
+  language: docker_image
+  entry: --entrypoint yamllint pipelinecomponents/yamllint
+  args: [--format, parsable, --strict]
+  types: [yaml]
+
+- id: sort-yaml-yml_sorter
+  name: Sort YAML files
+  description: This hook sorts YAML files
+  entry: --entrypoint yml-sorter -i
+  language: docker_image
+  types: [yaml]
+  # files: "(yml|yaml)"
+  args: ["-i"]
+
+- id: yaml-yq
+  name: Use yq
+  description: yq is a lightweight and portable command-line YAML processo
+  entry: --entrypoint yq mikefarah/yq
+  args: ["merge", "-a"]
+  language: docker_image
+
+- id: yaml-ytt
+  name: Use ytt
+  description: yq is a lightweight and portable command-line YAML processo
+  entry: --entrypoint ytt donaldrich/function:yaml
+  language: docker_image
+
+- id: yj
+  name: yj
+  description: Convert between YAML, TOML, JSON, and HCL
+  entry: --entrypoint yj donaldrich/function:yj
+  language: docker_image
+
+- id: gomplate
+  name: gomplate
+  description: gomplate
+  entry: --entrypoint gomplate donaldrich/function:gomplate
+  language: docker_image

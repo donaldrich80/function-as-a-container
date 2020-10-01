@@ -16,25 +16,18 @@ include:
   - local: .meta/pipelines/repos/gitlab/gitlab-ci-lint/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/secrets/detect-secrets/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/secrets/gitleaks/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/remarshall/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/hclfmt/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/json/hcl2json/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/json/jq/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/json/fony/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/json/json2hcl/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/json/show-struct/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/json/jsonnet/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/toml/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/yj/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/prettier/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/yaml/build.gitlab-ci.yml
-  - local: .meta/pipelines/structured-text/gomplate/build.gitlab-ci.yml
   - local: .meta/pipelines/policy-as-code/build.gitlab-ci.yml
   - local: .meta/pipelines/.meta/archive/image-validation/inspec/build.gitlab-ci.yml
   - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml
   - local: .meta/pipelines/media/wkhtmltopdf/build.gitlab-ci.yml
   - local: .meta/pipelines/media/diagrams/build.gitlab-ci.yml
   - local: .meta/pipelines/media/man/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax-tools/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax-tools/json/hcl2json/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax-tools/json/fony/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax-tools/json/show-struct/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax-tools/json/jsonnet/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax-tools/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/td4a/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/vuls/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/dump-env/build.gitlab-ci.yml

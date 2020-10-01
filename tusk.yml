@@ -57,6 +57,7 @@ tasks:
 
   hooks-commit:
     run:
+      - command: pre-commit run -a || true
       - command: git add .
       - command: 'git commit -m "docs(hooks): refresh hook list"'
       - command: git push origin master
@@ -69,7 +70,7 @@ tasks:
 
   full:
     run:
-      - task: repo-full
+      - task: repo
       - task: hooks-full
       # - task: update-hooks
       # - task: repo-hook-list

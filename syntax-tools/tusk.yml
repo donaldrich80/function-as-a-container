@@ -1,0 +1,97 @@
+---
+tasks:
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:syntax-tools .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:syntax-tools validate
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:syntax-tools
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: gomplate --version
+          print: "\e[32mgomplate\e[0m"
+      - command:
+          exec: hclfmt --version
+          print: "\e[32mhclfmt\e[0m"
+      - command:
+          exec: jq --version
+          print: "\e[32mjq\e[0m"
+      - command:
+          exec: json2hcl --version
+          print: "\e[32mjson2hcl\e[0m"
+      - command:
+          exec: remarshal --version
+          print: "\e[32mremarshal\e[0m"
+      - command:
+          exec: yaml --version
+          print: "\e[32myaml\e[0m"
+      - command:
+          exec: toml-sort --version
+          print: "\e[32mtoml-sort\e[0m"
+      - command:
+          exec: yamale -h
+          print: "\e[32myamale\e[0m"
+      - command:
+          exec: yaml-tools --help
+          print: "\e[32myaml-tools\e[0m"
+      - command:
+          exec: yamllint --version
+          print: "\e[32myamllint\e[0m"
+      - command:
+          exec: yj -v
+          print: "\e[32myj\e[0m"
+      - command:
+          exec: yq --version
+          print: "\e[32myq\e[0m"
+      - command:
+          exec: ytt --version
+          print: "\e[32mytt\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: gomplate --help
+          print: "\e[32mgomplate\e[0m"
+      - command:
+          exec: hclfmt --help
+          print: "\e[32mhclfmt\e[0m"
+      - command:
+          exec: jq --help
+          print: "\e[32mjq\e[0m"
+      - command:
+          exec: json2hcl --help
+          print: "\e[32mjson2hcl\e[0m"
+      - command:
+          exec: remarshal --help
+          print: "\e[32mremarshal\e[0m"
+      - command:
+          exec: yaml --help
+          print: "\e[32myaml\e[0m"
+      - command:
+          exec: toml-sort --help
+          print: "\e[32mtoml-sort\e[0m"
+      - command:
+          exec: yamale -h
+          print: "\e[32myamale\e[0m"
+      - command:
+          exec: yaml-tools --help
+          print: "\e[32myaml-tools\e[0m"
+      - command:
+          exec: yamllint --help
+          print: "\e[32myamllint\e[0m"
+      - command:
+          exec: yj -h
+          print: "\e[32myj\e[0m"
+      - command:
+          exec: yq --help
+          print: "\e[32myq\e[0m"
+      - command:
+          exec: ytt --help
+          print: "\e[32mytt\e[0m"

@@ -1,0 +1,11 @@
+# FROM sclevine/yj AS yj-builder
+
+FROM donaldrich/builder:latest AS yj-builder
+COPY --from=sclevine/yj  /bin/yj /usr/local/bin/yj
+RUN chmod +rx /usr/local/bin/yj
+RUN upx /usr/local/bin/yj
+# validate
+COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./tusk.yml ./tusk.yml
+RUN tusk validate
+ENTRYPOINT [ "tusk" ]

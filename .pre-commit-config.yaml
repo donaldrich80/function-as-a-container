@@ -65,11 +65,11 @@ repos:
   #       stages: [commit-msg]
   #       verbose: true
 
-  # - repo: https://github.com/commitizen-tools/commitizen
-  #   rev: d8e9badae9d5ab1c088d5bb0932f3977db24d442
-  #   hooks:
-  #     - id: commitizen
-  #       stages: [commit-msg]
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: d8e9badae9d5ab1c088d5bb0932f3977db24d442
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
 
   # function-yaml-yq
 

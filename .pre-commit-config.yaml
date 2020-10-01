@@ -63,6 +63,7 @@ repos:
         exclude: Dockerfile.tmpl.*
       - id: repo-policy-commitlint
         stages: [commit-msg]
+        verbose: true
 
   - repo: https://github.com/commitizen-tools/commitizen
     rev: master

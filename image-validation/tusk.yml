@@ -30,7 +30,7 @@ tasks:
           exec: container-structure-test --help
           print: "\e[32mcontainer-structure-test\e[0m"
       - command:
-          exec: converge --help
+          exec: converge version
           print: "\e[32mconverge\e[0m"
       - command:
           exec: goss --help

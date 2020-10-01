@@ -19,7 +19,7 @@ commands:
     download: https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64
   converge:
     prefix: converge
-    help: --help
+    help: version
     version: version
     github: asteris-llc/converge
     docs: http://converge.aster.is

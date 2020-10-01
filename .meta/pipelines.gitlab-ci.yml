@@ -19,6 +19,7 @@ include:
   - local: .meta/pipelines/repos/secrets/detect-secrets/build.gitlab-ci.yml
   - local: .meta/pipelines/repos/secrets/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/structured-text/remarshall/build.gitlab-ci.yml
+  - local: .meta/pipelines/structured-text/hclfmt/build.gitlab-ci.yml
   - local: .meta/pipelines/structured-text/json/hcl2json/build.gitlab-ci.yml
   - local: .meta/pipelines/structured-text/json/jq/build.gitlab-ci.yml
   - local: .meta/pipelines/structured-text/json/fony/build.gitlab-ci.yml

@@ -20,16 +20,17 @@ repos:
           - manual
     repo: local
   - hooks:
+      - id: detect-private-key
+        stages:
+          - commit
+      - id: end-of-file-fixer
       - id: check-added-large-files
         stages:
           - commit
       - id: check-executables-have-shebangs
       - exclude: mkdocs.yml
         id: check-yaml
-      - id: detect-private-key
-        stages:
-          - commit
-      - id: end-of-file-fixer
+
     repo: https://github.com/pre-commit/pre-commit-hooks
     rev: 5bd9e74adfb59d8e14c8a88c36511eb60c59b36e
   - hooks:

@@ -1,0 +1,12 @@
+image:
+  tag: hclfmt
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  hclfmt:
+    prefix: hclfmt
+    help: --help
+    version: --version
+    github: fatih/hclfmt
+extra: ""

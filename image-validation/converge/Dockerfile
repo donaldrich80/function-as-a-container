@@ -5,11 +5,6 @@
 FROM donaldrich/builder:latest AS converge-builder
 RUN curl get.converge.sh | bash -
 
-FROM alpine
+# FROM alpine
 
-COPY --from=converge-builder /usr/local/bin/converge /usr/local/bin/converge
-# validate
-COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
-COPY ./tusk.yml ./tusk.yml
-RUN tusk validate
-ENTRYPOINT [ "tusk" ]
+# COPY --from=converge-builder /usr/local/bin/converge /usr/local/bin/converge

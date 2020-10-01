@@ -18,8 +18,8 @@ RUN npm install -g --save-dev \
   semantic-release-docker@latest \
   @semantic-release/apm-config@latest \
   @semantic-release/gitlab-config@latest \
+  conventional-changelog-conventionalcommits \
   # @commitlint/config-conventional@latest \
-  # conventional-changelog-conventionalcommits \
   # @commitlint/cli@latest \
   # @commitlint/prompt@latest \
   # @commitlint/prompt-cli@latest \

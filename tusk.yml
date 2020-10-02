@@ -43,7 +43,7 @@ tasks:
     usage: hooks
     run:
       - command: pre-commit install
-      - command: pre-commit autoupdate --bleeding-edge
+      - command: pre-commit autoupdate
       - command: pre-commit install --hook-type commit-msg
       - command: pre-commit install --hook-type prepare-commit-msg
       - command: pre-commit run -a || true

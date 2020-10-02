@@ -15,6 +15,7 @@ repos:
         id: hook-test
         language: docker_image
         log_file: .pre-commit-hooks.yaml
+        verbose: true
         name: Use yq
         stages:
           - manual

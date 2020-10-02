@@ -18,6 +18,19 @@
   entry: hadolint/hadolint hadolint
   files: Dockerfile.*
 
+- id: docker-dockerfilelint
+  name: Lint Dockerfiles with dockerfilelint
+  entry: --entrypoint dockerfilelint replicated/dockerfilelint
+  language: docker_image
+  files: Dockerfile.*
+
+- id: docker-dockerfile_lint
+  name: Lint Dockerfiles with dockerfile_lint
+  entry: --entrypoint dockerfile_lint projectatomic/dockerfile-lint
+  language: docker_image
+  # args: [--dockerfile]
+  files: Dockerfile.*
+
 - id: docker-hadolint
   name: Lint Dockerfiles with hadolint
   description: Lint Dockerfiles w hadolint
@@ -30,4 +43,11 @@
   description: Lint Dockerfiles w hadolint
   language: docker_image
   entry: jessfraz/dockfmt dockfmt
+  files: Dockerfile.*
+
+- id: docker-dockerfile-generator
+  name: docker-dockerfile-generator
+  description: Lint Dockerfiles w hadolint
+  language: docker_image
+  entry: --entrypoint dockerfile-generator donaldrich/function:docker
   files: Dockerfile.*

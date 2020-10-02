@@ -31,7 +31,6 @@ include:
   - local: .meta/pipelines/unsorted/td4a/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/vuls/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/dump-env/build.gitlab-ci.yml
-  - local: .meta/pipelines/unsorted/bashful/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/zsh/build.gitlab-ci.yml
   - local: .meta/pipelines/task/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/pdftk/build.gitlab-ci.yml

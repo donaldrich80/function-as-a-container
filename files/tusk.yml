@@ -24,11 +24,17 @@ tasks:
           exec: fzf --version
           print: "\e[32mfzf\e[0m"
       - command:
+          exec: gget --version
+          print: "\e[32mgget\e[0m"
+      - command:
           exec: ginstall.sh --version
           print: "\e[32mginstall.sh\e[0m"
       - command:
           exec: bash -version
           print: "\e[32mbash\e[0m"
+      - command:
+          exec: magicpak --version
+          print: "\e[32mmagicpak\e[0m"
       - command:
           exec: ncdu --version
           print: "\e[32mncdu\e[0m"
@@ -54,11 +60,17 @@ tasks:
           exec: fzf --help
           print: "\e[32mfzf\e[0m"
       - command:
+          exec: gget --help
+          print: "\e[32mgget\e[0m"
+      - command:
           exec: ginstall.sh --help
           print: "\e[32mginstall.sh\e[0m"
       - command:
           exec: bash --help
           print: "\e[32mbash\e[0m"
+      - command:
+          exec: magicpak --help
+          print: "\e[32mmagicpak\e[0m"
       - command:
           exec: ncdu --help
           print: "\e[32mncdu\e[0m"

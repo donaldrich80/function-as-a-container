@@ -23,6 +23,12 @@ source: files/Dockerfile
 
 - [:octicons-mark-github-16: fzf](https://github.com/fzf)
 
+### Gget
+
+- [:octicons-book-16: Docs](https://gget.io/)
+
+- [:octicons-mark-github-16: dpb587/gget](https://github.com/dpb587/gget)
+
 ### Ginstall
 
 - [:octicons-mark-github-16: whalehub/ginstall.sh](https://github.com/whalehub/ginstall.sh)
@@ -30,6 +36,10 @@ source: files/Dockerfile
 ### Horcrux
 
 - [:octicons-mark-github-16: jesseduffield/horcrux](https://github.com/jesseduffield/horcrux)
+
+### Magicpak
+
+- [:octicons-mark-github-16: coord-e/magicpak](https://github.com/coord-e/magicpak)
 
 ### Ncdu
 

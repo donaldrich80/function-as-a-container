@@ -9,5 +9,5 @@ commands:
     help: help
     version: version
     github: helm
-    
+
 extra: ""

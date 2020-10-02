@@ -17,10 +17,6 @@ source: shell/Dockerfile
 
 - [:octicons-mark-github-16: koalaman/shellcheck](https://github.com/koalaman/shellcheck)
 
-### Shellharden
-
-- [:octicons-mark-github-16: anordal/shellharden](https://github.com/anordal/shellharden)
-
 ### Shfmt
 
 - [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/mvdan/sh)

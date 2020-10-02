@@ -21,9 +21,6 @@ tasks:
           exec: shellcheck --version
           print: "\e[32mshellcheck\e[0m"
       - command:
-          exec: shellharden --version
-          print: "\e[32mshellharden\e[0m"
-      - command:
           exec: shfmt -version
           print: "\e[32mshfmt\e[0m"
   help:
@@ -35,9 +32,6 @@ tasks:
       - command:
           exec: shellcheck --help
           print: "\e[32mshellcheck\e[0m"
-      - command:
-          exec: shellharden --help
-          print: "\e[32mshellharden\e[0m"
       - command:
           exec: shfmt -h
           print: "\e[32mshfmt\e[0m"

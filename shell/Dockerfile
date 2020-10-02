@@ -8,7 +8,7 @@ FROM matejak/argbash as argbash-builder
 
 FROM donaldrich/builder:latest AS shellharden-builder
 ADD https://github.com/anordal/shellharden/releases/download/v4.1.1/shellharden-4.1.1-x86_64-linux-gnu /usr/local/bin/shellharden
-RUN upx /usr/local/bin/shellharden
+RUN chmod +rx /usr/local/bin/shellharden
 
 FROM python:alpine
 

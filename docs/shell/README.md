@@ -9,6 +9,10 @@ source: shell/Dockerfile
 
 ## Documentation
 
+### Abs
+
+- [:octicons-mark-github-16: abs-lang/abs](https://github.com/abs-lang/abs)
+
 ### Bashate
 
 - [:octicons-mark-github-16: openstack/bashate](https://github.com/openstack/bashate)

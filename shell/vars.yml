@@ -21,6 +21,11 @@ commands:
     github: mvdan/sh
     docker: mvdan/sh
     base: mvdan/shfmt
+  abs:
+    prefix: abs
+    help: --help
+    version: --version
+    github: abs-lang/abs
   # shellharden:
   #   prefix: shellharden
   #   help: --help

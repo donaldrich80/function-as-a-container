@@ -9,6 +9,9 @@ RUN upx /usr/local/bin/restic
 FROM donaldrich/builder:latest AS upx-builder
 RUN ginstall.sh upx latest
 
+FROM donaldrich/builder:latest AS gget-builder
+RUN ginstall.sh gget latest
+
 FROM donaldrich/builder:latest AS ncdu-builder
 RUN wget -O archive.tar.gz "https://dev.yorhel.nl/download/ncdu-linux-x86_64-1.14.2.tar.gz"
 RUN tar xzf archive.tar.gz
@@ -60,5 +63,6 @@ COPY --from=ncdu-builder /usr/local/bin/ncdu /usr/local/bin/ncdu
 COPY --from=upx-builder /usr/local/bin/upx /usr/local/bin/upx
 COPY --from=restic-builder /usr/local/bin/restic /usr/local/bin/restic
 COPY --from=fzf-builder /usr/local/bin/fzf /usr/local/bin/fzf
+COPY --from=gget-builder /usr/local/bin/gget /usr/local/bin/gget
 
 {{- template "validate" }}

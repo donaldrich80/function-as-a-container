@@ -15,9 +15,6 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: abs --version
-          print: "\e[32mabs\e[0m"
-      - command:
           exec: bashate --version
           print: "\e[32mbashate\e[0m"
       - command:
@@ -29,9 +26,6 @@ tasks:
   help:
     usage: see config options
     run:
-      - command:
-          exec: abs --help
-          print: "\e[32mabs\e[0m"
       - command:
           exec: bashate --help
           print: "\e[32mbashate\e[0m"

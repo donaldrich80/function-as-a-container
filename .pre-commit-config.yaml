@@ -4,7 +4,7 @@ repos:
         stages:
           - commit
     repo: https://github.com/prettier/prettier
-    rev: 7c5a7d3c747c73b19f9f44757a7a75e9169afce4
+    rev: 2.1.2
   - hooks:
       - args:
           - merge
@@ -32,7 +32,7 @@ repos:
         id: check-yaml
 
     repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: 5bd9e74adfb59d8e14c8a88c36511eb60c59b36e
+    rev: v3.2.0
   - hooks:
       - id: secrets-detect-secrets
         stages:
@@ -46,7 +46,7 @@ repos:
       - exclude: Dockerfile.tmpl.*
         id: docker-lint-hadolint
     repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: c39ddca20199959dfb68783b6c05aa071230604a
+    rev: v1.7.1
   # - hooks:
   #     - id: commitizen
   #       stages:

@@ -1,0 +1,13 @@
+image:
+  tag: kubernetes
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  helm:
+    prefix: helm
+    help: help
+    version: version
+    github: helm
+    
+extra: ""

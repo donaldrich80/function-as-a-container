@@ -38,7 +38,7 @@ FROM alpine
 
 COPY --from=helm-builder /usr/local/bin/helm /usr/local/bin/helm
 COPY --from=eksctl-builder /usr/local/bin/eksctl /usr/local/bin/eksctl
-COPY --from=fluxctl-builder /usr/local/bin/kind /usr/local/bin/fluxctl
+COPY --from=fluxctl-builder /usr/local/bin/fluxctl /usr/local/bin/fluxctl
 COPY --from=kind-builder /usr/local/bin/kind /usr/local/bin/kind
 COPY --from=kompose-builder /usr/local/bin/kompose /usr/local/bin/kompose
 COPY --from=k9s-builder /usr/local/bin/k9s /usr/local/bin/k9s

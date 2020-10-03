@@ -14,6 +14,7 @@ RUN npm install -g --save-dev \
   @semantic-release/changelog@latest \
   @semantic-release/exec@latest \
   @semantic-release/git@latest \
+  @semantic-release/commit-analyzer@latest \
   @semantic-release/gitlab@latest \
   semantic-release-docker@latest \
   @semantic-release/apm-config@latest \

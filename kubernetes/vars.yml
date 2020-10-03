@@ -8,6 +8,18 @@ commands:
     prefix: helm
     help: help
     version: version
-    github: helm
-
+    github: helm/helm
+    docs: https://helm.sh
+  kompose:
+    prefix: kompose
+    help: version --help
+    version: version
+    github: kubernetes/kompose
+    docs: http://kompose.io
+  kind:
+    prefix: kind
+    help: version --help
+    version: version
+    github: kubernetes-sigs/kind
+    docs: https://kind.sigs.k8s.io
 extra: ""

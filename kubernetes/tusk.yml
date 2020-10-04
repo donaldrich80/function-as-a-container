@@ -17,9 +17,21 @@ tasks:
       - command:
           exec: helm version
           print: "\e[32mhelm\e[0m"
+      - command:
+          exec: kind version
+          print: "\e[32mkind\e[0m"
+      - command:
+          exec: kompose version
+          print: "\e[32mkompose\e[0m"
   help:
     usage: see config options
     run:
       - command:
           exec: helm help
           print: "\e[32mhelm\e[0m"
+      - command:
+          exec: kind version --help
+          print: "\e[32mkind\e[0m"
+      - command:
+          exec: kompose version --help
+          print: "\e[32mkompose\e[0m"

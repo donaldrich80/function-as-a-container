@@ -11,7 +11,21 @@ source: kubernetes/Dockerfile
 
 ### Helm
 
-- [:octicons-mark-github-16: helm](https://github.com/helm)
+- [:octicons-book-16: Docs](https://helm.sh)
+
+- [:octicons-mark-github-16: helm/helm](https://github.com/helm/helm)
+
+### Kind
+
+- [:octicons-book-16: Docs](https://kind.sigs.k8s.io)
+
+- [:octicons-mark-github-16: kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind)
+
+### Kompose
+
+- [:octicons-book-16: Docs](http://kompose.io)
+
+- [:octicons-mark-github-16: kubernetes/kompose](https://github.com/kubernetes/kompose)
 
 ## Image Commands
 

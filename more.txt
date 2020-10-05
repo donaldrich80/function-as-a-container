@@ -30,3 +30,5 @@ https://github.com/Stratoscale/skipper
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.0/bin/linux/amd64/kubectl
 
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.24.1/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+
+https://github.com/dbohdan/structured-text-tools

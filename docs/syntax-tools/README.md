@@ -33,6 +33,12 @@ Tools for using and manipulating YAML files
 
 - [:octicons-mark-github-16: kvz/json2hcl](https://github.com/kvz/json2hcl)
 
+### Jsonnet
+
+- [:octicons-book-16: Docs](https://jsonnet.org)
+
+- [:octicons-mark-github-16: google/jsonnet](https://github.com/google/jsonnet)
+
 ### Remarshal
 
 - [:octicons-mark-github-16: dbohdan/remarshal](https://github.com/dbohdan/remarshal)

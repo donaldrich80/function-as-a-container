@@ -27,6 +27,9 @@ tasks:
           exec: json2hcl --version
           print: "\e[32mjson2hcl\e[0m"
       - command:
+          exec: jsonnet --version
+          print: "\e[32mjsonnet\e[0m"
+      - command:
           exec: remarshal --version
           print: "\e[32mremarshal\e[0m"
       - command:
@@ -68,6 +71,9 @@ tasks:
       - command:
           exec: json2hcl --help
           print: "\e[32mjson2hcl\e[0m"
+      - command:
+          exec: jsonnet --help
+          print: "\e[32mjsonnet\e[0m"
       - command:
           exec: remarshal --help
           print: "\e[32mremarshal\e[0m"

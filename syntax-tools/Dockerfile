@@ -35,7 +35,7 @@ RUN upx /root/go/bin/hclfmt
 
 FROM python:alpine
 
-RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-sort remarshal
+RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-sort remarshal jsonnet
 
 COPY --from=hclfmt-builder /root/go/bin/hclfmt /usr/local/bin/hclfmt
 COPY --from=json2hcl-builder  /usr/local/bin/json2hcl  /usr/local/bin/json2hcl

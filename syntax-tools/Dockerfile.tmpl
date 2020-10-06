@@ -38,12 +38,12 @@ FROM python:alpine
 RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-sort remarshal jsonnet
 
 COPY --from=hclfmt-builder /go/bin/hclfmt /usr/local/bin/hclfmt
-COPY --from=json2hcl-builder  /usr/local/bin/json2hcl  /usr/local/bin/json2hcl
+COPY --from=json2hcl-builder /usr/local/bin/json2hcl /usr/local/bin/json2hcl
 COPY --from=jq-builder /usr/local/bin/jq /usr/local/bin/jq
 COPY --from=yaml-tools-builder /usr/local/bin/yaml-tools /usr/local/bin/yaml-tools
 COPY --from=yq-builder /usr/local/bin/yq /usr/local/bin/yq
-COPY --from=yj-builder  /usr/local/bin/yj  /usr/local/bin/yj
-COPY --from=ytt-builder  /usr/local/bin/ytt  /usr/local/bin/ytt
+COPY --from=yj-builder /usr/local/bin/yj /usr/local/bin/yj
+COPY --from=ytt-builder /usr/local/bin/ytt /usr/local/bin/ytt
 COPY --from=gomplate-builder /usr/local/bin/gomplate /usr/local/bin/gomplate
 
 {{- template "validate" }}

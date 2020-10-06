@@ -3,7 +3,7 @@ image:
   context: ""
   dir: ""
   dockerfile: ""
-  download: https://github.com/tmccombs/hcl2json/releases/download/0.2.1/hcl2json_0.2.1_linux_amd64
+  download: https://github.com/tmccombs/hcl2json/releases/download/v0.3.1/hcl2json_v0.3.1_linux_amd64
 commands:
   hcl2json:
     prefix: hcl2json

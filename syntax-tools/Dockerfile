@@ -33,6 +33,10 @@ FROM donaldrich/builder:go AS hclfmt-builder
 RUN go get github.com/fatih/hclfmt
 RUN upx /go/bin/hclfmt
 
+FROM donaldrich/builder:go AS jsonnet-builder
+RUN go get github.com/google/go-jsonnet/cmd/jsonnet
+RUN upx /go/bin/jsonnet
+
 FROM donaldrich/builder:latest AS hcl2json-builder
 RUN wget "https://github.com/tmccombs/hcl2json/releases/download/v0.3.1/hcl2json_v0.3.1_linux_amd64" -O /usr/local/bin/hcl2json
 RUN chmod +rx /usr/local/bin/hcl2json
@@ -40,8 +44,10 @@ RUN upx /usr/local/bin/hcl2json
 
 FROM python:alpine
 
-RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-sort remarshal jsonnet
+RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-sort remarshal
+# jsonnet
 
+COPY --from=jsonnet-builder /go/bin/jsonnet /usr/local/bin/jsonnet
 COPY --from=hclfmt-builder /go/bin/hclfmt /usr/local/bin/hclfmt
 COPY --from=json2hcl-builder /usr/local/bin/json2hcl /usr/local/bin/json2hcl
 COPY --from=jq-builder /usr/local/bin/jq /usr/local/bin/jq

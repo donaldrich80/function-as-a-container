@@ -51,8 +51,8 @@ plugins:
           - BREAKING
   - "@semantic-release/gitlab"
   - - "@semantic-release/changelog"
-    - changelogFile: .meta/docs/CHANGELOG.md
+    - changelogFile: CHANGELOG
   - - "@semantic-release/git"
     - assets:
-        - .meta/docs/CHANGELOG.md
+        - CHANGELOG
       message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"

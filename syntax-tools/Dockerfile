@@ -31,7 +31,7 @@ RUN upx /usr/local/bin/gomplate
 
 FROM donaldrich/builder:go AS hclfmt-builder
 RUN go get github.com/fatih/hclfmt
-RUN upx /root/go/bin/hclfmt
+RUN upx /go/bin/hclfmt
 
 FROM python:alpine
 

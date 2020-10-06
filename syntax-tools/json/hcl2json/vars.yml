@@ -8,6 +8,6 @@ commands:
   hcl2json:
     prefix: hcl2json
     help: help
-    version: version
+    version: --version
     github: tmccombs/hcl2json
 extra: ""

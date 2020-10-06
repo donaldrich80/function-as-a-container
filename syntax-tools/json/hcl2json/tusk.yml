@@ -15,7 +15,7 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: hcl2json version
+          exec: hcl2json --version
           print: "\e[32mhcl2json\e[0m"
   help:
     usage: see config options

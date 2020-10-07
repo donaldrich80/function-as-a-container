@@ -1,3 +1,10 @@
+### [1.8.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.8.0...v1.8.1) (2020-10-07)
+
+
+### Bug Fixes
+
+* delete semantic-release ([3edc3fe](https://gitlab.com/donaldrich/function-as-a-container/commit/3edc3fe380d0e421aa443533ce3b424d3a6338b4))
+
 ## [1.8.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.7.1...v1.8.0) (2020-10-06)
 
 

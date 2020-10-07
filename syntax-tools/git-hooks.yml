@@ -28,6 +28,14 @@
   entry: --entrypoint ytt donaldrich/function:yaml
   language: docker_image
 
+- id: yaml-yamllint
+  name: Lint YAML w yamllint
+  description: Lint YAML w yamllint
+  language: docker_image
+  entry: --entrypoint yamllint pipelinecomponents/yamllint
+  args: [--format, parsable, --strict]
+  types: [yaml]
+
 - id: yj
   name: yj
   description: Convert between YAML, TOML, JSON, and HCL

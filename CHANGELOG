@@ -1,0 +1,16 @@
+## [1.8.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.7.1...v1.8.0) (2020-10-06)
+
+
+### Features
+
+* added kubernetes ([ec97b65](https://gitlab.com/donaldrich/function-as-a-container/commit/ec97b65b7c78d479f89fd418732c3693468f4e0d))
+* kubernetes ([5dcd2ee](https://gitlab.com/donaldrich/function-as-a-container/commit/5dcd2ee873d627634ea79db01d6c480872827cd1))
+
+
+### Bug Fixes
+
+* semantic-release ([ed30c0d](https://gitlab.com/donaldrich/function-as-a-container/commit/ed30c0d4059b4e16fb8b415407d6bc3dc6f7d069))
+* **ci:** commitlint ([f4b92d6](https://gitlab.com/donaldrich/function-as-a-container/commit/f4b92d62bf59132bb415f4a0b01d616ad5d0c8fd))
+* semantic release ([6a1b54a](https://gitlab.com/donaldrich/function-as-a-container/commit/6a1b54a4cff32d4ef6875256241a53031911f5c9))
+* test ([68e3a30](https://gitlab.com/donaldrich/function-as-a-container/commit/68e3a3002f4acc87c55728a528db16908771791d))
+* test ([8e1ca48](https://gitlab.com/donaldrich/function-as-a-container/commit/8e1ca48bc66c1efc7cfa7afc7dae1c59a7680a33))

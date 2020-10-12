@@ -1,0 +1,11 @@
+
+FROM donaldrich/builder:latest AS github-cli-builder
+RUN wget -O archive.tar.gz "https://github.com/cli/cli/releases/download/v1.0.0/gh_1.0.0_linux_amd64.tar.gz"
+RUN tar xzf archive.tar.gz
+RUN mv /gh_1.0.0_linux_amd64/bin/gh /usr/local/bin
+RUN upx /usr/local/bin/gh
+RUN chmod a+x /usr/local/bin/gh
+
+FROM alpine
+
+COPY --from=github-cli-builder /usr/local/bin/gh /usr/local/bin/gh

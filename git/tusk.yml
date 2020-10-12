@@ -1,0 +1,55 @@
+---
+tasks:
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:git .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:git validate
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:git
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: gitbatch -v
+          print: "\e[32mgitbatch\e[0m"
+      - command:
+          exec: gh -v
+          print: "\e[32mgh\e[0m"
+      - command:
+          exec: gitlab-ci-lint --version
+          print: "\e[32mgitlab-ci-lint\e[0m"
+      - command:
+          exec: gitlab-ci-local --version
+          print: "\e[32mgitlab-ci-local\e[0m"
+      - command:
+          exec: glab version
+          print: "\e[32mglab\e[0m"
+      - command:
+          exec: tago --version
+          print: "\e[32mtago\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: gitbatch -h
+          print: "\e[32mgitbatch\e[0m"
+      - command:
+          exec: gh -h
+          print: "\e[32mgh\e[0m"
+      - command:
+          exec: gitlab-ci-lint --help
+          print: "\e[32mgitlab-ci-lint\e[0m"
+      - command:
+          exec: gitlab-ci-local --help
+          print: "\e[32mgitlab-ci-local\e[0m"
+      - command:
+          exec: glab help
+          print: "\e[32mglab\e[0m"
+      - command:
+          exec: tago --help
+          print: "\e[32mtago\e[0m"

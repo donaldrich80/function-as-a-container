@@ -8,7 +8,7 @@ RUN upx /usr/local/bin/tflint
 
 FROM donaldrich/builder:latest AS tfsec-builder
 RUN ginstall.sh tfsec latest
-RUN upx /usr/local/bin/tfsec
+# RUN upx /usr/local/bin/tfsec
 
 FROM donaldrich/builder:latest AS terraform-docs-builder
 COPY --from=quay.io/terraform-docs/terraform-docs:latest /usr/local/bin/terraform-docs /usr/local/bin/terraform-docs
@@ -51,11 +51,11 @@ FROM ubuntu
 
 COPY --from=terracognita-builder /usr/local/bin/terracognita /usr/local/bin/terracognita
 COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /.terraform.d/plugins/terraform-provider-keycloak
-COPY --from=converge-builder /root/go/bin/converge /usr/local/bin/converge
+COPY --from=converge-builder /go/bin/converge /usr/local/bin/converge
 COPY --from=terraformer-builder /usr/local/bin/terraformer /usr/local/bin/terraformer
 COPY --from=terragrunt-builder /usr/local/bin/terragrunt /usr/local/bin/terragrunt
-COPY --from=terraform-provider-proxmox-builder  /root/go/bin/terraform-provider-proxmox  /.terraform.d/plugins/terraform-provider-proxmox
-COPY --from=terraform-provider-proxmox-builder  /root/go/bin/terraform-provisioner-proxmox  /.terraform.d/plugins/terraform-provisioner-proxmox
+COPY --from=terraform-provider-proxmox-builder  /go/bin/terraform-provider-proxmox  /.terraform.d/plugins/terraform-provider-proxmox
+COPY --from=terraform-provider-proxmox-builder  /go/bin/terraform-provisioner-proxmox  /.terraform.d/plugins/terraform-provisioner-proxmox
 COPY --from=registry.gitlab.com/gitlab-org/terraform-images/stable:latest /usr/bin/gitlab-terraform /usr/local/bin/gitlab-terraform
 COPY --from=terrahelp-builder  /usr/local/bin/terrahelp  /usr/local/bin/terrahelp
 COPY --from=terraform-docs-builder /usr/local/bin/terraform-docs /usr/local/bin/terraform-docs

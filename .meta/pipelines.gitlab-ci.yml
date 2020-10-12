@@ -3,18 +3,17 @@ include:
   - local: .meta/pipelines/kubernetes/build.gitlab-ci.yml
   - local: .meta/pipelines/aws/cloud-nuke/build.gitlab-ci.yml
   - local: .meta/pipelines/docker/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/commit/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/commit/commitizen/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/misc/gitlint/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/misc/tsrc/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/misc/gitversion/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/secrets/detect-secrets/build.gitlab-ci.yml
+  - local: .meta/pipelines/git/secrets/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/shell/tools/bat/build.gitlab-ci.yml
   - local: .meta/pipelines/shell/build.gitlab-ci.yml
   - local: .meta/pipelines/image-validation/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/semver/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/git/commitizen/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/git/tsrc/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/git/tago/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/git/gitversion/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/github/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/gitlab/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/secrets/detect-secrets/build.gitlab-ci.yml
-  - local: .meta/pipelines/repos/secrets/gitleaks/build.gitlab-ci.yml
   - local: .meta/pipelines/policy-as-code/build.gitlab-ci.yml
   - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml
   - local: .meta/pipelines/media/wkhtmltopdf/build.gitlab-ci.yml
@@ -49,7 +48,6 @@ include:
   - local: .meta/pipelines/hashicorp/vault/vault-ssh-helper/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/token-helper/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/packer/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/terraform/terraform-provider-healthchecksio/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/terratag/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/checkov/build.gitlab-ci.yml

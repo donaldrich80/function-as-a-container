@@ -21,6 +21,13 @@ commands:
     github: mvdan/sh
     docker: mvdan/sh
     base: mvdan/shfmt
+  bat:
+    prefix: bat
+    help: --help
+    version: --version
+    github: sharkdp/bat
+    download: https://github.com/sharkdp/bat/releases/download/v0.15.4/bat-v0.15.4-x86_64-unknown-linux-musl.tar.gz
+
   # abs:
   #   prefix: abs
   #   help: --help

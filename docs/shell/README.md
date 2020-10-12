@@ -13,6 +13,10 @@ source: shell/Dockerfile
 
 - [:octicons-mark-github-16: openstack/bashate](https://github.com/openstack/bashate)
 
+### Bat
+
+- [:octicons-mark-github-16: sharkdp/bat](https://github.com/sharkdp/bat)
+
 ### Shellcheck
 
 - [:octicons-mark-github-16: koalaman/shellcheck](https://github.com/koalaman/shellcheck)

@@ -23,6 +23,9 @@ tasks:
       - command:
           exec: conform --version
           print: "\e[32mconform\e[0m"
+      - command:
+          exec: git-conventional-commits --version
+          print: "\e[32mgit-conventional-commits\e[0m"
   help:
     usage: see config options
     run:
@@ -35,3 +38,6 @@ tasks:
       - command:
           exec: conform --help
           print: "\e[32mconform\e[0m"
+      - command:
+          exec: git-conventional-commits --help
+          print: "\e[32mgit-conventional-commits\e[0m"

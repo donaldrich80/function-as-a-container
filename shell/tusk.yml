@@ -18,6 +18,9 @@ tasks:
           exec: bashate --version
           print: "\e[32mbashate\e[0m"
       - command:
+          exec: bat --version
+          print: "\e[32mbat\e[0m"
+      - command:
           exec: shellcheck --version
           print: "\e[32mshellcheck\e[0m"
       - command:
@@ -29,6 +32,9 @@ tasks:
       - command:
           exec: bashate --help
           print: "\e[32mbashate\e[0m"
+      - command:
+          exec: bat --help
+          print: "\e[32mbat\e[0m"
       - command:
           exec: shellcheck --help
           print: "\e[32mshellcheck\e[0m"

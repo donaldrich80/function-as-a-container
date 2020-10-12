@@ -15,10 +15,19 @@ ADD https://github.com/abs-lang/abs/releases/download/2.3.1/abs-linux-amd64 /usr
 RUN chmod +rx /usr/local/bin/abs
 RUN upx /usr/local/bin/abs
 
+FROM donaldrich/builder:latest AS bat-builder
+RUN wget -O archive.tar.gz "https://github.com/sharkdp/bat/releases/download/v0.16.0/bat-v0.16.0-x86_64-unknown-linux-musl.tar.gz"
+RUN tar xzf archive.tar.gz
+RUN mv bat-v0.16.0-x86_64-unknown-linux-musl/bat bat
+RUN mv bat /usr/local/bin
+RUN chmod a+x /usr/local/bin/bat
+
 FROM python:alpine
 
+# RUN apk update && apk add bat
 RUN pip install --no-cache-dir bashate
 
+COPY --from=bat-builder /usr/local/bin/bat /usr/local/bin/bat
 COPY --from=argbash-builder /usr/local/bin/argbash /usr/local/bin/argbash
 COPY --from=argbash-builder /usr/local/bin/argbash-1to2 /usr/local/bin/argbash-1to2
 COPY --from=argbash-builder /usr/local/bin/argbash-init /usr/local/bin/argbash-init

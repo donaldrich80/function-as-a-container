@@ -4,12 +4,6 @@ image:
   dir: ""
   dockerfile: ""
 commands:
-  # semantic-release:
-  #   prefix: semantic-release
-  #   help: -h
-  #   version: -v
-  #   github: semantic-release/semantic-release
-  #   docs: https://semantic-release.gitbook.io/semantic-release
   commitlint:
     prefix: commitlint
     help: -h
@@ -21,11 +15,11 @@ commands:
     version: --version
     github: commitizen-tools/commitizen
     docs: https://commitizen-tools.github.io/commitizen
-  # standard-version:
-  #   prefix: standard-version
-  #   help: --help
-  #   version: --version
-  #   github: conventional-changelog/standard-version
+  git-conventional-commits:
+    prefix: git-conventional-commits
+    help: --help
+    version: --version
+    github: qoomon/git-conventional-commits
   conform:
     prefix: conform
     help: --help

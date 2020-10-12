@@ -9,16 +9,6 @@ COPY --from=conform-builder  /usr/local/bin/conform  /usr/local/bin/conform
 
 RUN apk --update --no-cache add ca-certificates git git-lfs openssh python3 py3-pip
 RUN npm install -g --save-dev \
-#   semantic-release@latest \
-# # core plugins
-#   @semantic-release/apm@latest \
-#   @semantic-release/changelog@latest \
-#   @semantic-release/exec@latest \
-#   @semantic-release/git@latest \
-#   @semantic-release/gitlab@latest \
-#   semantic-release-docker@latest \
-#   @semantic-release/apm-config@latest \
-#   @semantic-release/gitlab-config@latest \
 #   conventional-changelog-conventionalcommits \
   # commitlint
   @commitlint/config-conventional@latest \
@@ -27,7 +17,7 @@ RUN npm install -g --save-dev \
   @commitlint/prompt-cli@latest \
   commitizen@latest \
   cz-conventional-changelog@latest \
-  cz-customizable@latest
-  # standard-version
+  cz-customizable@latest \
+  git-conventional-commits
 
 RUN echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc

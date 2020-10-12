@@ -1,6 +1,6 @@
 ---
 path: tree/master
-source: documents/general/codespell/Dockerfile
+source: documents/spellcheck/codespell/Dockerfile
 ---
 
 # codespell

@@ -1,6 +1,6 @@
 ---
 path: tree/master
-source: documents/general/goodcheck/Dockerfile
+source: documents/spellcheck/goodcheck/Dockerfile
 ---
 
 # goodcheck

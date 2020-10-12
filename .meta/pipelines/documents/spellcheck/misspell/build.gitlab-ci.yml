@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:languagetool:
+build:misspell:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:languagetool:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:languagetool
+      --cache-from $REGISTRY/function:misspell
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:languagetool
-      --file documents/general/languagetool/Dockerfile
-      documents/general/languagetool
+      --tag $REGISTRY/function:misspell
+      --file documents/spellcheck/misspell/Dockerfile
+      documents/spellcheck/misspell
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:languagetool:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "documents/general/languagetool/*"
+        - "documents/spellcheck/misspell/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "languagetool"'
+    - if: '$TRIGGER_VAR1 == "misspell"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

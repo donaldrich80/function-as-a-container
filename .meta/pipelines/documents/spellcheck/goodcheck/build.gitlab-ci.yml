@@ -24,7 +24,7 @@
   - echo $DOCKER_CLI_EXPERIMENTAL
   - echo $DOCKER_DRIVER
 
-build:naturaldocs:
+build:goodcheck:
   retry: 2
   interruptible: true
   allow_failure: true
@@ -42,11 +42,11 @@ build:naturaldocs:
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY/function:naturaldocs
+      --cache-from $REGISTRY/function:goodcheck
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY/function:naturaldocs
-      --file documents/general/natural_docs/Dockerfile
-      documents/general/natural_docs
+      --tag $REGISTRY/function:goodcheck
+      --file documents/spellcheck/goodcheck/Dockerfile
+      documents/spellcheck/goodcheck
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,11 +60,11 @@ build:naturaldocs:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "documents/general/natural_docs/*"
+        - "documents/spellcheck/goodcheck/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "naturaldocs"'
+    - if: '$TRIGGER_VAR1 == "goodcheck"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

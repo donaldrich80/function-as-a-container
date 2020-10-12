@@ -30,12 +30,11 @@ include:
   - local: .meta/pipelines/task/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/pdftk/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/markdown/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/spellcheck/codespell/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/spellcheck/goodcheck/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/spellcheck/misspell/build.gitlab-ci.yml
+  - local: .meta/pipelines/documents/spellcheck/languagetool/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/pandoc/build.gitlab-ci.yml
-  - local: .meta/pipelines/documents/general/codespell/build.gitlab-ci.yml
-  - local: .meta/pipelines/documents/general/natural_docs/build.gitlab-ci.yml
-  - local: .meta/pipelines/documents/general/goodcheck/build.gitlab-ci.yml
-  - local: .meta/pipelines/documents/general/misspell/build.gitlab-ci.yml
-  - local: .meta/pipelines/documents/general/languagetool/build.gitlab-ci.yml
   - local: .meta/pipelines/network/bitwarden-cli/build.gitlab-ci.yml
   - local: .meta/pipelines/network/httpie/build.gitlab-ci.yml
   - local: .meta/pipelines/network/goscan/build.gitlab-ci.yml

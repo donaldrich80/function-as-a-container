@@ -10,4 +10,6 @@ RUN npm install -g markdownlint-cli
 
 RUN npm install --save remark-cli remark-preset-lint-recommended
 
+RUN npm install textlint --global
+
 COPY package.json ./

@@ -1,6 +1,6 @@
 ---
 path: tree/master
-source: documents/general/languagetool/Dockerfile
+source: documents/spellcheck/languagetool/Dockerfile
 ---
 
 # languagetool

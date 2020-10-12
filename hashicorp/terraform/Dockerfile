@@ -19,9 +19,15 @@ RUN wget "https://github.com/opencredo/terrahelp/releases/download/v0.7.4/terrah
 RUN chmod +rx /usr/local/bin/terrahelp
 RUN upx /usr/local/bin/terrahelp
 
+# FROM donaldrich/builder:go AS terraform-provider-proxmox-builder
+# RUN go get github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox
+# RUN go get github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
+
 FROM donaldrich/builder:go AS terraform-provider-proxmox-builder
-RUN go get github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox
-RUN go get github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
+RUN git clone https://github.com/Telmate/terraform-provider-proxmox.git
+WORKDIR /terraform-provider-proxmox
+RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox
+RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
 
 FROM donaldrich/builder:latest AS terragrunt-builder
 RUN wget "https://github.com/gruntwork-io/terragrunt/releases/download/v0.25.0/terragrunt_linux_amd64" -O /usr/local/bin/terragrunt
@@ -33,8 +39,9 @@ RUN wget "https://github.com/GoogleCloudPlatform/terraformer/releases/download/0
 RUN chmod +rx /usr/local/bin/terraformer
 RUN upx /usr/local/bin/terraformer
 
-FROM donaldrich/builder:go AS converge-builder
-RUN go get github.com/asteris-llc/converge
+# FROM donaldrich/builder:go AS converge-builder
+# RUN go get github.com/asteris-llc/converge
+# https://github.com/asteris-llc/converge/releases/download/0.6.0/converge_0.6.0_linux_amd64.tar.gz
 
 FROM donaldrich/builder:latest AS terraform-provider-keycloak-builder
 RUN wget "https://github.com/mrparkers/terraform-provider-keycloak/releases/download/1.20.0/terraform-provider-keycloak_v1.20.0_linux_amd64.zip"
@@ -51,7 +58,7 @@ FROM ubuntu
 
 COPY --from=terracognita-builder /usr/local/bin/terracognita /usr/local/bin/terracognita
 COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /.terraform.d/plugins/terraform-provider-keycloak
-COPY --from=converge-builder /go/bin/converge /usr/local/bin/converge
+# COPY --from=converge-builder /go/bin/converge /usr/local/bin/converge
 COPY --from=terraformer-builder /usr/local/bin/terraformer /usr/local/bin/terraformer
 COPY --from=terragrunt-builder /usr/local/bin/terragrunt /usr/local/bin/terragrunt
 COPY --from=terraform-provider-proxmox-builder  /go/bin/terraform-provider-proxmox  /.terraform.d/plugins/terraform-provider-proxmox

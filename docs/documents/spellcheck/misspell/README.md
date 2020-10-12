@@ -1,6 +1,6 @@
 ---
 path: tree/master
-source: documents/general/misspell/Dockerfile
+source: documents/spellcheck/misspell/Dockerfile
 ---
 
 # misspell

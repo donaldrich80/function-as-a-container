@@ -46,12 +46,12 @@ commands:
     version: --version
     github: GoogleCloudPlatform/terraformer
     download: https://github.com/GoogleCloudPlatform/terraformer/releases/download/0.8.8/terraformer-all-linux-amd64
-  converge:
-    prefix: converge
-    help: --help
-    version: version
-    github: asteris-llc/converge
-    docs: http://converge.aster.is
+  # converge:
+  #   prefix: converge
+  #   help: --help
+  #   version: version
+  #   github: asteris-llc/converge
+  #   docs: http://converge.aster.is
   terracognita:
     prefix: terracognita
     version: version

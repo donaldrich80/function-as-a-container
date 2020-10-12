@@ -9,12 +9,6 @@ source: hashicorp/terraform/Dockerfile
 
 ## Documentation
 
-### Converge
-
-- [:octicons-book-16: Docs](http://converge.aster.is)
-
-- [:octicons-mark-github-16: asteris-llc/converge](https://github.com/asteris-llc/converge)
-
 ### Terracognita
 
 - [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/cycloid/terracognita)

@@ -1,0 +1,12 @@
+image:
+  tag: tfenv
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  tfenv:
+    prefix: tfenv
+    version: --version
+    help: --help
+    github: tfutils/tfenv
+extra: ""

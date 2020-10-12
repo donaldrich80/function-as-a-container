@@ -15,11 +15,11 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: vault-token-helper --version
+          exec: vault-token-helper version
           print: "\e[32mvault-token-helper\e[0m"
   help:
     usage: see config options
     run:
       - command:
-          exec: vault-token-helper --help
+          exec: vault-token-helper help
           print: "\e[32mvault-token-helper\e[0m"

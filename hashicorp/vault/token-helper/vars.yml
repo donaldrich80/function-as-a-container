@@ -7,8 +7,8 @@ image:
 commands:
   vault-token-helper:
     prefix: vault-token-helper
-    help: --help
-    version: --version
+    help: help
+    version: version
     github: joemiller/vault-token-helper
     download: https://github.com/joemiller/vault-token-helper/releases/download/v0.3.3/vault-token-helper_0.3.3_linux_amd64
 extra: ""

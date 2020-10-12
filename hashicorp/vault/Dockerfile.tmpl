@@ -32,6 +32,10 @@ RUN upx /usr/local/bin/vsh
 
 FROM blockloop/vault-unseal:latest AS vault-unseal-builder
 
+FROM donaldrich/builder:latest AS vault-token-helper-builder
+RUN wget "https://github.com/joemiller/vault-token-helper/releases/download/v0.3.3/vault-token-helper_0.3.3_linux_amd64" -O /usr/local/bin/vault-token-helper
+RUN chmod +rx /usr/local/bin/vault-token-helper
+
 FROM alpine
 
 COPY --from=vault-unseal-builder /vault-unseal.sh /usr/local/bin/vault-unseal
@@ -42,5 +46,6 @@ COPY --from=vault-ssh-helper-builder  vault-ssh-helper /usr/local/bin/vault-ssh-
 COPY --from=vault-sidekick-builder /usr/local/bin/vault-sidekick /usr/local/bin/vault-sidekick
 COPY --from=hashi-helper-builder  /usr/local/bin/hashi-helper  /usr/local/bin/hashi-helper
 COPY --from=vault-builder  /usr/local/bin/vault  /usr/local/bin/vault
+COPY --from=vault-token-helper-builder  /usr/local/bin/vault-token-helper  /usr/local/bin/vault-token-helper
 
 {{- template "validate" }}

@@ -46,6 +46,13 @@ commands:
     version: --version
     github: channable/vaultenv
     download: https://github.com/channable/vaultenv/releases/download/v0.13.1/vaultenv-0.13.1-linux-musl
+  vault-token-helper:
+    prefix: vault-token-helper
+    help: help
+    version: version
+    github: joemiller/vault-token-helper
+    download: https://github.com/joemiller/vault-token-helper/releases/download/v0.3.3/vault-token-helper_0.3.3_linux_amd64
+
   # vault-ssh-helper:
   #   prefix: vault-ssh-helper
   #   help: null

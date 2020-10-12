@@ -54,8 +54,17 @@ FROM donaldrich/builder:latest AS terracognita-builder
 COPY --from=cycloid/terracognita /app/terracognita /usr/local/bin/terracognita
 RUN upx /usr/local/bin/terracognita
 
+FROM donaldrich/builder:latest AS terratag-builder
+RUN wget -O archive.tar.gz "https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz"
+RUN tar xzf archive.tar.gz
+RUN upx terratag
+RUN mv terratag /usr/local/bin
+RUN chmod a+x /usr/local/bin/terratag
+
+
 FROM ubuntu
 
+COPY --from=terratag-builder /usr/local/bin/terratag /usr/local/bin/terratag
 COPY --from=terracognita-builder /usr/local/bin/terracognita /usr/local/bin/terracognita
 COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /.terraform.d/plugins/terraform-provider-keycloak
 # COPY --from=converge-builder /go/bin/converge /usr/local/bin/converge

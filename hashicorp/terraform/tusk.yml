@@ -30,6 +30,9 @@ tasks:
           exec: terrahelp --version
           print: "\e[32mterrahelp\e[0m"
       - command:
+          exec: terratag --version
+          print: "\e[32mterratag\e[0m"
+      - command:
           exec: tflint --version
           print: "\e[32mtflint\e[0m"
       - command:
@@ -53,6 +56,9 @@ tasks:
       - command:
           exec: terrahelp --help
           print: "\e[32mterrahelp\e[0m"
+      - command:
+          exec: terratag --help
+          print: "\e[32mterratag\e[0m"
       - command:
           exec: tflint --help
           print: "\e[32mtflint\e[0m"

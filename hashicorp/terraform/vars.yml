@@ -59,6 +59,12 @@ commands:
     github: cycloidio/terracognita
     docker: cycloid/terracognita
     download: https://github.com/cycloidio/terracognita/releases/download/v0.3.0/terracognita-linux-amd64.tar.gz
+  terratag:
+    prefix: terratag
+    version: --version
+    help: --help
+    github: env0/terratag
+    download: https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz
 
   # terraform-provider-keycloak:
   #   prefix: terraform-provider-keycloak

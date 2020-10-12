@@ -23,6 +23,10 @@ source: hashicorp/vault/Dockerfile
 
 - [:fontawesome-brands-docker: Quay](https://quay.io/https://quay.io/repository/ukhomeofficedigital/vault-sidekick)
 
+### Vault-Token-Helper
+
+- [:octicons-mark-github-16: joemiller/vault-token-helper](https://github.com/joemiller/vault-token-helper)
+
 ### Vaultenv
 
 - [:octicons-mark-github-16: channable/vaultenv](https://github.com/channable/vaultenv)

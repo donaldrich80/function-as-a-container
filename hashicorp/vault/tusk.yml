@@ -27,6 +27,9 @@ tasks:
           exec: vault-sidekick -version
           print: "\e[32mvault-sidekick\e[0m"
       - command:
+          exec: vault-token-helper version
+          print: "\e[32mvault-token-helper\e[0m"
+      - command:
           exec: vaultenv --version
           print: "\e[32mvaultenv\e[0m"
   help:
@@ -44,6 +47,9 @@ tasks:
       - command:
           exec: vault-sidekick -help
           print: "\e[32mvault-sidekick\e[0m"
+      - command:
+          exec: vault-token-helper help
+          print: "\e[32mvault-token-helper\e[0m"
       - command:
           exec: vaultenv --help
           print: "\e[32mvaultenv\e[0m"

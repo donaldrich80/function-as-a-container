@@ -10,7 +10,7 @@
 - id: yaml-yq
   name: Use yq
   description: yq is a lightweight and portable command-line YAML processo
-  entry: --entrypoint yq mikefarah/yq
+  entry: --entrypoint yq donaldrich/function:yaml
   args: ["merge", "-a"]
   language: docker_image
 
@@ -24,7 +24,7 @@
   name: Lint YAML w yamllint
   description: Lint YAML w yamllint
   language: docker_image
-  entry: --entrypoint yamllint pipelinecomponents/yamllint
+  entry: --entrypoint yamllint donaldrich/function:yaml
   args: [--format, parsable, --strict]
   types: [yaml]
 

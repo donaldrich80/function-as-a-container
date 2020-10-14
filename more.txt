@@ -33,3 +33,6 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.24.1/minik
 
 https://github.com/shellspec/shellspec
 https://github.com/dbohdan/structured-text-tools
+https://github.com/uber/astro
+https://hub.docker.com/r/cytopia/terragrunt-fmt
+https://github.com/secretlint/secretlint

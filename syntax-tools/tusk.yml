@@ -45,6 +45,9 @@ tasks:
           exec: yaml-tools --help
           print: "\e[32myaml-tools\e[0m"
       - command:
+          exec: yamlfmt --version
+          print: "\e[32myamlfmt\e[0m"
+      - command:
           exec: yamllint --version
           print: "\e[32myamllint\e[0m"
       - command:
@@ -89,6 +92,9 @@ tasks:
       - command:
           exec: yaml-tools --help
           print: "\e[32myaml-tools\e[0m"
+      - command:
+          exec: yamlfmt --help
+          print: "\e[32myamlfmt\e[0m"
       - command:
           exec: yamllint --help
           print: "\e[32myamllint\e[0m"

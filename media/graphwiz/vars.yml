@@ -1,0 +1,13 @@
+image:
+  tag: graphviz
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  graphviz:
+    prefix: graphviz
+    help: --help
+    version: --version
+    github: graphviz/graphviz
+    docs: http://www.graphviz.org
+extra: ""

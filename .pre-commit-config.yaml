@@ -47,7 +47,7 @@ repos:
       - exclude: Dockerfile.tmpl.*
         id: docker-lint-hadolint
     repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v1.7.1
+    rev: master
   # - hooks:
   #     - id: commitizen
   #       stages:

@@ -92,6 +92,11 @@ commands:
     help: --help
     version: --version
     github: fatih/hclfmt
+  yamlfmt:
+    prefix: yamlfmt
+    help: --help
+    version: --version
+    github: mmlb/yamlfmt
   jsonnet:
     prefix: jsonnet
     help: --help

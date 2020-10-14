@@ -44,8 +44,9 @@ RUN upx /usr/local/bin/hcl2json
 
 FROM python:alpine
 
-RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-sort remarshal
+RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-sort remarshal yamlfmt
 # jsonnet
+# bash
 
 COPY --from=jsonnet-builder /go/bin/jsonnet /usr/local/bin/jsonnet
 COPY --from=hclfmt-builder /go/bin/hclfmt /usr/local/bin/hclfmt

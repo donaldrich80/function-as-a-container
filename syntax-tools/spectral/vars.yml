@@ -1,0 +1,13 @@
+image:
+  tag: spectral
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  spectral:
+    prefix: spectral
+    help: --help
+    version: --version
+    github: stoplightio/spectral
+    docs: https://prettier.io
+extra: ""

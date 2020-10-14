@@ -61,6 +61,10 @@ Tools for using and manipulating YAML files
 
 - [:octicons-mark-github-16: thecodingmachine/yaml-tools](https://github.com/thecodingmachine/yaml-tools)
 
+### Yamlfmt
+
+- [:octicons-mark-github-16: mmlb/yamlfmt](https://github.com/mmlb/yamlfmt)
+
 ### Yamllint
 
 - [:octicons-mark-github-16: adrienverge/yamllint](https://github.com/adrienverge/yamllint)

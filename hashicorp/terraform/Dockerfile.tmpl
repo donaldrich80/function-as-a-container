@@ -30,7 +30,7 @@ RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provi
 RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
 
 FROM donaldrich/builder:latest AS terragrunt-builder
-RUN wget "https://github.com/gruntwork-io/terragrunt/releases/download/v0.25.0/terragrunt_linux_amd64" -O /usr/local/bin/terragrunt
+RUN wget "https://github.com/gruntwork-io/terragrunt/releases/download/v0.25.3/terragrunt_linux_amd64" -O /usr/local/bin/terragrunt
 RUN chmod +rx /usr/local/bin/terragrunt
 RUN upx /usr/local/bin/terragrunt
 

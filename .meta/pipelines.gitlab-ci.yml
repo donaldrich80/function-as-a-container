@@ -16,10 +16,12 @@ include:
   - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml
   - local: .meta/pipelines/media/wkhtmltopdf/build.gitlab-ci.yml
   - local: .meta/pipelines/media/diagrams/build.gitlab-ci.yml
+  - local: .meta/pipelines/media/graphwiz/build.gitlab-ci.yml
   - local: .meta/pipelines/media/man/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax-tools/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax-tools/json/fony/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax-tools/json/show-struct/build.gitlab-ci.yml
+  - local: .meta/pipelines/syntax-tools/spectral/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax-tools/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/td4a/build.gitlab-ci.yml
   - local: .meta/pipelines/unsorted/vuls/build.gitlab-ci.yml

@@ -36,3 +36,4 @@ https://github.com/dbohdan/structured-text-tools
 https://github.com/uber/astro
 https://hub.docker.com/r/cytopia/terragrunt-fmt
 https://github.com/secretlint/secretlint
+https://github.com/ksatirli/code-quality-for-terraform

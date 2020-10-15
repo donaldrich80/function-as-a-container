@@ -22,12 +22,16 @@ https://github.com/earthly/earthly
 https://github.com/harbur/captain
 
 https://github.com/tmknom/prettier/blob/master/Makefile
+https://github.com/paraterraform/para
 
+https://github.com/hashicorp/terraform-cdk
 https://github.com/naorlivne/terraformize
 
 https://github.com/Stratoscale/skipper
-
+https://github.com/firecracker-microvm/firecracker
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.0/bin/linux/amd64/kubectl
+
+https://github.com/fugue/credstash
 
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.24.1/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 

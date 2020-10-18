@@ -1,0 +1,8 @@
+- id: documentation-diagrams
+  name: diagrams
+  description: diagrams
+  entry: --entrypoint python donaldrich/function:diagrams
+  language: docker_image
+  pass_filenames: false
+  args: ["diagram.py"]
+  files: "diagram.py"

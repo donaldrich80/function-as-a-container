@@ -11,6 +11,8 @@ source: media/diagrams/Dockerfile
 
 ### Diagrams
 
+- [:octicons-book-16: Docs](https://diagrams.mingrammer.com)
+
 - [:octicons-mark-github-16: mingrammer/diagrams](https://github.com/mingrammer/diagrams)
 
 ## Image Commands

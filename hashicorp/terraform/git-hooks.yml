@@ -1,13 +1,3 @@
-# - id: terraform-fmt-check
-#   name: Terraform fmt
-#   description: Rewrites all Terraform configuration files to a canonical format.
-#   entry: --entrypoint terraform donaldrich/function:terraform
-#   args: ["fmt", "-check", "-recursive"]
-#   pass_filenames: false
-#   language: docker_image
-#   files: (\.tf|\.tfvars)$
-#   exclude: \.terraform\/.*$
-# types: [terraform]
 - id: terraform-fmt
   name: Terraform fmt
   description: Rewrites all Terraform configuration files to a canonical format.
@@ -15,6 +5,16 @@
   args: ["fmt", "-recursive"]
   pass_filenames: false
   language: docker_image
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
+
+- id: terraform-init
+  name: Terraform init command
+  description: Terraform init command
+  entry: --entrypoint terraform donaldrich/function:terraform
+  language: docker_image
+  args: ["init"]
+  pass_filenames: false
   files: (\.tf|\.tfvars)$
   exclude: \.terraform\/.*$
 
@@ -54,6 +54,40 @@
   args: ["hclfmt"]
   pass_filenames: false
   exclude: \.terraform\/.*$
+
+- id: terraform
+  name: Terragrunt HCL format
+  language: docker_image
+  entry: --entrypoint terraform donaldrich/function:terraform
+  pass_filenames: false
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
+
+- id: terraform-checkov
+  name: terraform-checkov
+  language: docker_image
+  entry: --entrypoint checkov donaldrich/function:checkov
+  args: ["-d", "."]
+  pass_filenames: false
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
+
+- id: terragrunt
+  name: terragrunt
+  language: docker_image
+  entry: --entrypoint terragrunt donaldrich/function:terraform
+  pass_filenames: false
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
+
+- id: terragrunt-validate
+  name: Terragrunt HCL format
+  files: \.hcl$
+  language: docker_image
+  entry: --entrypoint terragrunt donaldrich/function:terraform
+  args: ["validate"]
+  pass_filenames: false
+  exclude: \.terraform\/.*$
 # - id: terraform_docs
 #   name: Terraform docs
 #   description: Inserts input and output documentation into README.md (using terraform-docs).
@@ -79,37 +113,4 @@
 #   entry: terraform_docs_replace
 #   language: python
 #   files: (\.tf)$
-#   exclude: \.terraform\/.*$
-
-# - id: terragrunt_fmt
-#   name: Terragrunt fmt
-#   description: Rewrites all Terragrunt configuration files to a canonical format.
-#   entry: terragrunt_fmt.sh
-#   language: script
-#   files: (\.hcl)$
-#   exclude: \.terraform\/.*$
-
-# - id: terragrunt_validate
-#   name: Terragrunt validate
-#   description: Validates all Terragrunt configuration files.
-#   entry: terragrunt_validate.sh
-#   language: script
-#   files: (\.hcl)$
-#   exclude: \.terraform\/.*$
-
-# - id: checkov
-#   name: Checkov
-#   description: Runs checkov on Terraform templates.
-#   entry: checkov -d .
-#   language: python
-#   pass_filenames: false
-#   always_run: false
-#   files: \.tf$
-#   exclude: \.+.terraform\/.*$
-#   require_serial: true
-
-# - id: terraform-checkov
-#   name: checkov
-#   entry: --entrypoint checkov donaldrich/function:checkov
-#   language: docker_image
-#   args: ["-d", "."]
+#   exclude: \.terraform\/.*$\

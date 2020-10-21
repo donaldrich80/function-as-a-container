@@ -8,8 +8,6 @@ commands:
     prefix: waypoint
     version: version
     help: -h
-  tusk:
-    prefix: tusk
-    version: --version
-    help: --help
+    docs: https://www.waypointproject.io/docs
+    site: https://www.waypointproject.io
 extra: ""

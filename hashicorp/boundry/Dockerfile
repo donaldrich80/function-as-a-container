@@ -2,8 +2,10 @@ FROM donaldrich/builder:latest  AS builder
 
 ENV BOUNDRY_VERSION=0.1.0
 
-RUN wget https://releases.hashicorp.com/boundary/${BOUNDRY_VERSION}/boundary${BOUNDRY_VERSION}_linux_amd64.zip
-RUN unzip boundary${BOUNDRY_VERSION}_linux_amd64.zip
+RUN wget https://releases.hashicorp.com/boundary/${BOUNDRY_VERSION}/boundary_${BOUNDRY_VERSION}_linux_amd64.zip
+RUN unzip boundary_${BOUNDRY_VERSION}_linux_amd64.zip
+
+RUN upx /boundary
 
 FROM alpine
 

@@ -8,8 +8,6 @@ commands:
     prefix: boundary
     version: version
     help: -h
-  tusk:
-    prefix: tusk
-    version: --version
-    help: --help
+    docs: https://www.boundaryproject.io/docs
+    site: https://www.boundaryproject.io
 extra: ""

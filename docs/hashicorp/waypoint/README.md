@@ -9,9 +9,11 @@ source: hashicorp/waypoint/Dockerfile
 
 ## Documentation
 
-### Tusk
-
 ### Waypoint
+
+- [:octicons-book-16: Docs](https://www.waypointproject.io/docs)
+
+- [site](https://www.waypointproject.io)
 
 ## Image Commands
 

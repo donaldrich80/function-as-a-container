@@ -17,15 +17,9 @@ tasks:
       - command:
           exec: boundary version
           print: "\e[32mboundary\e[0m"
-      - command:
-          exec: tusk --version
-          print: "\e[32mtusk\e[0m"
   help:
     usage: see config options
     run:
       - command:
           exec: boundary -h
           print: "\e[32mboundary\e[0m"
-      - command:
-          exec: tusk --help
-          print: "\e[32mtusk\e[0m"

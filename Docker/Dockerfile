@@ -1,9 +1,9 @@
 FROM docker:latest  AS docker
 
 FROM donaldrich/builder:latest AS notary-builder
-# RUN wget "https://github.com/theupdateframework/notary/releases/download/v0.6.1/notary-Linux-amd64" -O /usr/local/bin/notary
-# RUN chmod +rx /usr/local/bin/notary
-RUN gget github.com/theupdateframework/notary --executable /usr/local/bin/notary='*Linux-amd64'
+RUN wget "https://github.com/theupdateframework/notary/releases/download/v0.6.1/notary-Linux-amd64" -O /usr/local/bin/notary
+RUN chmod +rx /usr/local/bin/notary
+# RUN gget github.com/theupdateframework/notary --executable /usr/local/bin/notary='*Linux-amd64'
 RUN upx /usr/local/bin/notary
 
 FROM donaldrich/builder:latest AS docker-builder
@@ -48,8 +48,9 @@ RUN upx /build/bin/docker-credential-vault-login
 COPY ./config.hcl /etc/docker-credential-vault-login/
 
 FROM donaldrich/builder:latest AS dockerfile-generator-builder
-RUN wget "https://github.com/ozankasikci/dockerfile-generator/releases/download/v1.0.0/dfg_v1.0.0_linux_amd64" -O /usr/local/bin/dfg
-RUN chmod +rx /usr/local/bin/dfg
+# RUN wget "https://github.com/ozankasikci/dockerfile-generator/releases/download/v1.0.0/dfg_v1.0.0_linux_amd64" -O /usr/local/bin/dfg
+# RUN chmod +rx /usr/local/bin/dfg
+RUN gget github.com/ozankasikci/dockerfile-generator --executable /usr/local/bin/dfg='*linux_amd64'
 RUN upx /usr/local/bin/dfg
 
 FROM donaldrich/builder:latest AS docker-gen-builder
@@ -70,8 +71,9 @@ COPY --from=rustagainshell/rash /bin/rash /usr/local/bin/rash
 RUN upx /usr/local/bin/rash
 
 FROM donaldrich/builder:latest AS earthly-builder
-RUN wget "https://github.com/earthly/earthly/releases/latest/download/earth-linux-amd64" -O /usr/local/bin/earthly
-RUN chmod +rx /usr/local/bin/earthly
+# RUN wget "https://github.com/earthly/earthly/releases/latest/download/earth-linux-amd64" -O /usr/local/bin/earthly
+# RUN chmod +rx /usr/local/bin/earthly
+RUN gget github.com/earthly/earthly --executable /usr/local/bin/earthly='*linux-amd64'
 RUN upx /usr/local/bin/earthly
 
 FROM alpine

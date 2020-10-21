@@ -27,6 +27,14 @@ source: kubernetes/Dockerfile
 
 - [:octicons-mark-github-16: kubernetes/kompose](https://github.com/kubernetes/kompose)
 
+### Kubectl
+
+- [:octicons-mark-github-16: kubectl](https://github.com/kubectl)
+
+### Minikube
+
+- [:octicons-mark-github-16: minikube](https://github.com/minikube)
+
 ## Image Commands
 
 ### Container shell

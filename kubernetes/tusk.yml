@@ -23,6 +23,12 @@ tasks:
       - command:
           exec: kompose version
           print: "\e[32mkompose\e[0m"
+      - command:
+          exec: kubectl version
+          print: "\e[32mkubectl\e[0m"
+      - command:
+          exec: minikube version
+          print: "\e[32mminikube\e[0m"
   help:
     usage: see config options
     run:
@@ -35,3 +41,9 @@ tasks:
       - command:
           exec: kompose version --help
           print: "\e[32mkompose\e[0m"
+      - command:
+          exec: kubectl version --help
+          print: "\e[32mkubectl\e[0m"
+      - command:
+          exec: minikube version --help
+          print: "\e[32mminikube\e[0m"

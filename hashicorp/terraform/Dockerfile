@@ -20,10 +20,6 @@ RUN gget github.com/opencredo/terrahelp --executable /usr/local/bin/terrahelp='*
 # RUN chmod +rx /usr/local/bin/terrahelp
 RUN upx /usr/local/bin/terrahelp
 
-# FROM donaldrich/builder:go AS terraform-provider-proxmox-builder
-# RUN go get github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox
-# RUN go get github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
-
 FROM donaldrich/builder:go AS terraform-provider-proxmox-builder
 RUN git clone https://github.com/Telmate/terraform-provider-proxmox.git
 WORKDIR /terraform-provider-proxmox
@@ -58,8 +54,9 @@ COPY --from=cycloid/terracognita /app/terracognita /usr/local/bin/terracognita
 RUN upx /usr/local/bin/terracognita
 
 FROM donaldrich/builder:latest AS terratag-builder
-RUN wget -O archive.tar.gz "https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz"
-RUN tar xzf archive.tar.gz
+# RUN wget -O archive.tar.gz "https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz"
+# RUN tar xzf archive.tar.gz
+RUN gget github.com/env0/terratag --type=archive '*linux_amd64.tar.gz' --stdout | tar -tzf- | tail -n2
 RUN upx terratag
 RUN mv terratag /usr/local/bin
 RUN chmod a+x /usr/local/bin/terratag

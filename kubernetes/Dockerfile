@@ -1,6 +1,12 @@
-FROM donaldrich/builder:latest
+FROM donaldrich/builder:latest AS kubectl-builder
+RUN wget "https://storage.googleapis.com/kubernetes-release/release/v1.9.0/bin/linux/amd64/kubectl" -O /usr/local/bin/kubectl
+RUN chmod +rx /usr/local/bin/kubectl
+RUN upx /usr/local/bin/kubectl
 
-RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+FROM donaldrich/builder:latest AS minikube-builder
+RUN wget "https://storage.googleapis.com/minikube/releases/v0.24.1/minikube-linux-amd64" -O /usr/local/bin/minikube
+RUN chmod +rx /usr/local/bin/minikube
+RUN upx /usr/local/bin/minikube
 
 FROM donaldrich/builder:latest AS helm-builder
 RUN ginstall.sh helm latest

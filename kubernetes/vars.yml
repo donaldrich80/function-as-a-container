@@ -16,6 +16,16 @@ commands:
     version: version
     github: kubernetes/kompose
     docs: http://kompose.io
+  kubectl:
+    prefix: kubectl
+    help: version --help
+    version: version
+    github: kubectl
+  minikube:
+    prefix: minikube
+    help: version --help
+    version: version
+    github: minikube
   kind:
     prefix: kind
     help: version --help

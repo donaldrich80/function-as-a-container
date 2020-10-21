@@ -15,10 +15,6 @@ https://github.com/cloud66-oss/habitus
 
 https://github.com/wfxr/forgit
 
-https://github.com/thoughtworks/talisman
-
-https://github.com/earthly/earthly
-
 https://github.com/harbur/captain
 
 https://github.com/tmknom/prettier/blob/master/Makefile
@@ -29,11 +25,8 @@ https://github.com/naorlivne/terraformize
 
 https://github.com/Stratoscale/skipper
 https://github.com/firecracker-microvm/firecracker
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.0/bin/linux/amd64/kubectl
 
 https://github.com/fugue/credstash
-
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.24.1/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 
 https://github.com/shellspec/shellspec
 https://github.com/dbohdan/structured-text-tools

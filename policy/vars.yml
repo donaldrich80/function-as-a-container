@@ -1,0 +1,23 @@
+image:
+  tag: policy
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  opa:
+    prefix: opa
+    help: -h
+    version: -v
+    github: openpolicyagent/opa
+  conftest:
+    prefix: conftest
+    help: -h
+    version: -v
+    github: openpolicyagent/conftest
+  stein:
+    prefix: stein
+    help: --help
+    version: --version
+    github: b4b4r07/stein
+    download: https://github.com/b4b4r07/stein/releases/download/v0.3.4/stein_linux_x86_64.tar.gz
+extra: ""

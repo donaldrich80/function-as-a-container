@@ -18,7 +18,6 @@ https://github.com/wfxr/forgit
 https://github.com/harbur/captain
 
 https://github.com/tmknom/prettier/blob/master/Makefile
-https://github.com/paraterraform/para
 
 https://github.com/hashicorp/terraform-cdk
 https://github.com/naorlivne/terraformize

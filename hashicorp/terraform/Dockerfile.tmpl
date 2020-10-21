@@ -16,9 +16,17 @@ RUN upx /usr/local/bin/terraform-docs
 
 FROM donaldrich/builder:latest AS terrahelp-builder
 # RUN wget "https://github.com/opencredo/terrahelp/releases/download/v0.7.4/terrahelp-linux-amd64" -O /usr/local/bin/terrahelp
-RUN gget github.com/opencredo/terrahelp --executable /usr/local/bin/terrahelp='*linux-amd64'
 # RUN chmod +rx /usr/local/bin/terrahelp
+
+RUN gget github.com/opencredo/terrahelp --executable /usr/local/bin/terrahelp='*linux-amd64'
 RUN upx /usr/local/bin/terrahelp
+
+# FROM donaldrich/builder:latest AS terraform-provider-sops-builder
+# # RUN wget "https://github.com/carlpett/terraform-provider-sops/releases/download/v0.5.2/terraform-provider-sops_0.5.2_linux_amd64.zip
+# RUN gget github.com/carlpett/terraform-provider-sops --executable /usr/local/bin/terrahelp='*linux-amd64'
+
+
+
 
 FROM donaldrich/builder:go AS terraform-provider-proxmox-builder
 RUN git clone https://github.com/Telmate/terraform-provider-proxmox.git
@@ -38,6 +46,10 @@ FROM donaldrich/builder:latest AS terraformer-builder
 RUN gget github.com/GoogleCloudPlatform/terraformer --executable /usr/local/bin/terraformer='*all-linux-amd64'
 RUN upx /usr/local/bin/terraformer
 
+FROM donaldrich/builder:latest AS para-builder
+RUN gget github.com/paraterraform/para --executable /usr/local/bin/para='*linux-amd64'
+RUN upx /usr/local/bin/para
+
 # FROM donaldrich/builder:go AS converge-builder
 # RUN go get github.com/asteris-llc/converge
 # https://github.com/asteris-llc/converge/releases/download/0.6.0/converge_0.6.0_linux_amd64.tar.gz
@@ -54,9 +66,9 @@ COPY --from=cycloid/terracognita /app/terracognita /usr/local/bin/terracognita
 RUN upx /usr/local/bin/terracognita
 
 FROM donaldrich/builder:latest AS terratag-builder
-# RUN wget -O archive.tar.gz "https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz"
-# RUN tar xzf archive.tar.gz
-RUN gget github.com/env0/terratag --type=archive '*linux_amd64.tar.gz' --stdout | tar -tzf- | tail -n2
+RUN wget -O archive.tar.gz "https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz"
+RUN tar xzf archive.tar.gz
+# RUN gget github.com/env0/terratag --type=archive '*linux_amd64.tar.gz' --stdout | tar -tzf- | tail -n2
 RUN upx terratag
 RUN mv terratag /usr/local/bin
 RUN chmod a+x /usr/local/bin/terratag
@@ -78,5 +90,6 @@ COPY --from=terraform-docs-builder /usr/local/bin/terraform-docs /usr/local/bin/
 COPY --from=tfsec-builder /usr/local/bin/tfsec /usr/local/bin/tfsec
 COPY --from=tflint-builder /usr/local/bin/tflint /usr/local/bin/tflint
 COPY --from=terraform-builder /usr/local/bin/terraform /usr/local/bin/terraform
+COPY --from=para-builder /usr/local/bin/para /usr/local/bin/para
 
 {{- template "validate" }}

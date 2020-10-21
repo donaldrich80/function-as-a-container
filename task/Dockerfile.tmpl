@@ -5,8 +5,9 @@ FROM donaldrich/builder:latest AS task-builder
 RUN ginstall.sh task latest
 
 FROM donaldrich/builder:latest AS robo-builder
-RUN  wget "https://github.com/tj/robo/releases/download/v0.5.5/robo_linux_amd64" -O /usr/local/bin/robo
-RUN  chmod +rx /usr/local/bin/robo
+# RUN  wget "https://github.com/tj/robo/releases/download/v0.5.5/robo_linux_amd64" -O /usr/local/bin/robo
+# RUN  chmod +rx /usr/local/bin/robo
+RUN gget github.com/tj/robo --executable /usr/local/bin/robo='*linux_amd64'
 
 FROM donaldrich/builder:latest AS orbit-builder
 RUN wget https://github.com/gulien/orbit/releases/download/v3.2.0/orbit_Linux_x86_64.tar.gz
@@ -31,8 +32,9 @@ RUN mv navi /usr/local/bin
 RUN chmod a+x /usr/local/bin/navi
 
 FROM donaldrich/builder:latest AS commander-builder
-RUN wget "https://github.com/SimonBaeumer/commander/releases/download/v2.1.0/commander-linux-amd64" -O /usr/local/bin/commander
-RUN chmod +rx /usr/local/bin/commander
+# RUN wget "https://github.com/SimonBaeumer/commander/releases/download/v2.1.0/commander-linux-amd64" -O /usr/local/bin/commander
+# RUN chmod +rx /usr/local/bin/commander
+RUN gget github.com/SimonBaeumer/commander --executable /usr/local/bin/commander='*linux-amd64'
 RUN upx /usr/local/bin/commander
 
 FROM donaldrich/builder:latest AS dunner-builder

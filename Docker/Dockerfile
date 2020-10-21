@@ -1,8 +1,9 @@
 FROM docker:latest  AS docker
 
 FROM donaldrich/builder:latest AS notary-builder
-RUN wget "https://github.com/theupdateframework/notary/releases/download/v0.6.1/notary-Linux-amd64" -O /usr/local/bin/notary
-RUN chmod +rx /usr/local/bin/notary
+# RUN wget "https://github.com/theupdateframework/notary/releases/download/v0.6.1/notary-Linux-amd64" -O /usr/local/bin/notary
+# RUN chmod +rx /usr/local/bin/notary
+RUN gget github.com/theupdateframework/notary --executable /usr/local/bin/notary='*Linux-amd64'
 RUN upx /usr/local/bin/notary
 
 FROM donaldrich/builder:latest AS docker-builder
@@ -23,8 +24,9 @@ RUN wget -O ~/.docker/cli-plugins/docker-buildx "https://github.com/docker/build
 RUN chmod a+x /root/.docker/cli-plugins/docker-buildx
 
 FROM donaldrich/builder:latest AS dockfmt-builder
-RUN wget "https://github.com/jessfraz/dockfmt/releases/download/v0.3.3/dockfmt-linux-amd64" -O /usr/local/bin/dockfmt
-RUN chmod +rx /usr/local/bin/dockfmt
+# RUN wget "https://github.com/jessfraz/dockfmt/releases/download/v0.3.3/dockfmt-linux-amd64" -O /usr/local/bin/dockfmt
+# RUN chmod +rx /usr/local/bin/dockfmt
+RUN gget github.com/jessfraz/dockfmt --executable /usr/local/bin/dockfmt='*linux-amd64'
 
 FROM donaldrich/builder:latest AS dive-builder
 RUN ginstall.sh dive latest

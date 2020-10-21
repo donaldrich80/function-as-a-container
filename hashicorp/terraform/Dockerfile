@@ -39,7 +39,7 @@ RUN upx /usr/local/bin/terragrunt
 FROM donaldrich/builder:latest AS terraformer-builder
 # RUN wget "https://github.com/GoogleCloudPlatform/terraformer/releases/download/0.8.8/terraformer-all-linux-amd64" -O /usr/local/bin/terraformer
 # RUN chmod +rx /usr/local/bin/terraformer
-RUN gget github.com/GoogleCloudPlatform/terraformer --executable /usr/local/bin/terraformer='*linux-amd64'
+RUN gget github.com/GoogleCloudPlatform/terraformer --executable /usr/local/bin/terraformer='*all-linux-amd64'
 RUN upx /usr/local/bin/terraformer
 
 # FROM donaldrich/builder:go AS converge-builder

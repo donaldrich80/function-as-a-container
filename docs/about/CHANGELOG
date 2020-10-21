@@ -1,0 +1,76 @@
+## 1.0.0 (2020-10-16)
+
+
+### Features
+
+* added kubernetes ([ec97b65](https://gitlab.com/donaldrich/function-as-a-container/commit/ec97b65b7c78d479f89fd418732c3693468f4e0d))
+* kubernetes ([5dcd2ee](https://gitlab.com/donaldrich/function-as-a-container/commit/5dcd2ee873d627634ea79db01d6c480872827cd1))
+* pre-commit master list ([3f1fec0](https://gitlab.com/donaldrich/function-as-a-container/commit/3f1fec0fe246a1c4f3c508f001cd9fc933fa47b0))
+* structured text ([6cec658](https://gitlab.com/donaldrich/function-as-a-container/commit/6cec658f3c643bb94a5d96b40712ed061439b829))
+* **hook:** shell hooks ([8820221](https://gitlab.com/donaldrich/function-as-a-container/commit/8820221c5df211c0b4eca4047f606b493a1c7fea))
+* **image:** commitizen ([78756d5](https://gitlab.com/donaldrich/function-as-a-container/commit/78756d57fc7a3a2ba8c167b6bfbcc43d407be335))
+* **image:** remarshall ([104a8f3](https://gitlab.com/donaldrich/function-as-a-container/commit/104a8f3cbe81d0edfed9fc6e062a31e958adbc92))
+* **image:** semantic has commitizen ([349fe77](https://gitlab.com/donaldrich/function-as-a-container/commit/349fe777165cd849da83ffe9cfbccdcdb580d540))
+* **image:** terracognita ([f541652](https://gitlab.com/donaldrich/function-as-a-container/commit/f5416529d45c8354b464dfd36266850398f7c647))
+
+
+### Bug Fixes
+
+* delete semantic-release ([3edc3fe](https://gitlab.com/donaldrich/function-as-a-container/commit/3edc3fe380d0e421aa443533ce3b424d3a6338b4))
+* hooks ([3876235](https://gitlab.com/donaldrich/function-as-a-container/commit/38762351d550b013162ec2a79acd433cdd0fb82e))
+* semantic-release ([ed30c0d](https://gitlab.com/donaldrich/function-as-a-container/commit/ed30c0d4059b4e16fb8b415407d6bc3dc6f7d069))
+* **ci:** commitlint ([f4b92d6](https://gitlab.com/donaldrich/function-as-a-container/commit/f4b92d62bf59132bb415f4a0b01d616ad5d0c8fd))
+* semantic release ([6a1b54a](https://gitlab.com/donaldrich/function-as-a-container/commit/6a1b54a4cff32d4ef6875256241a53031911f5c9))
+* test ([68e3a30](https://gitlab.com/donaldrich/function-as-a-container/commit/68e3a3002f4acc87c55728a528db16908771791d))
+* test ([8e1ca48](https://gitlab.com/donaldrich/function-as-a-container/commit/8e1ca48bc66c1efc7cfa7afc7dae1c59a7680a33))
+* **ci:** moved semver to template ([0a02a57](https://gitlab.com/donaldrich/function-as-a-container/commit/0a02a57f5d14f1625b74626cabd49101d6f72aa9))
+* **ci:** test ([08e18a1](https://gitlab.com/donaldrich/function-as-a-container/commit/08e18a1beb023076a09351788ca0a436969b8362))
+* **hooks:** commitizen ([5168d4d](https://gitlab.com/donaldrich/function-as-a-container/commit/5168d4d955981ad4c044b023a831f1714e9f21e4))
+* **hooks:** commitizen ([5f2a5e4](https://gitlab.com/donaldrich/function-as-a-container/commit/5f2a5e4835b635511aa1d775459dc4c28d0b1e8e))
+* **image:** consolidate semver into one image ([c783656](https://gitlab.com/donaldrich/function-as-a-container/commit/c7836564d27904bd5b4520541f319d9587fa4d1b))
+* **image:** semver ([d209b64](https://gitlab.com/donaldrich/function-as-a-container/commit/d209b64d46cb4546687985c74541c4859c69941e))
+* **image:** semver ([c9c34c0](https://gitlab.com/donaldrich/function-as-a-container/commit/c9c34c0a1ba5eac5d479ab28c0960c51fe97f85b))
+* hooks ([2353fb8](https://gitlab.com/donaldrich/function-as-a-container/commit/2353fb8752c9b1f83976480617deddb8092b616a))
+* hooks ([5e4c49e](https://gitlab.com/donaldrich/function-as-a-container/commit/5e4c49e501d3682bd988677f5431e3afbf79e661))
+* semver ([3b0ec00](https://gitlab.com/donaldrich/function-as-a-container/commit/3b0ec007f7e06161b18015a05dae845f9375183a))
+* test ([5dd69bc](https://gitlab.com/donaldrich/function-as-a-container/commit/5dd69bc35576b951b56f0b23a9f26da35cc825cb))
+* **image:** semver ([cbdce07](https://gitlab.com/donaldrich/function-as-a-container/commit/cbdce07b2f823bb8c6fcc12dff333e452630d2ba))
+* **repo:** readme ([ae84a6d](https://gitlab.com/donaldrich/function-as-a-container/commit/ae84a6df2d84c29604d39dbf82b57c8b338bde5c))
+* hooks ([ba54004](https://gitlab.com/donaldrich/function-as-a-container/commit/ba54004beec62a2aa4391a3cab3c17fdf6e0f928))
+* semver config ([31e3633](https://gitlab.com/donaldrich/function-as-a-container/commit/31e36332927cf239df13985583769b829fac1fa8))
+
+
+### Performance Improvements
+
+* added yj ([830f4e8](https://gitlab.com/donaldrich/function-as-a-container/commit/830f4e85afc19a85dc8cd6cac3ad17b01f0e201a))
+
+### [1.8.2](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.8.1...v1.8.2) (2020-10-15)
+
+
+### Bug Fixes
+
+* hooks ([3876235](https://gitlab.com/donaldrich/function-as-a-container/commit/38762351d550b013162ec2a79acd433cdd0fb82e))
+
+### [1.8.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.8.0...v1.8.1) (2020-10-07)
+
+
+### Bug Fixes
+
+* delete semantic-release ([3edc3fe](https://gitlab.com/donaldrich/function-as-a-container/commit/3edc3fe380d0e421aa443533ce3b424d3a6338b4))
+
+## [1.8.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.7.1...v1.8.0) (2020-10-06)
+
+
+### Features
+
+* added kubernetes ([ec97b65](https://gitlab.com/donaldrich/function-as-a-container/commit/ec97b65b7c78d479f89fd418732c3693468f4e0d))
+* kubernetes ([5dcd2ee](https://gitlab.com/donaldrich/function-as-a-container/commit/5dcd2ee873d627634ea79db01d6c480872827cd1))
+
+
+### Bug Fixes
+
+* semantic-release ([ed30c0d](https://gitlab.com/donaldrich/function-as-a-container/commit/ed30c0d4059b4e16fb8b415407d6bc3dc6f7d069))
+* **ci:** commitlint ([f4b92d6](https://gitlab.com/donaldrich/function-as-a-container/commit/f4b92d62bf59132bb415f4a0b01d616ad5d0c8fd))
+* semantic release ([6a1b54a](https://gitlab.com/donaldrich/function-as-a-container/commit/6a1b54a4cff32d4ef6875256241a53031911f5c9))
+* test ([68e3a30](https://gitlab.com/donaldrich/function-as-a-container/commit/68e3a3002f4acc87c55728a528db16908771791d))
+* test ([8e1ca48](https://gitlab.com/donaldrich/function-as-a-container/commit/8e1ca48bc66c1efc7cfa7afc7dae1c59a7680a33))

@@ -1,3 +1,0 @@
-https://github.com/kubernetes-sigs/aws-iam-authenticator/
-
-https://github.com/clusterfrak-dynamics/teks

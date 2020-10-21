@@ -18,7 +18,8 @@ tasks:
       - command: rm -r .meta/pipelines | true
       - command: mkdir docs | true
       - command: cp .meta/docs/index.md docs
-      - command: cp .meta/docs/CHANGELOG.md docs
+      - command: cp -r .meta/docs/about docs
+      - command: cp CHANGELOG docs/about
 
   repo-template:
     usage: applys template

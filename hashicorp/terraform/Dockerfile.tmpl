@@ -17,16 +17,12 @@ RUN upx /usr/local/bin/terraform-docs
 FROM donaldrich/builder:latest AS terrahelp-builder
 # RUN wget "https://github.com/opencredo/terrahelp/releases/download/v0.7.4/terrahelp-linux-amd64" -O /usr/local/bin/terrahelp
 # RUN chmod +rx /usr/local/bin/terrahelp
-
 RUN gget github.com/opencredo/terrahelp --executable /usr/local/bin/terrahelp='*linux-amd64'
 RUN upx /usr/local/bin/terrahelp
 
 # FROM donaldrich/builder:latest AS terraform-provider-sops-builder
 # # RUN wget "https://github.com/carlpett/terraform-provider-sops/releases/download/v0.5.2/terraform-provider-sops_0.5.2_linux_amd64.zip
 # RUN gget github.com/carlpett/terraform-provider-sops --executable /usr/local/bin/terrahelp='*linux-amd64'
-
-
-
 
 FROM donaldrich/builder:go AS terraform-provider-proxmox-builder
 RUN git clone https://github.com/Telmate/terraform-provider-proxmox.git

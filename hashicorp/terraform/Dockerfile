@@ -15,8 +15,9 @@ COPY --from=quay.io/terraform-docs/terraform-docs:latest /usr/local/bin/terrafor
 RUN upx /usr/local/bin/terraform-docs
 
 FROM donaldrich/builder:latest AS terrahelp-builder
-RUN wget "https://github.com/opencredo/terrahelp/releases/download/v0.7.4/terrahelp-linux-amd64" -O /usr/local/bin/terrahelp
-RUN chmod +rx /usr/local/bin/terrahelp
+# RUN wget "https://github.com/opencredo/terrahelp/releases/download/v0.7.4/terrahelp-linux-amd64" -O /usr/local/bin/terrahelp
+RUN gget github.com/opencredo/terrahelp --executable /usr/local/bin/terrahelp='*linux-amd64'
+# RUN chmod +rx /usr/local/bin/terrahelp
 RUN upx /usr/local/bin/terrahelp
 
 # FROM donaldrich/builder:go AS terraform-provider-proxmox-builder
@@ -30,13 +31,15 @@ RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provi
 RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
 
 FROM donaldrich/builder:latest AS terragrunt-builder
-RUN wget "https://github.com/gruntwork-io/terragrunt/releases/download/v0.25.3/terragrunt_linux_amd64" -O /usr/local/bin/terragrunt
-RUN chmod +rx /usr/local/bin/terragrunt
+# RUN wget "https://github.com/gruntwork-io/terragrunt/releases/download/v0.25.3/terragrunt_linux_amd64" -O /usr/local/bin/terragrunt
+# RUN chmod +rx /usr/local/bin/terragrunt
+RUN gget github.com/gruntwork-io/terragrunt --executable /usr/local/bin/terragrunt='*linux_amd64'
 RUN upx /usr/local/bin/terragrunt
 
 FROM donaldrich/builder:latest AS terraformer-builder
-RUN wget "https://github.com/GoogleCloudPlatform/terraformer/releases/download/0.8.8/terraformer-all-linux-amd64" -O /usr/local/bin/terraformer
-RUN chmod +rx /usr/local/bin/terraformer
+# RUN wget "https://github.com/GoogleCloudPlatform/terraformer/releases/download/0.8.8/terraformer-all-linux-amd64" -O /usr/local/bin/terraformer
+# RUN chmod +rx /usr/local/bin/terraformer
+RUN gget github.com/GoogleCloudPlatform/terraformer --executable /usr/local/bin/terraformer='*linux-amd64'
 RUN upx /usr/local/bin/terraformer
 
 # FROM donaldrich/builder:go AS converge-builder

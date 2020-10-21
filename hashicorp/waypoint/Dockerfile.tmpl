@@ -1,0 +1,12 @@
+FROM donaldrich/builder:latest  AS builder
+
+ENV WAYPOINT_VERSION=0.1.3
+
+RUN wget https://releases.hashicorp.com/waypoint/${WAYPOINT_VERSION}/waypoint${WAYPOINT_VERSION}_linux_amd64.zip
+RUN unzip boundary${WAYPOINT_VERSION}_linux_amd64.zip
+
+FROM alpine
+
+COPY --from=builder  /waypoint  /usr/local/bin/waypoint
+
+{{- template "validate" }}

@@ -1,0 +1,15 @@
+image:
+  tag: boundary
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  boundary:
+    prefix: boundary
+    version: version
+    help: -h
+  tusk:
+    prefix: tusk
+    version: --version
+    help: --help
+extra: ""

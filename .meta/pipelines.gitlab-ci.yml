@@ -51,4 +51,4 @@ include:
   - local: .meta/pipelines/hashicorp/terraform/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/tfenv/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/checkov/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/boundry/build.gitlab-ci.yml
+  - local: .meta/pipelines/hashicorp/boundary/build.gitlab-ci.yml

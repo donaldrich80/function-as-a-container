@@ -1,5 +1,19 @@
-- id: codespell
+- id: spellcheck-codespell
   name: codespell
   entry: --entrypoint codespell donaldrich/function:codespell
   language: docker_image
   types: [text]
+  description: Checks for common misspellings in text files.
+- id: lint-goodcheck
+  name: goodcheck
+  entry: --entrypoint goodcheck donaldrich/function:goodcheck
+  language: docker_image
+  # types: [text]
+  description: Regexp based customizable linter
+- id: spellcheck-misspell
+  name: misspell
+  entry: --entrypoint misspell donaldrich/function:misspell
+  language: docker_image
+  types: [text]
+  description: Checks for common misspellings in text files.
+  args: ["-w", "."]

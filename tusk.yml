@@ -31,7 +31,7 @@ tasks:
       - command: git pull origin master
       - command: pre-commit run -a || true
       - command: git add .
-      - command: 'git commit -m "chore(repo): repo"'
+      - command: 'git commit -m "chore(repo): mainatinence"'
       - command: git push origin master
 
   repo:

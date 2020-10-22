@@ -35,3 +35,5 @@ https://github.com/ksatirli/code-quality-for-terraform
 https://github.com/kubernetes-sigs/aws-iam-authenticator/
 
 https://github.com/clusterfrak-dynamics/teks
+
+https://github.com/orf/git-workspace

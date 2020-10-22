@@ -19,6 +19,13 @@ repos:
         name: Use yq
         stages:
           - manual
+      - id: spellcheck-misspell
+        name: misspell
+        entry: --entrypoint misspell donaldrich/function:misspell
+        language: docker_image
+        types: [text]
+        description: Checks for common misspellings in text files.
+        args: ["-w", "."]
     repo: local
   - hooks:
       - id: detect-private-key

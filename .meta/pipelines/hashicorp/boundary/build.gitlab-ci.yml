@@ -45,8 +45,8 @@ build:boundary:
       --cache-from $REGISTRY/function:boundary
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $REGISTRY/function:boundary
-      --file hashicorp/boundry/Dockerfile
-      hashicorp/boundry
+      --file hashicorp/boundary/Dockerfile
+      hashicorp/boundary
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -60,7 +60,7 @@ build:boundary:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "hashicorp/boundry/*"
+        - "hashicorp/boundary/*"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

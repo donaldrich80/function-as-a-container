@@ -1,6 +1,6 @@
 ---
 path: tree/master
-source: hashicorp/boundry/Dockerfile
+source: hashicorp/boundary/Dockerfile
 ---
 
 # boundary

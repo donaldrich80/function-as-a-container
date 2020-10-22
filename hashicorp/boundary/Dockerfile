@@ -1,9 +1,9 @@
 FROM donaldrich/builder:latest  AS builder
 
-ENV BOUNDRY_VERSION=0.1.0
+ENV BOUNDARY_VERSION=0.1.0
 
-RUN wget https://releases.hashicorp.com/boundary/${BOUNDRY_VERSION}/boundary_${BOUNDRY_VERSION}_linux_amd64.zip
-RUN unzip boundary_${BOUNDRY_VERSION}_linux_amd64.zip
+RUN wget "https://releases.hashicorp.com/boundary/${BOUNDARY_VERSION}/boundary_${BOUNDARY_VERSION}_linux_amd64.zip"
+RUN unzip boundary_${BOUNDARY_VERSION}_linux_amd64.zip
 
 RUN upx /boundary
 

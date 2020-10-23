@@ -1,0 +1,13 @@
+image:
+  tag: nomad
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  nomad:
+    prefix: nomad
+    version: version
+    help: -h
+    docs: https://www.nomadproject.io/docs
+    site: https://www.nomadproject.io
+extra: ""

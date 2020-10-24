@@ -36,6 +36,9 @@ tasks:
           exec: tflint --version
           print: "\e[32mtflint\e[0m"
       - command:
+          exec: tfmigrate --version
+          print: "\e[32mtfmigrate\e[0m"
+      - command:
           exec: tfsec --version
           print: "\e[32mtfsec\e[0m"
   help:
@@ -62,6 +65,9 @@ tasks:
       - command:
           exec: tflint --help
           print: "\e[32mtflint\e[0m"
+      - command:
+          exec: tfmigrate --help
+          print: "\e[32mtfmigrate\e[0m"
       - command:
           exec: tfsec --help
           print: "\e[32mtfsec\e[0m"

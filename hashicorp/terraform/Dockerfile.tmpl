@@ -20,6 +20,13 @@ FROM donaldrich/builder:latest AS terrahelp-builder
 RUN gget github.com/opencredo/terrahelp --executable /usr/local/bin/terrahelp='*linux-amd64'
 RUN upx /usr/local/bin/terrahelp
 
+FROM donaldrich/builder:latest AS tfmigrate-builder
+RUN wget -O archive.tar.gz "https://github.com/minamijoyo/tfmigrate/releases/download/v0.1.0/tfmigrate_0.1.0_linux_amd64.tar.gz"
+RUN tar xzf archive.tar.gz
+RUN upx tfmigrate
+RUN mv tfmigrate /usr/local/bin
+RUN chmod a+x /usr/local/bin/tfmigrate
+
 # FROM donaldrich/builder:latest AS terraform-provider-sops-builder
 # # RUN wget "https://github.com/carlpett/terraform-provider-sops/releases/download/v0.5.2/terraform-provider-sops_0.5.2_linux_amd64.zip
 # RUN gget github.com/carlpett/terraform-provider-sops --executable /usr/local/bin/terrahelp='*linux-amd64'
@@ -87,5 +94,6 @@ COPY --from=tfsec-builder /usr/local/bin/tfsec /usr/local/bin/tfsec
 COPY --from=tflint-builder /usr/local/bin/tflint /usr/local/bin/tflint
 COPY --from=terraform-builder /usr/local/bin/terraform /usr/local/bin/terraform
 COPY --from=para-builder /usr/local/bin/para /usr/local/bin/para
+COPY --from=tfmigrate-builder /usr/local/bin/tfmigrate /usr/local/bin/tfmigrate
 
 {{- template "validate" }}

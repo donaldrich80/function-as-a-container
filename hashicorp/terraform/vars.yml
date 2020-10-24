@@ -65,6 +65,12 @@ commands:
     help: --help
     github: env0/terratag
     download: https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz
+  tfmigrate:
+    prefix: tfmigrate
+    version: --version
+    help: --help
+    github: minamijoyo/tfmigrate
+    download: https://github.com/minamijoyo/tfmigrate/releases/download/v0.1.0/tfmigrate_0.1.0_darwin_amd64.tar.gz
 
   # terraform-provider-keycloak:
   #   prefix: terraform-provider-keycloak

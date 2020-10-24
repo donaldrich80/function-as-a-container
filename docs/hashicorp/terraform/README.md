@@ -45,6 +45,10 @@ source: hashicorp/terraform/Dockerfile
 
 - [:octicons-mark-github-16: terraform-linters/tflint](https://github.com/terraform-linters/tflint)
 
+### Tfmigrate
+
+- [:octicons-mark-github-16: minamijoyo/tfmigrate](https://github.com/minamijoyo/tfmigrate)
+
 ### Tfsec
 
 - [:octicons-mark-github-16: liamg/tfsec](https://github.com/liamg/tfsec)

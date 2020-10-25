@@ -7,7 +7,6 @@ RUN ginstall.sh tflint latest
 RUN upx /usr/local/bin/tflint
 
 FROM donaldrich/builder:latest AS tfsec-builder
-# RUN ginstall.sh tfsec latest
 RUN gget github.com/tfsec/tfsec --executable /usr/local/bin/tfsec='tfsec-linux-amd64'
 RUN gget github.com/tfsec/tfsec --executable /usr/local/bin/tfsec-checkgen='tfsec-checkgen-linux-amd64'
 RUN upx /usr/local/bin/tfsec
@@ -54,9 +53,10 @@ RUN gget github.com/paraterraform/para --executable /usr/local/bin/para='*linux-
 # https://github.com/asteris-llc/converge/releases/download/0.6.0/converge_0.6.0_linux_amd64.tar.gz
 
 FROM donaldrich/builder:latest AS terraform-provider-keycloak-builder
-RUN wget "https://github.com/mrparkers/terraform-provider-keycloak/releases/download/1.20.0/terraform-provider-keycloak_v1.20.0_linux_amd64.zip"
-RUN unzip -q terraform-provider-keycloak_v1.20.0_linux_amd64.zip
-RUN mv terraform-provider-keycloak_v1.20.0 terraform-provider-keycloak
+RUN gget github.com/mrparkers/terraform-provider-keycloak '*linux_amd64'
+# RUN wget "https://github.com/mrparkers/terraform-provider-keycloak/releases/download/1.20.0/terraform-provider-keycloak_v1.20.0_linux_amd64.zip"
+RUN unzip -q terraform-provider-keycloak_v2.0.0_linux_amd64.zip
+RUN mv terraform-provider-keycloak_v2.0.0 terraform-provider-keycloak
 RUN chmod +rx terraform-provider-keycloak
 RUN mv terraform-provider-keycloak /usr/local/bin/
 

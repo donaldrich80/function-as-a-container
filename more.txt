@@ -38,3 +38,5 @@ https://github.com/clusterfrak-dynamics/teks
 
 https://github.com/orf/git-workspace
 https://github.com/keybase/client
+
+https://github.com/mattolenik/hclq

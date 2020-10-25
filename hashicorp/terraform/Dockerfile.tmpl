@@ -7,16 +7,17 @@ RUN ginstall.sh tflint latest
 RUN upx /usr/local/bin/tflint
 
 FROM donaldrich/builder:latest AS tfsec-builder
-RUN ginstall.sh tfsec latest
-# RUN upx /usr/local/bin/tfsec
+# RUN ginstall.sh tfsec latest
+RUN gget github.com/tfsec/tfsec --executable /usr/local/bin/tfsec='tfsec-linux-amd64'
+RUN gget github.com/tfsec/tfsec --executable /usr/local/bin/tfsec-checkgen='tfsec-checkgen-linux-amd64'
+RUN upx /usr/local/bin/tfsec
+RUN upx /usr/local/bin/tfsec-checkgen
 
 FROM donaldrich/builder:latest AS terraform-docs-builder
 COPY --from=quay.io/terraform-docs/terraform-docs:latest /usr/local/bin/terraform-docs /usr/local/bin/terraform-docs
 RUN upx /usr/local/bin/terraform-docs
 
 FROM donaldrich/builder:latest AS terrahelp-builder
-# RUN wget "https://github.com/opencredo/terrahelp/releases/download/v0.7.4/terrahelp-linux-amd64" -O /usr/local/bin/terrahelp
-# RUN chmod +rx /usr/local/bin/terrahelp
 RUN gget github.com/opencredo/terrahelp --executable /usr/local/bin/terrahelp='*linux-amd64'
 RUN upx /usr/local/bin/terrahelp
 
@@ -38,20 +39,15 @@ RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provi
 RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
 
 FROM donaldrich/builder:latest AS terragrunt-builder
-# RUN wget "https://github.com/gruntwork-io/terragrunt/releases/download/v0.25.3/terragrunt_linux_amd64" -O /usr/local/bin/terragrunt
-# RUN chmod +rx /usr/local/bin/terragrunt
 RUN gget github.com/gruntwork-io/terragrunt --executable /usr/local/bin/terragrunt='*linux_amd64'
 RUN upx /usr/local/bin/terragrunt
 
 FROM donaldrich/builder:latest AS terraformer-builder
-# RUN wget "https://github.com/GoogleCloudPlatform/terraformer/releases/download/0.8.8/terraformer-all-linux-amd64" -O /usr/local/bin/terraformer
-# RUN chmod +rx /usr/local/bin/terraformer
 RUN gget github.com/GoogleCloudPlatform/terraformer --executable /usr/local/bin/terraformer='*all-linux-amd64'
 RUN upx /usr/local/bin/terraformer
 
 FROM donaldrich/builder:latest AS para-builder
 RUN gget github.com/paraterraform/para --executable /usr/local/bin/para='*linux-amd64'
-RUN upx /usr/local/bin/para
 
 # FROM donaldrich/builder:go AS converge-builder
 # RUN go get github.com/asteris-llc/converge

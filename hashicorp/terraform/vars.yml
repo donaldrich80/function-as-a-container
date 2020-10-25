@@ -72,14 +72,6 @@ commands:
     github: minamijoyo/tfmigrate
     download: https://github.com/minamijoyo/tfmigrate/releases/download/v0.1.0/tfmigrate_0.1.0_darwin_amd64.tar.gz
 
-  # terraform-provider-keycloak:
-  #   prefix: terraform-provider-keycloak
-  #   help: null
-  #   version: null
-  #   github: mrparkers/terraform-provider-keycloak
-  #   docs: https://mrparkers.github.io/terraform-provider-keycloak
-  #   download: https://github.com/mrparkers/terraform-provider-keycloak/releases/download/1.20.0/terraform-provider-keycloak_v1.20.0_linux_amd64.zip
-
 reference:
   para:
     github: paraterraform/para
@@ -87,5 +79,10 @@ reference:
     github: carlpett/terraform-provider-sops
   terraform-provider-proxmox:
     github: Telmate/terraform-provider-proxmox
+  terraform-provider-keycloak:
+    github: mrparkers/terraform-provider-keycloak
+    docs: https://mrparkers.github.io/terraform-provider-keycloak
+    download: https://github.com/mrparkers/terraform-provider-keycloak/releases/download/1.20.0/terraform-provider-keycloak_v1.20.0_linux_amd64.zip
+
 extra: ""
 links: https://yetiops.net/posts/proxmox-terraform-cloudinit-saltstack-prometheus

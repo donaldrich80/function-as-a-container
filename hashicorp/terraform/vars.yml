@@ -71,6 +71,11 @@ commands:
     help: --help
     github: minamijoyo/tfmigrate
     download: https://github.com/minamijoyo/tfmigrate/releases/download/v0.1.0/tfmigrate_0.1.0_darwin_amd64.tar.gz
+  tfenv:
+    prefix: tfenv
+    version: --version
+    help: --help
+    github: cloudposse/tfenv
 
 reference:
   para:

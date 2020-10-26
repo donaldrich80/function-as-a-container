@@ -40,3 +40,4 @@ https://github.com/orf/git-workspace
 https://github.com/keybase/client
 
 https://github.com/mattolenik/hclq
+https://github.com/direnv/direnv

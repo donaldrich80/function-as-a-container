@@ -72,6 +72,9 @@ RUN upx terratag
 RUN mv terratag /usr/local/bin
 RUN chmod a+x /usr/local/bin/terratag
 
+FROM donaldrich/builder:latest AS tfenv-builder
+RUN gget github.com/cloudposse/tfenv --executable /usr/local/bin/tfenv='*linux_amd64'
+RUN upx /usr/local/bin/tfenv
 
 FROM ubuntu
 
@@ -91,6 +94,8 @@ COPY --from=tflint-builder /usr/local/bin/tflint /usr/local/bin/tflint
 COPY --from=terraform-builder /usr/local/bin/terraform /usr/local/bin/terraform
 COPY --from=para-builder /usr/local/bin/para /usr/local/bin/para
 COPY --from=tfmigrate-builder /usr/local/bin/tfmigrate /usr/local/bin/tfmigrate
+COPY --from=tfenv-builder /usr/local/bin/tfenv /usr/local/bin/tfenv
+
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 COPY ./tusk.yml ./tusk.yml

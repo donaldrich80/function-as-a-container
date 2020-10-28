@@ -48,6 +48,10 @@ RUN upx /usr/local/bin/terraformer
 FROM donaldrich/builder:latest AS para-builder
 RUN gget github.com/paraterraform/para --executable /usr/local/bin/para='*linux-amd64'
 
+FROM donaldrich/builder:latest AS tfenv-builder
+RUN gget github.com/cloudposse/tfenv --executable /usr/local/bin/tfenv='*linux_amd64'
+RUN upx /usr/local/bin/tfenv
+
 # FROM donaldrich/builder:go AS converge-builder
 # RUN go get github.com/asteris-llc/converge
 # https://github.com/asteris-llc/converge/releases/download/0.6.0/converge_0.6.0_linux_amd64.tar.gz
@@ -72,9 +76,6 @@ RUN upx terratag
 RUN mv terratag /usr/local/bin
 RUN chmod a+x /usr/local/bin/terratag
 
-FROM donaldrich/builder:latest AS tfenv-builder
-RUN gget github.com/cloudposse/tfenv --executable /usr/local/bin/tfenv='*linux_amd64'
-RUN upx /usr/local/bin/tfenv
 
 FROM ubuntu
 
@@ -90,12 +91,12 @@ COPY --from=registry.gitlab.com/gitlab-org/terraform-images/stable:latest /usr/b
 COPY --from=terrahelp-builder  /usr/local/bin/terrahelp  /usr/local/bin/terrahelp
 COPY --from=terraform-docs-builder /usr/local/bin/terraform-docs /usr/local/bin/terraform-docs
 COPY --from=tfsec-builder /usr/local/bin/tfsec /usr/local/bin/tfsec
+COPY --from=tfsec-builder /usr/local/bin/tfsec-checkgen /usr/local/bin/tfsec-checkgen
 COPY --from=tflint-builder /usr/local/bin/tflint /usr/local/bin/tflint
 COPY --from=terraform-builder /usr/local/bin/terraform /usr/local/bin/terraform
 COPY --from=para-builder /usr/local/bin/para /usr/local/bin/para
 COPY --from=tfmigrate-builder /usr/local/bin/tfmigrate /usr/local/bin/tfmigrate
 COPY --from=tfenv-builder /usr/local/bin/tfenv /usr/local/bin/tfenv
-
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 COPY ./tusk.yml ./tusk.yml

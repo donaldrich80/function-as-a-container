@@ -3,8 +3,10 @@ COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
 RUN upx /usr/local/bin/vault
 
 FROM donaldrich/builder:latest AS hashi-helper-builder
-RUN wget "https://github.com/seatgeek/hashi-helper/releases/download/v3.3.0/hashi-helper-linux-amd64" -O /usr/local/bin/hashi-helper
-RUN chmod +rx /usr/local/bin/hashi-helper
+# RUN wget "https://github.com/seatgeek/hashi-helper/releases/download/v3.3.0/hashi-helper-linux-amd64" -O /usr/local/bin/hashi-helper
+# RUN chmod +rx /usr/local/bin/hashi-helper
+# RUN upx /usr/local/bin/hashi-helper
+RUN gget github.com/seatgeek/hashi-helper --executable /usr/local/bin/hashi-helper='*linux-amd64'
 RUN upx /usr/local/bin/hashi-helper
 
 FROM donaldrich/builder:latest AS vault-sidekick-builder
@@ -18,8 +20,10 @@ RUN chmod +rx vault-ssh-helper
 RUN upx vault-ssh-helper
 
 FROM donaldrich/builder:latest AS vault-sync-builder
-RUN wget "https://github.com/cloudwatt/vault-sync/releases/download/v0.1.3/vault-sync_linux_amd64" -O /usr/local/bin/vault-sync
-RUN chmod +rx /usr/local/bin/vault-sync
+# RUN wget "https://github.com/cloudwatt/vault-sync/releases/download/v0.1.3/vault-sync_linux_amd64" -O /usr/local/bin/vault-sync
+# RUN chmod +rx /usr/local/bin/vault-sync
+RUN gget github.com/cloudwatt/vault-sync --executable /usr/local/bin/vault-sync='*linux_amd64'
+RUN upx /usr/local/bin/vault-sync
 
 FROM donaldrich/builder:latest AS vaultenv-builder
 RUN wget "https://github.com/channable/vaultenv/releases/download/v0.13.1/vaultenv-0.13.1-linux-musl" -O /usr/local/bin/vaultenv

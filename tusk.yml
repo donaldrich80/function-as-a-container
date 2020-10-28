@@ -38,7 +38,7 @@ tasks:
     run:
       - task: repo-clean
       - task: repo-template
-      - task: repo-commit
+      # - task: repo-commit
 
   hooks-install:
     usage: hooks

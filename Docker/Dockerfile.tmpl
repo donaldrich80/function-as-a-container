@@ -71,8 +71,6 @@ COPY --from=rustagainshell/rash /bin/rash /usr/local/bin/rash
 RUN upx /usr/local/bin/rash
 
 FROM donaldrich/builder:latest AS earthly-builder
-# RUN wget "https://github.com/earthly/earthly/releases/latest/download/earth-linux-amd64" -O /usr/local/bin/earthly
-# RUN chmod +rx /usr/local/bin/earthly
 RUN gget github.com/earthly/earthly --executable /usr/local/bin/earthly='*linux-amd64'
 RUN upx /usr/local/bin/earthly
 

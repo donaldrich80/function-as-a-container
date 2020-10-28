@@ -7,11 +7,13 @@ plugins:
   - - "@semantic-release/commit-analyzer"
     - preset: conventionalcommits
       releaseRules:
+        - type: release
+          release: major
         - type: added
           release: minor
         - type: fixed
           release: patch
-        - type: changed
+        - type: modified
           release: patch
         - type: removed
           release: minor
@@ -21,7 +23,6 @@ plugins:
           release: patch
         - type: chore
           release: false
-
       parserOpts:
         noteKeywords:
           - BREAKING CHANGE
@@ -34,8 +35,8 @@ plugins:
           section: Added
         - type: fixed
           section: Fixed
-        - type: changed
-          section: Changed
+        - type: modified
+          section: Modified
         - type: removed
           section: Removed
         - type: ci

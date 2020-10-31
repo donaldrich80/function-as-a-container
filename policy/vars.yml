@@ -8,12 +8,13 @@ commands:
     prefix: opa
     help: -h
     version: -v
-    github: openpolicyagent/opa
+    github: open-policy-agent/opa
+    docs: https://conftest.dev
   conftest:
     prefix: conftest
     help: -h
     version: -v
-    github: openpolicyagent/conftest
+    github: open-policy-agent/conftest
   stein:
     prefix: stein
     help: --help

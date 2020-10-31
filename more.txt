@@ -2,6 +2,8 @@ Kitchen-Terraform : A Test Kitchen plugin allowing to handle Terraform testing
 Inspec : The Chef Compliance as code test framework
 
 https://github.com/rrey/terraform-runner
+https://github.com/runatlantis/atlantis
+
 
 https://github.com/gocd/gocd
 

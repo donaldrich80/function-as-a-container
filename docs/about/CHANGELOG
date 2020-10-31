@@ -1,3 +1,19 @@
+### [2.0.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v2.0.0...v2.0.1) (2020-10-31)
+
+
+### Bug Fixes
+
+* policy ([a083ceb](https://gitlab.com/donaldrich/function-as-a-container/commit/a083cebcc99aa73daa321dbe6780268a3c5e9824))
+
+## [2.0.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.2.0...v2.0.0) (2020-10-28)
+
+## [1.2.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.1.0...v1.2.0) (2020-10-28)
+
+
+### Features
+
+* added tfenv ([253091f](https://gitlab.com/donaldrich/function-as-a-container/commit/253091f3963186d0efc1a4d1f66ad6b0f728f715))
+
 ## [1.1.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.0.2...v1.1.0) (2020-10-23)
 
 ### [1.0.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v1.0.0...v1.0.1) (2020-10-22)

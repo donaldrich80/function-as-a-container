@@ -7,6 +7,7 @@ RUN upx /usr/local/bin/cloud-nuke
 RUN gget github.com/opencredo/terrahelp --executable /usr/local/bin/terrahelp='*linux-amd64'
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk.yml ./tusk.yml
 RUN tusk validate
 ENTRYPOINT [ "tusk" ]

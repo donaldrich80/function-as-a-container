@@ -40,6 +40,7 @@ FROM donaldrich/builder:latest AS hadolint-builder
 COPY --from=hadolint/hadolint /bin/hadolint /usr/local/bin/hadolint
 
 FROM donaldrich/builder:go AS docker-credential-vault-login-builder
+# https://github.com/morningconsult/docker-credential-vault-login/releases/download/v0.3.9/docker-credential-vault-login_0.3.9_Linux_x86_64.tar.gz
 RUN git clone https://github.com/morningconsult/docker-credential-vault-login /build
 WORKDIR /build
 RUN make
@@ -95,6 +96,7 @@ COPY --from=docker-credential-vault-login-builder /build/bin/docker-credential-v
 COPY --from=rash-builder  /usr/local/bin/rash  /usr/local/bin/rash
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk.yml ./tusk.yml
 RUN tusk validate
 ENTRYPOINT [ "tusk" ]

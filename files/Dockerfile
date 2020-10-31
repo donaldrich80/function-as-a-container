@@ -66,6 +66,7 @@ COPY --from=fzf-builder /usr/local/bin/fzf /usr/local/bin/fzf
 COPY --from=gget-builder /usr/local/bin/gget /usr/local/bin/gget
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk.yml ./tusk.yml
 RUN tusk validate
 ENTRYPOINT [ "tusk" ]

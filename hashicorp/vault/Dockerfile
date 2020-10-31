@@ -53,6 +53,7 @@ COPY --from=vault-builder  /usr/local/bin/vault  /usr/local/bin/vault
 COPY --from=vault-token-helper-builder  /usr/local/bin/vault-token-helper  /usr/local/bin/vault-token-helper
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk.yml ./tusk.yml
 RUN tusk validate
 ENTRYPOINT [ "tusk" ]

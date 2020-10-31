@@ -11,11 +11,13 @@ source: policy/Dockerfile
 
 ### Conftest
 
-- [:octicons-mark-github-16: openpolicyagent/conftest](https://github.com/openpolicyagent/conftest)
+- [:octicons-mark-github-16: open-policy-agent/conftest](https://github.com/open-policy-agent/conftest)
 
 ### Opa
 
-- [:octicons-mark-github-16: openpolicyagent/opa](https://github.com/openpolicyagent/opa)
+- [:octicons-book-16: Docs](https://conftest.dev)
+
+- [:octicons-mark-github-16: open-policy-agent/opa](https://github.com/open-policy-agent/opa)
 
 ### Stein
 

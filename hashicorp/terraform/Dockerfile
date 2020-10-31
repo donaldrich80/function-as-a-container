@@ -99,6 +99,7 @@ COPY --from=tfmigrate-builder /usr/local/bin/tfmigrate /usr/local/bin/tfmigrate
 COPY --from=tfenv-builder /usr/local/bin/tfenv /usr/local/bin/tfenv
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk.yml ./tusk.yml
 RUN tusk validate
 ENTRYPOINT [ "tusk" ]

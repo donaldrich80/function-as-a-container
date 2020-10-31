@@ -22,6 +22,7 @@ COPY --from=yq-builder /usr/local/bin/yq /usr/local/bin/yq
 COPY --from=ytt-builder  /usr/local/bin/ytt  /usr/local/bin/ytt
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk.yml ./tusk.yml
 RUN tusk validate
 ENTRYPOINT [ "tusk" ]

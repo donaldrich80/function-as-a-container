@@ -60,6 +60,7 @@ COPY --from=gomplate-builder /usr/local/bin/gomplate /usr/local/bin/gomplate
 COPY --from=hcl2json-builder /usr/local/bin/hcl2json /usr/local/bin/hcl2json
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk.yml ./tusk.yml
 RUN tusk validate
 ENTRYPOINT [ "tusk" ]

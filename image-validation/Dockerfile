@@ -36,6 +36,7 @@ COPY --from=builder /usr/local/bin/dcgoss /usr/local/bin/dcgoss
 COPY --from=builder /usr/local/bin/kgoss /usr/local/bin/kgoss
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk.yml ./tusk.yml
 RUN tusk validate
 ENTRYPOINT [ "tusk" ]

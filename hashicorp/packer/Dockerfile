@@ -30,6 +30,7 @@ COPY --from=packer-builder-arm-image-builder /usr/local/bin/packer-builder-arm-i
 COPY --from=packer-provisioner-goss-builder  /usr/local/bin/packer-provisioner-goss  /usr/local/bin/packer-provisioner-goss
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk.yml ./tusk.yml
 RUN tusk validate
 ENTRYPOINT [ "tusk" ]

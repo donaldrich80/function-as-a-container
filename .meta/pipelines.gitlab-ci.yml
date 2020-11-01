@@ -5,7 +5,6 @@ include:
   - local: .meta/pipelines/aws/cloud-nuke/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/json/fony/build.gitlab-ci.yml
-  - local: .meta/pipelines/syntax/json/show-struct/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/spectral/build.gitlab-ci.yml
   - local: .meta/pipelines/syntax/prettier/build.gitlab-ci.yml
   - local: .meta/pipelines/git/build.gitlab-ci.yml

@@ -17,10 +17,6 @@ Tools for using and manipulating YAML files
 
 - [:octicons-mark-github-16: hairyhenderson/gomplate](https://github.com/hairyhenderson/gomplate)
 
-### Hclfmt
-
-- [:octicons-mark-github-16: fatih/hclfmt](https://github.com/fatih/hclfmt)
-
 ### Jq
 
 - [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/stedolan/jq)
@@ -32,12 +28,6 @@ Tools for using and manipulating YAML files
 ### Json2hcl
 
 - [:octicons-mark-github-16: kvz/json2hcl](https://github.com/kvz/json2hcl)
-
-### Jsonnet
-
-- [:octicons-book-16: Docs](https://jsonnet.org)
-
-- [:octicons-mark-github-16: google/jsonnet](https://github.com/google/jsonnet)
 
 ### Remarshal
 
@@ -60,10 +50,6 @@ Tools for using and manipulating YAML files
 ### Yaml-Tools
 
 - [:octicons-mark-github-16: thecodingmachine/yaml-tools](https://github.com/thecodingmachine/yaml-tools)
-
-### Yamlfmt
-
-- [:octicons-mark-github-16: mmlb/yamlfmt](https://github.com/mmlb/yamlfmt)
 
 ### Yamllint
 

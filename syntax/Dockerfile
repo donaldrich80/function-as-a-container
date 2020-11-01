@@ -3,8 +3,7 @@ RUN ginstall.sh yq latest
 RUN upx /usr/local/bin/yq
 
 FROM donaldrich/builder:latest AS ytt-builder
-RUN wget "https://github.com/k14s/ytt/releases/download/v0.27.1/ytt-linux-amd64" -O /usr/local/bin/ytt
-RUN chmod +rx /usr/local/bin/ytt
+RUN gget github.com/k14s/ytt --executable /usr/local/bin/ytt='*linux-amd64'
 RUN upx /usr/local/bin/ytt
 
 FROM donaldrich/builder AS yaml-tools-builder
@@ -21,8 +20,7 @@ RUN ginstall.sh jq latest
 RUN upx /usr/local/bin/jq
 
 FROM donaldrich/builder:latest AS json2hcl-builder
-RUN wget "https://github.com/kvz/json2hcl/releases/download/v0.0.6/json2hcl_v0.0.6_linux_amd64" -O /usr/local/bin/json2hcl
-RUN chmod +rx /usr/local/bin/json2hcl
+RUN gget github.com/kvz/json2hcl --executable /usr/local/bin/json2hcl='*linux_amd64'
 RUN upx /usr/local/bin/json2hcl
 
 FROM donaldrich/builder:latest AS gomplate-builder
@@ -33,22 +31,22 @@ FROM donaldrich/builder:go AS hclfmt-builder
 RUN go get github.com/fatih/hclfmt
 # RUN upx /go/bin/hclfmt
 
-FROM donaldrich/builder:go AS jsonnet-builder
-RUN go get github.com/google/go-jsonnet/cmd/jsonnet
-RUN upx /go/bin/jsonnet
+# FROM donaldrich/builder:go AS jsonnet-builder
+# RUN go get github.com/google/go-jsonnet/cmd/jsonnet
+# RUN upx /go/bin/jsonnet
 
 FROM donaldrich/builder:latest AS hcl2json-builder
-RUN wget "https://github.com/tmccombs/hcl2json/releases/download/v0.3.1/hcl2json_v0.3.1_linux_amd64" -O /usr/local/bin/hcl2json
-RUN chmod +rx /usr/local/bin/hcl2json
+RUN gget github.com/tmccombs/hcl2json --executable /usr/local/bin/hcl2json='*linux_amd64'
 RUN upx /usr/local/bin/hcl2json
 
 FROM python:alpine
 
-RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-sort remarshal yamlfmt
+RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-sort remarshal
+# yamlfmt
 # jsonnet
 # bash
 
-COPY --from=jsonnet-builder /go/bin/jsonnet /usr/local/bin/jsonnet
+# COPY --from=jsonnet-builder /go/bin/jsonnet /usr/local/bin/jsonnet
 COPY --from=hclfmt-builder /go/bin/hclfmt /usr/local/bin/hclfmt
 COPY --from=json2hcl-builder /usr/local/bin/json2hcl /usr/local/bin/json2hcl
 COPY --from=jq-builder /usr/local/bin/jq /usr/local/bin/jq

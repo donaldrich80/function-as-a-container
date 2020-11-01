@@ -18,17 +18,11 @@ tasks:
           exec: gomplate --version
           print: "\e[32mgomplate\e[0m"
       - command:
-          exec: hclfmt --version
-          print: "\e[32mhclfmt\e[0m"
-      - command:
           exec: jq --version
           print: "\e[32mjq\e[0m"
       - command:
           exec: json2hcl --version
           print: "\e[32mjson2hcl\e[0m"
-      - command:
-          exec: jsonnet --version
-          print: "\e[32mjsonnet\e[0m"
       - command:
           exec: remarshal --version
           print: "\e[32mremarshal\e[0m"
@@ -44,9 +38,6 @@ tasks:
       - command:
           exec: yaml-tools --help
           print: "\e[32myaml-tools\e[0m"
-      - command:
-          exec: yamlfmt --version
-          print: "\e[32myamlfmt\e[0m"
       - command:
           exec: yamllint --version
           print: "\e[32myamllint\e[0m"
@@ -66,17 +57,11 @@ tasks:
           exec: gomplate --help
           print: "\e[32mgomplate\e[0m"
       - command:
-          exec: hclfmt --help
-          print: "\e[32mhclfmt\e[0m"
-      - command:
           exec: jq --help
           print: "\e[32mjq\e[0m"
       - command:
           exec: json2hcl --help
           print: "\e[32mjson2hcl\e[0m"
-      - command:
-          exec: jsonnet --help
-          print: "\e[32mjsonnet\e[0m"
       - command:
           exec: remarshal --help
           print: "\e[32mremarshal\e[0m"
@@ -92,9 +77,6 @@ tasks:
       - command:
           exec: yaml-tools --help
           print: "\e[32myaml-tools\e[0m"
-      - command:
-          exec: yamlfmt --help
-          print: "\e[32myamlfmt\e[0m"
       - command:
           exec: yamllint --help
           print: "\e[32myamllint\e[0m"

@@ -38,7 +38,6 @@ commands:
     github: k14s/ytt
     docs: https://github.com/k14s/ytt/blob/develop/docs/README.md
     site: https://get-ytt.io
-    download: https://github.com/k14s/ytt/releases/download/v0.27.1/ytt-linux-amd64
   yq:
     description: "yq is a portable command-line YAML processor"
     prefix: yq
@@ -87,21 +86,20 @@ commands:
     version: --version
     github: hairyhenderson/gomplate
     docs: https://docs.gomplate.ca
-  hclfmt:
-    prefix: hclfmt
-    help: --help
-    version: --version
-    github: fatih/hclfmt
-  yamlfmt:
-    prefix: yamlfmt
-    help: --help
-    version: --version
-    github: mmlb/yamlfmt
-  jsonnet:
-    prefix: jsonnet
-    help: --help
-    version: --version
-    github: google/jsonnet
-    docs: https://jsonnet.org
-    download: https://github.com/google/jsonnet/releases/download/v0.16.0/jsonnet-bin-v0.16.0-linux.tar.gz
+  # hclfmt:
+  #   prefix: hclfmt
+  #   help: --help
+  #   version: --version
+  #   github: fatih/hclfmt
+  # yamlfmt:
+  #   prefix: yamlfmt
+  #   help: --help
+  #   version: --version
+  #   github: mmlb/yamlfmt
+  # jsonnet:
+  #   prefix: jsonnet
+  #   help: --help
+  #   version: --version
+  #   github: google/jsonnet
+  #   docs: https://jsonnet.org
 extra: ""

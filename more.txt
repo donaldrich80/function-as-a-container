@@ -43,3 +43,7 @@ https://github.com/keybase/client
 
 https://github.com/mattolenik/hclq
 https://github.com/direnv/direnv
+https://github.com/kiwicom/dockerfiles
+https://github.com/x-motemen/ghq
+
+https://github.com/zero-os/cloud-init-server

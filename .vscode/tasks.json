@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "install",
+      "path": "documents/markdown/",
+      "problemMatcher": [],
+      "label": "npm: install - documents/markdown",
+      "detail": "install dependencies from package"
+    }
+  ]
+}

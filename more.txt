@@ -47,3 +47,5 @@ https://github.com/kiwicom/dockerfiles
 https://github.com/x-motemen/ghq
 
 https://github.com/zero-os/cloud-init-server
+
+https://github.com/nhurel/terraspec

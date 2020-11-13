@@ -9,6 +9,6 @@ RUN upx /usr/local/bin/waypoint
 
 FROM alpine
 
-COPY --from=builder  /usr/local/bin/waypoint /usr/local/bin/waypoint
+COPY --from=waypoint-builder  /usr/local/bin/waypoint /usr/local/bin/waypoint
 
 {{- template "validate" }}

@@ -26,6 +26,7 @@ commands:
     help: version --help
     version: version
     github: minikube
+    docs: https://minikube.sigs.k8s.io/docs/
   kind:
     prefix: kind
     help: version --help

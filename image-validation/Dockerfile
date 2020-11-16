@@ -20,8 +20,16 @@ RUN wget "https://storage.googleapis.com/container-structure-test/latest/contain
 RUN chmod +rx /usr/local/bin/container-structure-test
 RUN upx /usr/local/bin/container-structure-test
 
-FROM donaldrich/builder:latest AS converge-builder
-RUN curl get.converge.sh | bash -
+# FROM donaldrich/builder:latest AS converge-builder
+# RUN curl get.converge.sh | bash -
+
+FROM donaldrich/builder:go AS converge-builder
+# RUN gget github.com/asteris-llc/converge '*linux_amd64.tar.gz'
+RUN wget -O archive.tar.gz "https://github.com/asteris-llc/converge/releases/download/0.6.0/converge_0.6.0_linux_amd64.tar.gz"
+RUN tar xzf archive.tar.gz
+RUN upx converge
+RUN mv converge /usr/local/bin
+RUN chmod a+x /usr/local/bin/converge
 
 FROM alpine
 

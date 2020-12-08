@@ -9,6 +9,14 @@ source: hashicorp/vault/Dockerfile
 
 ## Documentation
 
+### Consul-Template
+
+- [:octicons-mark-github-16: hashicorp/consul-template](https://github.com/hashicorp/consul-template)
+
+### Envconsul
+
+- [:octicons-mark-github-16: hashicorp/envconsul](https://github.com/hashicorp/envconsul)
+
 ### Hashi-Helper
 
 - [:octicons-mark-github-16: seatgeek/hashi-helper](https://github.com/seatgeek/hashi-helper)

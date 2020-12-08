@@ -33,6 +33,8 @@ source: kubernetes/Dockerfile
 
 ### Minikube
 
+- [:octicons-book-16: Docs](https://minikube.sigs.k8s.io/docs/)
+
 - [:octicons-mark-github-16: minikube](https://github.com/minikube)
 
 ## Image Commands

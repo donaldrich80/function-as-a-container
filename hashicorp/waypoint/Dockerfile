@@ -9,7 +9,7 @@ RUN upx /usr/local/bin/waypoint
 
 FROM alpine
 
-COPY --from=builder  /usr/local/bin/waypoint /usr/local/bin/waypoint
+COPY --from=waypoint-builder  /usr/local/bin/waypoint /usr/local/bin/waypoint
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 COPY ./Dockerfile ./Dockerfile

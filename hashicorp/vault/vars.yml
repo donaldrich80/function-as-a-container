@@ -18,6 +18,16 @@ commands:
     version: --version
     github: seatgeek/hashi-helper
     download: https://github.com/seatgeek/hashi-helper/releases/download/v3.3.0/hashi-helper-linux-amd64
+  envconsul:
+    prefix: envconsul
+    help: help
+    version: version
+    github: hashicorp/envconsul
+  consul-template:
+    prefix: consul-template
+    help: help
+    version: version
+    github: hashicorp/consul-template
   vault-sidekick:
     prefix: vault-sidekick
     help: -help

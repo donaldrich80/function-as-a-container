@@ -44,7 +44,6 @@ include:
   - local: .meta/pipelines/network/cfssl/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/sentinel/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/vault/build.gitlab-ci.yml
-  - local: .meta/pipelines/hashicorp/vault/vault-ssh-helper/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/waypoint/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/packer/build.gitlab-ci.yml
   - local: .meta/pipelines/hashicorp/terraform/build.gitlab-ci.yml

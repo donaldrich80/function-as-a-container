@@ -3,22 +3,22 @@ repos:
       - id: prettier
         stages:
           - commit
-    repo: https://github.com/prettier/prettier
-    rev: 2.1.2
+    repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.2.1
   - hooks:
-      - args:
-          - merge
-          - -a
-        description: Use yq
-        entry: --entrypoint yq mikefarah/yq
-        files: git-hooks.yml
-        id: hook-test
-        language: docker_image
-        log_file: .pre-commit-hooks.yaml
-        verbose: true
-        name: Use yq
-        stages:
-          - manual
+      # - args:
+      #     - merge
+      #     - -a
+      #   description: Use yq
+      #   entry: --entrypoint yq mikefarah/yq
+      #   files: git-hooks.yml
+      #   id: hook-test
+      #   language: docker_image
+      #   log_file: .pre-commit-hooks.yaml
+      #   verbose: true
+      #   name: Use yq
+      #   stages:
+      #     - manual
       - id: spellcheck-misspell
         name: misspell
         entry: --entrypoint misspell donaldrich/function:misspell
@@ -40,7 +40,7 @@ repos:
         id: check-yaml
 
     repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v3.3.0
   - hooks:
       - id: secrets-detect-secrets
         stages:
@@ -48,13 +48,13 @@ repos:
       - id: secrets-gitleaks
         stages:
           - commit
-      - id: yaml-lint-yamllint
+      - id: yaml-yamllint
         stages:
           - commit
       - exclude: Dockerfile.tmpl.*
         id: docker-lint-hadolint
     repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: 84e002d90fafcb93c0a1e34fc0594fd6a49d5a9c
+    rev: v2.2.0
   # - hooks:
   #     - id: commitizen
   #       stages:

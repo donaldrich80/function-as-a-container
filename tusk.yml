@@ -54,7 +54,7 @@ tasks:
     run:
       - command: rm .pre-commit-hooks.yaml | true
       - command: touch .pre-commit-hooks.yaml | true
-      - command: pre-commit run --hook-stage manual hook-test -a
+      # - command: pre-commit run --hook-stage manual hook-test -a
 
   hooks-commit:
     run:

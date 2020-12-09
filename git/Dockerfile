@@ -25,6 +25,10 @@ FROM donaldrich/builder:go AS tago-builder
 RUN go get github.com/FalcoSuessgott/tago
 RUN upx /go/bin/tago
 
+FROM donaldrich/builder:latest AS gitlab-release-cli-builder
+COPY --from=registry.gitlab.com/gitlab-org/release-cli /usr/local/bin/release-cli /usr/local/bin/release-cli
+RUN upx /usr/local/bin/release-cli
+
 # FROM alpine
 FROM node:alpine
 RUN npm install -g gitlab-ci-lint
@@ -34,3 +38,4 @@ COPY --from=gitlab-ci-local-builder /usr/local/bin/gitlab-ci-local /usr/local/bi
 COPY --from=gitbatch-builder /usr/local/bin/gitbatch /usr/local/bin/gitbatch
 COPY --from=github-cli-builder /usr/local/bin/gh /usr/local/bin/gh
 COPY --from=tago-builder /go/bin/tago /usr/local/bin/tago
+COPY --from=gitlab-release-cli-builder /usr/local/bin/release-cli /usr/local/bin/release-cli

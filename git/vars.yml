@@ -32,6 +32,11 @@ commands:
     version: -v
     github: isacikgoz/gitbatch
     download: https://github.com/isacikgoz/gitbatch/releases/download/v0.5.0/gitbatch_0.5.0_linux_amd64.tar.gz
+  release-cli:
+    prefix: release-cli
+    help: --help
+    version: --version
+    gitlab: gitlab-org/release-cli
   tago:
     prefix: tago
     help: --help

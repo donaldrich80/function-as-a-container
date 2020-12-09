@@ -30,6 +30,9 @@ tasks:
           exec: glab version
           print: "\e[32mglab\e[0m"
       - command:
+          exec: release-cli --version
+          print: "\e[32mrelease-cli\e[0m"
+      - command:
           exec: tago --version
           print: "\e[32mtago\e[0m"
   help:
@@ -50,6 +53,9 @@ tasks:
       - command:
           exec: glab help
           print: "\e[32mglab\e[0m"
+      - command:
+          exec: release-cli --help
+          print: "\e[32mrelease-cli\e[0m"
       - command:
           exec: tago --help
           print: "\e[32mtago\e[0m"

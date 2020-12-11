@@ -1,3 +1,10 @@
+### [2.3.1](https://gitlab.com/donaldrich/function-as-a-container/compare/v2.3.0...v2.3.1) (2020-12-11)
+
+
+### Bug Fixes
+
+* pipeline errors ([705b3be](https://gitlab.com/donaldrich/function-as-a-container/commit/705b3be6e7e83b6ada867a4174cbb6a49c82caac))
+
 ## [2.3.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v2.2.0...v2.3.0) (2020-12-08)
 
 ## [2.2.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v2.1.0...v2.2.0) (2020-11-16)

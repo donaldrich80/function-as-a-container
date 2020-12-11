@@ -2,9 +2,10 @@ FROM donaldrich/builder:latest AS yq-builder
 RUN ginstall.sh yq latest
 RUN upx /usr/local/bin/yq
 
+# DONT UPX
 FROM donaldrich/builder:latest AS ytt-builder
 RUN gget github.com/k14s/ytt --executable /usr/local/bin/ytt='*linux-amd64'
-RUN upx /usr/local/bin/ytt
+# RUN upx /usr/local/bin/ytt
 
 FROM donaldrich/builder AS yaml-tools-builder
 RUN wget "https://raw.githubusercontent.com/thecodingmachine/yaml-tools/0.0.6/src/yaml_tools.py" -O /usr/local/bin/yaml-tools

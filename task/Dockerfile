@@ -29,9 +29,10 @@ RUN tar xzf navi-v2.6.1-x86_64-unknown-linux-musl.tar.gz
 RUN mv navi /usr/local/bin
 RUN chmod a+x /usr/local/bin/navi
 
+# DONT UPX
 FROM donaldrich/builder:latest AS commander-builder
 RUN gget github.com/SimonBaeumer/commander --executable /usr/local/bin/commander='*linux-amd64'
-RUN upx /usr/local/bin/commander
+#RUN upx /usr/local/bin/commander
 
 FROM donaldrich/builder:latest AS dunner-builder
 RUN wget -O archive.tar.gz "https://github.com/leopardslab/dunner/releases/download/v2.1.3/dunner_2.1.3_linux_x86_64.tar.gz"

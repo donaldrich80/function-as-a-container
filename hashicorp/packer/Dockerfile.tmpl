@@ -16,6 +16,13 @@ RUN mv packer-provisioner-goss /usr/local/bin
 RUN chmod +rx /usr/local/bin/packer-provisioner-goss
 RUN upx /usr/local/bin/packer-provisioner-goss
 
+FROM donaldrich/builder:go AS packer-provisioner-comment-builder
+RUN git clone https://github.com/SwampDragons/packer-provisioner-comment.git
+WORKDIR packer-provisioner-comment
+RUN go mod init main
+RUN go build 
+RUN mv main ~/.packer.d/plugins/packer-provisioner-comment
+
 FROM hashicorp/packer AS packer
 FROM donaldrich/builder AS packer-builder
 

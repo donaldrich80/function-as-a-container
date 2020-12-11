@@ -28,7 +28,7 @@ RUN mv tfmigrate /usr/local/bin
 RUN chmod a+x /usr/local/bin/tfmigrate
 
 # FROM donaldrich/builder:latest AS terraform-provider-sops-builder
-# # RUN wget "https://github.com/carlpett/terraform-provider-sops/releases/download/v0.5.2/terraform-provider-sops_0.5.2_linux_amd64.zip
+# RUN wget "https://github.com/carlpett/terraform-provider-sops/releases/download/v0.5.2/terraform-provider-sops_0.5.2_linux_amd64.zip"
 # RUN gget github.com/carlpett/terraform-provider-sops --executable /usr/local/bin/terrahelp='*linux-amd64'
 
 FROM donaldrich/builder:go AS terraform-provider-proxmox-builder
@@ -56,14 +56,6 @@ RUN upx /usr/local/bin/tfenv
 # RUN go get github.com/asteris-llc/converge
 # https://github.com/asteris-llc/converge/releases/download/0.6.0/converge_0.6.0_linux_amd64.tar.gz
 
-FROM donaldrich/builder:latest AS terraform-provider-keycloak-builder
-RUN gget github.com/mrparkers/terraform-provider-keycloak '*linux_amd64'
-# RUN wget "https://github.com/mrparkers/terraform-provider-keycloak/releases/download/1.20.0/terraform-provider-keycloak_v1.20.0_linux_amd64.zip"
-RUN unzip -q terraform-provider-keycloak_v2.0.0_linux_amd64.zip
-RUN mv terraform-provider-keycloak_v2.0.0 terraform-provider-keycloak
-RUN chmod +rx terraform-provider-keycloak
-RUN mv terraform-provider-keycloak /usr/local/bin/
-
 FROM donaldrich/builder:latest AS terracognita-builder
 COPY --from=cycloid/terracognita /app/terracognita /usr/local/bin/terracognita
 RUN upx /usr/local/bin/terracognita
@@ -81,7 +73,7 @@ FROM ubuntu
 
 COPY --from=terratag-builder /usr/local/bin/terratag /usr/local/bin/terratag
 COPY --from=terracognita-builder /usr/local/bin/terracognita /usr/local/bin/terracognita
-COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /.terraform.d/plugins/terraform-provider-keycloak
+# COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /.terraform.d/plugins/terraform-provider-keycloak
 # COPY --from=converge-builder /go/bin/converge /usr/local/bin/converge
 COPY --from=terraformer-builder /usr/local/bin/terraformer /usr/local/bin/terraformer
 COPY --from=terragrunt-builder /usr/local/bin/terragrunt /usr/local/bin/terragrunt

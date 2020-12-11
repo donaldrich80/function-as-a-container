@@ -11,8 +11,8 @@ tasks:
     usage: analyze built image
     run: docker system prune --all --force
 
-  repo-clean:
-    usage: cleans repo
+  cleanup:
+    usage: housekeeping tasks
     run:
       - command: rm -r docs | true
       - command: rm -r .meta/pipelines | true
@@ -21,7 +21,7 @@ tasks:
       - command: cp -r .meta/docs/about docs
       - command: cp CHANGELOG docs/about
 
-  repo-template:
+  template:
     usage: applys template
     run:
       - command: ./run-all.sh
@@ -40,7 +40,7 @@ tasks:
       - task: repo-template
       # - task: repo-commit
 
-  hooks-install:
+  hooks:
     usage: hooks
     run:
       - command: pre-commit install
@@ -103,6 +103,6 @@ tasks:
   remote:
     usage: check package versions
     run:
-      - task: clean
+      - task: cleanup
       - task: template
-      - task: pre-commit
+      - task: hooks

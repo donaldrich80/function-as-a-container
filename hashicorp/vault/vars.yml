@@ -23,11 +23,11 @@ commands:
     help: help
     version: version
     github: hashicorp/envconsul
-  consul-template:
-    prefix: consul-template
-    help: help
-    version: version
-    github: hashicorp/consul-template
+  # consul-template:
+  #   prefix: consul-template
+  #   help: help
+  #   version: version
+  #   github: hashicorp/consul-template
   vault-sidekick:
     prefix: vault-sidekick
     help: -help

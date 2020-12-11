@@ -15,9 +15,6 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: consul-template version
-          print: "\e[32mconsul-template\e[0m"
-      - command:
           exec: envconsul version
           print: "\e[32menvconsul\e[0m"
       - command:
@@ -41,9 +38,6 @@ tasks:
   help:
     usage: see config options
     run:
-      - command:
-          exec: consul-template help
-          print: "\e[32mconsul-template\e[0m"
       - command:
           exec: envconsul help
           print: "\e[32menvconsul\e[0m"

@@ -1,0 +1,11 @@
+image:
+  tag: projectdiscovery
+  context: ""
+  dir: ""
+  dockerfile: ""
+commands:
+  zsh:
+    prefix: projectdiscovery
+    help: --projectdiscovery
+    version: --projectdiscovery
+extra: ""

@@ -1,7 +1,7 @@
-FROM debian:buster
-RUN mkdir /app
-WORKDIR /app
-RUN apt update && apt install -y nmap libpcap-dev
+FROM alpine
+# RUN mkdir /app
+# WORKDIR /app
+# RUN apt update && apt install -y nmap libpcap-dev
 
 COPY --from=projectdiscovery/subfinder  /usr/local/bin/subfinder /usr/local/bin/subfinder
 COPY --from=projectdiscovery/nuclei /app/nuclei /usr/local/bin/nuclei

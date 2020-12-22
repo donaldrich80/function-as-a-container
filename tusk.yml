@@ -105,4 +105,4 @@ tasks:
     run:
       - task: cleanup
       - task: template
-      - task: hooks
+      # - task: hooks

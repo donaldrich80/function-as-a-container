@@ -1,0 +1,25 @@
+---
+tasks:
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t function:projectdiscovery .
+
+  test:
+    usage: build docker image
+    run: docker run -it --rm function:projectdiscovery validate
+
+  dive:
+    usage: inspect docker image
+    run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock donaldrich/function:dive function:projectdiscovery
+  validate:
+    usage: check package versions
+    run:
+      - command:
+          exec: projectdiscovery --projectdiscovery
+          print: "\e[32mprojectdiscovery\e[0m"
+  help:
+    usage: see config options
+    run:
+      - command:
+          exec: projectdiscovery --projectdiscovery
+          print: "\e[32mprojectdiscovery\e[0m"

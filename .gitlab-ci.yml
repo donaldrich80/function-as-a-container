@@ -26,24 +26,3 @@ variables:
   DISABLE_SAST: "true"
   DISABLE_HEALTHCHECKS: "true"
   PUSHOVER_ID: $CI_PROJECT_TITLE
-# update-repo:
-#   stage: .post
-#   variables:
-#     GIT_STRATEGY: fetch
-#   before_script:
-#     - rm -r public/ || true
-#   script:
-#     # - apk add git
-#     - ./run-all.sh
-#     - git config --global user.email $GIT_EMAIL
-#     - git config --global user.name $GIT_NAME
-#     - git config --global user.username $GIT_USER
-#     - git remote set-url --push origin $GIT_PUSH_URL
-#     - git remote show origin
-#     - git add .
-#     - git commit -m "auto commit" || echo "no changes to repo"
-#     # - git commit -m "auto commit [skip ci]" || echo "no changes to repo"
-#     - git push origin HEAD:$CI_COMMIT_REF_NAME || echo "no changes to repo"
-#   rules:
-#   - changes:
-#     - "**/*/*"

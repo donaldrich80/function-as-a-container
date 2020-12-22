@@ -18,10 +18,14 @@ RUN ginstall.sh docker-machine latest
 RUN upx /usr/local/bin/docker-machine
 
 FROM donaldrich/builder:latest AS buildx-builder
-ENV BUILDX_VERSION=0.4.2
 RUN mkdir -p ~/.docker/cli-plugins/
-RUN wget -O ~/.docker/cli-plugins/docker-buildx "https://github.com/docker/buildx/releases/latest/download/buildx-v${BUILDX_VERSION}.linux-amd64"
-RUN chmod a+x /root/.docker/cli-plugins/docker-buildx
+RUN gget github.com/docker/buildx --executable /root/.docker/cli-plugins/docker-buildx='*linux-amd64'
+
+# FROM donaldrich/builder:latest AS buildx-builder
+# ENV BUILDX_VERSION=0.4.2
+# RUN mkdir -p ~/.docker/cli-plugins/
+# RUN wget -O ~/.docker/cli-plugins/docker-buildx "https://github.com/docker/buildx/releases/latest/download/buildx-v${BUILDX_VERSION}.linux-amd64"
+# RUN chmod a+x /root/.docker/cli-plugins/docker-buildx
 
 FROM donaldrich/builder:latest AS dockfmt-builder
 # RUN wget "https://github.com/jessfraz/dockfmt/releases/download/v0.3.3/dockfmt-linux-amd64" -O /usr/local/bin/dockfmt

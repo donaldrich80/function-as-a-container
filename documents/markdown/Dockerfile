@@ -1,17 +1,27 @@
 FROM node:alpine
 
-RUN npm install markdown-magic --save-dev
+RUN npm install -g \
+npm@7.3.0 \
+markdown-pdf \
+markdownlint \
+markdownlint-cli \
+remark-cli \
+remark-preset-lint-recommended \
+markdown-link-check \
+textlint
 
-RUN npm install -g markdown-pdf --ignore-scripts
+# RUN npm install markdown-magic
 
-RUN npm install markdownlint --save-dev
+# RUN npm install -g markdown-pdf --ignore-scripts
 
-RUN npm install -g markdownlint-cli
+# RUN npm install markdownlint --save-dev
 
-RUN npm install --save remark-cli remark-preset-lint-recommended
+# RUN npm install -g markdownlint-cli
 
-RUN npm install -g markdown-link-check
+# RUN npm install --save remark-cli remark-preset-lint-recommended
 
-RUN npm install textlint --global
+# RUN npm install -g markdown-link-check
 
-COPY package.json ./
+# RUN npm install textlint --global
+
+# COPY ./package.json ./

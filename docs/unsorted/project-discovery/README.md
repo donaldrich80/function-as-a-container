@@ -9,7 +9,15 @@ source: unsorted/project-discovery/Dockerfile
 
 ## Documentation
 
-### Zsh
+### Httpx
+
+### Nuclei
+
+### Proxify
+
+### Shuffledns
+
+### Subfinder
 
 ## Image Commands
 

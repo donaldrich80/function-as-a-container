@@ -1,6 +1,6 @@
 FROM alpine
-# RUN mkdir /app
-# WORKDIR /app
+
+RUN apk add nmap libpcap-dev
 # RUN apt update && apt install -y nmap libpcap-dev
 
 COPY --from=projectdiscovery/subfinder  /usr/local/bin/subfinder /usr/local/bin/subfinder

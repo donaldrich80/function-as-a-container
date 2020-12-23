@@ -15,11 +15,35 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: projectdiscovery --projectdiscovery
-          print: "\e[32mprojectdiscovery\e[0m"
+          exec: httpx -version
+          print: "\e[32mhttpx\e[0m"
+      - command:
+          exec: nuclei -version
+          print: "\e[32mnuclei\e[0m"
+      - command:
+          exec: proxify -version
+          print: "\e[32mproxify\e[0m"
+      - command:
+          exec: shuffledns -version
+          print: "\e[32mshuffledns\e[0m"
+      - command:
+          exec: subfinder -version
+          print: "\e[32msubfinder\e[0m"
   help:
     usage: see config options
     run:
       - command:
-          exec: projectdiscovery --projectdiscovery
-          print: "\e[32mprojectdiscovery\e[0m"
+          exec: httpx -help
+          print: "\e[32mhttpx\e[0m"
+      - command:
+          exec: nuclei -help
+          print: "\e[32mnuclei\e[0m"
+      - command:
+          exec: proxify -help
+          print: "\e[32mproxify\e[0m"
+      - command:
+          exec: shuffledns -help
+          print: "\e[32mshuffledns\e[0m"
+      - command:
+          exec: subfinder -help
+          print: "\e[32msubfinder\e[0m"

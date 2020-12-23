@@ -4,8 +4,24 @@ image:
   dir: ""
   dockerfile: ""
 commands:
-  zsh:
-    prefix: projectdiscovery
-    help: --projectdiscovery
-    version: --projectdiscovery
+  nuclei:
+    prefix: nuclei
+    help: -help
+    version: -version
+  shuffledns:
+    prefix: shuffledns
+    help: -help
+    version: -version
+  proxify:
+    prefix: proxify
+    help: -help
+    version: -version
+  httpx:
+    prefix: httpx
+    help: -help
+    version: -version
+  subfinder:
+    prefix: subfinder
+    help: -help
+    version: -version
 extra: ""

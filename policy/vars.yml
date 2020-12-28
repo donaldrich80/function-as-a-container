@@ -4,6 +4,8 @@ image:
   dir: ""
   dockerfile: ""
 commands:
+  falco:
+    docs: https://falco.org/docs
   opa:
     prefix: opa
     help: -h

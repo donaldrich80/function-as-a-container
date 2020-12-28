@@ -25,6 +25,16 @@ source: git/Dockerfile
 
 - [:octicons-mark-github-16: firecow/gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
 
+### Gitleaks
+
+- [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/zricethezav/gitleaks)
+
+- [:octicons-mark-github-16: zricethezav/gitleaks](https://github.com/zricethezav/gitleaks)
+
+### Gitlint
+
+- [:octicons-mark-github-16: jorisroovers/gitlint](https://github.com/jorisroovers/gitlint)
+
 ### Glab
 
 - [:octicons-book-16: Docs](https://clementsam.tech/glab)
@@ -36,6 +46,16 @@ source: git/Dockerfile
 ### Tago
 
 - [:octicons-mark-github-16: FalcoSuessgott/tago](https://github.com/FalcoSuessgott/tago)
+
+### Talisman
+
+- [:octicons-mark-github-16: thoughtworks/talisman](https://github.com/thoughtworks/talisman)
+
+### Tsrc
+
+- [:octicons-book-16: Docs](https://tankerhq.github.io/tsrc)
+
+- [:octicons-mark-github-16: TankerHQ/tsrc](https://github.com/TankerHQ/tsrc)
 
 ## Image Commands
 

@@ -26,6 +26,11 @@ commands:
     help: --help
     version: --version
     github: BuBuaBu/gitlab-ci-lint
+  talisman:
+    prefix: talisman
+    help: --help
+    version: --version
+    github: thoughtworks/talisman
   gitbatch:
     prefix: gitbatch
     help: -h
@@ -42,4 +47,21 @@ commands:
     help: --help
     version: --version
     github: FalcoSuessgott/tago
+  tsrc:
+    prefix: tsrc
+    help: -h
+    version: -v
+    github: TankerHQ/tsrc
+    docs: https://tankerhq.github.io/tsrc
+  gitlint:
+    prefix: gitlint
+    help: -h
+    version: -v
+    github: jorisroovers/gitlint
+  gitleaks:
+    prefix: gitleaks
+    help: --help
+    version: --version
+    github: zricethezav/gitleaks
+    docker: zricethezav/gitleaks
 extra: ""

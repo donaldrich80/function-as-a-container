@@ -5,8 +5,14 @@ image:
   dockerfile: ""
 commands:
   falco:
+    help: -h
+    version: -v
+    prefix: falco
     docs: https://falco.org/docs
   blueprint:
+    help: -h
+    version: -v
+    prefix: blueprint
     github: devstructure/blueprint
     docs: http://devstructure.com/blueprint
   opa:

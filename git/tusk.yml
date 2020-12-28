@@ -27,6 +27,12 @@ tasks:
           exec: gitlab-ci-local --version
           print: "\e[32mgitlab-ci-local\e[0m"
       - command:
+          exec: gitleaks --version
+          print: "\e[32mgitleaks\e[0m"
+      - command:
+          exec: gitlint -v
+          print: "\e[32mgitlint\e[0m"
+      - command:
           exec: glab version
           print: "\e[32mglab\e[0m"
       - command:
@@ -35,6 +41,12 @@ tasks:
       - command:
           exec: tago --version
           print: "\e[32mtago\e[0m"
+      - command:
+          exec: talisman --version
+          print: "\e[32mtalisman\e[0m"
+      - command:
+          exec: tsrc -v
+          print: "\e[32mtsrc\e[0m"
   help:
     usage: see config options
     run:
@@ -51,6 +63,12 @@ tasks:
           exec: gitlab-ci-local --help
           print: "\e[32mgitlab-ci-local\e[0m"
       - command:
+          exec: gitleaks --help
+          print: "\e[32mgitleaks\e[0m"
+      - command:
+          exec: gitlint -h
+          print: "\e[32mgitlint\e[0m"
+      - command:
           exec: glab help
           print: "\e[32mglab\e[0m"
       - command:
@@ -59,3 +77,9 @@ tasks:
       - command:
           exec: tago --help
           print: "\e[32mtago\e[0m"
+      - command:
+          exec: talisman --help
+          print: "\e[32mtalisman\e[0m"
+      - command:
+          exec: tsrc -h
+          print: "\e[32mtsrc\e[0m"

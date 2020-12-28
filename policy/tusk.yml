@@ -15,8 +15,14 @@ tasks:
     usage: check package versions
     run:
       - command:
+          exec: blueprint -v
+          print: "\e[32mblueprint\e[0m"
+      - command:
           exec: conftest -v
           print: "\e[32mconftest\e[0m"
+      - command:
+          exec: falco -v
+          print: "\e[32mfalco\e[0m"
       - command:
           exec: opa -v
           print: "\e[32mopa\e[0m"
@@ -27,8 +33,14 @@ tasks:
     usage: see config options
     run:
       - command:
+          exec: blueprint -h
+          print: "\e[32mblueprint\e[0m"
+      - command:
           exec: conftest -h
           print: "\e[32mconftest\e[0m"
+      - command:
+          exec: falco -h
+          print: "\e[32mfalco\e[0m"
       - command:
           exec: opa -h
           print: "\e[32mopa\e[0m"

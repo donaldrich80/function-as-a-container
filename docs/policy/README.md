@@ -9,9 +9,19 @@ source: policy/Dockerfile
 
 ## Documentation
 
+### Blueprint
+
+- [:octicons-book-16: Docs](http://devstructure.com/blueprint)
+
+- [:octicons-mark-github-16: devstructure/blueprint](https://github.com/devstructure/blueprint)
+
 ### Conftest
 
 - [:octicons-mark-github-16: open-policy-agent/conftest](https://github.com/open-policy-agent/conftest)
+
+### Falco
+
+- [:octicons-book-16: Docs](https://falco.org/docs)
 
 ### Opa
 

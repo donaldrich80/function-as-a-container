@@ -6,6 +6,9 @@ image:
 commands:
   falco:
     docs: https://falco.org/docs
+  blueprint:
+    github: devstructure/blueprint
+    docs: http://devstructure.com/blueprint
   opa:
     prefix: opa
     help: -h

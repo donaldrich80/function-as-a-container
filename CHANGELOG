@@ -1,3 +1,10 @@
+## [2.6.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v2.5.0...v2.6.0) (2020-12-28)
+
+
+### Features
+
+* **policy:** falco ([4f91d4b](https://gitlab.com/donaldrich/function-as-a-container/commit/4f91d4bef2201ffc337f9c8dc14406bbf5f1ed51))
+
 ## [2.5.0](https://gitlab.com/donaldrich/function-as-a-container/compare/v2.4.0...v2.5.0) (2020-12-23)
 
 

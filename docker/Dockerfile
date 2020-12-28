@@ -1,10 +1,8 @@
 FROM docker:latest  AS docker
 
-FROM donaldrich/builder:latest AS notary-builder
-RUN wget "https://github.com/theupdateframework/notary/releases/download/v0.6.1/notary-Linux-amd64" -O /usr/local/bin/notary
-RUN chmod +rx /usr/local/bin/notary
-# RUN gget github.com/theupdateframework/notary --executable /usr/local/bin/notary='*Linux-amd64'
-RUN upx /usr/local/bin/notary
+# FROM donaldrich/builder:latest AS notary-builder
+# RUN gget --verify-checksum=sha256 github.com/theupdateframework/notary --executable /usr/local/bin/notary='notary-Linux-amd64'
+# RUN upx /usr/local/bin/notary
 
 FROM donaldrich/builder:latest AS docker-builder
 COPY --from=docker:latest /usr/local/bin/docker /usr/local/bin/docker
@@ -21,27 +19,21 @@ FROM donaldrich/builder:latest AS buildx-builder
 RUN mkdir -p ~/.docker/cli-plugins/
 RUN gget github.com/docker/buildx --executable /root/.docker/cli-plugins/docker-buildx='*linux-amd64'
 
-# FROM donaldrich/builder:latest AS buildx-builder
-# ENV BUILDX_VERSION=0.4.2
-# RUN mkdir -p ~/.docker/cli-plugins/
-# RUN wget -O ~/.docker/cli-plugins/docker-buildx "https://github.com/docker/buildx/releases/latest/download/buildx-v${BUILDX_VERSION}.linux-amd64"
-# RUN chmod a+x /root/.docker/cli-plugins/docker-buildx
-
 FROM donaldrich/builder:latest AS dockfmt-builder
-# RUN wget "https://github.com/jessfraz/dockfmt/releases/download/v0.3.3/dockfmt-linux-amd64" -O /usr/local/bin/dockfmt
-# RUN chmod +rx /usr/local/bin/dockfmt
-RUN gget github.com/jessfraz/dockfmt --executable /usr/local/bin/dockfmt='*linux-amd64'
+RUN gget github.com/jessfraz/dockfmt --executable /usr/local/bin/dockfmt='dockfmt-linux-amd64'
 
 FROM donaldrich/builder:latest AS dive-builder
-RUN ginstall.sh dive latest
-RUN upx /usr/local/bin/dive
+RUN gget github.com/wagoodman/dive dive_*_linux_amd64.tar.gz --stdout | tar -xfz- dive
+RUN mv dive /usr/local/bin
 
 FROM donaldrich/builder:latest AS dobi-builder
 RUN ginstall.sh dobi latest
 RUN upx /usr/local/bin/dobi
 
 FROM donaldrich/builder:latest AS hadolint-builder
-COPY --from=hadolint/hadolint /bin/hadolint /usr/local/bin/hadolint
+RUN gget github.com/hadolint/hadolintt --executable /usr/local/bin/hadolint='hadolint-Linux-x86_64'
+# https://github.com/hadolint/hadolint/releases/download/v1.19.0/hadolint-Linux-x86_64
+# COPY --from=hadolint/hadolint /bin/hadolint /usr/local/bin/hadolint
 
 FROM donaldrich/builder:go AS docker-credential-vault-login-builder
 # https://github.com/morningconsult/docker-credential-vault-login/releases/download/v0.3.9/docker-credential-vault-login_0.3.9_Linux_x86_64.tar.gz
@@ -53,9 +45,7 @@ RUN upx /build/bin/docker-credential-vault-login
 COPY ./config.hcl /etc/docker-credential-vault-login/
 
 FROM donaldrich/builder:latest AS dockerfile-generator-builder
-# RUN wget "https://github.com/ozankasikci/dockerfile-generator/releases/download/v1.0.0/dfg_v1.0.0_linux_amd64" -O /usr/local/bin/dfg
-# RUN chmod +rx /usr/local/bin/dfg
-RUN gget github.com/ozankasikci/dockerfile-generator --executable /usr/local/bin/dfg='*linux_amd64'
+RUN gget github.com/ozankasikci/dockerfile-generator --executable /usr/local/bin/dfg='dfg_*_linux_amd64'
 RUN upx /usr/local/bin/dfg
 
 FROM donaldrich/builder:latest AS docker-gen-builder
@@ -76,8 +66,8 @@ COPY --from=rustagainshell/rash /bin/rash /usr/local/bin/rash
 RUN upx /usr/local/bin/rash
 
 FROM donaldrich/builder:latest AS earthly-builder
-RUN gget github.com/earthly/earthly --executable /usr/local/bin/earthly='*linux-amd64'
-RUN upx /usr/local/bin/earthly
+RUN gget github.com/earthly/earthly --executable /usr/local/bin/earthly='earthly-linux-amd64'
+# RUN upx /usr/local/bin/earthly
 
 FROM alpine
 

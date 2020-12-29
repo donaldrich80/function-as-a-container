@@ -1,39 +1,42 @@
 FROM mvdan/shfmt as shfmt-builder
 
-FROM donaldrich/builder:latest AS shellcheck-builder
+FROM matejak/argbash as argbash-builder
+
+FROM donaldrich/builder:latest AS builder
+# RUN gget github.com/koalaman/shellcheck shellcheck-*.linux.x86_64.tar.xz --stdout | tar -xJf- shellcheck
 RUN ginstall.sh shellcheck latest
 RUN upx /usr/local/bin/shellcheck
 
-FROM matejak/argbash as argbash-builder
+# FROM donaldrich/builder:latest AS shellharden-builder
+RUN gget github.com/anordal/shellharden --executable shellharden='shellharden-*-x86_64-linux-gnu'
 
-FROM donaldrich/builder:latest AS shellharden-builder
-ADD https://github.com/anordal/shellharden/releases/download/v4.1.1/shellharden-4.1.1-x86_64-linux-gnu /usr/local/bin/shellharden
-RUN chmod +rx /usr/local/bin/shellharden
+# FROM donaldrich/builder:latest AS abs-builder
+RUN gget github.com/abs-lang/abs --executable abs='abs-linux-amd64'
 
-FROM donaldrich/builder:latest AS abs-builder
-ADD https://github.com/abs-lang/abs/releases/download/2.3.1/abs-linux-amd64 /usr/local/bin/abs
-RUN chmod +rx /usr/local/bin/abs
-RUN upx /usr/local/bin/abs
-
-FROM donaldrich/builder:latest AS bat-builder
+# FROM donaldrich/builder:latest AS bat-builder
+# RUN gget github.com/sharkdp/bat bat-*-x86_64-unknown-linux-musl.tar.gz --stdout | tar -xzf-
 RUN wget -O archive.tar.gz "https://github.com/sharkdp/bat/releases/download/v0.16.0/bat-v0.16.0-x86_64-unknown-linux-musl.tar.gz"
 RUN tar xzf archive.tar.gz
 RUN mv bat-v0.16.0-x86_64-unknown-linux-musl/bat bat
 RUN mv bat /usr/local/bin
 RUN chmod a+x /usr/local/bin/bat
 
+# FROM donaldrich/builder:latest AS micro-builder
+# RUN gget github.com/zyedidia/micro micro-*-linux64.tar.gz --stdout | tar -xzf- micro
+
 FROM python:alpine
 
 # RUN apk update && apk add bat
 RUN pip install --no-cache-dir bashate
 
-COPY --from=bat-builder /usr/local/bin/bat /usr/local/bin/bat
+COPY --from=builder /usr/local/bin/bat /usr/local/bin/bat
 COPY --from=argbash-builder /usr/local/bin/argbash /usr/local/bin/argbash
 COPY --from=argbash-builder /usr/local/bin/argbash-1to2 /usr/local/bin/argbash-1to2
 COPY --from=argbash-builder /usr/local/bin/argbash-init /usr/local/bin/argbash-init
-COPY --from=shellcheck-builder /usr/local/bin/shellcheck /usr/local/bin/shellcheck
-COPY --from=abs-builder /usr/local/bin/abs /usr/local/bin/abs
-COPY --from=shellharden-builder /usr/local/bin/shellharden /usr/local/bin/shellharden
+COPY --from=builder /usr/local/bin/shellcheck /usr/local/bin/shellcheck
+COPY --from=builder abs /usr/local/bin/abs
+# COPY --from=builder micro /usr/local/bin/micro
+COPY --from=builder shellharden /usr/local/bin/shellharden
 COPY --from=shfmt-builder /bin/shfmt /usr/local/bin/shfmt
 
 {{- template "validate" }}

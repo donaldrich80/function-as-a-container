@@ -1,33 +1,21 @@
 FROM donaldrich/builder:latest AS tusk-builder
-RUN curl -sL https://git.io/tusk | bash -s -- -b /usr/local/bin latest
+RUN gget github.com/rliebz/tusk tusk_*_linux_amd64.tar.gz --cd=/usr/local/bin --stdout | tar -xzf- tusk
 
 FROM donaldrich/builder:latest AS task-builder
-RUN ginstall.sh task latest
+RUN gget github.com/go-task/task task_linux_amd64.tar.gz --cd=/usr/local/bin --stdout | tar -xzf- task
 
 FROM donaldrich/builder:latest AS robo-builder
 RUN gget github.com/tj/robo --executable /usr/local/bin/robo='*linux_amd64'
 
 FROM donaldrich/builder:latest AS orbit-builder
-RUN wget https://github.com/gulien/orbit/releases/download/v3.2.0/orbit_Linux_x86_64.tar.gz
-RUN tar xzf orbit_Linux_x86_64.tar.gz
-RUN mv orbit /usr/local/bin
-RUN chmod a+x /usr/local/bin/orbit
+RUN gget github.com/gulien/orbit orbit_Linux_x86_64.tar.gz --cd=/usr/local/bin --stdout | tar -xzf- orbit
+# > upx -o fzf
 
 FROM donaldrich/builder:latest AS just-builder
-RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
-
-# FROM donaldrich/builder:latest           AS mask-builder
-# RUN wget https://github.com/jakedeichert/mask/releases/download/v0.8.0/mask-v0.8.0-x86_64-unknown-linux-gnu.zip
-# RUN unzip mask-v0.8.0-x86_64-unknown-linux-gnu.zip
-# WORKDIR mask-v0.8.0-x86_64-unknown-linux-gnu
-# RUN mv mask /usr/local/bin
-# RUN chmod a+x /usr/local/bin/mask
+RUN gget github.com/casey/just just-*-x86_64-unknown-linux-musl.tar.gz --cd=/usr/local/bin --stdout | tar -xzf- just
 
 FROM donaldrich/builder:latest AS navi-builder
-RUN wget https://github.com/denisidoro/navi/releases/download/v2.6.1/navi-v2.6.1-x86_64-unknown-linux-musl.tar.gz
-RUN tar xzf navi-v2.6.1-x86_64-unknown-linux-musl.tar.gz
-RUN mv navi /usr/local/bin
-RUN chmod a+x /usr/local/bin/navi
+RUN gget github.com/denisidoro/navi navi-*-x86_64-unknown-linux-musl.tar.gz --stdout | tar -xzf- navi
 
 # DONT UPX
 FROM donaldrich/builder:latest AS commander-builder
@@ -35,25 +23,22 @@ RUN gget github.com/SimonBaeumer/commander --executable /usr/local/bin/commander
 #RUN upx /usr/local/bin/commander
 
 FROM donaldrich/builder:latest AS dunner-builder
-RUN wget -O archive.tar.gz "https://github.com/leopardslab/dunner/releases/download/v2.1.3/dunner_2.1.3_linux_x86_64.tar.gz"
-RUN tar xzf archive.tar.gz
+RUN gget github.com/leopardslab/dunner dunner_*_linux_x86_64.tar.gz --stdout | tar -xzf- dunner
 RUN upx dunner
-RUN mv dunner /usr/local/bin
-RUN chmod a+x /usr/local/bin/dunner
 
 FROM node:alpine
 
-RUN npm install -g maid
+# RUN npm install -g maid
 
 # RUN apk add fzf bash git
-COPY --from=dunner-builder /usr/local/bin/dunner /usr/local/bin/dunner
+COPY --from=dunner-builder ./dunner /usr/local/bin/dunner
 COPY --from=commander-builder /usr/local/bin/commander /usr/local/bin/commander
-COPY --from=navi-builder /usr/local/bin/navi /usr/local/bin/navi
-COPY --from=task-builder /usr/local/bin/task /usr/local/bin/task
+COPY --from=navi-builder ./navi /usr/local/bin/navi
+COPY --from=task-builder ./task /usr/local/bin/task
 COPY --from=robo-builder /usr/local/bin/robo /usr/local/bin/robo
-COPY --from=orbit-builder /usr/local/bin/orbit /usr/local/bin/orbit
-COPY --from=just-builder /usr/local/bin/just /usr/local/bin/just
-COPY --from=tusk-builder /usr/local/bin/tusk  /usr/local/bin/tusk
+COPY --from=orbit-builder ./orbit /usr/local/bin/orbit
+COPY --from=just-builder ./just /usr/local/bin/just
+COPY --from=tusk-builder ./tusk  /usr/local/bin/tusk
 # COPY --from=mask-builder   /usr/local/bin/mask  /usr/local/bin/mask
 
 

@@ -1,22 +1,30 @@
 FROM donaldrich/builder:latest AS tusk-builder
-RUN curl -sL https://git.io/tusk | bash -s -- -b /usr/local/bin latest
+# https://github.com/rliebz/tusk/releases/download/v0.6.1/tusk_0.6.1_linux_amd64.tar.gz
+# RUN curl -sL https://git.io/tusk | bash -s -- -b /usr/local/bin latest
+RUN gget github.com/rliebz/tusk tusk_*_linux_amd64.tar.gz --stdout | tar -xzf- tusk
 
 FROM donaldrich/builder:latest AS task-builder
-RUN ginstall.sh task latest
+RUN gget github.com/go-task/task task_linux_amd64.tar.gz --stdout | tar -xzf- task
 
 FROM donaldrich/builder:latest AS robo-builder
 RUN gget github.com/tj/robo --executable /usr/local/bin/robo='*linux_amd64'
 
 FROM donaldrich/builder:latest AS orbit-builder
-RUN wget https://github.com/gulien/orbit/releases/download/v3.2.0/orbit_Linux_x86_64.tar.gz
-RUN tar xzf orbit_Linux_x86_64.tar.gz
-RUN mv orbit /usr/local/bin
-RUN chmod a+x /usr/local/bin/orbit
+RUN gget github.com/gulien/orbit orbit_Linux_x86_64.tar.gz --stdout | tar -xzf- orbit
+# > upx -o fzf
+# RUN wget https://github.com/gulien/orbit/releases/download/v3.2.0/orbit_Linux_x86_64.tar.gz
+# RUN tar xzf orbit_Linux_x86_64.tar.gz
+# RUN mv orbit /usr/local/bin
+# RUN chmod a+x /usr/local/bin/orbit
 
 FROM donaldrich/builder:latest AS just-builder
-RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
+RUN gget github.com/casey/just just-*-x86_64-unknown-linux-musl.tar.gz --stdout | tar -xzf- just
+# https://github.com/casey/just/releases/download/v0.8.3/just-v0.8.3-x86_64-unknown-linux-musl.tar.gz
+# RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
 
-# FROM donaldrich/builder:latest           AS mask-builder
+FROM donaldrich/builder:latest AS mask-builder
+# https://github.com/jakedeichert/mask/releases/download/v0.9.0/mask-v0.9.0-x86_64-unknown-linux-gnu.zip
+RUN gget github.com/jakedeichert/mask mask-*-x86_64-unknown-linux-gnu.zip --cd=/usr/local/bin --stdout | tar -xzf- mask
 # RUN wget https://github.com/jakedeichert/mask/releases/download/v0.8.0/mask-v0.8.0-x86_64-unknown-linux-gnu.zip
 # RUN unzip mask-v0.8.0-x86_64-unknown-linux-gnu.zip
 # WORKDIR mask-v0.8.0-x86_64-unknown-linux-gnu
@@ -24,10 +32,12 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash 
 # RUN chmod a+x /usr/local/bin/mask
 
 FROM donaldrich/builder:latest AS navi-builder
-RUN wget https://github.com/denisidoro/navi/releases/download/v2.6.1/navi-v2.6.1-x86_64-unknown-linux-musl.tar.gz
-RUN tar xzf navi-v2.6.1-x86_64-unknown-linux-musl.tar.gz
-RUN mv navi /usr/local/bin
-RUN chmod a+x /usr/local/bin/navi
+RUN gget github.com/denisidoro/navi navi-*-x86_64-unknown-linux-musl.tar.gz --stdout | tar -xzf- navi
+# https://github.com/denisidoro/navi/releases/download/v2.13.1/navi-v2.13.1-x86_64-unknown-linux-musl.tar.gz
+# RUN wget https://github.com/denisidoro/navi/releases/download/v2.6.1/navi-v2.6.1-x86_64-unknown-linux-musl.tar.gz
+# RUN tar xzf navi-v2.6.1-x86_64-unknown-linux-musl.tar.gz
+# RUN mv navi /usr/local/bin
+# RUN chmod a+x /usr/local/bin/navi
 
 # DONT UPX
 FROM donaldrich/builder:latest AS commander-builder
@@ -35,11 +45,12 @@ RUN gget github.com/SimonBaeumer/commander --executable /usr/local/bin/commander
 #RUN upx /usr/local/bin/commander
 
 FROM donaldrich/builder:latest AS dunner-builder
-RUN wget -O archive.tar.gz "https://github.com/leopardslab/dunner/releases/download/v2.1.3/dunner_2.1.3_linux_x86_64.tar.gz"
-RUN tar xzf archive.tar.gz
+RUN gget github.com/leopardslab/dunner dunner_*_linux_x86_64.tar.gz --stdout | tar -xzf- dunner
+# RUN wget -O archive.tar.gz "https://github.com/leopardslab/dunner/releases/download/v2.1.3/dunner_2.1.3_linux_x86_64.tar.gz"
+# RUN tar xzf archive.tar.gz
 RUN upx dunner
-RUN mv dunner /usr/local/bin
-RUN chmod a+x /usr/local/bin/dunner
+# RUN mv dunner /usr/local/bin
+# RUN chmod a+x /usr/local/bin/dunner
 
 FROM node:alpine
 

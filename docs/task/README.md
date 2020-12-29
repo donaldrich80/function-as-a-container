@@ -11,6 +11,10 @@ Various task runners
 
 ## Documentation
 
+### Cheat
+
+- [:octicons-mark-github-16: cheat/cheat](https://github.com/cheat/cheat)
+
 ### Commander
 
 - [:octicons-mark-github-16: commander-cli/commander](https://github.com/commander-cli/commander)
@@ -22,10 +26,6 @@ Various task runners
 ### Just
 
 - [:octicons-mark-github-16: casey/just](https://github.com/casey/just)
-
-### Maid
-
-- [:octicons-mark-github-16: egoist/maid](https://github.com/egoist/maid)
 
 ### Navi
 

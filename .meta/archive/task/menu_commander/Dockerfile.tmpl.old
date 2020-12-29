@@ -1,4 +1,0 @@
-FROM ruby:slim
-RUN gem install menu_commander
-
-{{- template "validate" }}

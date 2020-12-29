@@ -1,2 +1,0 @@
-{{- template "binary" }}
-{{- template "validate" }}

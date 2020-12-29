@@ -1,8 +1,0 @@
-FROM ruby:alpine
-
-RUN gem install mdl
-
-
-{{- template "validate" }}
-# ENTRYPOINT ["mdl"]
-# CMD [ "--help" ]

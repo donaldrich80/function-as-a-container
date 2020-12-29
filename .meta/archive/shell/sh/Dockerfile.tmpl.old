@@ -1,6 +1,0 @@
-FROM mvdan/shfmt as builder
-FROM alpine
-COPY --from=builder /bin/shfmt /usr/local/bin/shfmt
-
-
-{{- template "validate" }}

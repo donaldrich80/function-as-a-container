@@ -10,7 +10,11 @@ commands:
     help: -h
     version: -v
     github: leopardslab/dunner
-    download: https://github.com/leopardslab/dunner/releases/download/v2.1.3/dunner_2.1.3_linux_x86_64.tar.gz
+  cheat:
+    prefix: cheat
+    help: -h
+    version: -v
+    github: cheat/cheat
   tusk:
     description: "The modern task runner"
     prefix: tusk
@@ -53,12 +57,11 @@ commands:
     help: --help
     version: --version
     github: commander-cli/commander
-    download: https://github.com/SimonBaeumer/commander/releases/download/v2.1.0/commander-linux-amd64
-  maid:
-    prefix: maid
-    help: --help
-    version: --version
-    github: egoist/maid
+  # maid:
+  #   prefix: maid
+  #   help: --help
+  #   version: --version
+  #   github: egoist/maid
   # mask:
   #   prefix: mask
   #   help: --help

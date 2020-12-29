@@ -30,11 +30,11 @@ RUN gget github.com/commander-cli/commander --executable commander='commander-li
 # FROM donaldrich/builder:latest AS dunner-builder
 RUN gget github.com/leopardslab/dunner dunner_*_linux_x86_64.tar.gz --stdout | tar -xzf- dunner
 # RUN upx dunner
-# RUN gget github.com/cheat/cheat cheat-linux-amd64.gz --stdout | tar -xJf- cheat
+# RUN gget github.com/cheat/cheat cheat-linux-amd64.gz --stdout | tar -xzf- cheat
 
 
 
-FROM node:alpine
+FROM alpine
 
 # RUN npm install -g maid
 

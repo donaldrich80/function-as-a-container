@@ -21,7 +21,6 @@ include:
   - local: .meta/pipelines/media/graphwiz/build.gitlab-ci.yml
   - local: .meta/pipelines/media/diagrams/build.gitlab-ci.yml
   - local: .meta/pipelines/media/imagemagick/build.gitlab-ci.yml
-  - local: .meta/pipelines/.meta/archive/detect-secrets/build.gitlab-ci.yml
   - local: .meta/pipelines/policy/build.gitlab-ci.yml
   - local: .meta/pipelines/kubernetes/build.gitlab-ci.yml
   - local: .meta/pipelines/documents/pandoc/build.gitlab-ci.yml

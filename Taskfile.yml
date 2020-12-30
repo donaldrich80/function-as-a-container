@@ -24,8 +24,8 @@ tasks:
     cmds:
       - pre-commit install
       - pre-commit autoupdate
-      - pre-commit install --hook-type commit-msg
-      - pre-commit install --hook-type prepare-commit-msg
+      # - pre-commit install --hook-type commit-msg
+      # - pre-commit install --hook-type prepare-commit-msg
       - pre-commit run -a || true
 
   clean:
@@ -37,22 +37,21 @@ tasks:
       - "-f .meta/pipelines"
 
   deps:
-    deps: [gomplate, pre-commit, buildx]
-
-  gomplate:
     cmds:
       - echo "install gomplate"
-    status:
-      - gomplate -v
-
-  pre-commit:
-    cmds:
       - sudo pip3 install pre-commit
-    status:
-      - pre-commit -V
-
-  buildx:
-    cmds:
       - echo "install buildx"
     status:
+      - gomplate -v
+      - pre-commit -V
       - docker buildx version
+
+  # - args:
+  #     - merge
+  #     - -a
+  #   description: Use yq
+  #   entry: --entrypoint yq mikefarah/yq
+  #   files: git-hooks.yml
+  #   id: hook-test
+  #   language: docker_image
+  #   log_file: .pre-commit-hooks.yaml

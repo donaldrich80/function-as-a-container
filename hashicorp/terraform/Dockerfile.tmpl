@@ -1,35 +1,24 @@
-FROM donaldrich/builder:latest  AS terraform-builder
-COPY --from=hashicorp/terraform /bin/terraform /usr/local/bin/terraform
-RUN upx /usr/local/bin/terraform
+FROM donaldrich/builder:latest  AS builder
+COPY --from=hashicorp/terraform /bin/terraform terraform
 
-FROM donaldrich/builder:latest AS tflint-builder
-RUN ginstall.sh tflint latest
-RUN upx /usr/local/bin/tflint
+WORKDIR /data
 
-FROM donaldrich/builder:latest AS tfsec-builder
-RUN gget github.com/tfsec/tfsec --executable /usr/local/bin/tfsec='tfsec-linux-amd64'
-RUN gget github.com/tfsec/tfsec --executable /usr/local/bin/tfsec-checkgen='tfsec-checkgen-linux-amd64'
-RUN upx /usr/local/bin/tfsec
-RUN upx /usr/local/bin/tfsec-checkgen
-
-FROM donaldrich/builder:latest AS terraform-docs-builder
-COPY --from=quay.io/terraform-docs/terraform-docs:latest /usr/local/bin/terraform-docs /usr/local/bin/terraform-docs
-RUN upx /usr/local/bin/terraform-docs
-
-FROM donaldrich/builder:latest AS terrahelp-builder
-RUN gget github.com/opencredo/terrahelp --executable /usr/local/bin/terrahelp='*linux-amd64'
-RUN upx /usr/local/bin/terrahelp
-
-FROM donaldrich/builder:latest AS tfmigrate-builder
-RUN wget -O archive.tar.gz "https://github.com/minamijoyo/tfmigrate/releases/download/v0.1.0/tfmigrate_0.1.0_linux_amd64.tar.gz"
-RUN tar xzf archive.tar.gz
-RUN upx tfmigrate
-RUN mv tfmigrate /usr/local/bin
-RUN chmod a+x /usr/local/bin/tfmigrate
-
-# FROM donaldrich/builder:latest AS terraform-provider-sops-builder
-# RUN wget "https://github.com/carlpett/terraform-provider-sops/releases/download/v0.5.2/terraform-provider-sops_0.5.2_linux_amd64.zip"
-# RUN gget github.com/carlpett/terraform-provider-sops --executable /usr/local/bin/terrahelp='*linux-amd64'
+RUN gget github.com/tfsec/tfsec --executable tfsec='tfsec-linux-amd64'
+RUN gget github.com/tfsec/tfsec --executable tfsec-checkgen='tfsec-checkgen-linux-amd64'
+RUN gget github.com/opencredo/terrahelp --executable terrahelp='*linux-amd64'
+RUN gget github.com/minamijoyo/tfmigrate tfmigrate_*_linux_amd64.tar.gz --stdout | tar -xzf- tfmigrate
+RUN gget github.com/gruntwork-io/terragrunt --executable terragrunt='*linux_amd64'
+RUN gget github.com/GoogleCloudPlatform/terraformer --executable terraformer='*all-linux-amd64'
+RUN gget github.com/paraterraform/para --executable para='*linux-amd64'
+RUN gget github.com/cloudposse/tfenv --executable tfenv='*linux_amd64'
+RUN gget github.com/asteris-llc/converge converge_*_linux_amd64.tar.gz --stdout | tar -xzf- converge
+RUN gget github.com/env0/terratag terratag_*_linux_amd64.tar.gz --stdout | tar -xzf- terratag
+# RUN wget -O archive.tar.gz "https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz"
+# RUN tar xzf archive.tar.gz
+# RUN gget github.com/env0/terratag --type=archive '*linux_amd64.tar.gz' --stdout | tar -tzf- | tail -n2
+# RUN upx terratag
+# RUN mv terratag /usr/local/bin
+# RUN chmod a+x /usr/local/bin/terratag
 
 FROM donaldrich/builder:go AS terraform-provider-proxmox-builder
 RUN git clone https://github.com/Telmate/terraform-provider-proxmox.git
@@ -37,57 +26,38 @@ WORKDIR /terraform-provider-proxmox
 RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox
 RUN go install github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
 
-FROM donaldrich/builder:latest AS terragrunt-builder
-RUN gget github.com/gruntwork-io/terragrunt --executable /usr/local/bin/terragrunt='*linux_amd64'
-RUN upx /usr/local/bin/terragrunt
+RUN ginstall.sh tflint latest
+RUN upx /usr/local/bin/tflint
 
-FROM donaldrich/builder:latest AS terraformer-builder
-RUN gget github.com/GoogleCloudPlatform/terraformer --executable /usr/local/bin/terraformer='*all-linux-amd64'
-RUN upx /usr/local/bin/terraformer
-
-FROM donaldrich/builder:latest AS para-builder
-RUN gget github.com/paraterraform/para --executable /usr/local/bin/para='*linux-amd64'
-
-FROM donaldrich/builder:latest AS tfenv-builder
-RUN gget github.com/cloudposse/tfenv --executable /usr/local/bin/tfenv='*linux_amd64'
-RUN upx /usr/local/bin/tfenv
-
-# FROM donaldrich/builder:go AS converge-builder
-# RUN go get github.com/asteris-llc/converge
-# https://github.com/asteris-llc/converge/releases/download/0.6.0/converge_0.6.0_linux_amd64.tar.gz
-
-FROM donaldrich/builder:latest AS terracognita-builder
-COPY --from=cycloid/terracognita /app/terracognita /usr/local/bin/terracognita
-RUN upx /usr/local/bin/terracognita
-
-FROM donaldrich/builder:latest AS terratag-builder
-RUN wget -O archive.tar.gz "https://github.com/env0/terratag/releases/download/v0.1.21/terratag_0.1.21_linux_amd64.tar.gz"
-RUN tar xzf archive.tar.gz
-# RUN gget github.com/env0/terratag --type=archive '*linux_amd64.tar.gz' --stdout | tar -tzf- | tail -n2
-RUN upx terratag
-RUN mv terratag /usr/local/bin
-RUN chmod a+x /usr/local/bin/terratag
+# FROM donaldrich/builder:latest AS terraform-provider-sops-builder
+# RUN wget "https://github.com/carlpett/terraform-provider-sops/releases/download/v0.5.2/terraform-provider-sops_0.5.2_linux_amd64.zip"
+# RUN gget github.com/carlpett/terraform-provider-sops --executable /usr/local/bin/terrahelp='*linux-amd64'
 
 
 FROM ubuntu
 
-COPY --from=terratag-builder /usr/local/bin/terratag /usr/local/bin/terratag
-COPY --from=terracognita-builder /usr/local/bin/terracognita /usr/local/bin/terracognita
+COPY --from=builder /data/* /usr/local/bin/
+
+COPY --from=cycloid/terracognita /app/terracognita terracognita
+COPY --from=quay.io/terraform-docs/terraform-docs:latest /usr/local/bin/terraform-docs terraform-docs
+
+# COPY --from=terratag-builder /usr/local/bin/terratag /usr/local/bin/terratag
+# COPY --from=terracognita-builder /usr/local/bin/terracognita /usr/local/bin/terracognita
 # COPY --from=terraform-provider-keycloak-builder /usr/local/bin/terraform-provider-keycloak /.terraform.d/plugins/terraform-provider-keycloak
 # COPY --from=converge-builder /go/bin/converge /usr/local/bin/converge
-COPY --from=terraformer-builder /usr/local/bin/terraformer /usr/local/bin/terraformer
-COPY --from=terragrunt-builder /usr/local/bin/terragrunt /usr/local/bin/terragrunt
+# COPY --from=terraformer-builder /usr/local/bin/terraformer /usr/local/bin/terraformer
+# COPY --from=terragrunt-builder /usr/local/bin/terragrunt /usr/local/bin/terragrunt
 COPY --from=terraform-provider-proxmox-builder  /go/bin/terraform-provider-proxmox  /.terraform.d/plugins/terraform-provider-proxmox
 COPY --from=terraform-provider-proxmox-builder  /go/bin/terraform-provisioner-proxmox  /.terraform.d/plugins/terraform-provisioner-proxmox
 COPY --from=registry.gitlab.com/gitlab-org/terraform-images/stable:latest /usr/bin/gitlab-terraform /usr/local/bin/gitlab-terraform
-COPY --from=terrahelp-builder  /usr/local/bin/terrahelp  /usr/local/bin/terrahelp
-COPY --from=terraform-docs-builder /usr/local/bin/terraform-docs /usr/local/bin/terraform-docs
-COPY --from=tfsec-builder /usr/local/bin/tfsec /usr/local/bin/tfsec
-COPY --from=tfsec-builder /usr/local/bin/tfsec-checkgen /usr/local/bin/tfsec-checkgen
-COPY --from=tflint-builder /usr/local/bin/tflint /usr/local/bin/tflint
-COPY --from=terraform-builder /usr/local/bin/terraform /usr/local/bin/terraform
-COPY --from=para-builder /usr/local/bin/para /usr/local/bin/para
-COPY --from=tfmigrate-builder /usr/local/bin/tfmigrate /usr/local/bin/tfmigrate
-COPY --from=tfenv-builder /usr/local/bin/tfenv /usr/local/bin/tfenv
+# COPY --from=terrahelp-builder  /usr/local/bin/terrahelp  /usr/local/bin/terrahelp
+# COPY --from=terraform-docs-builder /usr/local/bin/terraform-docs /usr/local/bin/terraform-docs
+# COPY --from=tfsec-builder /usr/local/bin/tfsec /usr/local/bin/tfsec
+# COPY --from=tfsec-builder /usr/local/bin/tfsec-checkgen /usr/local/bin/tfsec-checkgen
+COPY --from=terraform-provider-proxmox-builder /usr/local/bin/tflint /usr/local/bin/tflint
+# COPY --from=terraform-builder /usr/local/bin/terraform /usr/local/bin/terraform
+# COPY --from=para-builder /usr/local/bin/para /usr/local/bin/para
+# COPY --from=tfmigrate-builder /usr/local/bin/tfmigrate /usr/local/bin/tfmigrate
+# COPY --from=tfenv-builder /usr/local/bin/tfenv /usr/local/bin/tfenv
 
 {{- template "validate" }}

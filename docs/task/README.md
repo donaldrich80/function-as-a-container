@@ -11,10 +11,6 @@ Various task runners
 
 ## Documentation
 
-### Cheat
-
-- [:octicons-mark-github-16: cheat/cheat](https://github.com/cheat/cheat)
-
 ### Commander
 
 - [:octicons-mark-github-16: commander-cli/commander](https://github.com/commander-cli/commander)

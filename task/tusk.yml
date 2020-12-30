@@ -15,9 +15,6 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: cheat -v
-          print: "\e[32mcheat\e[0m"
-      - command:
           exec: commander --version
           print: "\e[32mcommander\e[0m"
       - command:
@@ -44,9 +41,6 @@ tasks:
   help:
     usage: see config options
     run:
-      - command:
-          exec: cheat -h
-          print: "\e[32mcheat\e[0m"
       - command:
           exec: commander --help
           print: "\e[32mcommander\e[0m"

@@ -6,9 +6,10 @@ RUN wget "https://releases.hashicorp.com/nomad/${NOMAD_VERSION}/nomad_${NOMAD_VE
 RUN unzip nomad_${NOMAD_VERSION}_linux_amd64.zip
 
 RUN upx /nomad
+RUN gget github.com/hashicorp/levant --executable /usr/local/bin/levant='linux-amd64-levant'
 
 FROM alpine
 
 COPY --from=builder  /nomad  /usr/local/bin/nomad
 
-
+COPY --from=builder  /usr/local/bin/levant /usr/local/bin/levant

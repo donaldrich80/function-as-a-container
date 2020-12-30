@@ -1,38 +1,24 @@
 FROM donaldrich/builder:latest AS builder
 
 WORKDIR /data
-# RUN gget github.com/rliebz/tusk tusk_*_linux_amd64.tar.gz --cd=/usr/local/bin --stdout | tar -xzf- tusk
+
 RUN gget github.com/rliebz/tusk tusk_*_linux_amd64.tar.gz --stdout | tar -xzf- tusk
-
-# FROM donaldrich/builder:latest AS task-builder
-# RUN gget github.com/go-task/task task_linux_amd64.tar.gz --cd=/usr/local/bin --stdout | tar -xzf- task
 RUN gget github.com/go-task/task task_linux_amd64.tar.gz --stdout | tar -xzf- task
-
-# FROM donaldrich/builder:latest AS robo-builder
-# RUN gget github.com/tj/robo --executable /usr/local/bin/robo='*linux_amd64'
 RUN gget github.com/tj/robo --executable robo='*linux_amd64'
-# FROM donaldrich/builder:latest AS orbit-builder
 RUN gget github.com/gulien/orbit orbit_Linux_x86_64.tar.gz --stdout | tar -xzf- orbit
-# > upx -o fzf
-
-# FROM donaldrich/builder:latest AS just-builder
 RUN gget github.com/casey/just just-*-x86_64-unknown-linux-musl.tar.gz --stdout | tar -xzf- just
-
-# FROM donaldrich/builder:latest AS navi-builder
 RUN gget github.com/denisidoro/navi navi-*-x86_64-unknown-linux-musl.tar.gz --stdout | tar -xzf- navi
-
 # DONT UPX
-# FROM donaldrich/builder:latest AS commander-builder
-# RUN gget github.com/commander-cli/commander --executable /usr/local/bin/commander='commander-linux-amd64'
 RUN gget github.com/commander-cli/commander --executable commander='commander-linux-amd64'
-
-
-# FROM donaldrich/builder:latest AS dunner-builder
 RUN gget github.com/leopardslab/dunner dunner_*_linux_x86_64.tar.gz --stdout | tar -xzf- dunner
 # RUN upx dunner
-# RUN gget github.com/cheat/cheat cheat-linux-amd64.gz --stdout | tar -xzf- cheat
+RUN gget github.com/cheat/cheat cheat-linux-amd64.gz
+RUN gzip -d cheat-linux-amd64.gz
+RUN gget github.com/mumoshu/variant variant_*_linux_amd64.tar.gz --stdout | tar -xzf- variant
+# RUN wget -O - -q https://raw.githubusercontent.com/liujianping/job/master/install.sh | sh -s
+RUN gget github.com/liujianping/job job_*_Linux_x86_64.tar.gz --stdout | tar -xzf- job
 
-
+# https://github.com/davidovich/summon
 
 FROM alpine
 

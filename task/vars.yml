@@ -10,11 +10,11 @@ commands:
     help: -h
     version: -v
     github: leopardslab/dunner
-  cheat:
-    prefix: cheat
-    help: -h
-    version: -v
-    github: cheat/cheat
+  # cheat:
+  #   prefix: cheat
+  #   help: -h
+  #   version: -v
+  #   github: cheat/cheat
   tusk:
     description: "The modern task runner"
     prefix: tusk

@@ -4,89 +4,52 @@ FROM docker:latest  AS docker
 # RUN gget --verify-checksum=sha256 github.com/theupdateframework/notary --executable /usr/local/bin/notary='notary-Linux-amd64'
 # RUN upx /usr/local/bin/notary
 
-FROM donaldrich/builder:latest AS docker-builder
-COPY --from=docker:latest /usr/local/bin/docker /usr/local/bin/docker
-RUN upx /usr/local/bin/docker
+FROM donaldrich/builder:latest AS builder
 
-FROM donaldrich/builder:latest AS docker-compose-builder
-COPY --from=docker/compose  /usr/local/bin/docker-compose  /usr/local/bin/docker-compose
+WORKDIR /data
 
-FROM donaldrich/builder:latest AS docker-machine-builder
-RUN ginstall.sh docker-machine latest
-RUN upx /usr/local/bin/docker-machine
-
-FROM donaldrich/builder:latest AS buildx-builder
-RUN mkdir -p ~/.docker/cli-plugins/
-RUN gget github.com/docker/buildx --executable /root/.docker/cli-plugins/docker-buildx='*linux-amd64'
-
-FROM donaldrich/builder:latest AS dockfmt-builder
-RUN gget github.com/jessfraz/dockfmt --executable /usr/local/bin/dockfmt='dockfmt-linux-amd64'
-
-FROM donaldrich/builder:latest AS dive-builder
-RUN gget github.com/wagoodman/dive dive_*_linux_amd64.tar.gz --stdout | tar -xfz- dive
-RUN mv dive /usr/local/bin
-
-FROM donaldrich/builder:latest AS dobi-builder
-RUN ginstall.sh dobi latest
-RUN upx /usr/local/bin/dobi
-
-FROM donaldrich/builder:latest AS hadolint-builder
-RUN gget github.com/hadolint/hadolintt --executable /usr/local/bin/hadolint='hadolint-Linux-x86_64'
-# https://github.com/hadolint/hadolint/releases/download/v1.19.0/hadolint-Linux-x86_64
-# COPY --from=hadolint/hadolint /bin/hadolint /usr/local/bin/hadolint
-
-FROM donaldrich/builder:go AS docker-credential-vault-login-builder
-# https://github.com/morningconsult/docker-credential-vault-login/releases/download/v0.3.9/docker-credential-vault-login_0.3.9_Linux_x86_64.tar.gz
-RUN git clone https://github.com/morningconsult/docker-credential-vault-login /build
-WORKDIR /build
-RUN make
-WORKDIR /
-RUN upx /build/bin/docker-credential-vault-login
+RUN gget github.com/morningconsult/docker-credential-vault-login docker-credential-vault-login_*_Linux_x86_64.tar.gz
 COPY ./config.hcl /etc/docker-credential-vault-login/
 
-FROM donaldrich/builder:latest AS dockerfile-generator-builder
-RUN gget github.com/ozankasikci/dockerfile-generator --executable /usr/local/bin/dfg='dfg_*_linux_amd64'
-RUN upx /usr/local/bin/dfg
+RUN gget github.com/jessfraz/dockfmt --executable dockfmt='dockfmt-linux-amd64'
+RUN gget github.com/wagoodman/dive dive_*_linux_amd64.tar.gz --stdout | tar -xfz- dive
+RUN gget github.com/hadolint/hadolintt --executable hadolint='hadolint-Linux-x86_64'
+RUN gget github.com/ozankasikci/dockerfile-generator --executable dfg='dfg_*_linux_amd64'
+RUN gget github.com/earthly/earthly --executable earthly='earthly-linux-amd64'
+RUN gget github.com/docker/buildx --executable docker-buildx='*linux-amd64'
 
-FROM donaldrich/builder:latest AS docker-gen-builder
+FROM donaldrich/builder:go AS go-builder
+RUN ginstall.sh docker-machine latest
+RUN ginstall.sh dobi latest
 RUN ginstall.sh docker-gen latest
-RUN upx /usr/local/bin/docker-gen
-
-FROM donaldrich/builder:latest AS docker-slim-builder
-COPY --from=dslim/docker-slim /bin/docker-slim /usr/local/bin/docker-slim
-RUN upx /usr/local/bin/docker-slim
-
-FROM donaldrich/builder:go AS docker-shell-builder
 RUN git clone https://github.com/Trendyol/docker-shell.git /docker-shell
 WORKDIR /docker-shell
 RUN go build -o /usr/local/bin/docker-shell .
 
-FROM donaldrich/builder:latest AS rash-builder
-COPY --from=rustagainshell/rash /bin/rash /usr/local/bin/rash
-RUN upx /usr/local/bin/rash
-
-FROM donaldrich/builder:latest AS earthly-builder
-RUN gget github.com/earthly/earthly --executable /usr/local/bin/earthly='earthly-linux-amd64'
-# RUN upx /usr/local/bin/earthly
-
 FROM alpine
 
-COPY --from=earthly-builder /usr/local/bin/earthly /usr/local/bin/earthly
-COPY --from=docker-shell-builder /usr/local/bin/docker-shell /usr/local/bin/docker-shell
-COPY --from=docker-slim-builder /usr/local/bin/docker-slim /usr/local/bin/docker-slim
-COPY --from=docker-gen-builder /usr/local/bin/docker-gen /usr/local/bin/docker-gen
-COPY --from=dockerfile-generator-builder  /usr/local/bin/dfg  /usr/local/bin/dfg
-COPY --from=hadolint-builder  /usr/local/bin/hadolint  /usr/local/bin/hadolint
-COPY --from=dobi-builder /usr/local/bin/dobi /usr/local/bin/dobi
-COPY --from=dive-builder  /usr/local/bin/dive  /usr/local/bin/dive
-COPY --from=dockfmt-builder  /usr/local/bin/dockfmt  /usr/local/bin/dockfmt
-# COPY --from=notary-builder  /usr/local/bin/notary  /usr/local/bin/notary
-COPY --from=docker-builder   /usr/local/bin/docker  /usr/local/bin/docker
-COPY --from=docker-compose-builder  /usr/local/bin/docker-compose  /usr/local/bin/docker-compose
-COPY --from=docker-machine-builder  /usr/local/bin/docker-machine  /usr/local/bin/docker-machine
-COPY --from=buildx-builder  /root/.docker/cli-plugins/docker-buildx  /root/.docker/cli-plugins/docker-buildx
-COPY --from=docker-credential-vault-login-builder /etc/docker-credential-vault-login/config.hcl /etc/docker-credential-vault-login/config.hcl
-COPY --from=docker-credential-vault-login-builder /build/bin/docker-credential-vault-login /usr/local/bin/docker-credential-vault-login
-COPY --from=rash-builder  /usr/local/bin/rash  /usr/local/bin/rash
+COPY --from=builder /data/* /usr/local/bin/
+# COPY --from=earthly-builder /usr/local/bin/earthly /usr/local/bin/earthly
+# COPY --from=docker-shell-builder /usr/local/bin/docker-shell /usr/local/bin/docker-shell
+# COPY --from=docker-slim-builder /usr/local/bin/docker-slim /usr/local/bin/docker-slim
+# COPY --from=docker-gen-builder /usr/local/bin/docker-gen /usr/local/bin/docker-gen
+# COPY --from=dockerfile-generator-builder  /usr/local/bin/dfg  /usr/local/bin/dfg
+# COPY --from=hadolint-builder  /usr/local/bin/hadolint  /usr/local/bin/hadolint
+# COPY --from=dobi-builder /usr/local/bin/dobi /usr/local/bin/dobi
+# COPY --from=dive-builder  /usr/local/bin/dive  /usr/local/bin/dive
+# COPY --from=dockfmt-builder  /usr/local/bin/dockfmt  /usr/local/bin/dockfmt
+# # COPY --from=notary-builder  /usr/local/bin/notary  /usr/local/bin/notary
+# COPY --from=docker-builder   /usr/local/bin/docker  /usr/local/bin/docker
+# COPY --from=docker-compose-builder  /usr/local/bin/docker-compose  /usr/local/bin/docker-compose
+# COPY --from=docker-machine-builder  /usr/local/bin/docker-machine  /usr/local/bin/docker-machine
+# COPY --from=buildx-builder  /root/.docker/cli-plugins/docker-buildx  /root/.docker/cli-plugins/docker-buildx
+# COPY --from=docker-credential-vault-login-builder /etc/docker-credential-vault-login/config.hcl /etc/docker-credential-vault-login/config.hcl
+# COPY --from=docker-credential-vault-login-builder /build/bin/docker-credential-vault-login /usr/local/bin/docker-credential-vault-login
+# COPY --from=rash-builder  /usr/local/bin/rash  /usr/local/bin/rash
+
+COPY --from=docker:latest /usr/local/bin/docker /usr/local/bin/docker
+COPY --from=docker/compose  /usr/local/bin/docker-compose  /usr/local/bin/docker-compose
+COPY --from=dslim/docker-slim /bin/docker-slim /usr/local/bin/docker-slim
+COPY --from=rustagainshell/rash /bin/rash /usr/local/bin/rash
 
 {{- template "validate" }}

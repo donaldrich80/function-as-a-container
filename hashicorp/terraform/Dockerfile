@@ -1,7 +1,7 @@
 FROM donaldrich/builder:latest  AS builder
 COPY --from=hashicorp/terraform /bin/terraform terraform
 
-WORKDIR /work
+WORKDIR /data
 
 RUN gget github.com/tfsec/tfsec --executable tfsec='tfsec-linux-amd64'
 RUN gget github.com/tfsec/tfsec --executable tfsec-checkgen='tfsec-checkgen-linux-amd64'
@@ -36,7 +36,7 @@ RUN upx /usr/local/bin/tflint
 
 FROM ubuntu
 
-COPY --from=builder /work/* /usr/local/bin/
+COPY --from=builder /data/* /usr/local/bin/
 
 COPY --from=cycloid/terracognita /app/terracognita terracognita
 COPY --from=quay.io/terraform-docs/terraform-docs:latest /usr/local/bin/terraform-docs terraform-docs

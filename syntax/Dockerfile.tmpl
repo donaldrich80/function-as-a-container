@@ -1,44 +1,33 @@
-FROM donaldrich/builder:latest AS yq-builder
-RUN ginstall.sh yq latest
-RUN upx /usr/local/bin/yq
+FROM donaldrich/builder:latest AS builder
 
-# DONT UPX
-FROM donaldrich/builder:latest AS ytt-builder
-RUN gget github.com/k14s/ytt --executable /usr/local/bin/ytt='*linux-amd64'
-# RUN upx /usr/local/bin/ytt
+WORKDIR /data
 
-FROM donaldrich/builder AS yaml-tools-builder
-RUN wget "https://raw.githubusercontent.com/thecodingmachine/yaml-tools/0.0.6/src/yaml_tools.py" -O /usr/local/bin/yaml-tools
-RUN chmod +x /usr/local/bin/yaml-tools
+RUN gget github.com/mikefarah/yq --executable yq='yq_linux_amd64'
 
-FROM donaldrich/builder:latest AS yj-builder
-COPY --from=sclevine/yj  /bin/yj /usr/local/bin/yj
-RUN chmod +rx /usr/local/bin/yj
-RUN upx /usr/local/bin/yj
+RUN gget github.com/k14s/ytt --executable ytt='*linux-amd64'
 
-FROM donaldrich/builder:latest AS jq-builder
-RUN ginstall.sh jq latest
-RUN upx /usr/local/bin/jq
+RUN gget github.com/sclevine/yj --executable yj='yj-linux'
 
-FROM donaldrich/builder:latest AS json2hcl-builder
-RUN gget github.com/kvz/json2hcl --executable /usr/local/bin/json2hcl='*linux_amd64'
-RUN upx /usr/local/bin/json2hcl
+RUN wget "https://raw.githubusercontent.com/thecodingmachine/yaml-tools/0.0.6/src/yaml_tools.py" -O yaml-tools
+RUN chmod +x yaml-tools
 
-FROM donaldrich/builder:latest AS gomplate-builder
-RUN ginstall.sh gomplate latest
-RUN upx /usr/local/bin/gomplate
+RUN gget github.com/stedolan/jq --executable jq='jq-linux64'
 
-FROM donaldrich/builder:go AS hclfmt-builder
-RUN go get github.com/fatih/hclfmt
+RUN gget github.com/kvz/json2hcl --executable json2hcl='*linux_amd64'
+
+RUN gget github.com/hairyhenderson/gomplate --executable gomplate='gomplate_linux-amd64'
+
+RUN gget github.com/tmccombs/hcl2json --executable hcl2json='*linux_amd64'
 # RUN upx /go/bin/hclfmt
 
 # FROM donaldrich/builder:go AS jsonnet-builder
 # RUN go get github.com/google/go-jsonnet/cmd/jsonnet
 # RUN upx /go/bin/jsonnet
 
-FROM donaldrich/builder:latest AS hcl2json-builder
-RUN gget github.com/tmccombs/hcl2json --executable /usr/local/bin/hcl2json='*linux_amd64'
-RUN upx /usr/local/bin/hcl2json
+
+
+FROM donaldrich/builder:go AS hclfmt-builder
+RUN go get github.com/fatih/hclfmt
 
 FROM python:alpine
 
@@ -47,15 +36,9 @@ RUN pip install --no-cache-dir ruamel.yaml ruamel.yaml.cmd yamllint yamale toml-
 # jsonnet
 # bash
 
+COPY --from=builder /data/* /usr/local/bin/
+
 # COPY --from=jsonnet-builder /go/bin/jsonnet /usr/local/bin/jsonnet
 COPY --from=hclfmt-builder /go/bin/hclfmt /usr/local/bin/hclfmt
-COPY --from=json2hcl-builder /usr/local/bin/json2hcl /usr/local/bin/json2hcl
-COPY --from=jq-builder /usr/local/bin/jq /usr/local/bin/jq
-COPY --from=yaml-tools-builder /usr/local/bin/yaml-tools /usr/local/bin/yaml-tools
-COPY --from=yq-builder /usr/local/bin/yq /usr/local/bin/yq
-COPY --from=yj-builder /usr/local/bin/yj /usr/local/bin/yj
-COPY --from=ytt-builder /usr/local/bin/ytt /usr/local/bin/ytt
-COPY --from=gomplate-builder /usr/local/bin/gomplate /usr/local/bin/gomplate
-COPY --from=hcl2json-builder /usr/local/bin/hcl2json /usr/local/bin/hcl2json
 
 {{- template "validate" }}

@@ -51,3 +51,4 @@ https://github.com/zero-os/cloud-init-server
 https://github.com/nhurel/terraspec
 https://github.com/mojocn/sshfortress
 https://github.com/openssh/openssh-portable
+https://github.com/TomWright/dasel/releases/download/v1.11.0/dasel_linux_amd64

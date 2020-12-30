@@ -10,6 +10,11 @@ commands:
     help: -h
     version: -v
     github: cli/cli
+  # gitversion:
+  #   prefix: gitversion
+  #   help: --help
+  #   version: --version
+  #   github: GitTools/GitVersion
   glab:
     prefix: glab
     help: help

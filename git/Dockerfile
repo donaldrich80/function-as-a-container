@@ -27,4 +27,3 @@ COPY --from=builder /data/* /usr/local/bin/
 
 COPY --from=tago-builder /go/bin/tago /usr/local/bin/tago
 COPY --from=registry.gitlab.com/gitlab-org/release-cli:latest /usr/local/bin/release-cli /usr/local/bin/release-cli
-

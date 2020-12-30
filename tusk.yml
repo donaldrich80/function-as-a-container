@@ -11,20 +11,20 @@ tasks:
     usage: analyze built image
     run: docker system prune --all --force
 
-  cleanup:
-    usage: housekeeping tasks
-    run:
-      - command: rm -r docs | true
-      - command: rm -r .meta/pipelines | true
-      - command: mkdir docs | true
-      - command: cp .meta/docs/index.md docs
-      - command: cp -r .meta/docs/about docs
-      - command: cp CHANGELOG docs/about
+  # cleanup:
+  #   usage: housekeeping tasks
+  #   run:
+  #     - command: rm -r docs | true
+  #     - command: rm -r .meta/pipelines | true
+  #     - command: mkdir docs | true
+  #     - command: cp .meta/docs/index.md docs
+  #     - command: cp -r .meta/docs/about docs
+  #     - command: cp CHANGELOG docs/about
 
-  template:
-    usage: applys template
-    run:
-      - command: ./run-all.sh
+  # template:
+  #   usage: applys template
+  #   run:
+  #     - command: ./run-all.sh
 
   repo-commit:
     run:
@@ -40,14 +40,14 @@ tasks:
       - task: repo-template
       # - task: repo-commit
 
-  hooks:
-    usage: hooks
-    run:
-      - command: pre-commit install
-      - command: pre-commit autoupdate
-      - command: pre-commit install --hook-type commit-msg
-      - command: pre-commit install --hook-type prepare-commit-msg
-      - command: pre-commit run -a || true
+  # hooks:
+  #   usage: hooks
+  #   run:
+  #     - command: pre-commit install
+  #     - command: pre-commit autoupdate
+  #     - command: pre-commit install --hook-type commit-msg
+  #     - command: pre-commit install --hook-type prepare-commit-msg
+  #     - command: pre-commit run -a || true
 
   hooks-list:
     usage: repo-hook-list
@@ -63,11 +63,11 @@ tasks:
       - command: 'git commit -m "docs(hooks): refresh hook list"'
       - command: git push origin master
 
-  hooks-full:
-    run:
-      - task: hooks-install
-      - task: hooks-list
-      - task: hooks-commit
+  # hooks-full:
+  #   run:
+  #     - task: hooks-install
+  #     - task: hooks-list
+  #     - task: hooks-commit
 
   full:
     run:

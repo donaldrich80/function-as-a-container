@@ -10,4 +10,3 @@ COPY --from=projectdiscovery/naabu /app/scripts /usr/local/bin/scripts
 COPY --from=projectdiscovery/httpx /usr/local/bin/httpx /usr/local/bin/httpx
 COPY --from=projectdiscovery/shuffledns /usr/bin/shuffledns /usr/local/bin/shuffledns
 COPY --from=projectdiscovery/proxify /usr/local/bin/proxify /usr/local/bin/proxify
-

@@ -44,4 +44,3 @@ RUN tusk validate
 ENTRYPOINT ["tusk"]
 
 CMD ["config"]
-

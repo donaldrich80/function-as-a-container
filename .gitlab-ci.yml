@@ -17,6 +17,7 @@ stages:
   - pre
   - lint
   - debug
+  - bundler
   - build
   - documentation
   - deploy

@@ -11,17 +11,20 @@ WORKDIR /data
 RUN gget github.com/morningconsult/docker-credential-vault-login docker-credential-vault-login_*_Linux_x86_64.tar.gz
 COPY ./config.hcl /etc/docker-credential-vault-login/
 
-RUN gget github.com/jessfraz/dockfmt --executable dockfmt='dockfmt-linux-amd64'
-RUN gget github.com/wagoodman/dive dive_*_linux_amd64.tar.gz --stdout | tar -xfz- dive
-RUN gget github.com/hadolint/hadolintt --executable hadolint='hadolint-Linux-x86_64'
-RUN gget github.com/ozankasikci/dockerfile-generator --executable dfg='dfg_*_linux_amd64'
-RUN gget github.com/earthly/earthly --executable earthly='earthly-linux-amd64'
-RUN gget github.com/docker/buildx --executable docker-buildx='*linux-amd64'
+RUN gget --executable github.com/jessfraz/dockfmt dockfmt='dockfmt-linux-amd64'
+RUN gget --stdout github.com/wagoodman/dive dive_*_linux_amd64.tar.gz | tar -xzf- dive
+RUN gget --executable github.com/hadolint/hadolint hadolint='hadolint-Linux-x86_64'
+RUN gget --executable github.com/ozankasikci/dockerfile-generator dfg='dfg_*_linux_amd64'
+RUN gget --executable github.com/earthly/earthly earthly='earthly-linux-amd64'
+RUN gget --executable github.com/docker/buildx  docker-buildx='*linux-amd64'
+RUN gget --executable github.com/dnephin/dobi dobi='dobi-linux-arm64'
+RUN gget --stdout github.com/jwilder/docker-gen docker-gen-linux-amd64-*.tar.gz | tar -xzf- docker-gen
+
 
 FROM donaldrich/builder:go AS go-builder
 RUN ginstall.sh docker-machine latest
-RUN ginstall.sh dobi latest
-RUN ginstall.sh docker-gen latest
+# RUN ginstall.sh dobi latest
+# RUN ginstall.sh docker-gen latest
 RUN git clone https://github.com/Trendyol/docker-shell.git /docker-shell
 WORKDIR /docker-shell
 RUN go build -o /usr/local/bin/docker-shell .

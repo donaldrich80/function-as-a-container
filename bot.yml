@@ -33,7 +33,7 @@
     PROJECT_PATH: donaldrich/function-as-a-container
     PACKAGE_MANAGER_SET: docker
     PACKAGE_MANAGER: docker
-    DIRECTORY: docker
+    DIRECTORY: /
   before_script:
     - cd /home/dependabot
   script:

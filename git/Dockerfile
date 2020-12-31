@@ -19,9 +19,7 @@ RUN upx /go/bin/tago
 # RUN npm install -g gitlab-ci-lint
 FROM python:alpine
 
-RUN pip3 install gitlint
-RUN pip3 install tsrc --user
-RUN pip install detect-secrets
+RUN pip3 --no-cache-dir install gitlint tsrc detect-secrets
 
 COPY --from=builder /data/* /usr/local/bin/
 

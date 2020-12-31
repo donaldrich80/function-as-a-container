@@ -1,4 +1,3 @@
 FROM python:alpine
 
-RUN pip3 install --upgrade pip && pip3 install --upgrade setuptools
-RUN pip3 install checkov
+RUN pip3 --no-cache-dir install --upgrade pip setuptools checkov

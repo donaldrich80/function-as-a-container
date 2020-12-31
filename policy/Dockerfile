@@ -13,7 +13,7 @@ RUN chmod a+x /usr/local/bin/stein
 
 FROM python:alpine
 
-RUN pip3 --no-cache install blueprint
+RUN pip3 --no-cache-dir install blueprint
 
 COPY --from=stein-builder /usr/local/bin/stein /usr/local/bin/stein
 

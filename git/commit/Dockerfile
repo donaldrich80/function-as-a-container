@@ -8,7 +8,7 @@ FROM node:alpine
 COPY --from=conform-builder  /usr/local/bin/conform  /usr/local/bin/conform
 
 RUN apk --update --no-cache add ca-certificates git git-lfs openssh python3 py3-pip
-RUN pip3 install -U commitizen pre-commit
+RUN pip3 --no-cache-dir install -U commitizen pre-commit
 RUN npm install -g --save-dev \
 #   conventional-changelog-conventionalcommits \
   # commitlint

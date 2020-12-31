@@ -37,17 +37,7 @@ repos:
   #   description: Checks for common misspellings in text files.
   #   args: ["-w", "."]
   #   repo: local
-  # - hooks:
-  #     - id: detect-private-key
-  #       stages:
-  #         - commit
-  #     - id: end-of-file-fixer
-  #     - id: check-added-large-files
-  #       stages:
-  #         - commit
-  #     - id: check-executables-have-shebangs
-  #     - exclude: mkdocs.yml
-  #       id: check-yaml
+
 
   #   repo: https://github.com/pre-commit/pre-commit-hooks
   #   rev: v3.3.0
@@ -71,3 +61,20 @@ repos:
   #         - commit-msg
   #   repo: https://github.com/commitizen-tools/commitizen
   #   rev: d8e9badae9d5ab1c088d5bb0932f3977db24d442
+
+  - repo: local
+    hooks:
+      - id: docker-hadolint
+        name: Lint Dockerfiles with hadolint
+        description: Lint Dockerfiles w hadolint
+        language: docker_image
+        entry: hadolint/hadolint hadolint
+        files: Dockerfile.*
+        exclude: Dockerfile.tmpl.*
+      - id: yaml-yamllint
+        name: Lint YAML w yamllint
+        description: Lint YAML w yamllint
+        language: docker_image
+        entry: --entrypoint yamllint donaldrich/function:syntax-tools
+        args: [--format, parsable, --strict]
+        types: [yaml]

@@ -21,7 +21,7 @@ RUN chmod +rx /usr/local/bin/container-structure-test
 RUN upx /usr/local/bin/container-structure-test
 
 FROM donaldrich/builder:latest AS inspec-builder
-RUN curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec
+RUN curl https://omnitruck.chef.io/install.sh | bash -s -- -P inspec
 
 # FROM donaldrich/builder:latest AS converge-builder
 # RUN curl get.converge.sh | bash -

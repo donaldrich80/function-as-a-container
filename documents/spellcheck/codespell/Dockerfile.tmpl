@@ -1,3 +1,3 @@
 FROM python:alpine
 
-RUN pip install codespell
+RUN pip install --no-cache-dir codespell

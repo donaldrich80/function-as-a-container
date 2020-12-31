@@ -85,11 +85,11 @@ tasks:
   #     - command: pre-commit run -a || true
   #     - command: pre-commit run -a
 
-  commit-to-remote:
-    run:
-      - command: git add .
-      - command: 'git commit -m "chore: repo"'
-      - command: git push origin master
+  # commit-to-remote:
+  #   run:
+  #     - command: git add .
+  #     - command: 'git commit -m "chore: repo"'
+  #     - command: git push origin master
 
   # repo:
   #   usage: check package versions
@@ -100,9 +100,9 @@ tasks:
   #     - task: pre-commit
   #     - task: commit
 
-  remote:
-    usage: check package versions
-    run:
-      - task: cleanup
-      - task: template
+  # remote:
+  #   usage: check package versions
+  #   run:
+  #     - task: cleanup
+  #     - task: template
       # - task: hooks

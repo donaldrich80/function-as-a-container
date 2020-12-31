@@ -17,6 +17,10 @@ source: documents/markdown/Dockerfile
 
 - [:octicons-mark-github-16: alanshaw/markdown-pdf](https://github.com/alanshaw/markdown-pdf)
 
+### Markdown-Spellcheck
+
+- [:octicons-mark-github-16: lukeapage/node-markdown-spellcheck](https://github.com/lukeapage/node-markdown-spellcheck)
+
 ### Markdownlint
 
 - [:octicons-mark-github-16: DavidAnson/markdownlint](https://github.com/DavidAnson/markdownlint)

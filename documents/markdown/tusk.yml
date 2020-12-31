@@ -21,6 +21,9 @@ tasks:
           exec: markdown-pdf --version
           print: "\e[32mmarkdown-pdf\e[0m"
       - command:
+          exec: mdspell --version
+          print: "\e[32mmdspell\e[0m"
+      - command:
           exec: markdownlint --version
           print: "\e[32mmarkdownlint\e[0m"
       - command:
@@ -35,6 +38,9 @@ tasks:
       - command:
           exec: markdown-pdf --help
           print: "\e[32mmarkdown-pdf\e[0m"
+      - command:
+          exec: mdspell --help
+          print: "\e[32mmdspell\e[0m"
       - command:
           exec: markdownlint --help
           print: "\e[32mmarkdownlint\e[0m"

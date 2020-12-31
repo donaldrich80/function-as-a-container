@@ -28,14 +28,6 @@ COPY --from=builder /data/* /usr/local/bin/
 # RUN ginstall.sh --first-run && ginstall.sh --self-update
 
 COPY ./extract.sh /usr/local/bin/extract
-# COPY --from=horcrux-builder /usr/local/bin/horcrux /usr/local/bin/horcrux
-# COPY --from=magicpak-builder /usr/local/bin/magicpak /usr/local/bin/magicpak
-# COPY --from=fetch-builder  /usr/local/bin/fetch  /usr/local/bin/fetch
-# COPY --from=ncdu-builder /usr/local/bin/ncdu /usr/local/bin/ncdu
-# COPY --from=upx-builder /usr/local/bin/upx /usr/local/bin/upx
-# COPY --from=restic-builder /usr/local/bin/restic /usr/local/bin/restic
-# COPY --from=fzf-builder /usr/local/bin/fzf /usr/local/bin/fzf
-# COPY --from=gget-builder /usr/local/bin/gget /usr/local/bin/gget
 # validate
 # validate
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk

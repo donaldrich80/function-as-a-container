@@ -30,9 +30,9 @@ commands:
     version: --version
     github: remarkjs/remark-lint
     docs: https://remark.js.org
-  # markdown-spellcheck:
-  #   prefix: mdspell
-  #   help: --help
-  #   version: --version
-  #   github: lukeapage/node-markdown-spellcheck
+  markdown-spellcheck:
+    prefix: mdspell
+    help: --help
+    version: --version
+    github: lukeapage/node-markdown-spellcheck
 extra: ""

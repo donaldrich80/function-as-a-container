@@ -8,6 +8,7 @@ markdownlint-cli \
 remark-cli \
 remark-preset-lint-recommended \
 markdown-link-check \
+markdown-spellcheck \
 textlint
 
 # RUN npm install markdown-magic

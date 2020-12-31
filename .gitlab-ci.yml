@@ -6,7 +6,8 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/repo/semantic-release.yml
   - local: .meta/pipelines.gitlab-ci.yml
-  - remote: https://gitlab.com/dependabot-gitlab/dependabot-standalone/raw/master/.gitlab-ci.yml
+  - local: bot.yml
+  # - remote: https://gitlab.com/dependabot-gitlab/dependabot-standalone/raw/master/.gitlab-ci.yml
 
 cache:
   # untracked: true

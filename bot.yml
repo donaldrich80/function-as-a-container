@@ -26,12 +26,13 @@
   stage: lint
   variables:
     GIT_STRATEGY: none
-    PACKAGE_MANAGER: $CI_JOB_NAME
+    # PACKAGE_MANAGER: $CI_JOB_NAME
     RAILS_ENV: production
     SETTINGS__STANDALONE: "true"
     PROJECT_PATH: donaldrich/function-as-a-container
     PACKAGE_MANAGER_SET: docker
-    DIRECTORY: /
+    PACKAGE_MANAGER: docker
+    DIRECTORY: docker
   before_script:
     - cd /home/dependabot
   script:

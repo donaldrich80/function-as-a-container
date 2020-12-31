@@ -21,7 +21,8 @@
 
 .dependabot-gitlab:
   image:
-    name: docker.io/andrcuns/dependabot-gitlab:latest
+    # name: docker.io/andrcuns/dependabot-gitlab:latest
+    name: registry.gitlab.com/dependabot-gitlab/dependabot:master-latest
     entrypoint: [""]
   stage: lint
   variables:

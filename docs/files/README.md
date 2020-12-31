@@ -45,10 +45,6 @@ source: files/Dockerfile
 
 - [:octicons-book-16: Docs](https://dev.yorhel.nl/ncdu)
 
-### Restic
-
-- [:octicons-mark-github-16: restic/restic](https://github.com/restic/restic)
-
 ### Tree
 
 ### Upx

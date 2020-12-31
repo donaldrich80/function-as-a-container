@@ -21,11 +21,11 @@ commands:
     help: --help
     version: --version
     github: fzf
-  restic:
-    prefix: restic
-    help: --help
-    version: version
-    github: restic/restic
+  # restic:
+  #   prefix: restic
+  #   help: --help
+  #   version: version
+  #   github: restic/restic
   upx:
     prefix: upx
     help: --help

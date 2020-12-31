@@ -39,9 +39,6 @@ tasks:
           exec: ncdu --version
           print: "\e[32mncdu\e[0m"
       - command:
-          exec: restic version
-          print: "\e[32mrestic\e[0m"
-      - command:
           exec: tree --version
           print: "\e[32mtree\e[0m"
       - command:
@@ -74,9 +71,6 @@ tasks:
       - command:
           exec: ncdu --help
           print: "\e[32mncdu\e[0m"
-      - command:
-          exec: restic --help
-          print: "\e[32mrestic\e[0m"
       - command:
           exec: tree --help
           print: "\e[32mtree\e[0m"

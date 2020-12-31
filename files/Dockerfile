@@ -2,16 +2,16 @@ FROM donaldrich/builder:latest AS builder
 
 WORKDIR /data
 
-RUN gget github.com/junegunn/fzf fzf-*-linux_amd64.tar.gz --stdout | tar -xzf- fzf
+RUN gget --stdout github.com/junegunn/fzf fzf-*-linux_amd64.tar.gz | tar -xzf- fzf
 RUN gget github.com/restic/restic restic_*_linux_amd64.bz2
-RUN gget github.com/upx/upx upx-*-amd64_linux.tar.xz --stdout | tar -xJf-
-RUN gget github.com/dpb587/gget --executable gget='gget-*-linux-amd64'
-RUN gget github.com/mholt/archiver --executable arc='arc_*_linux_amd64'
-RUN gget github.com/gruntwork-io/fetch --executable fetch='fetch_linux_amd64'
-RUN gget github.com/jesseduffield/horcrux horcrux_*_Linux_x86_64.tar.gz --stdout | tar -xzf- horcrux
-RUN gget github.com/whalehub/ginstall.sh --executable ginstall.sh='ginstall.sh'
-RUN gget github.com/coord-e/magicpak --executable magicpak='magicpak-x86_64-unknown-linux-musl'
-RUN gget github.com/megastep/makeself --executable makeself='makeself-*.run'
+RUN gget --stdout github.com/upx/upx upx-*-amd64_linux.tar.xz | tar -xJf-
+RUN gget --executable github.com/dpb587/gget gget='gget-*-linux-amd64'
+RUN gget --executable github.com/mholt/archiver arc='arc_*_linux_amd64'
+RUN gget --executable github.com/gruntwork-io/fetch fetch='fetch_linux_amd64'
+RUN gget --stdout github.com/jesseduffield/horcrux horcrux_*_Linux_x86_64.tar.gz | tar -xzf- horcrux
+RUN gget --executable github.com/whalehub/ginstall.sh ginstall.sh='ginstall.sh'
+RUN gget --executable github.com/coord-e/magicpak  magicpak='magicpak-x86_64-unknown-linux-musl'
+RUN gget --executable github.com/megastep/makeself  makeself='makeself-*.run'
 
 FROM ubuntu
 

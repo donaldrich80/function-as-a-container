@@ -3,18 +3,6 @@ updates:
 
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "docker"
-    directory: "/docker"
-    schedule:
-      interval: "daily"
-
-  # Maintain dependencies for npm
-  - package-ecosystem: "docker"
-    directory: "/files"
-    schedule:
-      interval: "daily"
-
-  # Maintain dependencies for Composer
-  - package-ecosystem: "docker"
-    directory: "/shell"
+    directory: "docker"
     schedule:
       interval: "daily"

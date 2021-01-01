@@ -6,7 +6,6 @@ include:
   - local: .meta/pipelines/git/commit/build.gitlab-ci.yml
   - local: .meta/pipelines/git/build.gitlab-ci.yml
   - local: .meta/pipelines/network/apprise/build.gitlab-ci.yml
-  - local: .meta/pipelines/network/curl/build.gitlab-ci.yml
   - local: .meta/pipelines/network/httpie/build.gitlab-ci.yml
   - local: .meta/pipelines/network/bitwarden-cli/build.gitlab-ci.yml
   - local: .meta/pipelines/network/cfssl/build.gitlab-ci.yml

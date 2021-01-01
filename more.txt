@@ -52,3 +52,7 @@ https://github.com/nhurel/terraspec
 https://github.com/mojocn/sshfortress
 https://github.com/openssh/openssh-portable
 https://github.com/TomWright/dasel/releases/download/v1.11.0/dasel_linux_amd64
+
+promtool
+https://github.com/line/promgen
+https://github.com/grafana/loki/releases/download/v2.1.0/logcli-linux-amd64.zip
